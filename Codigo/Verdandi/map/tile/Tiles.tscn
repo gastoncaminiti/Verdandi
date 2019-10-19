@@ -42,14 +42,16 @@ navpoly = SubResource( 1 )
 [node name="TileWater" type="Sprite" parent="."]
 position = Vector2( 0, 14 )
 texture = ExtResource( 4 )
+offset = Vector2( 0, 28 )
 
 [node name="Tiles_Tree" type="Sprite" parent="."]
-position = Vector2( 196, 74 )
 texture = ExtResource( 5 )
+offset = Vector2( 0, -62 )
 
 [node name="Tiles_Pick" type="Sprite" parent="."]
 position = Vector2( 321, 82 )
 texture = ExtResource( 6 )
+offset = Vector2( 0, -31 )
 
 [node name="Tile_Border" type="Sprite" parent="."]
 position = Vector2( 72, 110 )

@@ -13,16 +13,14 @@ func _input(event: InputEvent):
 			goal = event.position
 			path = nav.get_simple_path($Sprite.position, goal, false)
 			path2 = nav.get_simple_path(get_node("Norse-Swordman").get_unit_postion(), goal, false)
-			print(path2)
 			$Line2D.points = PoolVector2Array(path)
 			$Line2D.show()
+			get_node("Norse-Swordman").set_cursor(path2[0].angle_to(goal))
 			
 func _process(delta: float) -> void:
 	if !path:
 		$Line2D.hide()
 		return
-	if !path2:
-		get_node("Norse-Swordman").stop()
 	if path.size() > 0:
 		var d: float = $Sprite.position.distance_to(path[0])
 		if d > 10:
@@ -35,3 +33,5 @@ func _process(delta: float) -> void:
 			get_node("Norse-Swordman").move(path2[0], (speed * delta)/k)
 		else:
 			path2.remove(0)
+	if get_node("Norse-Swordman").get_distance_to(goal) < 31:
+		get_node("Norse-Swordman").stop()
