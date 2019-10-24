@@ -1,21 +1,31 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://manager/UnitManager.gd" type="Script" id=1]
-[ext_resource path="res://unit/norse/soldier/swordman/img/walk/Norse_Sword_Walk_00.png" type="Texture" id=2]
-[ext_resource path="res://unit/norse/soldier/swordman/img/walk/Norse_Sword_Walk_01.png" type="Texture" id=3]
-[ext_resource path="res://unit/norse/soldier/swordman/img/walk/Norse_Sword_Walk_02.png" type="Texture" id=4]
-[ext_resource path="res://unit/norse/soldier/swordman/img/walk/Norse_Sword_Walk_03.png" type="Texture" id=5]
-[ext_resource path="res://unit/norse/soldier/swordman/img/walk/Norse_Sword_Walk_04.png" type="Texture" id=6]
-[ext_resource path="res://unit/norse/soldier/swordman/img/walk/Norse_Sword_Walk_15.png" type="Texture" id=7]
-[ext_resource path="res://unit/norse/soldier/swordman/img/walk/Norse_Sword_Walk_16.png" type="Texture" id=8]
-[ext_resource path="res://unit/norse/soldier/swordman/img/walk/Norse_Sword_Walk_17.png" type="Texture" id=9]
-[ext_resource path="res://unit/norse/soldier/swordman/img/walk/Norse_Sword_Walk_18.png" type="Texture" id=10]
-[ext_resource path="res://unit/norse/soldier/swordman/img/walk/Norse_Sword_Walk_19.png" type="Texture" id=11]
+[ext_resource path="res://unit/norse/soldier/swordman/img/walk/Norse_Sword_Walk_15.png" type="Texture" id=2]
+[ext_resource path="res://unit/norse/soldier/swordman/img/walk/Norse_Sword_Walk_16.png" type="Texture" id=3]
+[ext_resource path="res://unit/norse/soldier/swordman/img/walk/Norse_Sword_Walk_17.png" type="Texture" id=4]
+[ext_resource path="res://unit/norse/soldier/swordman/img/walk/Norse_Sword_Walk_18.png" type="Texture" id=5]
+[ext_resource path="res://unit/norse/soldier/swordman/img/walk/Norse_Sword_Walk_19.png" type="Texture" id=6]
+[ext_resource path="res://unit/norse/soldier/swordman/img/walk/Norse_Sword_Walk_00.png" type="Texture" id=7]
+[ext_resource path="res://unit/norse/soldier/swordman/img/walk/Norse_Sword_Walk_01.png" type="Texture" id=8]
+[ext_resource path="res://unit/norse/soldier/swordman/img/walk/Norse_Sword_Walk_02.png" type="Texture" id=9]
+[ext_resource path="res://unit/norse/soldier/swordman/img/walk/Norse_Sword_Walk_03.png" type="Texture" id=10]
+[ext_resource path="res://unit/norse/soldier/swordman/img/walk/Norse_Sword_Walk_04.png" type="Texture" id=11]
 [ext_resource path="res://unit/norse/soldier/swordman/img/walk/Norse_Sword_Walk_05.png" type="Texture" id=12]
 [ext_resource path="res://unit/norse/soldier/swordman/img/walk/Norse_Sword_Walk_06.png" type="Texture" id=13]
 [ext_resource path="res://unit/norse/soldier/swordman/img/walk/Norse_Sword_Walk_07.png" type="Texture" id=14]
 [ext_resource path="res://unit/norse/soldier/swordman/img/walk/Norse_Sword_Walk_08.png" type="Texture" id=15]
 [ext_resource path="res://unit/norse/soldier/swordman/img/walk/Norse_Sword_Walk_09.png" type="Texture" id=16]
+[ext_resource path="res://unit/norse/soldier/swordman/img/walk/Norse_Sword_Walk_10.png" type="Texture" id=17]
+[ext_resource path="res://unit/norse/soldier/swordman/img/walk/Norse_Sword_Walk_11.png" type="Texture" id=18]
+[ext_resource path="res://unit/norse/soldier/swordman/img/walk/Norse_Sword_Walk_12.png" type="Texture" id=19]
+[ext_resource path="res://unit/norse/soldier/swordman/img/walk/Norse_Sword_Walk_13.png" type="Texture" id=20]
+[ext_resource path="res://unit/norse/soldier/swordman/img/walk/Norse_Sword_Walk_14.png" type="Texture" id=21]
+[ext_resource path="res://unit/norse/soldier/swordman/img/walk/Norse_Sword_Walk_24.png" type="Texture" id=22]
+[ext_resource path="res://unit/norse/soldier/swordman/img/walk/Norse_Sword_Walk_21.png" type="Texture" id=23]
+[ext_resource path="res://unit/norse/soldier/swordman/img/walk/Norse_Sword_Walk_22.png" type="Texture" id=24]
+[ext_resource path="res://unit/norse/soldier/swordman/img/walk/Norse_Sword_Walk_23.png" type="Texture" id=25]
+[ext_resource path="res://unit/norse/soldier/swordman/img/walk/Norse_Sword_Walk_20.png" type="Texture" id=26]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 9.23083
@@ -25,13 +35,13 @@ height = 12.7448
 animations = [ {
 "frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ) ],
 "loop": true,
-"name": "walk_north",
-"speed": 5.0
+"name": "walk_side",
+"speed": 10.0
 }, {
 "frames": [ ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ) ],
 "loop": true,
-"name": "walk_side",
-"speed": 10.0
+"name": "walk_north",
+"speed": 5.0
 }, {
 "frames": [ ExtResource( 12 ) ],
 "loop": true,
@@ -39,6 +49,11 @@ animations = [ {
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "idle_side",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ) ],
 "loop": true,
 "name": "idle_north",
 "speed": 5.0
@@ -48,32 +63,51 @@ animations = [ {
 "name": "walk_south",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 7 ) ],
+"frames": [ ExtResource( 17 ) ],
 "loop": true,
-"name": "idle_side",
+"name": "idle_diagonal_south",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ) ],
+"loop": true,
+"name": "walk_diagonal_south",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 22 ) ],
+"loop": true,
+"name": "walk_diagonal_north",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 26 ) ],
+"loop": true,
+"name": "idle_diagonal_north",
 "speed": 5.0
 } ]
 
 [sub_resource type="CircleShape2D" id=3]
-radius = 32.0812
+radius = 36.9254
 
 [node name="Norse-Swordman" type="KinematicBody2D"]
 script = ExtResource( 1 )
+move_range = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, 10 )
+position = Vector2( 0, -11 )
 shape = SubResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 0, -18 )
 frames = SubResource( 2 )
 animation = "idle_north"
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 0, -11 )
 shape = SubResource( 3 )
 
 [node name="North" type="Position2D" parent="."]
+editor/display_folded = true
 modulate = Color( 0.454902, 0.0509804, 0.0509804, 1 )
 self_modulate = Color( 0.101961, 0.0156863, 0.309804, 1 )
 
@@ -87,6 +121,7 @@ align = 1
 valign = 1
 
 [node name="South" type="Position2D" parent="."]
+editor/display_folded = true
 modulate = Color( 0.141176, 0.0235294, 0.0235294, 1 )
 
 [node name="Label2" type="Label" parent="South"]
@@ -99,6 +134,7 @@ align = 1
 valign = 1
 
 [node name="East" type="Position2D" parent="."]
+editor/display_folded = true
 modulate = Color( 0.647059, 0, 0.411765, 1 )
 
 [node name="Label3" type="Label" parent="East"]
@@ -111,6 +147,7 @@ align = 1
 valign = 1
 
 [node name="West" type="Position2D" parent="."]
+editor/display_folded = true
 modulate = Color( 0.458824, 0.603922, 0, 1 )
 self_modulate = Color( 0.835294, 0.0705882, 0.0705882, 1 )
 
@@ -120,6 +157,63 @@ margin_top = -11.7919
 margin_right = 20.2361
 margin_bottom = 2.20806
 text = "W"
+align = 1
+valign = 1
+
+[node name="NorthWest" type="Position2D" parent="."]
+editor/display_folded = true
+modulate = Color( 0, 0.0509804, 0.603922, 1 )
+self_modulate = Color( 0.835294, 0.0705882, 0.0705882, 1 )
+
+[node name="Label4" type="Label" parent="NorthWest"]
+margin_left = -19.7639
+margin_top = -11.7919
+margin_right = 20.2361
+margin_bottom = 2.20806
+text = "NW"
+align = 1
+valign = 1
+
+[node name="NorthEast" type="Position2D" parent="."]
+editor/display_folded = true
+modulate = Color( 0.823529, 0.537255, 0.458824, 1 )
+self_modulate = Color( 0.835294, 0.0705882, 0.0705882, 1 )
+
+[node name="Label4" type="Label" parent="NorthEast"]
+margin_left = -19.7639
+margin_top = -11.7919
+margin_right = 20.2361
+margin_bottom = 2.20806
+text = "NE"
+align = 1
+valign = 1
+
+[node name="SouthWest" type="Position2D" parent="."]
+editor/display_folded = true
+modulate = Color( 0.470588, 0, 0.603922, 1 )
+self_modulate = Color( 0.835294, 0.0705882, 0.0705882, 1 )
+
+[node name="Label4" type="Label" parent="SouthWest"]
+margin_left = -19.7639
+margin_top = -11.7919
+margin_right = 20.2361
+margin_bottom = 2.20806
+text = "SW"
+align = 1
+valign = 1
+
+[node name="SouthEast" type="Position2D" parent="."]
+editor/display_folded = true
+modulate = Color( 0, 0.603922, 0.517647, 1 )
+self_modulate = Color( 0.835294, 0.0705882, 0.0705882, 1 )
+
+[node name="Label4" type="Label" parent="SouthEast"]
+margin_left = -19.7639
+margin_top = -11.7919
+margin_right = 20.2361
+margin_bottom = 2.20806
+text = "SE
+"
 align = 1
 valign = 1
 

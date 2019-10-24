@@ -20,10 +20,10 @@ format = 1
 tile_data = PoolIntArray( -262137, 3, 0, -262136, 1, 0, -262135, 3, 0, -196602, 3, 0, -196601, 1, 0, -196600, 1, 0, -196599, 1, 0, -196598, 3, 0, -131067, 3, 0, -131066, 1, 0, -131065, 1, 0, -131064, 1, 0, -131063, 1, 0, -131062, 1, 0, -131061, 3, 0, -65531, 3, 0, -65530, 5, 0, -65529, 5, 0, -65528, 5, 0, -65527, 5, 0, -65526, 1, 0, -65525, 3, 0, 5, 3, 0, 6, 5, 0, 7, 5, 0, 8, 5, 0, 9, 5, 0, 10, 1, 0, 11, 3, 0, 65541, 3, 0, 65542, 1, 0, 65543, 1, 0, 65544, 1, 0, 65545, 1, 0, 65546, 1, 0, 65547, 3, 0, 131078, 3, 0, 131079, 1, 0, 131080, 1, 0, 131081, 1, 0, 131082, 3, 0, 196615, 3, 0, 196616, 1, 0, 196617, 3, 0, 262152, 3, 0 )
 
 [node name="Norse-Swordman" parent="." instance=ExtResource( 3 )]
-position = Vector2( 298.53, 345.118 )
+position = Vector2( 301.018, 357.983 )
 scale = Vector2( 2, 2 )
-move_range = 31
-orientation = 3
+move_range = 61
+orientation = 5
 
 [node name="Sprite" type="Sprite" parent="."]
 visible = false
@@ -32,6 +32,12 @@ scale = Vector2( 2, 2 )
 texture = ExtResource( 4 )
 
 [node name="Line2D" type="Line2D" parent="."]
-width = 2.0
+width = 4.0
+default_color = Color( 0.937255, 0.0784314, 0.0352941, 1 )
 texture_mode = -695123993
+begin_cap_mode = 2
+end_cap_mode = 2
+round_precision = 10
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
 
