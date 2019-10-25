@@ -22,8 +22,8 @@ tile_data = PoolIntArray( -262137, 3, 0, -262136, 1, 0, -262135, 3, 0, -196602, 
 [node name="Norse-Swordman" parent="." instance=ExtResource( 3 )]
 position = Vector2( 301.018, 357.983 )
 scale = Vector2( 2, 2 )
-move_range = 61
-orientation = 5
+move_range = 60
+orientation = 0
 
 [node name="Sprite" type="Sprite" parent="."]
 visible = false
