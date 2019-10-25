@@ -1,0 +1,8 @@
+[gd_scene format=2]
+
+[node name="Coordinate" type="Area2D"]
+modulate = Color( 0.270588, 0, 0, 1 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( 0, -31, -60, 0, 0, 31, 60, 0 )
+

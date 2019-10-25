@@ -23,11 +23,11 @@ texture = ExtResource( 1 )
 position = Vector2( 0, -0.0239372 )
 navpoly = SubResource( 1 )
 
-[node name="TileWiter" type="Sprite" parent="."]
+[node name="TileWinter" type="Sprite" parent="."]
 position = Vector2( 0, 14 )
 texture = ExtResource( 2 )
 
-[node name="NavigationTileRock" type="NavigationPolygonInstance" parent="TileWiter"]
+[node name="NavigationTileRock" type="NavigationPolygonInstance" parent="TileWinter"]
 position = Vector2( 0, -0.0239372 )
 navpoly = SubResource( 1 )
 

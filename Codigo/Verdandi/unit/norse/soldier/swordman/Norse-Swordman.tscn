@@ -1,114 +1,114 @@
-[gd_scene load_steps=30 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://manager/UnitManager.gd" type="Script" id=1]
-[ext_resource path="res://unit/norse/soldier/swordman/img/walk/Norse_Sword_Walk_15.png" type="Texture" id=2]
-[ext_resource path="res://unit/norse/soldier/swordman/img/walk/Norse_Sword_Walk_16.png" type="Texture" id=3]
-[ext_resource path="res://unit/norse/soldier/swordman/img/walk/Norse_Sword_Walk_17.png" type="Texture" id=4]
-[ext_resource path="res://unit/norse/soldier/swordman/img/walk/Norse_Sword_Walk_18.png" type="Texture" id=5]
-[ext_resource path="res://unit/norse/soldier/swordman/img/walk/Norse_Sword_Walk_19.png" type="Texture" id=6]
-[ext_resource path="res://unit/norse/soldier/swordman/img/walk/Norse_Sword_Walk_10.png" type="Texture" id=7]
-[ext_resource path="res://unit/norse/soldier/swordman/img/walk/Norse_Sword_Walk_00.png" type="Texture" id=8]
-[ext_resource path="res://unit/norse/soldier/swordman/img/walk/Norse_Sword_Walk_01.png" type="Texture" id=9]
-[ext_resource path="res://unit/norse/soldier/swordman/img/walk/Norse_Sword_Walk_02.png" type="Texture" id=10]
-[ext_resource path="res://unit/norse/soldier/swordman/img/walk/Norse_Sword_Walk_03.png" type="Texture" id=11]
-[ext_resource path="res://unit/norse/soldier/swordman/img/walk/Norse_Sword_Walk_04.png" type="Texture" id=12]
-[ext_resource path="res://unit/norse/soldier/swordman/img/walk/Norse_Sword_Walk_05.png" type="Texture" id=13]
-[ext_resource path="res://unit/norse/soldier/swordman/img/walk/Norse_Sword_Walk_11.png" type="Texture" id=14]
-[ext_resource path="res://unit/norse/soldier/swordman/img/walk/Norse_Sword_Walk_12.png" type="Texture" id=15]
-[ext_resource path="res://unit/norse/soldier/swordman/img/walk/Norse_Sword_Walk_13.png" type="Texture" id=16]
-[ext_resource path="res://unit/norse/soldier/swordman/img/walk/Norse_Sword_Walk_14.png" type="Texture" id=17]
-[ext_resource path="res://unit/norse/soldier/swordman/img/walk/Norse_Sword_Walk_24.png" type="Texture" id=18]
-[ext_resource path="res://unit/norse/soldier/swordman/img/walk/Norse_Sword_Walk_21.png" type="Texture" id=19]
-[ext_resource path="res://unit/norse/soldier/swordman/img/walk/Norse_Sword_Walk_22.png" type="Texture" id=20]
-[ext_resource path="res://unit/norse/soldier/swordman/img/walk/Norse_Sword_Walk_23.png" type="Texture" id=21]
-[ext_resource path="res://unit/norse/soldier/swordman/img/walk/Norse_Sword_Walk_20.png" type="Texture" id=22]
-[ext_resource path="res://unit/norse/soldier/swordman/img/walk/Norse_Sword_Walk_06.png" type="Texture" id=23]
-[ext_resource path="res://unit/norse/soldier/swordman/img/walk/Norse_Sword_Walk_07.png" type="Texture" id=24]
-[ext_resource path="res://unit/norse/soldier/swordman/img/walk/Norse_Sword_Walk_08.png" type="Texture" id=25]
-[ext_resource path="res://unit/norse/soldier/swordman/img/walk/Norse_Sword_Walk_09.png" type="Texture" id=26]
+[ext_resource path="res://unit/norse/soldier/swordman/img/walk/Norse_Sword_Walk_20.png" type="Texture" id=2]
+[ext_resource path="res://unit/norse/soldier/swordman/img/walk/Norse_Sword_Walk_15.png" type="Texture" id=3]
+[ext_resource path="res://unit/norse/soldier/swordman/img/walk/Norse_Sword_Walk_24.png" type="Texture" id=4]
+[ext_resource path="res://unit/norse/soldier/swordman/img/walk/Norse_Sword_Walk_21.png" type="Texture" id=5]
+[ext_resource path="res://unit/norse/soldier/swordman/img/walk/Norse_Sword_Walk_22.png" type="Texture" id=6]
+[ext_resource path="res://unit/norse/soldier/swordman/img/walk/Norse_Sword_Walk_23.png" type="Texture" id=7]
+[ext_resource path="res://unit/norse/soldier/swordman/img/walk/Norse_Sword_Walk_05.png" type="Texture" id=8]
+[ext_resource path="res://unit/norse/soldier/swordman/img/walk/Norse_Sword_Walk_06.png" type="Texture" id=9]
+[ext_resource path="res://unit/norse/soldier/swordman/img/walk/Norse_Sword_Walk_07.png" type="Texture" id=10]
+[ext_resource path="res://unit/norse/soldier/swordman/img/walk/Norse_Sword_Walk_08.png" type="Texture" id=11]
+[ext_resource path="res://unit/norse/soldier/swordman/img/walk/Norse_Sword_Walk_09.png" type="Texture" id=12]
+[ext_resource path="res://unit/norse/soldier/swordman/img/walk/Norse_Sword_Walk_00.png" type="Texture" id=13]
+[ext_resource path="res://unit/norse/soldier/swordman/img/walk/Norse_Sword_Walk_01.png" type="Texture" id=14]
+[ext_resource path="res://unit/norse/soldier/swordman/img/walk/Norse_Sword_Walk_02.png" type="Texture" id=15]
+[ext_resource path="res://unit/norse/soldier/swordman/img/walk/Norse_Sword_Walk_03.png" type="Texture" id=16]
+[ext_resource path="res://unit/norse/soldier/swordman/img/walk/Norse_Sword_Walk_04.png" type="Texture" id=17]
+[ext_resource path="res://unit/norse/soldier/swordman/img/walk/Norse_Sword_Walk_10.png" type="Texture" id=18]
+[ext_resource path="res://unit/norse/soldier/swordman/img/walk/Norse_Sword_Walk_11.png" type="Texture" id=19]
+[ext_resource path="res://unit/norse/soldier/swordman/img/walk/Norse_Sword_Walk_12.png" type="Texture" id=20]
+[ext_resource path="res://unit/norse/soldier/swordman/img/walk/Norse_Sword_Walk_13.png" type="Texture" id=21]
+[ext_resource path="res://unit/norse/soldier/swordman/img/walk/Norse_Sword_Walk_14.png" type="Texture" id=22]
+[ext_resource path="res://unit/norse/soldier/swordman/img/walk/Norse_Sword_Walk_16.png" type="Texture" id=23]
+[ext_resource path="res://unit/norse/soldier/swordman/img/walk/Norse_Sword_Walk_17.png" type="Texture" id=24]
+[ext_resource path="res://unit/norse/soldier/swordman/img/walk/Norse_Sword_Walk_18.png" type="Texture" id=25]
+[ext_resource path="res://unit/norse/soldier/swordman/img/walk/Norse_Sword_Walk_19.png" type="Texture" id=26]
+[ext_resource path="res://unit/common/AreaCoodinate.tscn" type="PackedScene" id=27]
 
 [sub_resource type="CapsuleShape2D" id=1]
-radius = 9.23083
-height = 12.7448
+radius = 15.8761
+height = 31.4616
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ) ],
-"loop": true,
-"name": "walk_side",
-"speed": 10.0
-}, {
-"frames": [ ExtResource( 7 ) ],
-"loop": true,
-"name": "idle_diagonal_south",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ) ],
-"loop": true,
-"name": "walk_north",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 13 ) ],
-"loop": true,
-"name": "idle_south",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 8 ) ],
+"frames": [ ExtResource( 2 ) ],
 "loop": true,
 "name": "idle_north",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 7 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ) ],
+"frames": [ ExtResource( 3 ) ],
 "loop": true,
-"name": "walk_diagonal_south",
+"name": "idle_north_east",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 18 ) ],
+"frames": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 4 ) ],
 "loop": true,
-"name": "walk_diagonal_north",
+"name": "walk_north",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ) ],
+"loop": true,
+"name": "walk_south_east",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ) ],
+"loop": true,
+"name": "walk_north_west",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ) ],
+"loop": true,
+"name": "walk_east",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 3 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ) ],
+"loop": true,
+"name": "walk_north_east",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 8 ) ],
+"loop": true,
+"name": "idle_south_east",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 2 ) ],
+"frames": [ ExtResource( 13 ) ],
 "loop": true,
-"name": "idle_side",
+"name": "idle_north_west",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 22 ) ],
+"frames": [ ExtResource( 18 ) ],
 "loop": true,
-"name": "idle_diagonal_north",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 13 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ) ],
-"loop": true,
-"name": "walk_south",
+"name": "idle_east",
 "speed": 5.0
 } ]
 
 [sub_resource type="CircleShape2D" id=3]
-radius = 36.9254
+radius = 60.0739
 
 [node name="Norse-Swordman" type="KinematicBody2D"]
 script = ExtResource( 1 )
-move_range = 16
 orientation = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, -11 )
+position = Vector2( 0, -25 )
 shape = SubResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 0, -18 )
+position = Vector2( 0.0121155, -39.3405 )
+scale = Vector2( 2, 2 )
 frames = SubResource( 2 )
-animation = "walk_diagonal_north"
+animation = "idle_north_west"
 
 [node name="Area2D" type="Area2D" parent="."]
+position = Vector2( 0, -25 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2( 0, -11 )
 shape = SubResource( 3 )
 
 [node name="North" type="Position2D" parent="."]
-editor/display_folded = true
 modulate = Color( 0.454902, 0.0509804, 0.0509804, 1 )
 self_modulate = Color( 0.101961, 0.0156863, 0.309804, 1 )
 
@@ -120,6 +120,8 @@ margin_bottom = 1.37765
 text = "N"
 align = 1
 valign = 1
+
+[node name="Coordinate" parent="North" instance=ExtResource( 27 )]
 
 [node name="South" type="Position2D" parent="."]
 editor/display_folded = true
@@ -190,6 +192,7 @@ align = 1
 valign = 1
 
 [node name="SouthWest" type="Position2D" parent="."]
+editor/display_folded = true
 modulate = Color( 0.470588, 0, 0.603922, 1 )
 self_modulate = Color( 0.835294, 0.0705882, 0.0705882, 1 )
 

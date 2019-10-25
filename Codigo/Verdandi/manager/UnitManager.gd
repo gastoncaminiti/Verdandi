@@ -1,14 +1,15 @@
 extends KinematicBody2D
 
 # Editable VAR
-export(int) var move_range = 62
-export(int) var move_speed = 250
-export(int) var cell_range =  1
+export(int) var move_speed = 100
+export(int) var cell_range =  2
 export(int) var path_dimension  =  3
 export(int, "North", "South","West","East","NorthWest","NorthEast","SouthWest","SouthEast") var orientation = 0
 # Private VAR
 var my_map:  TileMap
 var my_path: PoolVector2Array
+var my_goal_position
+var flag_move = false
 var my_index_path
 var size_cell_x
 var size_cell_y 
@@ -51,7 +52,7 @@ func get_distance_to(distance):
 	return global_position.distance_to(distance)
 
 func move(point, speed):
-	orientation_animation()
+	orientation_animation("walk")
 	global_position = global_position.linear_interpolate(point, speed)
 	
 func set_animated(name):
@@ -69,31 +70,41 @@ func _goMapConfig(map):
 	size_cell_y = my_map.cell_size.y / 2
 	global_position = set_center_position_by_cell(get_position_by_cell_index(get_cell_index(global_position)))
 	coordinates_reposition()
-	orientation_reposition()
+	orientation_animation("idle")
 
 func _goPahtConfig(nav):
-	if(my_path):
-		if(my_index_path < my_path.size()):
-			if(my_path[0] == my_path[1]):
-				if(my_path.size() == 2):
+		if(my_path):
+			var index_end =  my_path.size() - 1
+			if(my_index_path  < index_end):
+				print("En Camino")
+				my_index_path+=1 
+				my_goal_position = set_center_position_by_cell(get_position_by_cell_index(get_cell_index(my_path[my_index_path])))
+				flag_move = true
+			else:
+				print("Reorientado")
+				if(my_index_path == index_end):
 					orientation_reorientation()
-					set_new_path(nav)
-					print(orientation)
-				else:
-					my_index_path = 2
-			global_position = set_center_position_by_cell(get_position_by_cell_index(get_cell_index(my_path[my_index_path]))) 
-			my_index_path+=1
+					search_path(nav)
+					orientation_animation("idle")
+					set_center_path()
+					my_index_path+=1 
+					my_goal_position = set_center_position_by_cell(get_position_by_cell_index(get_cell_index(my_path[my_index_path])))
+					flag_move = true
+			
 		else:
-			set_new_path(nav)
-			orientation_reposition()
+			search_path(nav)
+			orientation_animation("idle")
 			set_center_path()
-	else:
-		set_new_path(nav)
-		orientation_reposition()
-		set_center_path()
-		global_position = set_center_position_by_cell(get_position_by_cell_index(get_cell_index(my_path[my_index_path]))) 
-	print(my_path)
+			print(my_path)
+			my_index_path+=1 
+			my_goal_position = set_center_position_by_cell(get_position_by_cell_index(get_cell_index(my_path[my_index_path]))) 
+			flag_move = true
 	
+func search_path(my_nav):
+	set_new_path(my_nav)
+	while my_path.size() < path_dimension:
+		orientation_reorientation()
+		set_new_path(my_nav)
 
 func get_cell_index(pos):
 	return my_map.world_to_map(pos)
@@ -110,8 +121,8 @@ func set_center_path():
 		my_path[i] = set_center_position_by_cell(get_position_by_cell_index(get_cell_index(my_path[i])))
 
 func set_new_path(my_nav):
-	my_path = my_nav.get_simple_path(global_position, orientation_global_position(), false)
-	my_index_path = 1
+	my_path = my_nav.get_simple_path(global_position, orientation_global_position(), true)
+	my_index_path = 0
 	
 
 func coordinates_reposition():
@@ -124,68 +135,33 @@ func coordinates_reposition():
 	$NorthEast.global_position = set_center_position_by_cell(get_position_by_cell_index(Vector2(index_unit_pos.x + cell_range,index_unit_pos.y - cell_range)))
 	$SouthWest.global_position = set_center_position_by_cell(get_position_by_cell_index(Vector2(index_unit_pos.x - cell_range,index_unit_pos.y + cell_range)))
 	$SouthEast.global_position = set_center_position_by_cell(get_position_by_cell_index(Vector2(index_unit_pos.x + cell_range,index_unit_pos.y + cell_range)))
-	#$North.position.y -= move_range 
-	#$South.position.y += move_range
-	#$West.position.x  -= move_range
-	#$East.position.x  += move_range
-	#$NorthWest.position.y -=move_range
-	#$NorthWest.position.x -=move_range
-	#$NorthEast.position.y -=move_range
-	#$NorthEast.position.x +=move_range
-	#$SouthWest.position.y +=move_range
-	#$SouthWest.position.x -=move_range
-	#$SouthEast.position.y +=move_range
-	#$SouthEast.position.x +=move_range
 
-func orientation_reposition():
+func orientation_animation(prefix):
 	match orientation:
 		0:
-			set_animated("idle_north")
+			$AnimatedSprite.flip_h = false
+			set_animated(prefix + "_north")
 		1:
-			set_animated("idle_south")
+			$AnimatedSprite.flip_h = true
+			set_animated(prefix + "_east")
 		2:
 			$AnimatedSprite.flip_h = true
-			set_animated("idle_side")
+			set_animated(prefix + "_north")
 		3:
 			$AnimatedSprite.flip_h = false
-			set_animated("idle_side")
+			set_animated(prefix + "_east")
 		4:
-			$AnimatedSprite.flip_h = true
-			set_animated("idle_diagonal_north")
+			$AnimatedSprite.flip_h = false
+			set_animated(prefix + "_north_west")
 		5:
 			$AnimatedSprite.flip_h = false
-			set_animated("idle_diagonal_north")
+			set_animated(prefix + "_north_east")
 		6:
 			$AnimatedSprite.flip_h = true
-			set_animated("idle_diagonal_south")
+			set_animated(prefix + "_north_east")
 		7:
 			$AnimatedSprite.flip_h = false
-			set_animated("idle_diagonal_south")
-
-func orientation_animation():
-	match orientation:
-		0:
-			set_animated("walk_north")
-		1:
-			set_animated("walk_south")
-		2:
-			$AnimatedSprite.flip_h = true
-			set_animated("walk_side")
-		3:
-			$AnimatedSprite.flip_h = false
-			set_animated("walk_side")
-		4:
-			$AnimatedSprite.flip_h = true
-			set_animated("walk_diagonal_north")
-		5:
-			$AnimatedSprite.flip_h = false
-			set_animated("walk_diagonal_north")
-		6:
-			$AnimatedSprite.flip_h = true
-			set_animated("walk_diagonal_south")
-		7:
-			$AnimatedSprite.flip_h = false
-			set_animated("walk_diagonal_south")
+			set_animated(prefix + "_south_east")
 
 func orientation_global_position():
 	match orientation:
@@ -209,7 +185,7 @@ func orientation_global_position():
 func orientation_reorientation():
 	match orientation:
 		0:
-			orientation = 5
+			orientation = 3
 		1:
 			orientation = 6
 		2:
@@ -224,3 +200,13 @@ func orientation_reorientation():
 			orientation = 2
 		7:
 			orientation = 1
+
+func _process(delta: float) -> void:
+	if flag_move:
+		orientation_animation("walk")
+		var d: float = global_position.distance_to(my_goal_position)
+		if d > 1:
+			move(my_goal_position, (move_speed * delta)/d)
+		else:
+			flag_move = false
+			orientation_animation("idle")
