@@ -5,14 +5,21 @@ export(int) var move_speed = 100
 export(int) var cell_range =  2
 export(int) var path_dimension  =  3
 export(int, "North", "South","West","East","NorthWest","NorthEast","SouthWest","SouthEast") var orientation = 0
+export(int, "North", "South","West","East","NorthWest","NorthEast","SouthWest","SouthEast") var priority_orientation = 0
+# Game VAR
+export(int) var life = 100
+export(int) var attack = 20
+export(int) var attack_speed = 2
+export(int) var defense = 20
 # Private VAR
 var my_map:  TileMap
 var my_path: PoolVector2Array
 var my_goal_position
-var flag_move = false
 var my_index_path
 var size_cell_x
 var size_cell_y 
+var flag_move = false
+var flag_priority = false
 
 func _ready():
 	connect_parent_child("map_initiated","_goMapConfig")
@@ -86,7 +93,7 @@ func _goPahtConfig(nav):
 					orientation_reorientation()
 					search_path(nav)
 					orientation_animation("idle")
-					set_center_path()
+					#set_center_path()
 					my_index_path+=1 
 					my_goal_position = set_center_position_by_cell(get_position_by_cell_index(get_cell_index(my_path[my_index_path])))
 					flag_move = true
@@ -95,14 +102,24 @@ func _goPahtConfig(nav):
 			search_path(nav)
 			orientation_animation("idle")
 			set_center_path()
-			print(my_path)
 			my_index_path+=1 
 			my_goal_position = set_center_position_by_cell(get_position_by_cell_index(get_cell_index(my_path[my_index_path]))) 
 			flag_move = true
 	
+func valid_path(my_path, my_nav):
+	if( get_cell_index(my_path[0]) == get_cell_index(my_path[1])):
+		return false
+	if(my_path.size() < path_dimension):
+		return false
+	set_center_path()
+	print(my_path[0].distance_to(my_path[1]))
+	if(my_path[0].distance_to(my_path[1]) < my_map.cell_size.y):
+		return false
+	return true
+	
 func search_path(my_nav):
 	set_new_path(my_nav)
-	while my_path.size() < path_dimension:
+	while !valid_path(my_path, my_nav):
 		orientation_reorientation()
 		set_new_path(my_nav)
 
