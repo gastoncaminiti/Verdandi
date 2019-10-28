@@ -1,0 +1,81 @@
+<?xml version="1.0" standalone="no" ?>
+<!DOCTYPE project PUBLIC "-//audacityproject-1.3.0//DTD//EN" "http://audacity.sourceforge.net/xml/audacityproject-1.3.0.dtd" >
+<project xmlns="http://audacity.sourceforge.net/xml/" projname="Halindir - Der Hvor Egen Gror_data" version="1.3.0" audacityversion="2.2.2" sel0="0.0000000000" sel1="0.0000000000" vpos="0" h="0.0000000000" zoom="5.1140652713" rate="44100.0" snapto="off" selectionformat="Cuadros CDDA (75 fps)" frequencyformat="Hz" bandwidthformat="octavas">
+	<tags>
+		<tag name="Software" value="FL Studio 20"/>
+	</tags>
+	<wavetrack name="Halindir - Der Hvor Egen Gror" channel="0" linked="1" mute="0" solo="0" height="150" minimized="0" isSelected="1" rate="44100" gain="1.0" pan="0.0" colorindex="0">
+		<waveclip offset="0.00000000" colorindex="0">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="2414517">
+				<waveblock start="0">
+					<pcmaliasblockfile summaryfile="e08085a6.auf" aliasfile="D:\ESTUDIO\UNLVIRTUAL\TRABAJO FINAL\Verdandi\Recursos\Sonidos\Original\Halindir - Der Hvor Egen Gror.wav" aliasstart="0" aliaslen="262144" aliaschannel="0" min="-0.116239" max="0.111197" rms="0.027785"/>
+				</waveblock>
+				<waveblock start="262144">
+					<pcmaliasblockfile summaryfile="e080828b.auf" aliasfile="D:\ESTUDIO\UNLVIRTUAL\TRABAJO FINAL\Verdandi\Recursos\Sonidos\Original\Halindir - Der Hvor Egen Gror.wav" aliasstart="262144" aliaslen="262144" aliaschannel="0" min="-0.304469" max="0.317218" rms="0.074555"/>
+				</waveblock>
+				<waveblock start="524288">
+					<pcmaliasblockfile summaryfile="e0808cfb.auf" aliasfile="D:\ESTUDIO\UNLVIRTUAL\TRABAJO FINAL\Verdandi\Recursos\Sonidos\Original\Halindir - Der Hvor Egen Gror.wav" aliasstart="524288" aliaslen="262144" aliaschannel="0" min="-0.369154" max="0.349612" rms="0.092296"/>
+				</waveblock>
+				<waveblock start="786432">
+					<pcmaliasblockfile summaryfile="e08083ee.auf" aliasfile="D:\ESTUDIO\UNLVIRTUAL\TRABAJO FINAL\Verdandi\Recursos\Sonidos\Original\Halindir - Der Hvor Egen Gror.wav" aliasstart="786432" aliaslen="262144" aliaschannel="0" min="-0.519811" max="0.456211" rms="0.099404"/>
+				</waveblock>
+				<waveblock start="1048576">
+					<pcmaliasblockfile summaryfile="e0808fae.auf" aliasfile="D:\ESTUDIO\UNLVIRTUAL\TRABAJO FINAL\Verdandi\Recursos\Sonidos\Original\Halindir - Der Hvor Egen Gror.wav" aliasstart="1048576" aliaslen="262144" aliaschannel="0" min="-0.824165" max="0.824031" rms="0.152364"/>
+				</waveblock>
+				<waveblock start="1310720">
+					<pcmaliasblockfile summaryfile="e0808cd5.auf" aliasfile="D:\ESTUDIO\UNLVIRTUAL\TRABAJO FINAL\Verdandi\Recursos\Sonidos\Original\Halindir - Der Hvor Egen Gror.wav" aliasstart="1310720" aliaslen="262144" aliaschannel="0" min="-0.66258" max="0.824038" rms="0.143387"/>
+				</waveblock>
+				<waveblock start="1572864">
+					<pcmaliasblockfile summaryfile="e08082e8.auf" aliasfile="D:\ESTUDIO\UNLVIRTUAL\TRABAJO FINAL\Verdandi\Recursos\Sonidos\Original\Halindir - Der Hvor Egen Gror.wav" aliasstart="1572864" aliaslen="262144" aliaschannel="0" min="-0.824151" max="0.821625" rms="0.150677"/>
+				</waveblock>
+				<waveblock start="1835008">
+					<simpleblockfile filename="e080836a.au" len="262144" min="-0.766136" max="0.824197" rms="0.148629"/>
+				</waveblock>
+				<waveblock start="2097152">
+					<simpleblockfile filename="e0808ea5.au" len="158682" min="-0.704042" max="0.709915" rms="0.170854"/>
+				</waveblock>
+				<waveblock start="2255834">
+					<simpleblockfile filename="e08081d2.au" len="158683" min="-0.343953" max="0.391876" rms="0.073851"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+	<wavetrack name="Halindir - Der Hvor Egen Gror" channel="1" linked="0" mute="0" solo="0" height="150" minimized="0" isSelected="1" rate="44100" gain="1.0" pan="0.0" colorindex="0">
+		<waveclip offset="0.00000000" colorindex="0">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="2414517">
+				<waveblock start="0">
+					<pcmaliasblockfile summaryfile="e0808581.auf" aliasfile="D:\ESTUDIO\UNLVIRTUAL\TRABAJO FINAL\Verdandi\Recursos\Sonidos\Original\Halindir - Der Hvor Egen Gror.wav" aliasstart="0" aliaslen="262144" aliaschannel="1" min="-0.103038" max="0.095976" rms="0.022823"/>
+				</waveblock>
+				<waveblock start="262144">
+					<pcmaliasblockfile summaryfile="e08080b8.auf" aliasfile="D:\ESTUDIO\UNLVIRTUAL\TRABAJO FINAL\Verdandi\Recursos\Sonidos\Original\Halindir - Der Hvor Egen Gror.wav" aliasstart="262144" aliaslen="262144" aliaschannel="1" min="-0.277585" max="0.25488" rms="0.057639"/>
+				</waveblock>
+				<waveblock start="524288">
+					<pcmaliasblockfile summaryfile="e08087e3.auf" aliasfile="D:\ESTUDIO\UNLVIRTUAL\TRABAJO FINAL\Verdandi\Recursos\Sonidos\Original\Halindir - Der Hvor Egen Gror.wav" aliasstart="524288" aliaslen="262144" aliaschannel="1" min="-0.403356" max="0.332377" rms="0.081071"/>
+				</waveblock>
+				<waveblock start="786432">
+					<pcmaliasblockfile summaryfile="e0808e01.auf" aliasfile="D:\ESTUDIO\UNLVIRTUAL\TRABAJO FINAL\Verdandi\Recursos\Sonidos\Original\Halindir - Der Hvor Egen Gror.wav" aliasstart="786432" aliaslen="262144" aliaschannel="1" min="-0.527505" max="0.457257" rms="0.105578"/>
+				</waveblock>
+				<waveblock start="1048576">
+					<pcmaliasblockfile summaryfile="e0808361.auf" aliasfile="D:\ESTUDIO\UNLVIRTUAL\TRABAJO FINAL\Verdandi\Recursos\Sonidos\Original\Halindir - Der Hvor Egen Gror.wav" aliasstart="1048576" aliaslen="262144" aliaschannel="1" min="-0.824049" max="0.824085" rms="0.14924"/>
+				</waveblock>
+				<waveblock start="1310720">
+					<pcmaliasblockfile summaryfile="e0808eae.auf" aliasfile="D:\ESTUDIO\UNLVIRTUAL\TRABAJO FINAL\Verdandi\Recursos\Sonidos\Original\Halindir - Der Hvor Egen Gror.wav" aliasstart="1310720" aliaslen="262144" aliaschannel="1" min="-0.673773" max="0.824118" rms="0.136629"/>
+				</waveblock>
+				<waveblock start="1572864">
+					<pcmaliasblockfile summaryfile="e08083b9.auf" aliasfile="D:\ESTUDIO\UNLVIRTUAL\TRABAJO FINAL\Verdandi\Recursos\Sonidos\Original\Halindir - Der Hvor Egen Gror.wav" aliasstart="1572864" aliaslen="262144" aliaschannel="1" min="-0.824175" max="0.824017" rms="0.146866"/>
+				</waveblock>
+				<waveblock start="1835008">
+					<simpleblockfile filename="e08084b5.au" len="262144" min="-0.824151" max="0.824134" rms="0.156352"/>
+				</waveblock>
+				<waveblock start="2097152">
+					<simpleblockfile filename="e0808dbf.au" len="158682" min="-0.738113" max="0.758162" rms="0.172079"/>
+				</waveblock>
+				<waveblock start="2255834">
+					<simpleblockfile filename="e08080bd.au" len="158683" min="-0.347435" max="0.352419" rms="0.071169"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+</project>

@@ -1,0 +1,57 @@
+<?xml version="1.0" standalone="no" ?>
+<!DOCTYPE project PUBLIC "-//audacityproject-1.3.0//DTD//EN" "http://audacity.sourceforge.net/xml/audacityproject-1.3.0.dtd" >
+<project xmlns="http://audacity.sourceforge.net/xml/" projname="Landing-Vanaheimr_data" version="1.3.0" audacityversion="2.2.2" sel0="0.0000000000" sel1="0.0000000000" vpos="0" h="23.2707146670" zoom="122.4285562676" rate="44100.0" snapto="off" selectionformat="Cuadros CDDA (75 fps)" frequencyformat="Hz" bandwidthformat="octavas">
+	<tags>
+		<tag name="Software" value="FL Studio 9"/>
+	</tags>
+	<wavetrack name="Halindir - Vanaheimr" channel="0" linked="1" mute="0" solo="0" height="150" minimized="0" isSelected="1" rate="44100" gain="1.0" pan="0.0" colorindex="0">
+		<waveclip offset="0.00000000" colorindex="0">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="1274896">
+				<waveblock start="0">
+					<simpleblockfile filename="e0808240.au" len="218292" min="-0.97522" max="0.944061" rms="0.217007"/>
+				</waveblock>
+				<waveblock start="218292">
+					<pcmaliasblockfile summaryfile="e08084cb.auf" aliasfile="D:\ESTUDIO\UNLVIRTUAL\TRABAJO FINAL\Verdandi\Recursos\Sonidos\Original\Halindir - Vanaheimr.wav" aliasstart="1048576" aliaslen="262144" aliaschannel="0" min="-0.975159" max="0.975067" rms="0.23281"/>
+				</waveblock>
+				<waveblock start="480436">
+					<pcmaliasblockfile summaryfile="e080856e.auf" aliasfile="D:\ESTUDIO\UNLVIRTUAL\TRABAJO FINAL\Verdandi\Recursos\Sonidos\Original\Halindir - Vanaheimr.wav" aliasstart="1310720" aliaslen="262144" aliaschannel="0" min="-0.951538" max="0.97522" rms="0.241259"/>
+				</waveblock>
+				<waveblock start="742580">
+					<pcmaliasblockfile summaryfile="e08086bb.auf" aliasfile="D:\ESTUDIO\UNLVIRTUAL\TRABAJO FINAL\Verdandi\Recursos\Sonidos\Original\Halindir - Vanaheimr.wav" aliasstart="1572864" aliaslen="262144" aliaschannel="0" min="-0.972046" max="0.975128" rms="0.237538"/>
+				</waveblock>
+				<waveblock start="1004724">
+					<simpleblockfile filename="e0808d8f.au" len="137911" min="-0.951874" max="0.866455" rms="0.21962"/>
+				</waveblock>
+				<waveblock start="1142635">
+					<simpleblockfile filename="e0808311.au" len="132261" min="-0.975067" max="0.866882" rms="0.231025"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+	<wavetrack name="Halindir - Vanaheimr" channel="1" linked="0" mute="0" solo="0" height="150" minimized="0" isSelected="1" rate="44100" gain="1.0" pan="0.0" colorindex="0">
+		<waveclip offset="0.00000000" colorindex="0">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="1274896">
+				<waveblock start="0">
+					<simpleblockfile filename="e08086ff.au" len="218292" min="-0.975098" max="0.975159" rms="0.206124"/>
+				</waveblock>
+				<waveblock start="218292">
+					<pcmaliasblockfile summaryfile="e0808d6a.auf" aliasfile="D:\ESTUDIO\UNLVIRTUAL\TRABAJO FINAL\Verdandi\Recursos\Sonidos\Original\Halindir - Vanaheimr.wav" aliasstart="1048576" aliaslen="262144" aliaschannel="1" min="-0.95636" max="0.975067" rms="0.212027"/>
+				</waveblock>
+				<waveblock start="480436">
+					<pcmaliasblockfile summaryfile="e0808820.auf" aliasfile="D:\ESTUDIO\UNLVIRTUAL\TRABAJO FINAL\Verdandi\Recursos\Sonidos\Original\Halindir - Vanaheimr.wav" aliasstart="1310720" aliaslen="262144" aliaschannel="1" min="-0.975159" max="0.975006" rms="0.224191"/>
+				</waveblock>
+				<waveblock start="742580">
+					<pcmaliasblockfile summaryfile="e0808a25.auf" aliasfile="D:\ESTUDIO\UNLVIRTUAL\TRABAJO FINAL\Verdandi\Recursos\Sonidos\Original\Halindir - Vanaheimr.wav" aliasstart="1572864" aliaslen="262144" aliaschannel="1" min="-0.975037" max="0.975189" rms="0.225054"/>
+				</waveblock>
+				<waveblock start="1004724">
+					<simpleblockfile filename="e0808aa0.au" len="137911" min="-0.975037" max="0.91748" rms="0.24002"/>
+				</waveblock>
+				<waveblock start="1142635">
+					<simpleblockfile filename="e080884d.au" len="132261" min="-0.97525" max="0.97522" rms="0.213038"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+</project>
