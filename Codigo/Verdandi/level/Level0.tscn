@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://manager/LevelManager.gd" type="Script" id=1]
 [ext_resource path="res://map/tile/Tiles.tres" type="TileSet" id=2]
 [ext_resource path="res://unit/norse/soldier/swordman/Norse-Swordman.tscn" type="PackedScene" id=3]
 [ext_resource path="res://unit/norse/soldier/swordman/img/walk/Norse_Sword_Walk_08.png" type="Texture" id=4]
+[ext_resource path="res://interface/GameInterface.tscn" type="PackedScene" id=5]
 
 [node name="Level" type="Node2D" groups=[
 "Level",
@@ -26,6 +27,14 @@ cell_range = 1
 path_dimension = 2
 orientation = 4
 
+[node name="Norse-Swordman2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 538.316, 366.662 )
+move_speed = 50
+cell_range = 1
+path_dimension = 2
+orientation = 4
+priority_orientation = 1
+
 [node name="Sprite" type="Sprite" parent="."]
 visible = false
 position = Vector2( 479.557, 292.862 )
@@ -40,5 +49,5 @@ begin_cap_mode = 2
 end_cap_mode = 2
 round_precision = 10
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="GameInterface" parent="." instance=ExtResource( 5 )]
 

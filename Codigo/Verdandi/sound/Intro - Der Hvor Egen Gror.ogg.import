@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Intro - Der Hvor Egen Gror.ogg-85ecf7bee4f1cde006ada643848e7644.oggstr"
+
+[deps]
+
+source_file="res://sound/Intro - Der Hvor Egen Gror.ogg"
+dest_files=[ "res://.import/Intro - Der Hvor Egen Gror.ogg-85ecf7bee4f1cde006ada643848e7644.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
