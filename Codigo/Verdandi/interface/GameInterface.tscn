@@ -1,15 +1,64 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://interface/TilesHUB.tres" type="TileSet" id=1]
+[ext_resource path="res://manager/InterfaceManager.gd" type="Script" id=1]
+[ext_resource path="res://interface/norse/img/background.png" type="Texture" id=2]
+[ext_resource path="res://interface/TilesHUB.tres" type="TileSet" id=3]
+[ext_resource path="res://interface/norse/img/table.png" type="Texture" id=4]
+[ext_resource path="res://interface/norse/img/interface_11.png" type="Texture" id=5]
+[ext_resource path="res://interface/norse/img/interface_12.png" type="Texture" id=6]
+[ext_resource path="res://avatar/norse/sigrdrifa/Sidgrida.tscn" type="PackedScene" id=7]
+[ext_resource path="res://interface/norse/img/papyrus.png" type="Texture" id=8]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 5 ) ],
+"loop": false,
+"name": "open",
+"speed": 5.0
+} ]
 
 [node name="GameInterface" type="Node2D"]
+script = ExtResource( 1 )
 
-[node name="Border - Layer 0" type="CanvasLayer" parent="."]
+[node name="Layer 0 - Background" type="CanvasLayer" parent="."]
+layer = -3
 
-[node name="TileMap" type="TileMap" parent="Border - Layer 0"]
+[node name="TextureRect" type="TextureRect" parent="Layer 0 - Background"]
+margin_right = 1027.0
+margin_bottom = 605.0
+texture = ExtResource( 2 )
+
+[node name="Layer 1 - Border" type="CanvasLayer" parent="."]
+layer = -2
+
+[node name="TileMap" type="TileMap" parent="Layer 1 - Border"]
 position = Vector2( 8, 8 )
-tile_set = ExtResource( 1 )
+tile_set = ExtResource( 3 )
 cell_size = Vector2( 84, 84 )
 format = 1
 tile_data = PoolIntArray( 0, -1073741824, 0, 1, -1073741823, 0, 2, -1073741823, 0, 3, -1073741823, 0, 4, -1073741823, 0, 5, -1073741823, 0, 6, -1073741823, 0, 7, -1073741823, 0, 8, -1073741823, 0, 9, -1073741823, 0, 10, -1073741823, 0, 11, 0, 0, 65536, 1610612737, 0, 65547, 1, 0, 131072, 1610612737, 0, 131083, 1, 0, 196608, 1610612737, 0, 196619, 1, 0, 262144, 1610612737, 0, 262155, 1, 0, 327680, 1610612737, 0, 327691, 1, 0, 393216, 1610612736, 0, 393217, -1610612735, 0, 393218, -1610612735, 0, 393219, -1610612735, 0, 393220, -1610612735, 0, 393221, -1610612735, 0, 393222, -1610612735, 0, 393223, -1610612735, 0, 393224, -1610612735, 0, 393225, -1610612735, 0, 393226, -1610612735, 0, 393227, -1610612736, 0 )
+
+[node name="Table" type="Sprite" parent="Layer 1 - Border"]
+position = Vector2( 512, 563 )
+texture = ExtResource( 4 )
+
+[node name="Layer 2 - GUI" type="CanvasLayer" parent="."]
+
+[node name="Bag" type="AnimatedSprite" parent="Layer 2 - GUI"]
+position = Vector2( 248, 529 )
+scale = Vector2( 1.2, 1.2 )
+frames = SubResource( 1 )
+
+[node name="Sidgrida" parent="Layer 2 - GUI" instance=ExtResource( 7 )]
+position = Vector2( -77, 100 )
+
+[node name="Papyrus" type="Sprite" parent="Layer 2 - GUI"]
+position = Vector2( 926, 487 )
+scale = Vector2( 1.2, 1.2 )
+texture = ExtResource( 8 )
 

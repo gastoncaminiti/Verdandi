@@ -1,7 +1,8 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://interface/img/interface_07.png" type="Texture" id=1]
-[ext_resource path="res://interface/img/interface_08.png" type="Texture" id=2]
+[ext_resource path="res://interface/norse/img/interface_07.png" type="Texture" id=1]
+[ext_resource path="res://interface/norse/img/interface_08.png" type="Texture" id=2]
+
 
 [node name="TilesHUB" type="Node2D"]
 

@@ -50,4 +50,5 @@ end_cap_mode = 2
 round_precision = 10
 
 [node name="GameInterface" parent="." instance=ExtResource( 5 )]
+position = Vector2( 3.48682, 7.36102 )
 
