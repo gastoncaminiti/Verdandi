@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://manager/InterfaceManager.gd" type="Script" id=1]
 [ext_resource path="res://interface/norse/img/background.png" type="Texture" id=2]
@@ -8,11 +8,13 @@
 [ext_resource path="res://interface/norse/img/interface_12.png" type="Texture" id=6]
 [ext_resource path="res://avatar/norse/sigrdrifa/Sidgrida.tscn" type="PackedScene" id=7]
 [ext_resource path="res://interface/norse/img/papyrus.png" type="Texture" id=8]
-[ext_resource path="res://interface/norse/font/Norsebold.otf" type="DynamicFontData" id=9]
-[ext_resource path="res://interface/norse/element/Coin.tscn" type="PackedScene" id=10]
-[ext_resource path="res://interface/norse/img/interface_19.png" type="Texture" id=11]
-[ext_resource path="res://interface/norse/element/Eye.tscn" type="PackedScene" id=12]
-[ext_resource path="res://interface/norse/element/Axe.tscn" type="PackedScene" id=13]
+[ext_resource path="res://interface/norse/font/Runes2.TTF" type="DynamicFontData" id=9]
+[ext_resource path="res://interface/norse/font/Norsebold.otf" type="DynamicFontData" id=10]
+[ext_resource path="res://interface/norse/element/Coin.tscn" type="PackedScene" id=11]
+[ext_resource path="res://interface/norse/img/interface_19.png" type="Texture" id=12]
+[ext_resource path="res://interface/norse/element/Eye.tscn" type="PackedScene" id=13]
+[ext_resource path="res://interface/norse/element/Axe.tscn" type="PackedScene" id=14]
+[ext_resource path="res://interface/norse/font/Runes.TTF" type="DynamicFontData" id=15]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -28,10 +30,28 @@ animations = [ {
 } ]
 
 [sub_resource type="DynamicFont" id=2]
+size = 26
+outline_size = 1
+outline_color = Color( 0.854902, 0.584314, 0.266667, 1 )
+use_filter = true
+extra_spacing_top = -5
+extra_spacing_bottom = -5
+extra_spacing_char = -5
+extra_spacing_space = -5
+font_data = ExtResource( 9 )
+
+[sub_resource type="DynamicFont" id=3]
 size = 42
 outline_size = 3
 outline_color = Color( 0.027451, 0.0156863, 0, 1 )
-font_data = ExtResource( 9 )
+font_data = ExtResource( 10 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 45
+outline_size = 2
+outline_color = Color( 0.619608, 0.290196, 0.027451, 1 )
+use_filter = true
+font_data = ExtResource( 15 )
 
 [node name="GameInterface" type="Node2D"]
 script = ExtResource( 1 )
@@ -40,13 +60,14 @@ script = ExtResource( 1 )
 layer = -3
 
 [node name="TextureRect" type="TextureRect" parent="Layer 0 - Background"]
-margin_left = -2.0
-margin_top = -1.0
-margin_right = 1030.0
-margin_bottom = 608.0
+margin_left = -1.0
+margin_top = -11.0
+margin_right = 1031.0
+margin_bottom = 598.0
 texture = ExtResource( 2 )
 
 [node name="Layer 1 - Border" type="CanvasLayer" parent="."]
+editor/display_folded = true
 layer = -2
 
 [node name="TileMap" type="TileMap" parent="Layer 1 - Border"]
@@ -70,12 +91,474 @@ frames = SubResource( 1 )
 [node name="Sidgrida" parent="Layer 2 - GUI" instance=ExtResource( 7 )]
 position = Vector2( -77, 100 )
 
-[node name="Papyrus" type="Sprite" parent="Layer 2 - GUI"]
-position = Vector2( 926, 487 )
-scale = Vector2( 1.2, 1.2 )
+[node name="Papyrus" type="TextureRect" parent="Layer 2 - GUI"]
+margin_left = 827.0
+margin_top = 350.0
+margin_right = 965.0
+margin_bottom = 530.0
+rect_scale = Vector2( 1.4, 1.43 )
 texture = ExtResource( 8 )
+expand = true
+stretch_mode = 1
 
-[node name="HContainer" type="HBoxContainer" parent="Layer 2 - GUI"]
+[node name="GridPapyrus" type="GridContainer" parent="Layer 2 - GUI/Papyrus"]
+editor/display_folded = true
+margin_left = 17.0
+margin_top = 25.0
+margin_right = 130.0
+margin_bottom = 142.0
+grow_vertical = 2
+rect_min_size = Vector2( 30, 0 )
+custom_constants/vseparation = 2
+custom_constants/hseparation = -15
+columns = 5
+
+[node name="CChar0" type="CenterContainer" parent="Layer 2 - GUI/Papyrus/GridPapyrus"]
+editor/display_folded = true
+margin_right = 33.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 33, 20 )
+
+[node name="Char0" type="Label" parent="Layer 2 - GUI/Papyrus/GridPapyrus/CChar0"]
+margin_left = 12.0
+margin_top = 1.0
+margin_right = 21.0
+margin_bottom = 19.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
+text = "A"
+
+[node name="CChar1" type="CenterContainer" parent="Layer 2 - GUI/Papyrus/GridPapyrus"]
+margin_left = 18.0
+margin_right = 51.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 33, 20 )
+
+[node name="Char1" type="Label" parent="Layer 2 - GUI/Papyrus/GridPapyrus/CChar1"]
+margin_left = 12.0
+margin_top = 1.0
+margin_right = 21.0
+margin_bottom = 19.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
+text = "A"
+
+[node name="CChar02" type="CenterContainer" parent="Layer 2 - GUI/Papyrus/GridPapyrus"]
+editor/display_folded = true
+margin_left = 36.0
+margin_right = 69.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 33, 20 )
+
+[node name="Char02" type="Label" parent="Layer 2 - GUI/Papyrus/GridPapyrus/CChar02"]
+margin_left = 8.0
+margin_top = 1.0
+margin_right = 25.0
+margin_bottom = 19.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
+text = "D"
+
+[node name="CChar03" type="CenterContainer" parent="Layer 2 - GUI/Papyrus/GridPapyrus"]
+editor/display_folded = true
+margin_left = 54.0
+margin_right = 87.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 33, 20 )
+
+[node name="Char03" type="Label" parent="Layer 2 - GUI/Papyrus/GridPapyrus/CChar03"]
+margin_left = 8.0
+margin_top = 1.0
+margin_right = 24.0
+margin_bottom = 19.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
+text = "E"
+
+[node name="CChar04" type="CenterContainer" parent="Layer 2 - GUI/Papyrus/GridPapyrus"]
+editor/display_folded = true
+margin_left = 72.0
+margin_right = 105.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 33, 20 )
+
+[node name="Char04" type="Label" parent="Layer 2 - GUI/Papyrus/GridPapyrus/CChar04"]
+margin_left = 11.0
+margin_top = 1.0
+margin_right = 21.0
+margin_bottom = 19.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
+text = "F"
+
+[node name="CChar05" type="CenterContainer" parent="Layer 2 - GUI/Papyrus/GridPapyrus"]
+editor/display_folded = true
+margin_top = 22.0
+margin_right = 33.0
+margin_bottom = 42.0
+rect_min_size = Vector2( 33, 20 )
+
+[node name="Char05" type="Label" parent="Layer 2 - GUI/Papyrus/GridPapyrus/CChar05"]
+margin_left = 7.0
+margin_top = 1.0
+margin_right = 25.0
+margin_bottom = 19.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
+text = "G"
+
+[node name="CChar06" type="CenterContainer" parent="Layer 2 - GUI/Papyrus/GridPapyrus"]
+editor/display_folded = true
+margin_left = 18.0
+margin_top = 22.0
+margin_right = 51.0
+margin_bottom = 42.0
+rect_min_size = Vector2( 33, 20 )
+
+[node name="Char06" type="Label" parent="Layer 2 - GUI/Papyrus/GridPapyrus/CChar06"]
+margin_left = 11.0
+margin_top = 1.0
+margin_right = 21.0
+margin_bottom = 19.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
+text = "H"
+
+[node name="CChar07" type="CenterContainer" parent="Layer 2 - GUI/Papyrus/GridPapyrus"]
+editor/display_folded = true
+margin_left = 36.0
+margin_top = 22.0
+margin_right = 69.0
+margin_bottom = 42.0
+rect_min_size = Vector2( 33, 20 )
+
+[node name="Char07" type="Label" parent="Layer 2 - GUI/Papyrus/GridPapyrus/CChar07"]
+margin_left = 15.0
+margin_top = 1.0
+margin_right = 18.0
+margin_bottom = 19.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
+text = "I"
+
+[node name="CChar08" type="CenterContainer" parent="Layer 2 - GUI/Papyrus/GridPapyrus"]
+editor/display_folded = true
+margin_left = 54.0
+margin_top = 22.0
+margin_right = 87.0
+margin_bottom = 42.0
+rect_min_size = Vector2( 33, 20 )
+
+[node name="Char08" type="Label" parent="Layer 2 - GUI/Papyrus/GridPapyrus/CChar08"]
+margin_top = 1.0
+margin_right = 33.0
+margin_bottom = 19.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
+text = "J"
+
+[node name="CChar09" type="CenterContainer" parent="Layer 2 - GUI/Papyrus/GridPapyrus"]
+editor/display_folded = true
+margin_left = 72.0
+margin_top = 22.0
+margin_right = 105.0
+margin_bottom = 42.0
+rect_min_size = Vector2( 33, 20 )
+
+[node name="Char09" type="Label" parent="Layer 2 - GUI/Papyrus/GridPapyrus/CChar09"]
+margin_left = 11.0
+margin_top = 1.0
+margin_right = 21.0
+margin_bottom = 19.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
+text = "K"
+
+[node name="CChar10" type="CenterContainer" parent="Layer 2 - GUI/Papyrus/GridPapyrus"]
+editor/display_folded = true
+margin_top = 44.0
+margin_right = 33.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 33, 20 )
+
+[node name="Char10" type="Label" parent="Layer 2 - GUI/Papyrus/GridPapyrus/CChar10"]
+margin_left = 11.0
+margin_top = 1.0
+margin_right = 21.0
+margin_bottom = 19.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
+text = "L"
+
+[node name="CChar11" type="CenterContainer" parent="Layer 2 - GUI/Papyrus/GridPapyrus"]
+editor/display_folded = true
+margin_left = 18.0
+margin_top = 44.0
+margin_right = 51.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 33, 20 )
+
+[node name="Char11" type="Label" parent="Layer 2 - GUI/Papyrus/GridPapyrus/CChar11"]
+margin_left = 7.0
+margin_top = 1.0
+margin_right = 25.0
+margin_bottom = 19.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
+text = "M"
+
+[node name="CChar12" type="CenterContainer" parent="Layer 2 - GUI/Papyrus/GridPapyrus"]
+editor/display_folded = true
+margin_left = 36.0
+margin_top = 44.0
+margin_right = 69.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 33, 20 )
+
+[node name="Char12" type="Label" parent="Layer 2 - GUI/Papyrus/GridPapyrus/CChar12"]
+margin_left = 11.0
+margin_top = 1.0
+margin_right = 22.0
+margin_bottom = 19.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
+text = "N"
+
+[node name="CChar13" type="CenterContainer" parent="Layer 2 - GUI/Papyrus/GridPapyrus"]
+editor/display_folded = true
+margin_left = 54.0
+margin_top = 44.0
+margin_right = 87.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 33, 20 )
+
+[node name="Char13" type="Label" parent="Layer 2 - GUI/Papyrus/GridPapyrus/CChar13"]
+margin_left = 10.0
+margin_top = 1.0
+margin_right = 23.0
+margin_bottom = 19.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
+text = "O"
+
+[node name="CChar14" type="CenterContainer" parent="Layer 2 - GUI/Papyrus/GridPapyrus"]
+editor/display_folded = true
+margin_left = 72.0
+margin_top = 44.0
+margin_right = 105.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 33, 20 )
+
+[node name="Char14" type="Label" parent="Layer 2 - GUI/Papyrus/GridPapyrus/CChar14"]
+margin_left = 8.0
+margin_top = 1.0
+margin_right = 24.0
+margin_bottom = 19.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
+text = "Q"
+
+[node name="CChar15" type="CenterContainer" parent="Layer 2 - GUI/Papyrus/GridPapyrus"]
+editor/display_folded = true
+margin_top = 66.0
+margin_right = 33.0
+margin_bottom = 86.0
+rect_min_size = Vector2( 33, 20 )
+
+[node name="Char15" type="Label" parent="Layer 2 - GUI/Papyrus/GridPapyrus/CChar15"]
+margin_left = 11.0
+margin_top = 1.0
+margin_right = 22.0
+margin_bottom = 19.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
+text = "R"
+
+[node name="CChar16" type="CenterContainer" parent="Layer 2 - GUI/Papyrus/GridPapyrus"]
+editor/display_folded = true
+margin_left = 18.0
+margin_top = 66.0
+margin_right = 51.0
+margin_bottom = 86.0
+rect_min_size = Vector2( 33, 20 )
+
+[node name="Char16" type="Label" parent="Layer 2 - GUI/Papyrus/GridPapyrus/CChar16"]
+margin_left = 11.0
+margin_top = 1.0
+margin_right = 21.0
+margin_bottom = 19.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
+text = "S"
+
+[node name="CChar17" type="CenterContainer" parent="Layer 2 - GUI/Papyrus/GridPapyrus"]
+editor/display_folded = true
+margin_left = 36.0
+margin_top = 66.0
+margin_right = 69.0
+margin_bottom = 86.0
+rect_min_size = Vector2( 33, 20 )
+
+[node name="Char17" type="Label" parent="Layer 2 - GUI/Papyrus/GridPapyrus/CChar17"]
+margin_left = 8.0
+margin_top = 1.0
+margin_right = 24.0
+margin_bottom = 19.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
+text = "T"
+
+[node name="CChar18" type="CenterContainer" parent="Layer 2 - GUI/Papyrus/GridPapyrus"]
+editor/display_folded = true
+margin_left = 54.0
+margin_top = 66.0
+margin_right = 87.0
+margin_bottom = 86.0
+rect_min_size = Vector2( 33, 20 )
+
+[node name="Char18" type="Label" parent="Layer 2 - GUI/Papyrus/GridPapyrus/CChar18"]
+margin_left = 11.0
+margin_top = 1.0
+margin_right = 21.0
+margin_bottom = 19.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
+text = "U"
+
+[node name="CChar19" type="CenterContainer" parent="Layer 2 - GUI/Papyrus/GridPapyrus"]
+editor/display_folded = true
+margin_left = 72.0
+margin_top = 66.0
+margin_right = 105.0
+margin_bottom = 86.0
+rect_min_size = Vector2( 33, 20 )
+
+[node name="Char19" type="Label" parent="Layer 2 - GUI/Papyrus/GridPapyrus/CChar19"]
+margin_left = 11.0
+margin_top = 1.0
+margin_right = 22.0
+margin_bottom = 19.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
+text = "W"
+
+[node name="CChar20" type="CenterContainer" parent="Layer 2 - GUI/Papyrus/GridPapyrus"]
+editor/display_folded = true
+margin_top = 88.0
+margin_right = 33.0
+margin_bottom = 108.0
+rect_min_size = Vector2( 33, 20 )
+
+[node name="Char20" type="Label" parent="Layer 2 - GUI/Papyrus/GridPapyrus/CChar20"]
+margin_left = 11.0
+margin_top = 1.0
+margin_right = 21.0
+margin_bottom = 19.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
+text = "X"
+
+[node name="CChar21" type="CenterContainer" parent="Layer 2 - GUI/Papyrus/GridPapyrus"]
+editor/display_folded = true
+margin_left = 18.0
+margin_top = 88.0
+margin_right = 51.0
+margin_bottom = 108.0
+rect_min_size = Vector2( 33, 20 )
+
+[node name="Char21" type="Label" parent="Layer 2 - GUI/Papyrus/GridPapyrus/CChar21"]
+margin_left = 11.0
+margin_top = 1.0
+margin_right = 21.0
+margin_bottom = 19.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
+text = "Y"
+
+[node name="CChar22" type="CenterContainer" parent="Layer 2 - GUI/Papyrus/GridPapyrus"]
+editor/display_folded = true
+margin_left = 36.0
+margin_top = 88.0
+margin_right = 69.0
+margin_bottom = 108.0
+rect_min_size = Vector2( 33, 20 )
+
+[node name="Char22" type="Label" parent="Layer 2 - GUI/Papyrus/GridPapyrus/CChar22"]
+margin_left = 8.0
+margin_top = 1.0
+margin_right = 25.0
+margin_bottom = 19.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
+text = "Z"
+
+[node name="CChar23" type="CenterContainer" parent="Layer 2 - GUI/Papyrus/GridPapyrus"]
+editor/display_folded = true
+margin_left = 54.0
+margin_top = 88.0
+margin_right = 87.0
+margin_bottom = 108.0
+rect_min_size = Vector2( 33, 20 )
+
+[node name="CChar23" type="Label" parent="Layer 2 - GUI/Papyrus/GridPapyrus/CChar23"]
+margin_left = 8.0
+margin_top = 1.0
+margin_right = 25.0
+margin_bottom = 19.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
+text = "P"
+
+[node name="AlingContainer" type="HBoxContainer" parent="Layer 2 - GUI"]
+editor/display_folded = true
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -329.0
@@ -84,140 +567,210 @@ margin_bottom = 99.0
 custom_constants/separation = 10
 alignment = 1
 
-[node name="VContainerA" type="VBoxContainer" parent="Layer 2 - GUI/HContainer"]
+[node name="VContainerA" type="VBoxContainer" parent="Layer 2 - GUI/AlingContainer"]
 margin_left = 23.0
 margin_right = 223.0
 margin_bottom = 99.0
 rect_min_size = Vector2( 200, 0 )
 alignment = 1
 
-[node name="LabelContainer" type="CenterContainer" parent="Layer 2 - GUI/HContainer/VContainerA"]
+[node name="LabelContainer" type="CenterContainer" parent="Layer 2 - GUI/AlingContainer/VContainerA"]
 margin_top = 9.0
 margin_right = 200.0
 margin_bottom = 56.0
 
-[node name="Label" type="Label" parent="Layer 2 - GUI/HContainer/VContainerA/LabelContainer"]
+[node name="Label" type="Label" parent="Layer 2 - GUI/AlingContainer/VContainerA/LabelContainer"]
 margin_left = 13.0
 margin_right = 186.0
 margin_bottom = 47.0
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Prosperidad"
 
-[node name="ElementContainer" type="HBoxContainer" parent="Layer 2 - GUI/HContainer/VContainerA"]
+[node name="ElementContainer" type="HBoxContainer" parent="Layer 2 - GUI/AlingContainer/VContainerA"]
 margin_top = 60.0
 margin_right = 200.0
 margin_bottom = 90.0
 rect_min_size = Vector2( 150, 0 )
 alignment = 1
 
-[node name="Coin5" parent="Layer 2 - GUI/HContainer/VContainerA/ElementContainer" instance=ExtResource( 10 )]
+[node name="Coin5" parent="Layer 2 - GUI/AlingContainer/VContainerA/ElementContainer" instance=ExtResource( 11 )]
 margin_left = 34.0
 margin_right = 64.0
 
-[node name="Coin4" parent="Layer 2 - GUI/HContainer/VContainerA/ElementContainer" instance=ExtResource( 10 )]
+[node name="Coin4" parent="Layer 2 - GUI/AlingContainer/VContainerA/ElementContainer" instance=ExtResource( 11 )]
 margin_left = 68.0
 margin_right = 98.0
 
-[node name="Coin2" parent="Layer 2 - GUI/HContainer/VContainerA/ElementContainer" instance=ExtResource( 10 )]
+[node name="Coin2" parent="Layer 2 - GUI/AlingContainer/VContainerA/ElementContainer" instance=ExtResource( 11 )]
 margin_left = 102.0
 margin_right = 132.0
 
-[node name="Coin3" parent="Layer 2 - GUI/HContainer/VContainerA/ElementContainer" instance=ExtResource( 10 )]
+[node name="Coin3" parent="Layer 2 - GUI/AlingContainer/VContainerA/ElementContainer" instance=ExtResource( 11 )]
 margin_left = 136.0
 margin_right = 166.0
 
-[node name="SeparatorContainerA" type="TextureRect" parent="Layer 2 - GUI/HContainer"]
+[node name="SeparatorContainerA" type="TextureRect" parent="Layer 2 - GUI/AlingContainer"]
 margin_left = 233.0
 margin_right = 269.0
 margin_bottom = 99.0
-texture = ExtResource( 11 )
+texture = ExtResource( 12 )
 
-[node name="VContainerB" type="VBoxContainer" parent="Layer 2 - GUI/HContainer"]
+[node name="VContainerB" type="VBoxContainer" parent="Layer 2 - GUI/AlingContainer"]
 margin_left = 279.0
 margin_right = 429.0
 margin_bottom = 99.0
 alignment = 1
 
-[node name="LabelContainer" type="CenterContainer" parent="Layer 2 - GUI/HContainer/VContainerB"]
+[node name="LabelContainer" type="CenterContainer" parent="Layer 2 - GUI/AlingContainer/VContainerB"]
 margin_top = 9.0
 margin_right = 150.0
 margin_bottom = 56.0
 
-[node name="Label" type="Label" parent="Layer 2 - GUI/HContainer/VContainerB/LabelContainer"]
+[node name="Label" type="Label" parent="Layer 2 - GUI/AlingContainer/VContainerB/LabelContainer"]
 margin_left = 32.0
 margin_right = 117.0
 margin_bottom = 47.0
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
 text = "Favor"
 
-[node name="ElementContainer2" type="HBoxContainer" parent="Layer 2 - GUI/HContainer/VContainerB"]
+[node name="ElementContainer2" type="HBoxContainer" parent="Layer 2 - GUI/AlingContainer/VContainerB"]
 margin_top = 60.0
 margin_right = 150.0
 margin_bottom = 90.0
 rect_min_size = Vector2( 150, 0 )
 alignment = 1
 
-[node name="Eye2" parent="Layer 2 - GUI/HContainer/VContainerB/ElementContainer2" instance=ExtResource( 12 )]
+[node name="Eye2" parent="Layer 2 - GUI/AlingContainer/VContainerB/ElementContainer2" instance=ExtResource( 13 )]
 margin_left = 9.0
 margin_right = 39.0
 
-[node name="Eye5" parent="Layer 2 - GUI/HContainer/VContainerB/ElementContainer2" instance=ExtResource( 12 )]
+[node name="Eye5" parent="Layer 2 - GUI/AlingContainer/VContainerB/ElementContainer2" instance=ExtResource( 13 )]
 margin_left = 43.0
 margin_right = 73.0
 
-[node name="Eye4" parent="Layer 2 - GUI/HContainer/VContainerB/ElementContainer2" instance=ExtResource( 12 )]
+[node name="Eye4" parent="Layer 2 - GUI/AlingContainer/VContainerB/ElementContainer2" instance=ExtResource( 13 )]
 margin_left = 77.0
 margin_right = 107.0
 
-[node name="Eye3" parent="Layer 2 - GUI/HContainer/VContainerB/ElementContainer2" instance=ExtResource( 12 )]
+[node name="Eye3" parent="Layer 2 - GUI/AlingContainer/VContainerB/ElementContainer2" instance=ExtResource( 13 )]
 margin_left = 111.0
 margin_right = 141.0
 
-[node name="SeparatorContainerA2" type="TextureRect" parent="Layer 2 - GUI/HContainer"]
+[node name="SeparatorContainerA2" type="TextureRect" parent="Layer 2 - GUI/AlingContainer"]
 margin_left = 439.0
 margin_right = 475.0
 margin_bottom = 99.0
-texture = ExtResource( 11 )
+texture = ExtResource( 12 )
 
-[node name="VContainerC" type="VBoxContainer" parent="Layer 2 - GUI/HContainer"]
+[node name="VContainerC" type="VBoxContainer" parent="Layer 2 - GUI/AlingContainer"]
+editor/display_folded = true
 margin_left = 485.0
 margin_right = 635.0
 margin_bottom = 99.0
 alignment = 1
 
-[node name="LabelContainer" type="CenterContainer" parent="Layer 2 - GUI/HContainer/VContainerC"]
+[node name="LabelContainer" type="CenterContainer" parent="Layer 2 - GUI/AlingContainer/VContainerC"]
 margin_top = 9.0
 margin_right = 150.0
 margin_bottom = 56.0
 
-[node name="Label" type="Label" parent="Layer 2 - GUI/HContainer/VContainerC/LabelContainer"]
+[node name="Label" type="Label" parent="Layer 2 - GUI/AlingContainer/VContainerC/LabelContainer"]
 margin_left = 29.0
 margin_right = 120.0
 margin_bottom = 47.0
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
 text = "Honor"
 
-[node name="ElementContainer3" type="HBoxContainer" parent="Layer 2 - GUI/HContainer/VContainerC"]
+[node name="ElementContainer3" type="HBoxContainer" parent="Layer 2 - GUI/AlingContainer/VContainerC"]
 margin_top = 60.0
 margin_right = 150.0
 margin_bottom = 90.0
 rect_min_size = Vector2( 150, 0 )
 alignment = 1
 
-[node name="Axe" parent="Layer 2 - GUI/HContainer/VContainerC/ElementContainer3" instance=ExtResource( 13 )]
+[node name="Axe" parent="Layer 2 - GUI/AlingContainer/VContainerC/ElementContainer3" instance=ExtResource( 14 )]
 margin_left = 9.0
 margin_right = 39.0
 
-[node name="Axe2" parent="Layer 2 - GUI/HContainer/VContainerC/ElementContainer3" instance=ExtResource( 13 )]
+[node name="Axe2" parent="Layer 2 - GUI/AlingContainer/VContainerC/ElementContainer3" instance=ExtResource( 14 )]
 margin_left = 43.0
 margin_right = 73.0
 
-[node name="Axe4" parent="Layer 2 - GUI/HContainer/VContainerC/ElementContainer3" instance=ExtResource( 13 )]
+[node name="Axe4" parent="Layer 2 - GUI/AlingContainer/VContainerC/ElementContainer3" instance=ExtResource( 14 )]
 margin_left = 77.0
 margin_right = 107.0
 
-[node name="Axe3" parent="Layer 2 - GUI/HContainer/VContainerC/ElementContainer3" instance=ExtResource( 13 )]
+[node name="Axe3" parent="Layer 2 - GUI/AlingContainer/VContainerC/ElementContainer3" instance=ExtResource( 14 )]
 margin_left = 111.0
 margin_right = 141.0
+
+[node name="GridEffect" type="GridContainer" parent="Layer 2 - GUI"]
+margin_left = 54.0
+margin_top = 109.0
+margin_right = 312.0
+margin_bottom = 195.0
+columns = 4
+
+[node name="CEffect0" type="CenterContainer" parent="Layer 2 - GUI/GridEffect"]
+editor/display_folded = true
+margin_right = 45.0
+margin_bottom = 45.0
+rect_min_size = Vector2( 45, 45 )
+
+[node name="Effect0" type="Label" parent="Layer 2 - GUI/GridEffect/CEffect0"]
+margin_right = 44.0
+margin_bottom = 45.0
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_outline_modulate = Color( 1, 0.752941, 0.0980392, 1 )
+custom_colors/font_color_shadow = Color( 0.364706, 0.0235294, 0.0235294, 1 )
+text = "A"
+
+[node name="CEffect1" type="CenterContainer" parent="Layer 2 - GUI/GridEffect"]
+margin_left = 49.0
+margin_right = 94.0
+margin_bottom = 45.0
+rect_min_size = Vector2( 45, 45 )
+
+[node name="Effect1" type="Label" parent="Layer 2 - GUI/GridEffect/CEffect1"]
+margin_right = 44.0
+margin_bottom = 45.0
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_outline_modulate = Color( 1, 0.752941, 0.0980392, 1 )
+custom_colors/font_color_shadow = Color( 0.364706, 0.0235294, 0.0235294, 1 )
+text = "R"
+
+[node name="CEffect2" type="CenterContainer" parent="Layer 2 - GUI/GridEffect"]
+editor/display_folded = true
+margin_left = 98.0
+margin_right = 143.0
+margin_bottom = 45.0
+rect_min_size = Vector2( 45, 45 )
+
+[node name="Effect2" type="Label" parent="Layer 2 - GUI/GridEffect/CEffect2"]
+margin_right = 44.0
+margin_bottom = 45.0
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_outline_modulate = Color( 1, 0.752941, 0.0980392, 1 )
+custom_colors/font_color_shadow = Color( 0.364706, 0.0235294, 0.0235294, 1 )
+text = "W"
+
+[node name="CEffect3" type="CenterContainer" parent="Layer 2 - GUI/GridEffect"]
+editor/display_folded = true
+margin_left = 147.0
+margin_right = 192.0
+margin_bottom = 45.0
+rect_min_size = Vector2( 45, 45 )
+
+[node name="Effect3" type="Label" parent="Layer 2 - GUI/GridEffect/CEffect3"]
+margin_right = 44.0
+margin_bottom = 45.0
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_outline_modulate = Color( 1, 0.752941, 0.0980392, 1 )
+custom_colors/font_color_shadow = Color( 0.364706, 0.0235294, 0.0235294, 1 )
+text = "D"
 
