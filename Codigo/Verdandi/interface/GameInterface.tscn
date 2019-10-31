@@ -1,13 +1,18 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://manager/InterfaceManager.gd" type="Script" id=1]
 [ext_resource path="res://interface/norse/img/background.png" type="Texture" id=2]
-[ext_resource path="res://interface/TilesHUB.tres" type="TileSet" id=3]
+[ext_resource path="res://interface/norse/tile/TilesHUB.tres" type="TileSet" id=3]
 [ext_resource path="res://interface/norse/img/table.png" type="Texture" id=4]
 [ext_resource path="res://interface/norse/img/interface_11.png" type="Texture" id=5]
 [ext_resource path="res://interface/norse/img/interface_12.png" type="Texture" id=6]
 [ext_resource path="res://avatar/norse/sigrdrifa/Sidgrida.tscn" type="PackedScene" id=7]
 [ext_resource path="res://interface/norse/img/papyrus.png" type="Texture" id=8]
+[ext_resource path="res://interface/norse/font/Norsebold.otf" type="DynamicFontData" id=9]
+[ext_resource path="res://interface/norse/element/Coin.tscn" type="PackedScene" id=10]
+[ext_resource path="res://interface/norse/img/interface_19.png" type="Texture" id=11]
+[ext_resource path="res://interface/norse/element/Eye.tscn" type="PackedScene" id=12]
+[ext_resource path="res://interface/norse/element/Axe.tscn" type="PackedScene" id=13]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -22,6 +27,12 @@ animations = [ {
 "speed": 5.0
 } ]
 
+[sub_resource type="DynamicFont" id=2]
+size = 42
+outline_size = 3
+outline_color = Color( 0.027451, 0.0156863, 0, 1 )
+font_data = ExtResource( 9 )
+
 [node name="GameInterface" type="Node2D"]
 script = ExtResource( 1 )
 
@@ -29,8 +40,10 @@ script = ExtResource( 1 )
 layer = -3
 
 [node name="TextureRect" type="TextureRect" parent="Layer 0 - Background"]
-margin_right = 1027.0
-margin_bottom = 605.0
+margin_left = -2.0
+margin_top = -1.0
+margin_right = 1030.0
+margin_bottom = 608.0
 texture = ExtResource( 2 )
 
 [node name="Layer 1 - Border" type="CanvasLayer" parent="."]
@@ -41,7 +54,7 @@ position = Vector2( 8, 8 )
 tile_set = ExtResource( 3 )
 cell_size = Vector2( 84, 84 )
 format = 1
-tile_data = PoolIntArray( 0, -1073741824, 0, 1, -1073741823, 0, 2, -1073741823, 0, 3, -1073741823, 0, 4, -1073741823, 0, 5, -1073741823, 0, 6, -1073741823, 0, 7, -1073741823, 0, 8, -1073741823, 0, 9, -1073741823, 0, 10, -1073741823, 0, 11, 0, 0, 65536, 1610612737, 0, 65547, 1, 0, 131072, 1610612737, 0, 131083, 1, 0, 196608, 1610612737, 0, 196619, 1, 0, 262144, 1610612737, 0, 262155, 1, 0, 327680, 1610612737, 0, 327691, 1, 0, 393216, 1610612736, 0, 393217, -1610612735, 0, 393218, -1610612735, 0, 393219, -1610612735, 0, 393220, -1610612735, 0, 393221, -1610612735, 0, 393222, -1610612735, 0, 393223, -1610612735, 0, 393224, -1610612735, 0, 393225, -1610612735, 0, 393226, -1610612735, 0, 393227, -1610612736, 0 )
+tile_data = PoolIntArray( 0, -1073741824, 0, 1, -1073741822, 0, 10, -536870910, 0, 11, 0, 0, 65536, 1610612737, 0, 65547, 1, 0, 131072, 1610612737, 0, 131083, 1, 0, 196608, 1610612737, 0, 196619, 1, 0, 262144, 1610612737, 0, 262155, 1, 0, 327680, 1610612737, 0, 327691, 1, 0, 393216, 1610612736, 0, 393217, -1610612735, 0, 393218, -1610612735, 0, 393219, -1610612735, 0, 393220, -1610612735, 0, 393221, -1610612735, 0, 393222, -1610612735, 0, 393224, -1610612735, 0, 393225, -1610612735, 0, 393226, -1610612735, 0, 393227, -1610612736, 0 )
 
 [node name="Table" type="Sprite" parent="Layer 1 - Border"]
 position = Vector2( 512, 563 )
@@ -61,4 +74,150 @@ position = Vector2( -77, 100 )
 position = Vector2( 926, 487 )
 scale = Vector2( 1.2, 1.2 )
 texture = ExtResource( 8 )
+
+[node name="HContainer" type="HBoxContainer" parent="Layer 2 - GUI"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -329.0
+margin_right = 329.0
+margin_bottom = 99.0
+custom_constants/separation = 10
+alignment = 1
+
+[node name="VContainerA" type="VBoxContainer" parent="Layer 2 - GUI/HContainer"]
+margin_left = 23.0
+margin_right = 223.0
+margin_bottom = 99.0
+rect_min_size = Vector2( 200, 0 )
+alignment = 1
+
+[node name="LabelContainer" type="CenterContainer" parent="Layer 2 - GUI/HContainer/VContainerA"]
+margin_top = 9.0
+margin_right = 200.0
+margin_bottom = 56.0
+
+[node name="Label" type="Label" parent="Layer 2 - GUI/HContainer/VContainerA/LabelContainer"]
+margin_left = 13.0
+margin_right = 186.0
+margin_bottom = 47.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Prosperidad"
+
+[node name="ElementContainer" type="HBoxContainer" parent="Layer 2 - GUI/HContainer/VContainerA"]
+margin_top = 60.0
+margin_right = 200.0
+margin_bottom = 90.0
+rect_min_size = Vector2( 150, 0 )
+alignment = 1
+
+[node name="Coin5" parent="Layer 2 - GUI/HContainer/VContainerA/ElementContainer" instance=ExtResource( 10 )]
+margin_left = 34.0
+margin_right = 64.0
+
+[node name="Coin4" parent="Layer 2 - GUI/HContainer/VContainerA/ElementContainer" instance=ExtResource( 10 )]
+margin_left = 68.0
+margin_right = 98.0
+
+[node name="Coin2" parent="Layer 2 - GUI/HContainer/VContainerA/ElementContainer" instance=ExtResource( 10 )]
+margin_left = 102.0
+margin_right = 132.0
+
+[node name="Coin3" parent="Layer 2 - GUI/HContainer/VContainerA/ElementContainer" instance=ExtResource( 10 )]
+margin_left = 136.0
+margin_right = 166.0
+
+[node name="SeparatorContainerA" type="TextureRect" parent="Layer 2 - GUI/HContainer"]
+margin_left = 233.0
+margin_right = 269.0
+margin_bottom = 99.0
+texture = ExtResource( 11 )
+
+[node name="VContainerB" type="VBoxContainer" parent="Layer 2 - GUI/HContainer"]
+margin_left = 279.0
+margin_right = 429.0
+margin_bottom = 99.0
+alignment = 1
+
+[node name="LabelContainer" type="CenterContainer" parent="Layer 2 - GUI/HContainer/VContainerB"]
+margin_top = 9.0
+margin_right = 150.0
+margin_bottom = 56.0
+
+[node name="Label" type="Label" parent="Layer 2 - GUI/HContainer/VContainerB/LabelContainer"]
+margin_left = 32.0
+margin_right = 117.0
+margin_bottom = 47.0
+custom_fonts/font = SubResource( 2 )
+text = "Favor"
+
+[node name="ElementContainer2" type="HBoxContainer" parent="Layer 2 - GUI/HContainer/VContainerB"]
+margin_top = 60.0
+margin_right = 150.0
+margin_bottom = 90.0
+rect_min_size = Vector2( 150, 0 )
+alignment = 1
+
+[node name="Eye2" parent="Layer 2 - GUI/HContainer/VContainerB/ElementContainer2" instance=ExtResource( 12 )]
+margin_left = 9.0
+margin_right = 39.0
+
+[node name="Eye5" parent="Layer 2 - GUI/HContainer/VContainerB/ElementContainer2" instance=ExtResource( 12 )]
+margin_left = 43.0
+margin_right = 73.0
+
+[node name="Eye4" parent="Layer 2 - GUI/HContainer/VContainerB/ElementContainer2" instance=ExtResource( 12 )]
+margin_left = 77.0
+margin_right = 107.0
+
+[node name="Eye3" parent="Layer 2 - GUI/HContainer/VContainerB/ElementContainer2" instance=ExtResource( 12 )]
+margin_left = 111.0
+margin_right = 141.0
+
+[node name="SeparatorContainerA2" type="TextureRect" parent="Layer 2 - GUI/HContainer"]
+margin_left = 439.0
+margin_right = 475.0
+margin_bottom = 99.0
+texture = ExtResource( 11 )
+
+[node name="VContainerC" type="VBoxContainer" parent="Layer 2 - GUI/HContainer"]
+margin_left = 485.0
+margin_right = 635.0
+margin_bottom = 99.0
+alignment = 1
+
+[node name="LabelContainer" type="CenterContainer" parent="Layer 2 - GUI/HContainer/VContainerC"]
+margin_top = 9.0
+margin_right = 150.0
+margin_bottom = 56.0
+
+[node name="Label" type="Label" parent="Layer 2 - GUI/HContainer/VContainerC/LabelContainer"]
+margin_left = 29.0
+margin_right = 120.0
+margin_bottom = 47.0
+custom_fonts/font = SubResource( 2 )
+text = "Honor"
+
+[node name="ElementContainer3" type="HBoxContainer" parent="Layer 2 - GUI/HContainer/VContainerC"]
+margin_top = 60.0
+margin_right = 150.0
+margin_bottom = 90.0
+rect_min_size = Vector2( 150, 0 )
+alignment = 1
+
+[node name="Axe" parent="Layer 2 - GUI/HContainer/VContainerC/ElementContainer3" instance=ExtResource( 13 )]
+margin_left = 9.0
+margin_right = 39.0
+
+[node name="Axe2" parent="Layer 2 - GUI/HContainer/VContainerC/ElementContainer3" instance=ExtResource( 13 )]
+margin_left = 43.0
+margin_right = 73.0
+
+[node name="Axe4" parent="Layer 2 - GUI/HContainer/VContainerC/ElementContainer3" instance=ExtResource( 13 )]
+margin_left = 77.0
+margin_right = 107.0
+
+[node name="Axe3" parent="Layer 2 - GUI/HContainer/VContainerC/ElementContainer3" instance=ExtResource( 13 )]
+margin_left = 111.0
+margin_right = 141.0
 
