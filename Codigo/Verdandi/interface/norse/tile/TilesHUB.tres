@@ -1,8 +1,10 @@
-[gd_resource type="TileSet" load_steps=4 format=2]
+[gd_resource type="TileSet" load_steps=6 format=2]
 
 [ext_resource path="res://interface/norse/img/interface_07.png" type="Texture" id=1]
 [ext_resource path="res://interface/norse/img/interface_08.png" type="Texture" id=2]
 [ext_resource path="res://interface/norse/img/interface_15.png" type="Texture" id=3]
+[ext_resource path="res://interface/norse/img/interface_07_white.png" type="Texture" id=4]
+[ext_resource path="res://interface/norse/img/interface_08_white.png" type="Texture" id=5]
 
 [resource]
 0/name = "Esquina"
@@ -35,4 +37,24 @@
 2/navigation_offset = Vector2( 42, 42 )
 2/shapes = [  ]
 2/z_index = 0
+3/name = "Esquina-White"
+3/texture = ExtResource( 4 )
+3/tex_offset = Vector2( 0, 0 )
+3/modulate = Color( 1, 1, 1, 1 )
+3/region = Rect2( 0, 0, 84, 84 )
+3/tile_mode = 0
+3/occluder_offset = Vector2( 42, 42 )
+3/navigation_offset = Vector2( 42, 42 )
+3/shapes = [  ]
+3/z_index = 0
+4/name = "Borde-White"
+4/texture = ExtResource( 5 )
+4/tex_offset = Vector2( 0, 0 )
+4/modulate = Color( 1, 1, 1, 1 )
+4/region = Rect2( 0, 0, 84, 84 )
+4/tile_mode = 0
+4/occluder_offset = Vector2( 42, 42 )
+4/navigation_offset = Vector2( 42, 42 )
+4/shapes = [  ]
+4/z_index = 0
 

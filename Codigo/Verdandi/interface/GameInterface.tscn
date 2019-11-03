@@ -1,6 +1,6 @@
 [gd_scene load_steps=20 format=2]
 
-[ext_resource path="res://manager/InterfaceManager.gd" type="Script" id=1]
+[ext_resource path="res://manager/InterfaceGameManager.gd" type="Script" id=1]
 [ext_resource path="res://interface/norse/img/background.png" type="Texture" id=2]
 [ext_resource path="res://interface/norse/tile/TilesHUB.tres" type="TileSet" id=3]
 [ext_resource path="res://interface/norse/img/table.png" type="Texture" id=4]
@@ -61,21 +61,25 @@ layer = -3
 
 [node name="TextureRect" type="TextureRect" parent="Layer 0 - Background"]
 margin_left = -1.0
-margin_top = -11.0
-margin_right = 1031.0
-margin_bottom = 598.0
+margin_right = 1038.0
+margin_bottom = 632.0
 texture = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Layer 1 - Border" type="CanvasLayer" parent="."]
-editor/display_folded = true
 layer = -2
 
 [node name="TileMap" type="TileMap" parent="Layer 1 - Border"]
-position = Vector2( 8, 8 )
+position = Vector2( 5, 10 )
 tile_set = ExtResource( 3 )
 cell_size = Vector2( 84, 84 )
 format = 1
 tile_data = PoolIntArray( 0, -1073741824, 0, 1, -1073741822, 0, 10, -536870910, 0, 11, 0, 0, 65536, 1610612737, 0, 65547, 1, 0, 131072, 1610612737, 0, 131083, 1, 0, 196608, 1610612737, 0, 196619, 1, 0, 262144, 1610612737, 0, 262155, 1, 0, 327680, 1610612737, 0, 327691, 1, 0, 393216, 1610612736, 0, 393217, -1610612735, 0, 393218, -1610612735, 0, 393219, -1610612735, 0, 393220, -1610612735, 0, 393221, -1610612735, 0, 393222, -1610612735, 0, 393224, -1610612735, 0, 393225, -1610612735, 0, 393226, -1610612735, 0, 393227, -1610612736, 0 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Table" type="Sprite" parent="Layer 1 - Border"]
 position = Vector2( 512, 563 )
@@ -89,13 +93,14 @@ scale = Vector2( 1.2, 1.2 )
 frames = SubResource( 1 )
 
 [node name="Sidgrida" parent="Layer 2 - GUI" instance=ExtResource( 7 )]
-position = Vector2( -77, 100 )
+position = Vector2( -60, 99 )
 
 [node name="Papyrus" type="TextureRect" parent="Layer 2 - GUI"]
-margin_left = 827.0
-margin_top = 350.0
-margin_right = 965.0
-margin_bottom = 530.0
+editor/display_folded = true
+margin_left = 820.0
+margin_top = 340.0
+margin_right = 958.0
+margin_bottom = 520.0
 rect_scale = Vector2( 1.4, 1.43 )
 texture = ExtResource( 8 )
 expand = true
@@ -705,20 +710,21 @@ margin_right = 107.0
 margin_left = 111.0
 margin_right = 141.0
 
-[node name="GridEffect" type="GridContainer" parent="Layer 2 - GUI"]
+[node name="GridEffectMy" type="GridContainer" parent="Layer 2 - GUI"]
+editor/display_folded = true
 margin_left = 54.0
-margin_top = 109.0
+margin_top = 100.0
 margin_right = 312.0
 margin_bottom = 195.0
 columns = 4
 
-[node name="CEffect0" type="CenterContainer" parent="Layer 2 - GUI/GridEffect"]
+[node name="CEffect0" type="CenterContainer" parent="Layer 2 - GUI/GridEffectMy"]
 editor/display_folded = true
 margin_right = 45.0
 margin_bottom = 45.0
 rect_min_size = Vector2( 45, 45 )
 
-[node name="Effect0" type="Label" parent="Layer 2 - GUI/GridEffect/CEffect0"]
+[node name="Effect0" type="Label" parent="Layer 2 - GUI/GridEffectMy/CEffect0"]
 margin_right = 44.0
 margin_bottom = 45.0
 custom_fonts/font = SubResource( 4 )
@@ -727,13 +733,13 @@ custom_colors/font_outline_modulate = Color( 1, 0.752941, 0.0980392, 1 )
 custom_colors/font_color_shadow = Color( 0.364706, 0.0235294, 0.0235294, 1 )
 text = "A"
 
-[node name="CEffect1" type="CenterContainer" parent="Layer 2 - GUI/GridEffect"]
+[node name="CEffect1" type="CenterContainer" parent="Layer 2 - GUI/GridEffectMy"]
 margin_left = 49.0
 margin_right = 94.0
 margin_bottom = 45.0
 rect_min_size = Vector2( 45, 45 )
 
-[node name="Effect1" type="Label" parent="Layer 2 - GUI/GridEffect/CEffect1"]
+[node name="Effect1" type="Label" parent="Layer 2 - GUI/GridEffectMy/CEffect1"]
 margin_right = 44.0
 margin_bottom = 45.0
 custom_fonts/font = SubResource( 4 )
@@ -742,14 +748,14 @@ custom_colors/font_outline_modulate = Color( 1, 0.752941, 0.0980392, 1 )
 custom_colors/font_color_shadow = Color( 0.364706, 0.0235294, 0.0235294, 1 )
 text = "R"
 
-[node name="CEffect2" type="CenterContainer" parent="Layer 2 - GUI/GridEffect"]
+[node name="CEffect2" type="CenterContainer" parent="Layer 2 - GUI/GridEffectMy"]
 editor/display_folded = true
 margin_left = 98.0
 margin_right = 143.0
 margin_bottom = 45.0
 rect_min_size = Vector2( 45, 45 )
 
-[node name="Effect2" type="Label" parent="Layer 2 - GUI/GridEffect/CEffect2"]
+[node name="Effect2" type="Label" parent="Layer 2 - GUI/GridEffectMy/CEffect2"]
 margin_right = 44.0
 margin_bottom = 45.0
 custom_fonts/font = SubResource( 4 )
@@ -758,14 +764,82 @@ custom_colors/font_outline_modulate = Color( 1, 0.752941, 0.0980392, 1 )
 custom_colors/font_color_shadow = Color( 0.364706, 0.0235294, 0.0235294, 1 )
 text = "W"
 
-[node name="CEffect3" type="CenterContainer" parent="Layer 2 - GUI/GridEffect"]
+[node name="CEffect3" type="CenterContainer" parent="Layer 2 - GUI/GridEffectMy"]
 editor/display_folded = true
 margin_left = 147.0
 margin_right = 192.0
 margin_bottom = 45.0
 rect_min_size = Vector2( 45, 45 )
 
-[node name="Effect3" type="Label" parent="Layer 2 - GUI/GridEffect/CEffect3"]
+[node name="Effect3" type="Label" parent="Layer 2 - GUI/GridEffectMy/CEffect3"]
+margin_right = 44.0
+margin_bottom = 45.0
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_outline_modulate = Color( 1, 0.752941, 0.0980392, 1 )
+custom_colors/font_color_shadow = Color( 0.364706, 0.0235294, 0.0235294, 1 )
+text = "D"
+
+[node name="GridEffectYou" type="GridContainer" parent="Layer 2 - GUI"]
+margin_left = 780.0
+margin_top = 100.0
+margin_right = 312.0
+margin_bottom = 195.0
+columns = 4
+
+[node name="CEffect0" type="CenterContainer" parent="Layer 2 - GUI/GridEffectYou"]
+margin_right = 45.0
+margin_bottom = 45.0
+rect_min_size = Vector2( 45, 45 )
+
+[node name="Effect0" type="Label" parent="Layer 2 - GUI/GridEffectYou/CEffect0"]
+margin_right = 44.0
+margin_bottom = 45.0
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_outline_modulate = Color( 1, 0.752941, 0.0980392, 1 )
+custom_colors/font_color_shadow = Color( 0.364706, 0.0235294, 0.0235294, 1 )
+text = "A"
+
+[node name="CEffect1" type="CenterContainer" parent="Layer 2 - GUI/GridEffectYou"]
+margin_left = 49.0
+margin_right = 94.0
+margin_bottom = 45.0
+rect_min_size = Vector2( 45, 45 )
+
+[node name="Effect1" type="Label" parent="Layer 2 - GUI/GridEffectYou/CEffect1"]
+margin_right = 44.0
+margin_bottom = 45.0
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_outline_modulate = Color( 1, 0.752941, 0.0980392, 1 )
+custom_colors/font_color_shadow = Color( 0.364706, 0.0235294, 0.0235294, 1 )
+text = "R"
+
+[node name="CEffect2" type="CenterContainer" parent="Layer 2 - GUI/GridEffectYou"]
+editor/display_folded = true
+margin_left = 98.0
+margin_right = 143.0
+margin_bottom = 45.0
+rect_min_size = Vector2( 45, 45 )
+
+[node name="Effect2" type="Label" parent="Layer 2 - GUI/GridEffectYou/CEffect2"]
+margin_right = 44.0
+margin_bottom = 45.0
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_outline_modulate = Color( 1, 0.752941, 0.0980392, 1 )
+custom_colors/font_color_shadow = Color( 0.364706, 0.0235294, 0.0235294, 1 )
+text = "W"
+
+[node name="CEffect3" type="CenterContainer" parent="Layer 2 - GUI/GridEffectYou"]
+editor/display_folded = true
+margin_left = 147.0
+margin_right = 192.0
+margin_bottom = 45.0
+rect_min_size = Vector2( 45, 45 )
+
+[node name="Effect3" type="Label" parent="Layer 2 - GUI/GridEffectYou/CEffect3"]
 margin_right = 44.0
 margin_bottom = 45.0
 custom_fonts/font = SubResource( 4 )
