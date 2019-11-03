@@ -1,33 +1,34 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://manager/InterfaceStartManager.gd" type="Script" id=1]
-[ext_resource path="res://interface/norse/img/background-black.png" type="Texture" id=2]
-[ext_resource path="res://interface/norse/tile/TilesHUB.tres" type="TileSet" id=3]
-[ext_resource path="res://interface/norse/font/Norsebold.otf" type="DynamicFontData" id=4]
-[ext_resource path="res://deck/norse/img/Rune_12.png" type="Texture" id=5]
-[ext_resource path="res://deck/norse/img/Rune_10.png" type="Texture" id=6]
-[ext_resource path="res://interface/norse/font/Norse.otf" type="DynamicFontData" id=7]
-[ext_resource path="res://sound/Landing-Vanaheimr.ogg" type="AudioStream" id=8]
+[ext_resource path="res://level/sigurd/Level0.tscn" type="PackedScene" id=2]
+[ext_resource path="res://interface/norse/img/background-black.png" type="Texture" id=3]
+[ext_resource path="res://interface/norse/tile/TilesHUB.tres" type="TileSet" id=4]
+[ext_resource path="res://interface/norse/font/Norsebold.otf" type="DynamicFontData" id=5]
+[ext_resource path="res://deck/norse/img/Rune_12.png" type="Texture" id=6]
+[ext_resource path="res://deck/norse/img/Rune_10.png" type="Texture" id=7]
+[ext_resource path="res://interface/norse/font/Norse.otf" type="DynamicFontData" id=8]
+[ext_resource path="res://sound/Landing-Vanaheimr.ogg" type="AudioStream" id=9]
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=1]
 size = 138
 outline_size = 5
 outline_color = Color( 0.156863, 0.156863, 0.156863, 1 )
-font_data = ExtResource( 4 )
+font_data = ExtResource( 5 )
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=2]
 size = 42
 outline_size = 1
 outline_color = Color( 0.764706, 0.384314, 0.0431373, 1 )
-font_data = ExtResource( 7 )
+font_data = ExtResource( 8 )
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="DynamicFont" id=3]
 size = 44
 outline_size = 5
 outline_color = Color( 0.156863, 0.156863, 0.156863, 1 )
 use_filter = true
 extra_spacing_char = 5
-font_data = ExtResource( 7 )
+font_data = ExtResource( 8 )
 
 [sub_resource type="Animation" id=4]
 resource_name = "idle"
@@ -60,6 +61,7 @@ tracks/1/keys = {
 
 [node name="StartInterface" type="Node2D"]
 script = ExtResource( 1 )
+open_scene = ExtResource( 2 )
 
 [node name="Layer 0 - Background" type="CanvasLayer" parent="."]
 layer = -3
@@ -67,7 +69,7 @@ layer = -3
 [node name="TextureRect" type="TextureRect" parent="Layer 0 - Background"]
 margin_right = 40.0
 margin_bottom = 40.0
-texture = ExtResource( 2 )
+texture = ExtResource( 3 )
 
 [node name="Layer 1 - Border" type="CanvasLayer" parent="."]
 editor/display_folded = true
@@ -75,7 +77,7 @@ layer = -2
 
 [node name="TileMap" type="TileMap" parent="Layer 1 - Border"]
 position = Vector2( 10, 5 )
-tile_set = ExtResource( 3 )
+tile_set = ExtResource( 4 )
 cell_size = Vector2( 84, 84 )
 format = 1
 tile_data = PoolIntArray( 0, -1073741821, 0, 1, -1073741820, 0, 2, -1073741820, 0, 3, -1073741820, 0, 4, -1073741820, 0, 5, -1073741820, 0, 6, -1073741820, 0, 7, -1073741820, 0, 8, -1073741820, 0, 9, -1073741820, 0, 10, -1073741820, 0, 11, 3, 0, 65536, 1610612740, 0, 65547, 4, 0, 131072, 1610612740, 0, 131083, 4, 0, 196608, 1610612740, 0, 196619, 4, 0, 262144, 1610612740, 0, 262155, 4, 0, 327680, 1610612740, 0, 327691, 4, 0, 393216, 1610612739, 0, 393217, -1610612732, 0, 393218, -1610612732, 0, 393219, -1610612732, 0, 393220, -1610612732, 0, 393221, -1610612732, 0, 393222, -1610612732, 0, 393223, -1610612732, 0, 393224, -1610612732, 0, 393225, -1610612732, 0, 393226, -1610612732, 0, 393227, -1610612733, 0 )
@@ -86,7 +88,7 @@ tile_data = PoolIntArray( 0, -1073741821, 0, 1, -1073741820, 0, 2, -1073741820, 
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -512.0
-margin_top = 60.0
+margin_top = 48.0
 margin_right = 512.0
 margin_bottom = 18.0
 custom_constants/separation = -12
@@ -103,35 +105,35 @@ margin_left = 248.0
 margin_top = 4.0
 margin_right = 357.0
 margin_bottom = 156.0
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 1 )
 text = "Ve"
 
 [node name="TextureRect" type="TextureRect" parent="Layer 2 - GUI/VCTitle/HCGameTitle"]
 margin_left = 331.0
 margin_right = 491.0
 margin_bottom = 160.0
-texture = ExtResource( 5 )
+texture = ExtResource( 6 )
 
 [node name="Label2" type="Label" parent="Layer 2 - GUI/VCTitle/HCGameTitle"]
 margin_left = 465.0
 margin_top = 4.0
 margin_right = 579.0
 margin_bottom = 156.0
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 1 )
 text = "DA"
 
 [node name="TextureRect2" type="TextureRect" parent="Layer 2 - GUI/VCTitle/HCGameTitle"]
 margin_left = 553.0
 margin_right = 713.0
 margin_bottom = 160.0
-texture = ExtResource( 6 )
+texture = ExtResource( 7 )
 
 [node name="Label3" type="Label" parent="Layer 2 - GUI/VCTitle/HCGameTitle"]
 margin_left = 687.0
 margin_top = 4.0
 margin_right = 775.0
 margin_bottom = 156.0
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 1 )
 text = "Di"
 
 [node name="CCPatchTitle" type="CenterContainer" parent="Layer 2 - GUI/VCTitle"]
@@ -140,105 +142,115 @@ margin_right = 1024.0
 margin_bottom = 195.0
 
 [node name="Label" type="Label" parent="Layer 2 - GUI/VCTitle/CCPatchTitle"]
-margin_left = 412.0
-margin_right = 612.0
+margin_left = 393.0
+margin_right = 630.0
 margin_bottom = 47.0
-custom_fonts/font = SubResource( 3 )
-text = "Norse Legends"
+custom_fonts/font = SubResource( 2 )
+text = "KEY_PATCH_TITLE"
 
 [node name="VCMenu" type="VBoxContainer" parent="Layer 2 - GUI"]
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-margin_top = -27.5
-margin_bottom = 27.5
-custom_constants/separation = 4
+margin_top = -42.0
+margin_bottom = 249.0
+custom_constants/separation = 2
 alignment = 1
 
 [node name="CenterContainer" type="CenterContainer" parent="Layer 2 - GUI/VCMenu"]
+margin_top = 4.0
 margin_right = 1024.0
-margin_bottom = 49.0
+margin_bottom = 59.0
 
-[node name="LinkButtonPlay" type="LinkButton" parent="Layer 2 - GUI/VCMenu/CenterContainer"]
-margin_left = 472.0
-margin_right = 552.0
-margin_bottom = 49.0
-custom_fonts/font = SubResource( 1 )
+[node name="LinkButtonPlay" type="Button" parent="Layer 2 - GUI/VCMenu/CenterContainer"]
+margin_left = 420.0
+margin_right = 604.0
+margin_bottom = 55.0
+focus_mode = 0
+custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 0.764706, 0.384314, 0.0431373, 1 )
-button_mask = 4
-text = "PLAY"
-underline = 2
+action_mode = 0
+enabled_focus_mode = 0
+text = "KEY_PLAY"
+flat = true
 
 [node name="CenterContainer5" type="CenterContainer" parent="Layer 2 - GUI/VCMenu"]
-margin_top = 53.0
+margin_top = 61.0
 margin_right = 1024.0
-margin_bottom = 102.0
+margin_bottom = 116.0
 
-[node name="LinkButtonPlay" type="LinkButton" parent="Layer 2 - GUI/VCMenu/CenterContainer5"]
-margin_left = 444.0
-margin_right = 580.0
-margin_bottom = 49.0
-custom_fonts/font = SubResource( 1 )
+[node name="LinkButtonProfile" type="Button" parent="Layer 2 - GUI/VCMenu/CenterContainer5"]
+margin_left = 392.0
+margin_right = 632.0
+margin_bottom = 55.0
+focus_mode = 0
+custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 0.854902, 0.447059, 0.0862745, 1 )
-button_mask = 4
-text = "Profile"
-underline = 2
+disabled = true
+action_mode = 0
+enabled_focus_mode = 0
+text = "KEY_PROFILE"
+flat = true
 
 [node name="CenterContainer2" type="CenterContainer" parent="Layer 2 - GUI/VCMenu"]
-editor/display_folded = true
-margin_top = 106.0
+margin_top = 118.0
 margin_right = 1024.0
-margin_bottom = 155.0
+margin_bottom = 173.0
 
-[node name="LinkButtonPlay" type="LinkButton" parent="Layer 2 - GUI/VCMenu/CenterContainer2"]
-margin_left = 472.0
-margin_right = 552.0
-margin_bottom = 49.0
-custom_fonts/font = SubResource( 1 )
+[node name="LinkButtonRunes" type="Button" parent="Layer 2 - GUI/VCMenu/CenterContainer2"]
+margin_left = 406.0
+margin_right = 618.0
+margin_bottom = 55.0
+focus_mode = 0
+custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 0.854902, 0.447059, 0.0862745, 1 )
-button_mask = 4
-text = "DECk"
-underline = 2
+disabled = true
+action_mode = 0
+enabled_focus_mode = 0
+text = "KEY_RUNES"
+flat = true
 
 [node name="CenterContainer3" type="CenterContainer" parent="Layer 2 - GUI/VCMenu"]
-editor/display_folded = true
-margin_top = 159.0
+margin_top = 175.0
 margin_right = 1024.0
-margin_bottom = 208.0
+margin_bottom = 230.0
 
-[node name="LinkButtonPlay" type="LinkButton" parent="Layer 2 - GUI/VCMenu/CenterContainer3"]
-margin_left = 439.0
-margin_right = 584.0
-margin_bottom = 49.0
-custom_fonts/font = SubResource( 1 )
+[node name="LinkButtonOptions" type="Button" parent="Layer 2 - GUI/VCMenu/CenterContainer3"]
+margin_left = 387.0
+margin_right = 636.0
+margin_bottom = 55.0
+focus_mode = 0
+custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 0.854902, 0.447059, 0.0862745, 1 )
-button_mask = 4
-text = "OPTIONS"
-underline = 2
+action_mode = 0
+enabled_focus_mode = 0
+text = "KEY_OPTIONS"
+flat = true
 
 [node name="CenterContainer4" type="CenterContainer" parent="Layer 2 - GUI/VCMenu"]
-editor/display_folded = true
-margin_top = 212.0
+margin_top = 232.0
 margin_right = 1024.0
-margin_bottom = 261.0
+margin_bottom = 287.0
 
-[node name="LinkButtonPlay" type="LinkButton" parent="Layer 2 - GUI/VCMenu/CenterContainer4"]
-margin_left = 472.0
-margin_right = 551.0
-margin_bottom = 49.0
-custom_fonts/font = SubResource( 1 )
+[node name="LinkButtonQuit" type="Button" parent="Layer 2 - GUI/VCMenu/CenterContainer4"]
+margin_left = 420.0
+margin_right = 603.0
+margin_bottom = 55.0
+focus_mode = 0
+custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 0.854902, 0.447059, 0.0862745, 1 )
-button_mask = 4
-text = "QUIT"
-underline = 2
+action_mode = 0
+enabled_focus_mode = 0
+text = "KEY_QUIT"
+flat = true
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 8 )
+stream = ExtResource( 9 )
 autoplay = true
 mix_target = 2
 
@@ -246,3 +258,5 @@ mix_target = 2
 playback_speed = 0.7
 anims/idle = SubResource( 4 )
 
+[connection signal="pressed" from="Layer 2 - GUI/VCMenu/CenterContainer/LinkButtonPlay" to="." method="_on_LinkButtonPlay_pressed"]
+[connection signal="pressed" from="Layer 2 - GUI/VCMenu/CenterContainer3/LinkButtonOptions" to="." method="_on_LinkButtonOptions_pressed"]
