@@ -12,3 +12,9 @@ func _input(event: InputEvent):
 			emit_signal("units_moved", $Navigation2D)
 			$Line2D.points = get_node("Norse-Swordman").get_path()
 			$Line2D.show()
+
+func selected_unit(l,a,d,s,p):
+	$GameInterface.set_selected_gui(l,a,d,s,p)
+
+func unselected_unit():
+	$GameInterface.set_unselected_gui()

@@ -1,0 +1,161 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://interface/norse/img/background-black.png" type="Texture" id=1]
+[ext_resource path="res://interface/norse/img/interface_00.png" type="Texture" id=2]
+[ext_resource path="res://interface/norse/font/Norse.otf" type="DynamicFontData" id=3]
+[ext_resource path="res://interface/norse/font/Norsebold.otf" type="DynamicFontData" id=4]
+[ext_resource path="res://interface/norse/img/interface_01.png" type="Texture" id=5]
+[ext_resource path="res://interface/norse/img/interface_02.png" type="Texture" id=6]
+[ext_resource path="res://interface/norse/img/interface_03.png" type="Texture" id=7]
+
+[sub_resource type="DynamicFont" id=1]
+size = 30
+outline_size = 2
+outline_color = Color( 0.254902, 0.184314, 0.0156863, 1 )
+use_filter = true
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 40
+font_data = ExtResource( 4 )
+
+[node name="StatusInterface" type="Node2D"]
+
+[node name="BackRect" type="NinePatchRect" parent="."]
+margin_right = 220.0
+margin_bottom = 270.0
+rect_min_size = Vector2( 210, 270 )
+texture = ExtResource( 1 )
+
+[node name="VContainer" type="VBoxContainer" parent="BackRect"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 200.0
+margin_bottom = 54.0
+rect_min_size = Vector2( 200, 60 )
+custom_constants/separation = 10
+alignment = 1
+
+[node name="HCLife" type="HBoxContainer" parent="BackRect/VContainer"]
+margin_right = 228.0
+margin_bottom = 54.0
+custom_constants/separation = 8
+
+[node name="TRLife" type="TextureRect" parent="BackRect/VContainer/HCLife"]
+margin_right = 54.0
+margin_bottom = 54.0
+rect_min_size = Vector2( 54, 0 )
+texture = ExtResource( 2 )
+
+[node name="LLife" type="Label" parent="BackRect/VContainer/HCLife"]
+margin_left = 62.0
+margin_top = 10.0
+margin_right = 148.0
+margin_bottom = 44.0
+rect_min_size = Vector2( 80, 0 )
+custom_fonts/font = SubResource( 1 )
+text = "KEY_LIFE"
+align = 1
+
+[node name="NLife" type="Label" parent="BackRect/VContainer/HCLife"]
+margin_left = 156.0
+margin_top = 4.0
+margin_right = 204.0
+margin_bottom = 49.0
+custom_fonts/font = SubResource( 2 )
+text = "100"
+align = 1
+
+[node name="HCAttack" type="HBoxContainer" parent="BackRect/VContainer"]
+margin_top = 64.0
+margin_right = 228.0
+margin_bottom = 118.0
+custom_constants/separation = 8
+
+[node name="TRAttack" type="TextureRect" parent="BackRect/VContainer/HCAttack"]
+margin_right = 54.0
+margin_bottom = 54.0
+rect_min_size = Vector2( 54, 0 )
+texture = ExtResource( 5 )
+
+[node name="LAttack" type="Label" parent="BackRect/VContainer/HCAttack"]
+margin_left = 62.0
+margin_top = 10.0
+margin_right = 179.0
+margin_bottom = 44.0
+rect_min_size = Vector2( 80, 0 )
+custom_fonts/font = SubResource( 1 )
+text = "KEY_ATTACK"
+align = 1
+
+[node name="NAttack" type="Label" parent="BackRect/VContainer/HCAttack"]
+margin_left = 187.0
+margin_top = 4.0
+margin_right = 217.0
+margin_bottom = 49.0
+custom_fonts/font = SubResource( 2 )
+text = "10"
+align = 1
+
+[node name="HCDefense" type="HBoxContainer" parent="BackRect/VContainer"]
+margin_top = 128.0
+margin_right = 228.0
+margin_bottom = 182.0
+custom_constants/separation = 8
+
+[node name="TRDefense" type="TextureRect" parent="BackRect/VContainer/HCDefense"]
+margin_right = 54.0
+margin_bottom = 54.0
+rect_min_size = Vector2( 54, 0 )
+texture = ExtResource( 6 )
+
+[node name="LDefense" type="Label" parent="BackRect/VContainer/HCDefense"]
+margin_left = 62.0
+margin_top = 10.0
+margin_right = 187.0
+margin_bottom = 44.0
+rect_min_size = Vector2( 80, 0 )
+custom_fonts/font = SubResource( 1 )
+text = "KEY_DEFENSE"
+align = 1
+
+[node name="NDefense" type="Label" parent="BackRect/VContainer/HCDefense"]
+margin_left = 195.0
+margin_top = 4.0
+margin_right = 228.0
+margin_bottom = 49.0
+custom_fonts/font = SubResource( 2 )
+text = "20"
+align = 1
+
+[node name="HCSpeed" type="HBoxContainer" parent="BackRect/VContainer"]
+margin_top = 192.0
+margin_right = 228.0
+margin_bottom = 246.0
+custom_constants/separation = 8
+
+[node name="TRSpeed" type="TextureRect" parent="BackRect/VContainer/HCSpeed"]
+margin_right = 54.0
+margin_bottom = 54.0
+rect_min_size = Vector2( 54, 0 )
+texture = ExtResource( 7 )
+
+[node name="LSpeed" type="Label" parent="BackRect/VContainer/HCSpeed"]
+margin_left = 62.0
+margin_top = 10.0
+margin_right = 164.0
+margin_bottom = 44.0
+rect_min_size = Vector2( 80, 0 )
+custom_fonts/font = SubResource( 1 )
+text = "KEY_SPEED"
+align = 1
+
+[node name="NSpeed" type="Label" parent="BackRect/VContainer/HCSpeed"]
+margin_left = 172.0
+margin_top = 4.0
+margin_right = 184.0
+margin_bottom = 49.0
+custom_fonts/font = SubResource( 2 )
+text = "1"
+align = 1
+

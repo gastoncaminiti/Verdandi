@@ -21,6 +21,7 @@ var size_cell_y
 var flag_move = false
 var flag_priority = false
 
+
 func _ready():
 	connect_parent_child("map_initiated","_goMapConfig")
 	connect_parent_child("units_moved","_goPahtConfig")
@@ -227,3 +228,13 @@ func _process(delta: float) -> void:
 		else:
 			flag_move = false
 			orientation_animation("idle")
+
+func _on_SelectedManager_mouse_entered():
+	print("Enter")
+	if get_parent().is_in_group("Level"):
+		get_parent().selected_unit(life,attack,defense,attack_speed,global_position)
+
+func _on_SelectedManager_mouse_exited():
+	print("Exit")
+	if get_parent().is_in_group("Level"):
+		get_parent().unselected_unit()

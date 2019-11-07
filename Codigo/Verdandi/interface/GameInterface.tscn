@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://manager/InterfaceGameManager.gd" type="Script" id=1]
 [ext_resource path="res://interface/norse/img/background.png" type="Texture" id=2]
@@ -15,6 +15,8 @@
 [ext_resource path="res://interface/norse/element/Eye.tscn" type="PackedScene" id=13]
 [ext_resource path="res://interface/norse/element/Axe.tscn" type="PackedScene" id=14]
 [ext_resource path="res://interface/norse/font/Runes.TTF" type="DynamicFontData" id=15]
+[ext_resource path="res://interface/StatusInterface.tscn" type="PackedScene" id=16]
+[ext_resource path="res://interface/RuneDetailInterface.tscn" type="PackedScene" id=17]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -54,9 +56,11 @@ use_filter = true
 font_data = ExtResource( 15 )
 
 [node name="GameInterface" type="Node2D"]
+editor/display_folded = true
 script = ExtResource( 1 )
 
 [node name="Layer 0 - Background" type="CanvasLayer" parent="."]
+editor/display_folded = true
 layer = -3
 
 [node name="TextureRect" type="TextureRect" parent="Layer 0 - Background"]
@@ -69,6 +73,7 @@ __meta__ = {
 }
 
 [node name="Layer 1 - Border" type="CanvasLayer" parent="."]
+editor/display_folded = true
 layer = -2
 
 [node name="TileMap" type="TileMap" parent="Layer 1 - Border"]
@@ -107,7 +112,6 @@ expand = true
 stretch_mode = 1
 
 [node name="GridPapyrus" type="GridContainer" parent="Layer 2 - GUI/Papyrus"]
-editor/display_folded = true
 margin_left = 17.0
 margin_top = 25.0
 margin_right = 130.0
@@ -562,8 +566,7 @@ custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
 text = "P"
 
-[node name="AlingContainer" type="HBoxContainer" parent="Layer 2 - GUI"]
-editor/display_folded = true
+[node name="AlignmentContainer" type="HBoxContainer" parent="Layer 2 - GUI"]
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -329.0
@@ -572,146 +575,148 @@ margin_bottom = 99.0
 custom_constants/separation = 10
 alignment = 1
 
-[node name="VContainerA" type="VBoxContainer" parent="Layer 2 - GUI/AlingContainer"]
-margin_left = 23.0
-margin_right = 223.0
+[node name="VContainerA" type="VBoxContainer" parent="Layer 2 - GUI/AlignmentContainer"]
+margin_left = 2.0
+margin_right = 226.0
 margin_bottom = 99.0
 rect_min_size = Vector2( 200, 0 )
 alignment = 1
 
-[node name="LabelContainer" type="CenterContainer" parent="Layer 2 - GUI/AlingContainer/VContainerA"]
+[node name="LabelContainer" type="CenterContainer" parent="Layer 2 - GUI/AlignmentContainer/VContainerA"]
 margin_top = 9.0
-margin_right = 200.0
+margin_right = 224.0
 margin_bottom = 56.0
 
-[node name="Label" type="Label" parent="Layer 2 - GUI/AlingContainer/VContainerA/LabelContainer"]
-margin_left = 13.0
-margin_right = 186.0
+[node name="Label" type="Label" parent="Layer 2 - GUI/AlignmentContainer/VContainerA/LabelContainer"]
+margin_right = 224.0
 margin_bottom = 47.0
+rect_min_size = Vector2( 150, 0 )
 custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
-text = "Prosperidad"
+text = "KEY_PROSPERITY"
+align = 1
 
-[node name="ElementContainer" type="HBoxContainer" parent="Layer 2 - GUI/AlingContainer/VContainerA"]
-margin_top = 60.0
-margin_right = 200.0
-margin_bottom = 90.0
-rect_min_size = Vector2( 150, 0 )
-alignment = 1
-
-[node name="Coin5" parent="Layer 2 - GUI/AlingContainer/VContainerA/ElementContainer" instance=ExtResource( 11 )]
-margin_left = 34.0
-margin_right = 64.0
-
-[node name="Coin4" parent="Layer 2 - GUI/AlingContainer/VContainerA/ElementContainer" instance=ExtResource( 11 )]
-margin_left = 68.0
-margin_right = 98.0
-
-[node name="Coin2" parent="Layer 2 - GUI/AlingContainer/VContainerA/ElementContainer" instance=ExtResource( 11 )]
-margin_left = 102.0
-margin_right = 132.0
-
-[node name="Coin3" parent="Layer 2 - GUI/AlingContainer/VContainerA/ElementContainer" instance=ExtResource( 11 )]
-margin_left = 136.0
-margin_right = 166.0
-
-[node name="SeparatorContainerA" type="TextureRect" parent="Layer 2 - GUI/AlingContainer"]
-margin_left = 233.0
-margin_right = 269.0
-margin_bottom = 99.0
-texture = ExtResource( 12 )
-
-[node name="VContainerB" type="VBoxContainer" parent="Layer 2 - GUI/AlingContainer"]
-margin_left = 279.0
-margin_right = 429.0
-margin_bottom = 99.0
-alignment = 1
-
-[node name="LabelContainer" type="CenterContainer" parent="Layer 2 - GUI/AlingContainer/VContainerB"]
-margin_top = 9.0
-margin_right = 150.0
-margin_bottom = 56.0
-
-[node name="Label" type="Label" parent="Layer 2 - GUI/AlingContainer/VContainerB/LabelContainer"]
-margin_left = 32.0
-margin_right = 117.0
-margin_bottom = 47.0
-custom_fonts/font = SubResource( 3 )
-text = "Favor"
-
-[node name="ElementContainer2" type="HBoxContainer" parent="Layer 2 - GUI/AlingContainer/VContainerB"]
-margin_top = 60.0
-margin_right = 150.0
-margin_bottom = 90.0
-rect_min_size = Vector2( 150, 0 )
-alignment = 1
-
-[node name="Eye2" parent="Layer 2 - GUI/AlingContainer/VContainerB/ElementContainer2" instance=ExtResource( 13 )]
-margin_left = 9.0
-margin_right = 39.0
-
-[node name="Eye5" parent="Layer 2 - GUI/AlingContainer/VContainerB/ElementContainer2" instance=ExtResource( 13 )]
-margin_left = 43.0
-margin_right = 73.0
-
-[node name="Eye4" parent="Layer 2 - GUI/AlingContainer/VContainerB/ElementContainer2" instance=ExtResource( 13 )]
-margin_left = 77.0
-margin_right = 107.0
-
-[node name="Eye3" parent="Layer 2 - GUI/AlingContainer/VContainerB/ElementContainer2" instance=ExtResource( 13 )]
-margin_left = 111.0
-margin_right = 141.0
-
-[node name="SeparatorContainerA2" type="TextureRect" parent="Layer 2 - GUI/AlingContainer"]
-margin_left = 439.0
-margin_right = 475.0
-margin_bottom = 99.0
-texture = ExtResource( 12 )
-
-[node name="VContainerC" type="VBoxContainer" parent="Layer 2 - GUI/AlingContainer"]
+[node name="ElementContainer" type="HBoxContainer" parent="Layer 2 - GUI/AlignmentContainer/VContainerA"]
 editor/display_folded = true
-margin_left = 485.0
-margin_right = 635.0
-margin_bottom = 99.0
-alignment = 1
-
-[node name="LabelContainer" type="CenterContainer" parent="Layer 2 - GUI/AlingContainer/VContainerC"]
-margin_top = 9.0
-margin_right = 150.0
-margin_bottom = 56.0
-
-[node name="Label" type="Label" parent="Layer 2 - GUI/AlingContainer/VContainerC/LabelContainer"]
-margin_left = 29.0
-margin_right = 120.0
-margin_bottom = 47.0
-custom_fonts/font = SubResource( 3 )
-text = "Honor"
-
-[node name="ElementContainer3" type="HBoxContainer" parent="Layer 2 - GUI/AlingContainer/VContainerC"]
 margin_top = 60.0
-margin_right = 150.0
+margin_right = 224.0
 margin_bottom = 90.0
 rect_min_size = Vector2( 150, 0 )
 alignment = 1
 
-[node name="Axe" parent="Layer 2 - GUI/AlingContainer/VContainerC/ElementContainer3" instance=ExtResource( 14 )]
-margin_left = 9.0
-margin_right = 39.0
+[node name="Coin5" parent="Layer 2 - GUI/AlignmentContainer/VContainerA/ElementContainer" instance=ExtResource( 11 )]
+margin_left = 46.0
+margin_right = 76.0
 
-[node name="Axe2" parent="Layer 2 - GUI/AlingContainer/VContainerC/ElementContainer3" instance=ExtResource( 14 )]
-margin_left = 43.0
-margin_right = 73.0
+[node name="Coin4" parent="Layer 2 - GUI/AlignmentContainer/VContainerA/ElementContainer" instance=ExtResource( 11 )]
+margin_left = 80.0
+margin_right = 110.0
 
-[node name="Axe4" parent="Layer 2 - GUI/AlingContainer/VContainerC/ElementContainer3" instance=ExtResource( 14 )]
-margin_left = 77.0
-margin_right = 107.0
+[node name="Coin2" parent="Layer 2 - GUI/AlignmentContainer/VContainerA/ElementContainer" instance=ExtResource( 11 )]
+margin_left = 114.0
+margin_right = 144.0
 
-[node name="Axe3" parent="Layer 2 - GUI/AlingContainer/VContainerC/ElementContainer3" instance=ExtResource( 14 )]
-margin_left = 111.0
-margin_right = 141.0
+[node name="Coin3" parent="Layer 2 - GUI/AlignmentContainer/VContainerA/ElementContainer" instance=ExtResource( 11 )]
+margin_left = 148.0
+margin_right = 178.0
+
+[node name="SeparatorContainerA" type="TextureRect" parent="Layer 2 - GUI/AlignmentContainer"]
+margin_left = 236.0
+margin_right = 272.0
+margin_bottom = 99.0
+texture = ExtResource( 12 )
+
+[node name="VContainerB" type="VBoxContainer" parent="Layer 2 - GUI/AlignmentContainer"]
+margin_left = 282.0
+margin_right = 438.0
+margin_bottom = 99.0
+alignment = 1
+
+[node name="LabelContainer" type="CenterContainer" parent="Layer 2 - GUI/AlignmentContainer/VContainerB"]
+margin_top = 9.0
+margin_right = 156.0
+margin_bottom = 56.0
+
+[node name="Label" type="Label" parent="Layer 2 - GUI/AlignmentContainer/VContainerB/LabelContainer"]
+margin_right = 156.0
+margin_bottom = 47.0
+rect_min_size = Vector2( 150, 0 )
+custom_fonts/font = SubResource( 3 )
+text = "KEY_FAVOR"
+align = 1
+
+[node name="ElementContainer2" type="HBoxContainer" parent="Layer 2 - GUI/AlignmentContainer/VContainerB"]
+margin_top = 60.0
+margin_right = 156.0
+margin_bottom = 90.0
+rect_min_size = Vector2( 150, 0 )
+alignment = 1
+
+[node name="Eye2" parent="Layer 2 - GUI/AlignmentContainer/VContainerB/ElementContainer2" instance=ExtResource( 13 )]
+margin_left = 12.0
+margin_right = 42.0
+
+[node name="Eye5" parent="Layer 2 - GUI/AlignmentContainer/VContainerB/ElementContainer2" instance=ExtResource( 13 )]
+margin_left = 46.0
+margin_right = 76.0
+
+[node name="Eye4" parent="Layer 2 - GUI/AlignmentContainer/VContainerB/ElementContainer2" instance=ExtResource( 13 )]
+margin_left = 80.0
+margin_right = 110.0
+
+[node name="Eye3" parent="Layer 2 - GUI/AlignmentContainer/VContainerB/ElementContainer2" instance=ExtResource( 13 )]
+margin_left = 114.0
+margin_right = 144.0
+
+[node name="SeparatorContainerA2" type="TextureRect" parent="Layer 2 - GUI/AlignmentContainer"]
+margin_left = 448.0
+margin_right = 484.0
+margin_bottom = 99.0
+texture = ExtResource( 12 )
+
+[node name="VContainerC" type="VBoxContainer" parent="Layer 2 - GUI/AlignmentContainer"]
+margin_left = 494.0
+margin_right = 656.0
+margin_bottom = 99.0
+alignment = 1
+
+[node name="LabelContainer" type="CenterContainer" parent="Layer 2 - GUI/AlignmentContainer/VContainerC"]
+margin_top = 9.0
+margin_right = 162.0
+margin_bottom = 56.0
+
+[node name="Label" type="Label" parent="Layer 2 - GUI/AlignmentContainer/VContainerC/LabelContainer"]
+margin_right = 162.0
+margin_bottom = 47.0
+rect_min_size = Vector2( 150, 0 )
+custom_fonts/font = SubResource( 3 )
+text = "KEY_HONOR"
+align = 1
+
+[node name="ElementContainer3" type="HBoxContainer" parent="Layer 2 - GUI/AlignmentContainer/VContainerC"]
+margin_top = 60.0
+margin_right = 162.0
+margin_bottom = 90.0
+rect_min_size = Vector2( 150, 0 )
+alignment = 1
+
+[node name="Axe" parent="Layer 2 - GUI/AlignmentContainer/VContainerC/ElementContainer3" instance=ExtResource( 14 )]
+margin_left = 15.0
+margin_right = 45.0
+
+[node name="Axe2" parent="Layer 2 - GUI/AlignmentContainer/VContainerC/ElementContainer3" instance=ExtResource( 14 )]
+margin_left = 49.0
+margin_right = 79.0
+
+[node name="Axe4" parent="Layer 2 - GUI/AlignmentContainer/VContainerC/ElementContainer3" instance=ExtResource( 14 )]
+margin_left = 83.0
+margin_right = 113.0
+
+[node name="Axe3" parent="Layer 2 - GUI/AlignmentContainer/VContainerC/ElementContainer3" instance=ExtResource( 14 )]
+margin_left = 117.0
+margin_right = 147.0
 
 [node name="GridEffectMy" type="GridContainer" parent="Layer 2 - GUI"]
-editor/display_folded = true
 margin_left = 54.0
 margin_top = 100.0
 margin_right = 312.0
@@ -738,6 +743,7 @@ margin_left = 49.0
 margin_right = 94.0
 margin_bottom = 45.0
 rect_min_size = Vector2( 45, 45 )
+hint_tooltip = "A"
 
 [node name="Effect1" type="Label" parent="Layer 2 - GUI/GridEffectMy/CEffect1"]
 margin_right = 44.0
@@ -781,6 +787,7 @@ custom_colors/font_color_shadow = Color( 0.364706, 0.0235294, 0.0235294, 1 )
 text = "D"
 
 [node name="GridEffectYou" type="GridContainer" parent="Layer 2 - GUI"]
+editor/display_folded = true
 margin_left = 780.0
 margin_top = 100.0
 margin_right = 312.0
@@ -847,4 +854,12 @@ custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_outline_modulate = Color( 1, 0.752941, 0.0980392, 1 )
 custom_colors/font_color_shadow = Color( 0.364706, 0.0235294, 0.0235294, 1 )
 text = "D"
+
+[node name="StatusInterface" parent="Layer 2 - GUI" instance=ExtResource( 16 )]
+position = Vector2( 1077, 45 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="RuneDetailInterface" parent="Layer 2 - GUI" instance=ExtResource( 17 )]
+position = Vector2( 1198, 42 )
+scale = Vector2( 0.6, 0.6 )
 

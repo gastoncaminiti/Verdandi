@@ -1,16 +1,7 @@
 extends Node
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	connect_parent_child("units_moved","_goOrder")
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
 
 func _goOrder(nav):
 	var avatar = get_node("Layer 2 - GUI/Sidgrida/AnimatedSprite")
@@ -19,6 +10,20 @@ func _goOrder(nav):
 	avatar.set_frame(0)
 	bag.play("open")
 	bag.set_frame(0)
+	
+func set_selected_gui(l,a,d,s,p):
+	get_node("Layer 2 - GUI/StatusInterface/BackRect/VContainer/HCLife/NLife").set_text(String(l))
+	get_node("Layer 2 - GUI/StatusInterface/BackRect/VContainer/HCAttack/NAttack").set_text(String(a))
+	get_node("Layer 2 - GUI/StatusInterface/BackRect/VContainer/HCDefense/NDefense").set_text(String(d))
+	get_node("Layer 2 - GUI/StatusInterface/BackRect/VContainer/HCSpeed/NSpeed").set_text(String(s))
+	var aux_node = get_node("Layer 2 - GUI/StatusInterface")
+	aux_node.global_position = p
+	aux_node.global_position.y -=190
+	aux_node.global_position.x -=55
+	aux_node.visible = true
+
+func set_unselected_gui():
+	get_node("Layer 2 - GUI/StatusInterface").visible = false
 
 # Función que permite conectar una señal de nodo padre con una función del nodo hijo.
 func connect_parent_child(nsignal, nfunction):

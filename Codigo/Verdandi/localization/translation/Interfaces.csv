@@ -5,3 +5,10 @@ KEY_PROFILE,Profile,Perfil
 KEY_RUNES,Runes,Runas
 KEY_OPTIONS,Options,Opciones
 KEY_QUIT,Quit,Salir
+KEY_LIFE,Life,Vida
+KEY_ATTACK,Attack,Ataque
+KEY_DEFENSE,Defense,Defensa
+KEY_SPEED,Speed,Velocidad
+KEY_PROSPERITY,Prosperity,Prosperidad
+KEY_FAVOR,Favor,Favor
+KEY_HONOR,Honor,Honor
