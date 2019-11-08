@@ -1,0 +1,156 @@
+{
+    "cards":{
+        "algiz":{
+            "alignment": "favor",
+            "invertible": true,
+            "image":"23",
+            "effect":{
+                "key": "renewal",
+                "text": "KEY_RENEWAL",
+                "type":"statistics",
+                "atributte": "life",
+                "target": "one",
+                "duration": 1,
+                "value": 20,
+                "description": "KEY_EFFECT_RENEWAL"
+            },
+            "inverse":{
+                "key": "fatigue",
+                "text": "KEY_FATIGUE",
+                "type":"statistics",
+                "atributte": "life",
+                "target": "one",
+                "duration": 1,
+                "value": -20,
+                "description": "KEY_EFFECT_FATIGUE"
+            }
+        },
+        "ansuz":{
+            "alignment": "prosperity",
+            "invertible": true,
+            "image":"00",
+            "effect":{
+                "key":"revelation",
+                "text": "KEY_REVELATION",
+                "type":"spell",
+                "cast": "vision",
+                "target": "one",
+                "duration": 1,
+                "value": true,
+                "description": "KEY_EFFECT_REVELATION"
+            },
+            "inverse":{
+                "key":"unknown",
+                "text": "KEY_UNKNOWN",
+                "type":"spell",
+                "cast": "vision",
+                "target": "one",
+                "duration": 1,
+                "value": false,
+                "description": "KEY_EFFECT_UNKNOWN"
+            }
+        },
+        "berkana":{
+            "alignment": "honor",
+            "invertible": true,
+            "image":"01",
+            "effect":{
+                "key":"strategy",
+                "text": "KEY_STRATEGY",
+                "type":"spell",
+                "cast": "boost",
+                "target": "all",
+                "duration": 2,
+                "value": true,
+                "description": "KEY_EFFECT_STRATEGY"
+            },
+            "inverse":{
+                "key":"imprudence",
+                "text": "KEY_IMPRUDENCE",
+                "type":"spell",
+                "cast": "boost",
+                "target": "all",
+                "duration": 2,
+                "value": false,
+                "description": "KEY_EFFECT_IMPRUDENCE"
+            }
+        },
+        "dagaz":{
+            "alignment": "honor",
+            "invertible": false,
+            "image":"03",
+            "effect":{
+                "key":"resilience",
+                "text": "KEY_RESILIENCE",
+                "type":"spell",
+                "cast": "delete",
+                "target": "one",
+                "duration": 1,
+                "value": true,
+                "description": "KEY_EFFECT_RESILIENCE"
+            }
+        }, 
+        "ehwaz":{
+            "alignment": "honor",
+            "invertible": true,
+            "image":"04",
+            "effect":{
+                "key":"quick",
+                "text": "KEY_QUICK",
+                "type":"order",
+                "cast": "march",
+                "target": "all",
+                "duration": 3,
+                "value": true,
+                "description": "KEY_EFFECT_QUICK"
+            },
+            "inverse":{
+                "key":"slow",
+                "text": "KEY_SLOW",
+                "type":"order",
+                "cast": "march",
+                "target": "all",
+                "duration": 3,
+                "value": false,
+                "description": "KEY_EFFECT_SLOW"
+            }
+        }, 
+        "eihwaz":{
+            "alignment": "favor",
+            "invertible": false,
+            "image":"09",
+            "effect":{
+                "key":"blessing",
+                "text": "KEY_BLESSING",
+                "type":"spell",
+                "cast": "invulnerable",
+                "target": "all",
+                "duration": 1,
+                "value": true,
+                "description": "KEY_EFFECT_BLESSING"
+            }
+        }
+    },
+    "decks": {
+        "level_starter": {
+          "algiz": {
+            "quantity": 1
+          },
+          "ansuz": {
+            "quantity": 1
+          },
+          "berkana": {
+            "quantity": 1
+          },
+          "dagaz": {
+            "quantity": 1
+          },
+          "ehwaz": {
+            "quantity": 1
+          },
+          "eihwaz": {
+            "quantity": 1
+          }
+        }
+    }
+}   

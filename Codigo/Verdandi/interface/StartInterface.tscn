@@ -1,6 +1,6 @@
 [gd_scene load_steps=14 format=2]
 
-[ext_resource path="res://manager/InterfaceStartManager.gd" type="Script" id=1]
+[ext_resource path="res://manager/interface/InterfaceStartManager.gd" type="Script" id=1]
 [ext_resource path="res://level/sigurd/Level0.tscn" type="PackedScene" id=2]
 [ext_resource path="res://interface/norse/img/background-black.png" type="Texture" id=3]
 [ext_resource path="res://interface/norse/tile/TilesHUB.tres" type="TileSet" id=4]

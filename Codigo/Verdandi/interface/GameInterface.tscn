@@ -1,6 +1,6 @@
 [gd_scene load_steps=22 format=2]
 
-[ext_resource path="res://manager/InterfaceGameManager.gd" type="Script" id=1]
+[ext_resource path="res://manager/interface/InterfaceGameManager.gd" type="Script" id=1]
 [ext_resource path="res://interface/norse/img/background.png" type="Texture" id=2]
 [ext_resource path="res://interface/norse/tile/TilesHUB.tres" type="TileSet" id=3]
 [ext_resource path="res://interface/norse/img/table.png" type="Texture" id=4]
