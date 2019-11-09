@@ -1,0 +1,30 @@
+,en,es
+KEY_RENEWAL,Renewal,Renovacion
+KEY_EFFECT_RENEWAL,Heal unit +20,Cura unidad +20
+KEY_FATIGUE,Fatigue,Fatiga
+KEY_EFFECT_FATIGUE,Damage unit -20,Daña unidad -20
+KEY_REVELATION,Revelation,Revelacion
+KEY_EFFECT_REVELATION,View enemy unit,Ver unidad enemiga
+KEY_UNKNOWN,Unknown,Desconocido
+KEY_EFFECT_UNKNOWN,Lose enemy unit,Perder unidad enemiga
+KEY_STRATEGY,Strategy,Estrategia
+KEY_EFFECT_STRATEGY,Effects increased,Efectos aumentados
+KEY_IMPRUDENCE,Imprudence,Imprudencia
+KEY_EFFECT_IMPRUDENCE,Effects decreased,Efectos disminuidos
+KEY_INVERTIBLE,Invertible,Invertible
+KEY_NOINVERTIBLE,No Invertible,No Invertible
+KEY_OR,Or,o
+KEY_RESILIENCE,Resilience,Resiliencia
+KEY_EFFECT_RESILIENCE,Delete a negative effect,Elimina un efecto negativo
+KEY_QUICK,Quick,Rapido
+KEY_EFFECT_QUICK, Increase movement speed,Aumenta velocidad de movimiento
+KEY_SLOW,Slow,Lento
+KEY_EFFECT_SLOW,decrease movement speed,Disminuir velocidad de movimiento
+KEY_BLESSING,Blessing,Bendicion
+KEY_EFFECT_BLESSING, invulnerable to damage,invulnerable 
+KEY_SILVER,Silver,Plata
+KEY_EFFECT_SILVER,Attack +10,Ataque +10
+KEY_OXIDE,Oxide,Oxido
+KEY_EFFECT_OXIDE,Attack -10,Ataque -10
+KEY_GIFT,Gift,Regalo
+KEY_EFFECT_GIFT,Hero defense +20,Defensa del Heroe +20

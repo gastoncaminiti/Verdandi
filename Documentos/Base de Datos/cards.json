@@ -12,7 +12,8 @@
                 "target": "one",
                 "duration": 1,
                 "value": 20,
-                "description": "KEY_EFFECT_RENEWAL"
+                "description": "KEY_EFFECT_RENEWAL",
+                "milestone" : ["KEY_M_RENEWAL_01","KEY_M_RENEWAL_02"]
             },
             "inverse":{
                 "key": "fatigue",
@@ -22,7 +23,8 @@
                 "target": "one",
                 "duration": 1,
                 "value": -20,
-                "description": "KEY_EFFECT_FATIGUE"
+                "description": "KEY_EFFECT_FATIGUE",
+                "milestone" : ["KEY_M_FATIGUE_01","KEY_M_FATIGUE_02"]
             }
         },
         "ansuz":{
@@ -37,7 +39,8 @@
                 "target": "one",
                 "duration": 1,
                 "value": true,
-                "description": "KEY_EFFECT_REVELATION"
+                "description": "KEY_EFFECT_REVELATION",
+                "milestone" : ["KEY_M_REVELATION_01","KEY_M_REVELATION_02"]
             },
             "inverse":{
                 "key":"unknown",
@@ -47,7 +50,8 @@
                 "target": "one",
                 "duration": 1,
                 "value": false,
-                "description": "KEY_EFFECT_UNKNOWN"
+                "description": "KEY_EFFECT_UNKNOWN",
+                "milestone" : ["KEY_M_UNKNOWN_01","KEY_M_UNKNOWN_02"]
             }
         },
         "berkana":{
@@ -62,7 +66,8 @@
                 "target": "all",
                 "duration": 2,
                 "value": true,
-                "description": "KEY_EFFECT_STRATEGY"
+                "description": "KEY_EFFECT_STRATEGY",
+                "milestone" : ["KEY_M_STRATEGY_01","KEY_M_STRATEGY_02"]
             },
             "inverse":{
                 "key":"imprudence",
@@ -72,7 +77,8 @@
                 "target": "all",
                 "duration": 2,
                 "value": false,
-                "description": "KEY_EFFECT_IMPRUDENCE"
+                "description": "KEY_EFFECT_IMPRUDENCE",
+                "milestone" : ["KEY_M_IMPRUDENCE_01","KEY_M_IMPRUDENCE_02"]
             }
         },
         "dagaz":{
@@ -87,7 +93,8 @@
                 "target": "one",
                 "duration": 1,
                 "value": true,
-                "description": "KEY_EFFECT_RESILIENCE"
+                "description": "KEY_EFFECT_RESILIENCE",
+                "milestone" : ["KEY_M_RESILIENCE_01","KEY_M_RESILIENCE_02"]
             }
         }, 
         "ehwaz":{
@@ -102,7 +109,8 @@
                 "target": "all",
                 "duration": 3,
                 "value": true,
-                "description": "KEY_EFFECT_QUICK"
+                "description": "KEY_EFFECT_QUICK",
+                "milestone" : ["KEY_M_QUICK_01","KEY_M_QUICK_02"]
             },
             "inverse":{
                 "key":"slow",
@@ -112,7 +120,8 @@
                 "target": "all",
                 "duration": 3,
                 "value": false,
-                "description": "KEY_EFFECT_SLOW"
+                "description": "KEY_EFFECT_SLOW",
+                "milestone" : ["KEY_M_SLOW_01","KEY_M_SLOW_02"]
             }
         }, 
         "eihwaz":{
@@ -127,7 +136,51 @@
                 "target": "all",
                 "duration": 1,
                 "value": true,
-                "description": "KEY_EFFECT_BLESSING"
+                "description": "KEY_EFFECT_BLESSING",
+                "milestone" : ["KEY_M_BLESSING_01","KEY_M_BLESSING_02"]
+            }
+        }, 
+        "fehu":{
+            "alignment": "prosperity",
+            "invertible": true,
+            "image":"05",
+            "effect":{
+                "key":"silver",
+                "text": "KEY_SILVER",
+                "type":"statistics",
+                "atributte": "attack",
+                "target": "all",
+                "duration": 3,
+                "value": 10,
+                "description": "KEY_EFFECT_SILVER",
+                "milestone" : ["KEY_M_SILVER_01","KEY_M_SILVER_02"]
+            },
+            "inverse":{
+                "key":"oxide",
+                "text": "KEY_OXIDE",
+                "type":"statistics",
+                "atributte": "attack",
+                "target": "all",
+                "duration": 3,
+                "value": -10,
+                "description": "KEY_EFFECT_OXIDE",
+                "milestone" : ["KEY_M_OXIDE_01","KEY_M_OXIDE_02"]
+            }
+        },
+        "gebo":{
+            "alignment": "prosperity",
+            "invertible": false,
+            "image":"19",
+            "effect":{
+                "key":"gift",
+                "text": "KEY_GIFT",
+                "type":"statistics",
+                "atributte": "defense",
+                "target": "hero",
+                "duration": 6,
+                "value": 20,
+                "description": "KEY_EFFECT_GIFT",
+                "milestone" : ["KEY_M_GIFT_01","KEY_M_GIFT_02"]
             }
         }
     },
@@ -149,6 +202,12 @@
             "quantity": 1
           },
           "eihwaz": {
+            "quantity": 1
+          },
+          "fehu": {
+            "quantity": 1
+          },
+          "gebo": {
             "quantity": 1
           }
         }

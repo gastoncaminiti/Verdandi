@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://manager/interface/InterfaceRuneManager.gd" type="Script" id=1]
 [ext_resource path="res://interface/norse/img/background-black.png" type="Texture" id=2]
 [ext_resource path="res://interface/norse/tile/TilesHUB.tres" type="TileSet" id=3]
 [ext_resource path="res://interface/norse/font/Norsebold.otf" type="DynamicFontData" id=4]
-[ext_resource path="res://sound/Landing-Vanaheimr.ogg" type="AudioStream" id=5]
+[ext_resource path="res://interface/RuneDetailInterface.tscn" type="PackedScene" id=5]
+[ext_resource path="res://sound/Landing-Vanaheimr.ogg" type="AudioStream" id=6]
 
 [sub_resource type="DynamicFont" id=1]
 size = 80
@@ -76,8 +77,11 @@ custom_constants/vseparation = -10
 custom_constants/hseparation = -30
 columns = 4
 
+[node name="RuneDetailInterface" parent="Layer 2 - GUI" instance=ExtResource( 5 )]
+position = Vector2( 690, 170 )
+
 [node name="Music" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 5 )
+stream = ExtResource( 6 )
 autoplay = true
 mix_target = 2
 

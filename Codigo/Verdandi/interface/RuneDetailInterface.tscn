@@ -1,8 +1,11 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://interface/norse/img/background-black.png" type="Texture" id=1]
 [ext_resource path="res://interface/norse/font/Norsebold.otf" type="DynamicFontData" id=2]
 [ext_resource path="res://interface/norse/font/Norse.otf" type="DynamicFontData" id=3]
+[ext_resource path="res://interface/norse/element/Axe.tscn" type="PackedScene" id=4]
+[ext_resource path="res://interface/norse/element/Coin.tscn" type="PackedScene" id=5]
+[ext_resource path="res://interface/norse/element/Eye.tscn" type="PackedScene" id=6]
 
 [sub_resource type="DynamicFont" id=1]
 size = 40
@@ -19,18 +22,19 @@ use_filter = true
 font_data = ExtResource( 3 )
 
 [sub_resource type="DynamicFont" id=3]
-size = 18
+size = 25
 outline_size = 2
-outline_color = Color( 0.254902, 0.184314, 0.0156863, 1 )
-use_filter = true
-font_data = ExtResource( 3 )
+outline_color = Color( 0.0980392, 0.262745, 0.00392157, 1 )
+font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=4]
 size = 25
+outline_size = 2
+outline_color = Color( 0.439216, 0.0392157, 0.0392157, 1 )
 font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=5]
-size = 22
+size = 25
 outline_size = 3
 outline_color = Color( 0.231373, 0.117647, 0.0156863, 1 )
 use_filter = true
@@ -47,7 +51,6 @@ font_data = ExtResource( 3 )
 [node name="RuneDetailInterface" type="Node2D"]
 
 [node name="BackRect" type="NinePatchRect" parent="."]
-editor/display_folded = true
 margin_right = 220.0
 margin_bottom = 270.0
 rect_min_size = Vector2( 240, 270 )
@@ -62,12 +65,13 @@ rect_min_size = Vector2( 200, 60 )
 custom_constants/separation = 5
 
 [node name="CCRuneName" type="MarginContainer" parent="BackRect/VContainer"]
-margin_right = 225.0
+editor/display_folded = true
+margin_right = 228.0
 margin_bottom = 45.0
 rect_min_size = Vector2( 210, 0 )
 
 [node name="LRuneName" type="Label" parent="BackRect/VContainer/CCRuneName"]
-margin_right = 225.0
+margin_right = 228.0
 margin_bottom = 45.0
 rect_min_size = Vector2( 200, 0 )
 custom_fonts/font = SubResource( 1 )
@@ -76,12 +80,13 @@ text = "KEY_RUNE"
 align = 1
 
 [node name="CCRuneStatus" type="MarginContainer" parent="BackRect/VContainer"]
+editor/display_folded = true
 margin_top = 50.0
-margin_right = 225.0
+margin_right = 228.0
 margin_bottom = 73.0
 
 [node name="LRuneStatus" type="Label" parent="BackRect/VContainer/CCRuneStatus"]
-margin_right = 225.0
+margin_right = 228.0
 margin_bottom = 23.0
 rect_min_size = Vector2( 80, 0 )
 custom_fonts/font = SubResource( 2 )
@@ -91,39 +96,40 @@ align = 1
 
 [node name="HCEffect" type="HBoxContainer" parent="BackRect/VContainer"]
 margin_top = 78.0
-margin_right = 225.0
+margin_right = 228.0
 margin_bottom = 106.0
 custom_constants/separation = 8
 
 [node name="LEffect" type="Label" parent="BackRect/VContainer/HCEffect"]
-margin_top = 3.0
-margin_right = 80.0
-margin_bottom = 24.0
-rect_min_size = Vector2( 80, 0 )
+margin_right = 110.0
+margin_bottom = 28.0
+rect_min_size = Vector2( 110, 0 )
 custom_fonts/font = SubResource( 3 )
-text = "KEY_EFFECT"
+text = "EFFECT"
 align = 1
 
-[node name="LTEffect" type="Label" parent="BackRect/VContainer/HCEffect"]
-margin_left = 88.0
-margin_right = 141.0
+[node name="LIEffect" type="Label" parent="BackRect/VContainer/HCEffect"]
+margin_left = 118.0
+margin_right = 228.0
 margin_bottom = 28.0
+rect_min_size = Vector2( 110, 0 )
 custom_fonts/font = SubResource( 4 )
 text = "EFFECT"
 align = 1
 
 [node name="CCEffectDescription" type="CenterContainer" parent="BackRect/VContainer"]
 margin_top = 111.0
-margin_right = 225.0
+margin_right = 228.0
 margin_bottom = 211.0
 
 [node name="LEffectDescription" type="Label" parent="BackRect/VContainer/CCEffectDescription"]
-margin_left = 2.0
-margin_right = 222.0
+margin_left = 4.0
+margin_right = 224.0
 margin_bottom = 100.0
 rect_min_size = Vector2( 220, 100 )
 custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 0.839216, 0.839216, 0.839216, 1 )
+custom_constants/line_spacing = 8
 text = "EFFECT EFFECTEFF ECTEFF ECTEFFE CTEFFECT FFECT FFECT  FFECT FFECTFFECT FFECT"
 align = 1
 valign = 1
@@ -131,21 +137,34 @@ autowrap = true
 clip_text = true
 
 [node name="HCAlignment" type="HBoxContainer" parent="BackRect/VContainer"]
+editor/display_folded = true
 margin_top = 216.0
-margin_right = 225.0
+margin_right = 228.0
 margin_bottom = 250.0
 custom_constants/separation = 8
 alignment = 1
 
 [node name="MCAlignment" type="MarginContainer" parent="BackRect/VContainer/HCAlignment"]
-margin_left = 6.0
-margin_right = 40.0
+margin_left = 8.0
+margin_right = 42.0
 margin_bottom = 34.0
 rect_min_size = Vector2( 34, 34 )
 
+[node name="Axe" parent="BackRect/VContainer/HCAlignment/MCAlignment" instance=ExtResource( 4 )]
+margin_right = 34.0
+margin_bottom = 34.0
+
+[node name="Coin" parent="BackRect/VContainer/HCAlignment/MCAlignment" instance=ExtResource( 5 )]
+margin_right = 34.0
+margin_bottom = 34.0
+
+[node name="Eye" parent="BackRect/VContainer/HCAlignment/MCAlignment" instance=ExtResource( 6 )]
+margin_right = 34.0
+margin_bottom = 34.0
+
 [node name="LAlignment" type="Label" parent="BackRect/VContainer/HCAlignment"]
-margin_left = 48.0
-margin_right = 218.0
+margin_left = 50.0
+margin_right = 220.0
 margin_bottom = 34.0
 rect_min_size = Vector2( 170, 0 )
 custom_fonts/font = SubResource( 6 )

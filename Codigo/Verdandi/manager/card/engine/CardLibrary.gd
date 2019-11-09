@@ -59,9 +59,9 @@ func _load_cards(raw_data):
 		card.alignment  = _extract_data(cards[card_id], "alignment", "")
 		card.invertible = _extract_data(cards[card_id], "invertible", false)
 		card.image      = _extract_data(cards[card_id], "image", "")
-		#card.values   = _extract_data(cards[card_id], "values", {})
-		#card.texts    = _extract_data(cards[card_id], "texts", {})
-		
+		card.effect   = _extract_data(cards[card_id], "effect", {})
+		if(card.invertible):
+			card.inverse    = _extract_data(cards[card_id], "inverse", {})
 		_cards[card_id] = card
 
 func _load_decks(raw_data):

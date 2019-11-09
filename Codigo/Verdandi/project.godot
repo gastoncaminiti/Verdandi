@@ -33,4 +33,4 @@ window/stretch/aspect="keep"
 
 [locale]
 
-translations=PoolStringArray( "res://localization/translation/Interfaces.en.translation", "res://localization/translation/Interfaces.es.translation" )
+translations=PoolStringArray( "res://localization/translation/Interfaces.en.translation", "res://localization/translation/Interfaces.es.translation", "res://localization/translation/Runes.en.translation", "res://localization/translation/Runes.es.translation" )

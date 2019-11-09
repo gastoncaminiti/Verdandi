@@ -174,9 +174,9 @@ func _on_animation_completed(object, key):
 
 func _on_SelectedManager_mouse_entered():
 	$AnimationPlayer.play("selected")
-	print(_card_data.id)
+	get_node("../../../../../").set_rune_view(_card_data)
 
 
 func _on_SelectedManager_mouse_exited():
 	$AnimationPlayer.play("unselected")
-	print(_card_data.image)
+	get_node("../../../../../").hide_rune_view()

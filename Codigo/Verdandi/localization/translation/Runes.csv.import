@@ -1,0 +1,16 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+
+[deps]
+
+files=[ "res://localization/translation/Runes.en.translation", "res://localization/translation/Runes.es.translation" ]
+
+source_file="res://localization/translation/Runes.csv"
+dest_files=[ "res://localization/translation/Runes.en.translation", "res://localization/translation/Runes.es.translation" ]
+
+[params]
+
+compress=true
+delimiter=0
