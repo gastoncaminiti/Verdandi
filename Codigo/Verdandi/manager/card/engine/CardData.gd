@@ -18,7 +18,8 @@ func duplicate():
 	copy.alignment  = alignment
 	copy.invertible = invertible
 	copy.image      = image
-	#copy.tags     = tags.duplicate()
+	copy.effect     = effect.duplicate()
+	copy.inverse    = inverse.duplicate()
 
 	return copy
 	

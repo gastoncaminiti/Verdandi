@@ -24,6 +24,7 @@ config/icon="res://icon.png"
 
 CardConfig="*res://manager/card/CardConfigManager.gd"
 CardEngine="*res://manager/card/CardEngineManager.gd"
+CardGame="*res://manager/card/CardGameManager.gd"
 
 [display]
 

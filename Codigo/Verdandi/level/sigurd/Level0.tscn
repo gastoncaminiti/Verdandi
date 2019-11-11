@@ -1,15 +1,10 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://manager/LevelManager.gd" type="Script" id=1]
 [ext_resource path="res://map/tile/Tiles.tres" type="TileSet" id=2]
 [ext_resource path="res://unit/norse/soldier/swordman/Norse-Swordman.tscn" type="PackedScene" id=3]
-[ext_resource path="res://unit/norse/soldier/swordman/img/walk/Norse_Sword_Walk_08.png" type="Texture" id=4]
-[ext_resource path="res://interface/GameInterface.tscn" type="PackedScene" id=5]
-[ext_resource path="res://sound/Game - Morning Dew.ogg" type="AudioStream" id=6]
-[ext_resource path="res://deck/norse/img/Rune_00.png" type="Texture" id=7]
-[ext_resource path="res://deck/norse/img/Rune_08.png" type="Texture" id=8]
-[ext_resource path="res://deck/norse/img/Rune_04.png" type="Texture" id=9]
-[ext_resource path="res://deck/norse/Rune.tscn" type="PackedScene" id=10]
+[ext_resource path="res://interface/GameInterface.tscn" type="PackedScene" id=4]
+[ext_resource path="res://sound/Game - Morning Dew.ogg" type="AudioStream" id=5]
 
 [node name="Level" type="Node2D" groups=[
 "Level",
@@ -45,12 +40,6 @@ life = 80
 attack_speed = 3
 defense = 40
 
-[node name="Sprite" type="Sprite" parent="."]
-visible = false
-position = Vector2( 479.557, 292.862 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 4 )
-
 [node name="Line2D" type="Line2D" parent="."]
 width = 4.0
 default_color = Color( 0.937255, 0.0784314, 0.0352941, 1 )
@@ -59,25 +48,10 @@ begin_cap_mode = 2
 end_cap_mode = 2
 round_precision = 10
 
-[node name="GameInterface" parent="." instance=ExtResource( 5 )]
+[node name="GameInterface" parent="." instance=ExtResource( 4 )]
 position = Vector2( 3.48682, 7.36102 )
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 6 )
+stream = ExtResource( 5 )
 autoplay = true
-
-[node name="Rune_00" type="Sprite" parent="."]
-position = Vector2( 396, 531 )
-texture = ExtResource( 7 )
-
-[node name="Rune_08" type="Sprite" parent="."]
-position = Vector2( 636, 528 )
-texture = ExtResource( 8 )
-
-[node name="Rune_04" type="Sprite" parent="."]
-position = Vector2( 514, 508 )
-texture = ExtResource( 9 )
-
-[node name="Rune" parent="." instance=ExtResource( 10 )]
-position = Vector2( 724, 524 )
 

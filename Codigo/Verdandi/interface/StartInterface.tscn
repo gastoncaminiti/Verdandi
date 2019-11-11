@@ -262,3 +262,4 @@ anims/idle = SubResource( 4 )
 [connection signal="pressed" from="Layer 2 - GUI/VCMenu/CenterContainer/LinkButtonPlay" to="." method="_on_LinkButtonPlay_pressed"]
 [connection signal="pressed" from="Layer 2 - GUI/VCMenu/CenterContainer2/LinkButtonRunes" to="." method="_on_LinkButtonRunes_pressed"]
 [connection signal="pressed" from="Layer 2 - GUI/VCMenu/CenterContainer3/LinkButtonOptions" to="." method="_on_LinkButtonOptions_pressed"]
+[connection signal="pressed" from="Layer 2 - GUI/VCMenu/CenterContainer4/LinkButtonQuit" to="." method="_on_LinkButtonQuit_pressed"]

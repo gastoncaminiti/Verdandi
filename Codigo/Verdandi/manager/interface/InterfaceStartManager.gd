@@ -18,3 +18,7 @@ func _on_LinkButtonOptions_pressed():
 func _on_LinkButtonRunes_pressed():
 	if(rune_scene):
 		return get_tree().change_scene_to(rune_scene)
+
+
+func _on_LinkButtonQuit_pressed():
+	return get_tree().quit()

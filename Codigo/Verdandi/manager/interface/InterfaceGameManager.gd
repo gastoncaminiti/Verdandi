@@ -1,15 +1,13 @@
 extends Node
 
 func _ready():
-	connect_parent_child("units_moved","_goOrder")
+	pass
 
-func _goOrder(nav):
+func animated_orden():
 	var avatar = get_node("Layer 2 - GUI/Sidgrida/AnimatedSprite")
-	var bag    = get_node("Layer 2 - GUI/Bag")
 	avatar.play("atack")
 	avatar.set_frame(0)
-	bag.play("open")
-	bag.set_frame(0)
+	
 	
 func set_selected_gui(l,a,d,s,p):
 	get_node("Layer 2 - GUI/StatusInterface/BackRect/VContainer/HCLife/NLife").set_text(String(l))
@@ -25,8 +23,16 @@ func set_selected_gui(l,a,d,s,p):
 func set_unselected_gui():
 	get_node("Layer 2 - GUI/StatusInterface").visible = false
 
-# Función que permite conectar una señal de nodo padre con una función del nodo hijo.
-func connect_parent_child(nsignal, nfunction):
+func _on_ButtonBag_pressed():
+	var bag    = get_node("Layer 2 - GUI/Bag")
+	bag.play("open")
+	bag.set_frame(0)
 	if get_parent().is_in_group("Level"):
-		if get_parent().connect(nsignal,self,nfunction) != OK:
-			print("Error al conectar "+ name +" con el padre - Señal "+nsignal+" Función "+nfunction)
+		get_parent().add_rune()
+
+func draw_cards(cards):
+	for card in cards:
+		var card_widget  = CardConfig.card_instance()
+		card_widget.set_card_data(card)
+		for slot in get_node("Layer 2 - GUI/Hand").get_children(): 
+			slot.add_child(card_widget)
