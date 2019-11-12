@@ -13,7 +13,10 @@ signal player_energy_changed()
 signal turn_started()
 
 # Constant values
-const HAND_SIZE = 3
+const HAND_SIZE = 0
+const HAND_LIMIT = 3
+
+var index_effect = 0
 
 var character = ""
 
@@ -58,6 +61,7 @@ func create_game(deck_id, character_name):
 
 func draw_one_card():
 	player_hand.append(player_draw.draw())
+	
 
 func draw_cards(amount):
 	player_hand.append_multiple(player_draw.draw_multiple(amount))

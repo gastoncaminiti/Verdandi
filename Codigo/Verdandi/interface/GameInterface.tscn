@@ -55,7 +55,9 @@ outline_color = Color( 0.619608, 0.290196, 0.027451, 1 )
 use_filter = true
 font_data = ExtResource( 15 )
 
-[node name="GameInterface" type="Node2D"]
+[node name="GameInterface" type="Node2D" groups=[
+"interface_game",
+]]
 script = ExtResource( 1 )
 
 [node name="Layer 0 - Background" type="CanvasLayer" parent="."]
@@ -109,7 +111,6 @@ flat = true
 position = Vector2( -60, 99 )
 
 [node name="Papyrus" type="TextureRect" parent="Layer 2 - GUI"]
-editor/display_folded = true
 margin_left = 820.0
 margin_top = 340.0
 margin_right = 958.0
@@ -120,6 +121,7 @@ expand = true
 stretch_mode = 1
 
 [node name="GridPapyrus" type="GridContainer" parent="Layer 2 - GUI/Papyrus"]
+editor/display_folded = true
 margin_left = 17.0
 margin_top = 25.0
 margin_right = 130.0
@@ -137,106 +139,101 @@ margin_bottom = 20.0
 rect_min_size = Vector2( 33, 20 )
 
 [node name="Char0" type="Label" parent="Layer 2 - GUI/Papyrus/GridPapyrus/CChar0"]
-margin_left = 12.0
+margin_left = 16.0
 margin_top = 1.0
-margin_right = 21.0
+margin_right = 16.0
 margin_bottom = 19.0
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
-text = "A"
 
 [node name="CChar1" type="CenterContainer" parent="Layer 2 - GUI/Papyrus/GridPapyrus"]
+editor/display_folded = true
 margin_left = 18.0
 margin_right = 51.0
 margin_bottom = 20.0
 rect_min_size = Vector2( 33, 20 )
 
 [node name="Char1" type="Label" parent="Layer 2 - GUI/Papyrus/GridPapyrus/CChar1"]
-margin_left = 12.0
+margin_left = 16.0
 margin_top = 1.0
-margin_right = 21.0
+margin_right = 16.0
 margin_bottom = 19.0
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
-text = "A"
 
-[node name="CChar02" type="CenterContainer" parent="Layer 2 - GUI/Papyrus/GridPapyrus"]
+[node name="CChar2" type="CenterContainer" parent="Layer 2 - GUI/Papyrus/GridPapyrus"]
 editor/display_folded = true
 margin_left = 36.0
 margin_right = 69.0
 margin_bottom = 20.0
 rect_min_size = Vector2( 33, 20 )
 
-[node name="Char02" type="Label" parent="Layer 2 - GUI/Papyrus/GridPapyrus/CChar02"]
-margin_left = 8.0
+[node name="Char2" type="Label" parent="Layer 2 - GUI/Papyrus/GridPapyrus/CChar2"]
+margin_left = 16.0
 margin_top = 1.0
-margin_right = 25.0
+margin_right = 16.0
 margin_bottom = 19.0
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
-text = "D"
 
-[node name="CChar03" type="CenterContainer" parent="Layer 2 - GUI/Papyrus/GridPapyrus"]
+[node name="CChar3" type="CenterContainer" parent="Layer 2 - GUI/Papyrus/GridPapyrus"]
 editor/display_folded = true
 margin_left = 54.0
 margin_right = 87.0
 margin_bottom = 20.0
 rect_min_size = Vector2( 33, 20 )
 
-[node name="Char03" type="Label" parent="Layer 2 - GUI/Papyrus/GridPapyrus/CChar03"]
-margin_left = 8.0
+[node name="Char3" type="Label" parent="Layer 2 - GUI/Papyrus/GridPapyrus/CChar3"]
+margin_left = 16.0
 margin_top = 1.0
-margin_right = 24.0
+margin_right = 16.0
 margin_bottom = 19.0
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
-text = "E"
 
-[node name="CChar04" type="CenterContainer" parent="Layer 2 - GUI/Papyrus/GridPapyrus"]
+[node name="CChar4" type="CenterContainer" parent="Layer 2 - GUI/Papyrus/GridPapyrus"]
 editor/display_folded = true
 margin_left = 72.0
 margin_right = 105.0
 margin_bottom = 20.0
 rect_min_size = Vector2( 33, 20 )
 
-[node name="Char04" type="Label" parent="Layer 2 - GUI/Papyrus/GridPapyrus/CChar04"]
-margin_left = 11.0
+[node name="Char4" type="Label" parent="Layer 2 - GUI/Papyrus/GridPapyrus/CChar4"]
+margin_left = 16.0
 margin_top = 1.0
-margin_right = 21.0
+margin_right = 16.0
 margin_bottom = 19.0
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
-text = "F"
 
-[node name="CChar05" type="CenterContainer" parent="Layer 2 - GUI/Papyrus/GridPapyrus"]
+[node name="CChar5" type="CenterContainer" parent="Layer 2 - GUI/Papyrus/GridPapyrus"]
 editor/display_folded = true
 margin_top = 22.0
 margin_right = 33.0
 margin_bottom = 42.0
 rect_min_size = Vector2( 33, 20 )
 
-[node name="Char05" type="Label" parent="Layer 2 - GUI/Papyrus/GridPapyrus/CChar05"]
-margin_left = 7.0
+[node name="Char5" type="Label" parent="Layer 2 - GUI/Papyrus/GridPapyrus/CChar5"]
+margin_left = 16.0
 margin_top = 1.0
-margin_right = 25.0
+margin_right = 16.0
 margin_bottom = 19.0
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
-text = "G"
 
-[node name="CChar06" type="CenterContainer" parent="Layer 2 - GUI/Papyrus/GridPapyrus"]
+[node name="CChar6" type="CenterContainer" parent="Layer 2 - GUI/Papyrus/GridPapyrus"]
 editor/display_folded = true
 margin_left = 18.0
 margin_top = 22.0
@@ -244,18 +241,17 @@ margin_right = 51.0
 margin_bottom = 42.0
 rect_min_size = Vector2( 33, 20 )
 
-[node name="Char06" type="Label" parent="Layer 2 - GUI/Papyrus/GridPapyrus/CChar06"]
-margin_left = 11.0
+[node name="Char6" type="Label" parent="Layer 2 - GUI/Papyrus/GridPapyrus/CChar6"]
+margin_left = 16.0
 margin_top = 1.0
-margin_right = 21.0
+margin_right = 16.0
 margin_bottom = 19.0
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
-text = "H"
 
-[node name="CChar07" type="CenterContainer" parent="Layer 2 - GUI/Papyrus/GridPapyrus"]
+[node name="CChar7" type="CenterContainer" parent="Layer 2 - GUI/Papyrus/GridPapyrus"]
 editor/display_folded = true
 margin_left = 36.0
 margin_top = 22.0
@@ -263,18 +259,17 @@ margin_right = 69.0
 margin_bottom = 42.0
 rect_min_size = Vector2( 33, 20 )
 
-[node name="Char07" type="Label" parent="Layer 2 - GUI/Papyrus/GridPapyrus/CChar07"]
-margin_left = 15.0
+[node name="Char7" type="Label" parent="Layer 2 - GUI/Papyrus/GridPapyrus/CChar7"]
+margin_left = 16.0
 margin_top = 1.0
-margin_right = 18.0
+margin_right = 16.0
 margin_bottom = 19.0
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
-text = "I"
 
-[node name="CChar08" type="CenterContainer" parent="Layer 2 - GUI/Papyrus/GridPapyrus"]
+[node name="CChar8" type="CenterContainer" parent="Layer 2 - GUI/Papyrus/GridPapyrus"]
 editor/display_folded = true
 margin_left = 54.0
 margin_top = 22.0
@@ -282,55 +277,50 @@ margin_right = 87.0
 margin_bottom = 42.0
 rect_min_size = Vector2( 33, 20 )
 
-[node name="Char08" type="Label" parent="Layer 2 - GUI/Papyrus/GridPapyrus/CChar08"]
+[node name="Char8" type="Label" parent="Layer 2 - GUI/Papyrus/GridPapyrus/CChar8"]
+margin_left = 16.0
 margin_top = 1.0
-margin_right = 33.0
+margin_right = 16.0
 margin_bottom = 19.0
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
-text = "J"
 
-[node name="CChar09" type="CenterContainer" parent="Layer 2 - GUI/Papyrus/GridPapyrus"]
-editor/display_folded = true
+[node name="CChar9" type="CenterContainer" parent="Layer 2 - GUI/Papyrus/GridPapyrus"]
 margin_left = 72.0
 margin_top = 22.0
 margin_right = 105.0
 margin_bottom = 42.0
 rect_min_size = Vector2( 33, 20 )
 
-[node name="Char09" type="Label" parent="Layer 2 - GUI/Papyrus/GridPapyrus/CChar09"]
-margin_left = 11.0
+[node name="Char9" type="Label" parent="Layer 2 - GUI/Papyrus/GridPapyrus/CChar9"]
+margin_left = 16.0
 margin_top = 1.0
-margin_right = 21.0
+margin_right = 16.0
 margin_bottom = 19.0
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
-text = "K"
 
 [node name="CChar10" type="CenterContainer" parent="Layer 2 - GUI/Papyrus/GridPapyrus"]
-editor/display_folded = true
 margin_top = 44.0
 margin_right = 33.0
 margin_bottom = 64.0
 rect_min_size = Vector2( 33, 20 )
 
 [node name="Char10" type="Label" parent="Layer 2 - GUI/Papyrus/GridPapyrus/CChar10"]
-margin_left = 11.0
+margin_left = 16.0
 margin_top = 1.0
-margin_right = 21.0
+margin_right = 16.0
 margin_bottom = 19.0
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
-text = "L"
 
 [node name="CChar11" type="CenterContainer" parent="Layer 2 - GUI/Papyrus/GridPapyrus"]
-editor/display_folded = true
 margin_left = 18.0
 margin_top = 44.0
 margin_right = 51.0
@@ -338,18 +328,16 @@ margin_bottom = 64.0
 rect_min_size = Vector2( 33, 20 )
 
 [node name="Char11" type="Label" parent="Layer 2 - GUI/Papyrus/GridPapyrus/CChar11"]
-margin_left = 7.0
+margin_left = 16.0
 margin_top = 1.0
-margin_right = 25.0
+margin_right = 16.0
 margin_bottom = 19.0
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
-text = "M"
 
 [node name="CChar12" type="CenterContainer" parent="Layer 2 - GUI/Papyrus/GridPapyrus"]
-editor/display_folded = true
 margin_left = 36.0
 margin_top = 44.0
 margin_right = 69.0
@@ -357,18 +345,16 @@ margin_bottom = 64.0
 rect_min_size = Vector2( 33, 20 )
 
 [node name="Char12" type="Label" parent="Layer 2 - GUI/Papyrus/GridPapyrus/CChar12"]
-margin_left = 11.0
+margin_left = 16.0
 margin_top = 1.0
-margin_right = 22.0
+margin_right = 16.0
 margin_bottom = 19.0
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
-text = "N"
 
 [node name="CChar13" type="CenterContainer" parent="Layer 2 - GUI/Papyrus/GridPapyrus"]
-editor/display_folded = true
 margin_left = 54.0
 margin_top = 44.0
 margin_right = 87.0
@@ -376,18 +362,16 @@ margin_bottom = 64.0
 rect_min_size = Vector2( 33, 20 )
 
 [node name="Char13" type="Label" parent="Layer 2 - GUI/Papyrus/GridPapyrus/CChar13"]
-margin_left = 10.0
+margin_left = 16.0
 margin_top = 1.0
-margin_right = 23.0
+margin_right = 16.0
 margin_bottom = 19.0
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
-text = "O"
 
 [node name="CChar14" type="CenterContainer" parent="Layer 2 - GUI/Papyrus/GridPapyrus"]
-editor/display_folded = true
 margin_left = 72.0
 margin_top = 44.0
 margin_right = 105.0
@@ -395,36 +379,32 @@ margin_bottom = 64.0
 rect_min_size = Vector2( 33, 20 )
 
 [node name="Char14" type="Label" parent="Layer 2 - GUI/Papyrus/GridPapyrus/CChar14"]
-margin_left = 8.0
+margin_left = 16.0
 margin_top = 1.0
-margin_right = 24.0
+margin_right = 16.0
 margin_bottom = 19.0
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
-text = "Q"
 
 [node name="CChar15" type="CenterContainer" parent="Layer 2 - GUI/Papyrus/GridPapyrus"]
-editor/display_folded = true
 margin_top = 66.0
 margin_right = 33.0
 margin_bottom = 86.0
 rect_min_size = Vector2( 33, 20 )
 
 [node name="Char15" type="Label" parent="Layer 2 - GUI/Papyrus/GridPapyrus/CChar15"]
-margin_left = 11.0
+margin_left = 16.0
 margin_top = 1.0
-margin_right = 22.0
+margin_right = 16.0
 margin_bottom = 19.0
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
-text = "R"
 
 [node name="CChar16" type="CenterContainer" parent="Layer 2 - GUI/Papyrus/GridPapyrus"]
-editor/display_folded = true
 margin_left = 18.0
 margin_top = 66.0
 margin_right = 51.0
@@ -432,18 +412,16 @@ margin_bottom = 86.0
 rect_min_size = Vector2( 33, 20 )
 
 [node name="Char16" type="Label" parent="Layer 2 - GUI/Papyrus/GridPapyrus/CChar16"]
-margin_left = 11.0
+margin_left = 16.0
 margin_top = 1.0
-margin_right = 21.0
+margin_right = 16.0
 margin_bottom = 19.0
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
-text = "S"
 
 [node name="CChar17" type="CenterContainer" parent="Layer 2 - GUI/Papyrus/GridPapyrus"]
-editor/display_folded = true
 margin_left = 36.0
 margin_top = 66.0
 margin_right = 69.0
@@ -451,18 +429,16 @@ margin_bottom = 86.0
 rect_min_size = Vector2( 33, 20 )
 
 [node name="Char17" type="Label" parent="Layer 2 - GUI/Papyrus/GridPapyrus/CChar17"]
-margin_left = 8.0
+margin_left = 16.0
 margin_top = 1.0
-margin_right = 24.0
+margin_right = 16.0
 margin_bottom = 19.0
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
-text = "T"
 
 [node name="CChar18" type="CenterContainer" parent="Layer 2 - GUI/Papyrus/GridPapyrus"]
-editor/display_folded = true
 margin_left = 54.0
 margin_top = 66.0
 margin_right = 87.0
@@ -470,18 +446,16 @@ margin_bottom = 86.0
 rect_min_size = Vector2( 33, 20 )
 
 [node name="Char18" type="Label" parent="Layer 2 - GUI/Papyrus/GridPapyrus/CChar18"]
-margin_left = 11.0
+margin_left = 16.0
 margin_top = 1.0
-margin_right = 21.0
+margin_right = 16.0
 margin_bottom = 19.0
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
-text = "U"
 
 [node name="CChar19" type="CenterContainer" parent="Layer 2 - GUI/Papyrus/GridPapyrus"]
-editor/display_folded = true
 margin_left = 72.0
 margin_top = 66.0
 margin_right = 105.0
@@ -489,36 +463,32 @@ margin_bottom = 86.0
 rect_min_size = Vector2( 33, 20 )
 
 [node name="Char19" type="Label" parent="Layer 2 - GUI/Papyrus/GridPapyrus/CChar19"]
-margin_left = 11.0
+margin_left = 16.0
 margin_top = 1.0
-margin_right = 22.0
+margin_right = 16.0
 margin_bottom = 19.0
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
-text = "W"
 
 [node name="CChar20" type="CenterContainer" parent="Layer 2 - GUI/Papyrus/GridPapyrus"]
-editor/display_folded = true
 margin_top = 88.0
 margin_right = 33.0
 margin_bottom = 108.0
 rect_min_size = Vector2( 33, 20 )
 
 [node name="Char20" type="Label" parent="Layer 2 - GUI/Papyrus/GridPapyrus/CChar20"]
-margin_left = 11.0
+margin_left = 16.0
 margin_top = 1.0
-margin_right = 21.0
+margin_right = 16.0
 margin_bottom = 19.0
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
-text = "X"
 
 [node name="CChar21" type="CenterContainer" parent="Layer 2 - GUI/Papyrus/GridPapyrus"]
-editor/display_folded = true
 margin_left = 18.0
 margin_top = 88.0
 margin_right = 51.0
@@ -526,18 +496,16 @@ margin_bottom = 108.0
 rect_min_size = Vector2( 33, 20 )
 
 [node name="Char21" type="Label" parent="Layer 2 - GUI/Papyrus/GridPapyrus/CChar21"]
-margin_left = 11.0
+margin_left = 16.0
 margin_top = 1.0
-margin_right = 21.0
+margin_right = 16.0
 margin_bottom = 19.0
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
-text = "Y"
 
 [node name="CChar22" type="CenterContainer" parent="Layer 2 - GUI/Papyrus/GridPapyrus"]
-editor/display_folded = true
 margin_left = 36.0
 margin_top = 88.0
 margin_right = 69.0
@@ -545,18 +513,16 @@ margin_bottom = 108.0
 rect_min_size = Vector2( 33, 20 )
 
 [node name="Char22" type="Label" parent="Layer 2 - GUI/Papyrus/GridPapyrus/CChar22"]
-margin_left = 8.0
+margin_left = 16.0
 margin_top = 1.0
-margin_right = 25.0
+margin_right = 16.0
 margin_bottom = 19.0
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
-text = "Z"
 
 [node name="CChar23" type="CenterContainer" parent="Layer 2 - GUI/Papyrus/GridPapyrus"]
-editor/display_folded = true
 margin_left = 54.0
 margin_top = 88.0
 margin_right = 87.0
@@ -564,15 +530,14 @@ margin_bottom = 108.0
 rect_min_size = Vector2( 33, 20 )
 
 [node name="CChar23" type="Label" parent="Layer 2 - GUI/Papyrus/GridPapyrus/CChar23"]
-margin_left = 8.0
+margin_left = 16.0
 margin_top = 1.0
-margin_right = 25.0
+margin_right = 16.0
 margin_bottom = 19.0
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
-text = "P"
 
 [node name="AlignmentContainer" type="HBoxContainer" parent="Layer 2 - GUI"]
 editor/display_folded = true
@@ -735,19 +700,18 @@ margin_bottom = 195.0
 columns = 4
 
 [node name="CEffect0" type="CenterContainer" parent="Layer 2 - GUI/GridEffectMy"]
-editor/display_folded = true
 margin_right = 45.0
 margin_bottom = 45.0
 rect_min_size = Vector2( 45, 45 )
 
 [node name="Effect0" type="Label" parent="Layer 2 - GUI/GridEffectMy/CEffect0"]
-margin_right = 44.0
+margin_left = 22.0
+margin_right = 22.0
 margin_bottom = 45.0
 custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_outline_modulate = Color( 1, 0.752941, 0.0980392, 1 )
 custom_colors/font_color_shadow = Color( 0.364706, 0.0235294, 0.0235294, 1 )
-text = "A"
 
 [node name="CEffect1" type="CenterContainer" parent="Layer 2 - GUI/GridEffectMy"]
 margin_left = 49.0
@@ -757,45 +721,43 @@ rect_min_size = Vector2( 45, 45 )
 hint_tooltip = "A"
 
 [node name="Effect1" type="Label" parent="Layer 2 - GUI/GridEffectMy/CEffect1"]
-margin_right = 44.0
+margin_left = 22.0
+margin_right = 22.0
 margin_bottom = 45.0
 custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_outline_modulate = Color( 1, 0.752941, 0.0980392, 1 )
 custom_colors/font_color_shadow = Color( 0.364706, 0.0235294, 0.0235294, 1 )
-text = "R"
 
 [node name="CEffect2" type="CenterContainer" parent="Layer 2 - GUI/GridEffectMy"]
-editor/display_folded = true
 margin_left = 98.0
 margin_right = 143.0
 margin_bottom = 45.0
 rect_min_size = Vector2( 45, 45 )
 
 [node name="Effect2" type="Label" parent="Layer 2 - GUI/GridEffectMy/CEffect2"]
-margin_right = 44.0
+margin_left = 22.0
+margin_right = 22.0
 margin_bottom = 45.0
 custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_outline_modulate = Color( 1, 0.752941, 0.0980392, 1 )
 custom_colors/font_color_shadow = Color( 0.364706, 0.0235294, 0.0235294, 1 )
-text = "W"
 
 [node name="CEffect3" type="CenterContainer" parent="Layer 2 - GUI/GridEffectMy"]
-editor/display_folded = true
 margin_left = 147.0
 margin_right = 192.0
 margin_bottom = 45.0
 rect_min_size = Vector2( 45, 45 )
 
 [node name="Effect3" type="Label" parent="Layer 2 - GUI/GridEffectMy/CEffect3"]
-margin_right = 44.0
+margin_left = 22.0
+margin_right = 22.0
 margin_bottom = 45.0
 custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_outline_modulate = Color( 1, 0.752941, 0.0980392, 1 )
 custom_colors/font_color_shadow = Color( 0.364706, 0.0235294, 0.0235294, 1 )
-text = "D"
 
 [node name="GridEffectYou" type="GridContainer" parent="Layer 2 - GUI"]
 editor/display_folded = true
@@ -811,13 +773,13 @@ margin_bottom = 45.0
 rect_min_size = Vector2( 45, 45 )
 
 [node name="Effect0" type="Label" parent="Layer 2 - GUI/GridEffectYou/CEffect0"]
-margin_right = 44.0
+margin_left = 22.0
+margin_right = 22.0
 margin_bottom = 45.0
 custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_outline_modulate = Color( 1, 0.752941, 0.0980392, 1 )
 custom_colors/font_color_shadow = Color( 0.364706, 0.0235294, 0.0235294, 1 )
-text = "A"
 
 [node name="CEffect1" type="CenterContainer" parent="Layer 2 - GUI/GridEffectYou"]
 margin_left = 49.0
@@ -826,45 +788,43 @@ margin_bottom = 45.0
 rect_min_size = Vector2( 45, 45 )
 
 [node name="Effect1" type="Label" parent="Layer 2 - GUI/GridEffectYou/CEffect1"]
-margin_right = 44.0
+margin_left = 22.0
+margin_right = 22.0
 margin_bottom = 45.0
 custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_outline_modulate = Color( 1, 0.752941, 0.0980392, 1 )
 custom_colors/font_color_shadow = Color( 0.364706, 0.0235294, 0.0235294, 1 )
-text = "R"
 
 [node name="CEffect2" type="CenterContainer" parent="Layer 2 - GUI/GridEffectYou"]
-editor/display_folded = true
 margin_left = 98.0
 margin_right = 143.0
 margin_bottom = 45.0
 rect_min_size = Vector2( 45, 45 )
 
 [node name="Effect2" type="Label" parent="Layer 2 - GUI/GridEffectYou/CEffect2"]
-margin_right = 44.0
+margin_left = 22.0
+margin_right = 22.0
 margin_bottom = 45.0
 custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_outline_modulate = Color( 1, 0.752941, 0.0980392, 1 )
 custom_colors/font_color_shadow = Color( 0.364706, 0.0235294, 0.0235294, 1 )
-text = "W"
 
 [node name="CEffect3" type="CenterContainer" parent="Layer 2 - GUI/GridEffectYou"]
-editor/display_folded = true
 margin_left = 147.0
 margin_right = 192.0
 margin_bottom = 45.0
 rect_min_size = Vector2( 45, 45 )
 
 [node name="Effect3" type="Label" parent="Layer 2 - GUI/GridEffectYou/CEffect3"]
-margin_right = 44.0
+margin_left = 22.0
+margin_right = 22.0
 margin_bottom = 45.0
 custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_outline_modulate = Color( 1, 0.752941, 0.0980392, 1 )
 custom_colors/font_color_shadow = Color( 0.364706, 0.0235294, 0.0235294, 1 )
-text = "D"
 
 [node name="StatusInterface" parent="Layer 2 - GUI" instance=ExtResource( 16 )]
 position = Vector2( 1077, 45 )
@@ -878,12 +838,12 @@ scale = Vector2( 0.6, 0.6 )
 position = Vector2( 500, 500 )
 
 [node name="RuneSlotPoint0" type="Position2D" parent="Layer 2 - GUI/Hand"]
-position = Vector2( -125, 50 )
+position = Vector2( -125, 40 )
 
 [node name="RuneSlotPoint1" type="Position2D" parent="Layer 2 - GUI/Hand"]
-position = Vector2( 0, 50 )
+position = Vector2( 0, 40 )
 
 [node name="RuneSlotPoint2" type="Position2D" parent="Layer 2 - GUI/Hand"]
-position = Vector2( 125, 50 )
+position = Vector2( 125, 40 )
 
 [connection signal="pressed" from="Layer 2 - GUI/Bag/ButtonBag" to="." method="_on_ButtonBag_pressed"]

@@ -59,7 +59,8 @@ func _load_cards(raw_data):
 		card.alignment  = _extract_data(cards[card_id], "alignment", "")
 		card.invertible = _extract_data(cards[card_id], "invertible", false)
 		card.image      = _extract_data(cards[card_id], "image", "")
-		card.effect   = _extract_data(cards[card_id], "effect", {})
+		card.guifont    = _extract_data(cards[card_id], "guifont", "")
+		card.effect     = _extract_data(cards[card_id], "effect", {})
 		if(card.invertible):
 			card.inverse    = _extract_data(cards[card_id], "inverse", {})
 		_cards[card_id] = card

@@ -24,7 +24,5 @@ func unselected_unit():
 	$GameInterface.set_unselected_gui()
 
 func add_rune():
-	print(CardGame.get_player_hand_cards())
 	CardGame.draw_one_card()
-	print(CardGame.get_player_hand_cards())
-	$GameInterface.draw_cards(CardGame.get_player_hand_cards())
+	$GameInterface.draw_card(CardGame.get_player_hand_cards().back())

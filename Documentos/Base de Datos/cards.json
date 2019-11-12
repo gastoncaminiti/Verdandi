@@ -4,6 +4,7 @@
             "alignment": "favor",
             "invertible": true,
             "image":"23",
+            "guifont":"z",
             "effect":{
                 "key": "renewal",
                 "text": "KEY_RENEWAL",
@@ -31,6 +32,7 @@
             "alignment": "prosperity",
             "invertible": true,
             "image":"00",
+            "guifont":"a",
             "effect":{
                 "key":"revelation",
                 "text": "KEY_REVELATION",
@@ -58,6 +60,7 @@
             "alignment": "honor",
             "invertible": true,
             "image":"01",
+            "guifont":"b",
             "effect":{
                 "key":"strategy",
                 "text": "KEY_STRATEGY",
@@ -85,6 +88,7 @@
             "alignment": "honor",
             "invertible": false,
             "image":"03",
+            "guifont":"d",
             "effect":{
                 "key":"resilience",
                 "text": "KEY_RESILIENCE",
@@ -101,6 +105,7 @@
             "alignment": "honor",
             "invertible": true,
             "image":"04",
+            "guifont":"e",
             "effect":{
                 "key":"quick",
                 "text": "KEY_QUICK",
@@ -128,6 +133,7 @@
             "alignment": "favor",
             "invertible": false,
             "image":"09",
+            "guifont":"s",
             "effect":{
                 "key":"blessing",
                 "text": "KEY_BLESSING",
@@ -144,6 +150,7 @@
             "alignment": "prosperity",
             "invertible": true,
             "image":"05",
+            "guifont":"f",
             "effect":{
                 "key":"silver",
                 "text": "KEY_SILVER",
@@ -171,6 +178,7 @@
             "alignment": "prosperity",
             "invertible": false,
             "image":"19",
+            "guifont":"g",
             "effect":{
                 "key":"gift",
                 "text": "KEY_GIFT",

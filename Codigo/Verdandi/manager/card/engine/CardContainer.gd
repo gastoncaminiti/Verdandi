@@ -15,9 +15,10 @@ var _cards = []
 # Adds a card to the container
 func append(card_data):
 	if card_data == null || !card_data is CardData: return
+	print("K")
 	_cards.append(card_data)
-	emit_signal("card_added", card_data)
-	emit_signal("size_changed", size())
+	#emit_signal("card_added", card_data)
+	#emit_signal("size_changed", size())
 
 # Adds the cards from the given array to the container
 func append_multiple(card_data_array):

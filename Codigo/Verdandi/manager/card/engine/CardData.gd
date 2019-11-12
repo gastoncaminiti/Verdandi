@@ -4,6 +4,7 @@ var id         = ""    # Identifies the card, unique in the library
 var alignment  = ""    # Specifies the card's category
 var invertible = false # Specifies the card's type
 var image      = ""
+var guifont      = ""
 var effect    = {} # Lists the different image used to represent this card
 var inverse   = {} # Lists the different numerical values for this card
 
@@ -18,6 +19,7 @@ func duplicate():
 	copy.alignment  = alignment
 	copy.invertible = invertible
 	copy.image      = image
+	copy.guifont      = guifont
 	copy.effect     = effect.duplicate()
 	copy.inverse    = inverse.duplicate()
 

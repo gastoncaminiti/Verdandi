@@ -13,7 +13,7 @@ func _ready():
 func set_card_data(card_data):
 	_card_data = card_data
 	_update_card()
-	_card_data.connect("changed", self, "_update_card")
+	#_card_data.connect("changed", self, "_update_card")
 
 # Returns the date used by this widget
 func get_card_data():
@@ -44,8 +44,29 @@ func _update_card():
 
 func _on_SelectedManager_mouse_entered():
 	$AnimationPlayer.play("selected")
-	get_node("../../../../../").set_rune_view(_card_data)
+	if get_node("../../../../../").is_in_group("interface_runes"):
+		get_node("../../../../../").set_rune_view(_card_data)
+	if get_node("../../../../").is_in_group("interface_game"):
+		get_node("../../../../").set_rune_view(_card_data, global_position)
 
 func _on_SelectedManager_mouse_exited():
 	$AnimationPlayer.play("unselected")
-	get_node("../../../../../").hide_rune_view()
+	if get_node("../../../../../").is_in_group("interface_runes"):
+		get_node("../../../../../").hide_rune_view()
+	if get_node("../../../../").is_in_group("interface_game"):
+		get_node("../../../../").hide_rune_view()
+
+
+func _on_SelectedManager_gui_input(event):
+	if event is InputEventMouseButton:
+		if get_node("../../../../").is_in_group("interface_game"):
+			get_node("../../../../").hide_rune_view()
+			$AnimationPlayer.play("played")
+			$SelectedManager.queue_free()
+
+func _on_AnimationPlayer_animation_finished(anim_name):
+	if anim_name == "played":
+		queue_free()
+		if get_node("../../../../").is_in_group("interface_game"):
+			get_node("../../../../").set_rune_gui(_card_data.guifont,CardGame.index_effect)
+			CardGame.index_effect+=1
