@@ -2,7 +2,8 @@
 extends Node2D
 
 var _card_data = null
-var _is_ready = false
+var _is_ready  = false
+var _is_invert = false
 
 func _ready():
 	_is_ready = true
@@ -59,14 +60,24 @@ func _on_SelectedManager_mouse_exited():
 
 func _on_SelectedManager_gui_input(event):
 	if event is InputEventMouseButton:
-		if get_node("../../../../").is_in_group("interface_game"):
-			get_node("../../../../").hide_rune_view()
-			$AnimationPlayer.play("played")
-			$SelectedManager.queue_free()
+		if event.button_index  == BUTTON_LEFT:
+			if get_node("../../../../").is_in_group("interface_game"):
+				get_node("../../../../").hide_rune_view()
+				$AnimationPlayer.play("played")
+				$SelectedManager.queue_free()
+		if event.button_index  == BUTTON_RIGHT and _card_data.invertible:
+				if(_is_invert):
+					$AnimationPlayer.play("uninvert")
+				else:
+					$AnimationPlayer.play("invert")
 
 func _on_AnimationPlayer_animation_finished(anim_name):
 	if anim_name == "played":
 		queue_free()
 		if get_node("../../../../").is_in_group("interface_game"):
-			get_node("../../../../").set_rune_gui(_card_data.guifont,CardGame.index_effect)
+			get_node("../../../../").set_rune_gui(_card_data.guifont,CardGame.index_effect, _is_invert)
 			CardGame.index_effect+=1
+	if anim_name == "uninvert":
+		_is_invert = false
+	if anim_name == "invert":
+		_is_invert = true

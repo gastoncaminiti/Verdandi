@@ -15,7 +15,7 @@ func set_selected_gui(l,a,d,s,p):
 	var aux_node = get_node("Layer 2 - GUI/StatusInterface")
 	aux_node.global_position = p
 	aux_node.global_position.y -=190
-	aux_node.global_position.x -=55
+	aux_node.global_position.x -=50
 	aux_node.visible = true
 
 func set_unselected_gui():
@@ -75,11 +75,12 @@ func set_rune_view(data, pos):
 func hide_rune_view():
 	get_node("Layer 2 - GUI/RuneDetailInterface").visible = false
 
-func set_rune_gui(character,index):
+func set_rune_gui(character,index, b):
 	var node_effect_gui = "Layer 2 - GUI/GridEffectMy/CEffect"+String(index)+"/Effect"+String(index)
 	var node_papyrus_gui = "Layer 2 - GUI/Papyrus/GridPapyrus/CChar"+String(index)+"/Char"+String(index)
-	get_node(node_effect_gui).text = character.to_upper()
-	get_node(node_papyrus_gui).text = character.to_upper()
+	var c = character  if b else character.to_upper() 
+	get_node(node_effect_gui).text  =  c
+	get_node(node_papyrus_gui).text =  c
 	var avatar = get_node("Layer 2 - GUI/Sidgrida/AnimatedSprite")
 	avatar.play("atack")
 	avatar.set_frame(0)
