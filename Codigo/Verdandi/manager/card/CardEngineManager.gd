@@ -15,7 +15,7 @@ var _master_rng = CardRng.new()
 # Intializes CardEngine
 func _init():
 	_library.load_from_database(CardConfig.database_path())
-	print(library())
+	#print(library())
 
 # Returns the Library singleton
 func library():

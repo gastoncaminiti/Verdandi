@@ -84,3 +84,21 @@ func set_rune_gui(character,index, b):
 	var avatar = get_node("Layer 2 - GUI/Sidgrida/AnimatedSprite")
 	avatar.play("atack")
 	avatar.set_frame(0)
+
+func update_alignament(alignament, invert):
+	if get_parent().is_in_group("Level"):
+		var node_level = get_parent()
+		node_level.alignament_control(alignament, invert)
+		match alignament:
+			"prosperity":
+				var node = get_node("Layer 2 - GUI/AlignmentContainer/VCProsperity/IconContainer")
+				if  node.get_child_count() < node_level.prosperity:
+					node.add_child($Coin.duplicate())
+			"favor":
+				var node = get_node("Layer 2 - GUI/AlignmentContainer/VCFavor/IconContainer")
+				if  node.get_child_count() < node_level.favor:
+					node.add_child($Eye.duplicate())
+			"honor":
+				var node = get_node("Layer 2 - GUI/AlignmentContainer/VCHonor/IconContainer")
+				if  node.get_child_count() < node_level.honor:
+					node.add_child($Axe.duplicate())

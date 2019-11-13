@@ -84,12 +84,12 @@ func _goPahtConfig(nav):
 		if(my_path):
 			var index_end =  my_path.size() - 1
 			if(my_index_path  < index_end):
-				print("En Camino")
+				#print("En Camino")
 				my_index_path+=1 
 				my_goal_position = set_center_position_by_cell(get_position_by_cell_index(get_cell_index(my_path[my_index_path])))
 				flag_move = true
 			else:
-				print("Reorientado")
+				#print("Reorientado")
 				if(my_index_path == index_end):
 					orientation_reorientation()
 					search_path(nav)
@@ -113,7 +113,7 @@ func valid_path(my_path, my_nav):
 	if(my_path.size() < path_dimension):
 		return false
 	set_center_path()
-	print(my_path[0].distance_to(my_path[1]))
+	#print(my_path[0].distance_to(my_path[1]))
 	if(my_path[0].distance_to(my_path[1]) < my_map.cell_size.y):
 		return false
 	return true
