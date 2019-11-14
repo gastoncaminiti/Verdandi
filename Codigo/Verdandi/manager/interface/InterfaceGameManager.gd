@@ -79,8 +79,16 @@ func set_rune_gui(character,index, b):
 	var node_effect_gui = "Layer 2 - GUI/GridEffectMy/CEffect"+String(index)+"/Effect"+String(index)
 	var node_papyrus_gui = "Layer 2 - GUI/Papyrus/GridPapyrus/CChar"+String(index)+"/Char"+String(index)
 	var c = character  if b else character.to_upper() 
-	get_node(node_effect_gui).text  =  c
-	get_node(node_papyrus_gui).text =  c
+	if(get_node(node_effect_gui)):
+		get_node(node_effect_gui).text  =  c
+	else:
+		var effect_container = get_node("Layer 2 - GUI/GridEffectMy")
+		effect_container.add_child(effect_container.get_children().back().duplicate())
+		effect_container.get_children().back().set_name("CEffect"+String(index))
+		effect_container.get_children().back().get_children().back().set_name("Effect"+String(index))
+		get_node(node_effect_gui).text  =  c
+	if(get_node(node_papyrus_gui)):
+		get_node(node_papyrus_gui).text  =  c
 	var avatar = get_node("Layer 2 - GUI/Sidgrida/AnimatedSprite")
 	avatar.play("atack")
 	avatar.set_frame(0)
@@ -94,11 +102,20 @@ func update_alignament(alignament, invert):
 				var node = get_node("Layer 2 - GUI/AlignmentContainer/VCProsperity/IconContainer")
 				if  node.get_child_count() < node_level.prosperity:
 					node.add_child($Coin.duplicate())
+				else:
+					if(node.get_children()):
+						node.get_children().back().queue_free()
 			"favor":
 				var node = get_node("Layer 2 - GUI/AlignmentContainer/VCFavor/IconContainer")
 				if  node.get_child_count() < node_level.favor:
 					node.add_child($Eye.duplicate())
+				else:
+					if(node.get_children()):
+						node.get_children().back().queue_free()
 			"honor":
 				var node = get_node("Layer 2 - GUI/AlignmentContainer/VCHonor/IconContainer")
 				if  node.get_child_count() < node_level.honor:
 					node.add_child($Axe.duplicate())
+				else:
+					if(node.get_children()):
+						node.get_children().back().queue_free()

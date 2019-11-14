@@ -87,6 +87,7 @@ tile_data = PoolIntArray( 0, -1073741821, 0, 1, -1073741820, 0, 2, -1073741820, 
 [node name="Layer 2 - GUI" type="CanvasLayer" parent="."]
 
 [node name="VCTitle" type="VBoxContainer" parent="Layer 2 - GUI"]
+editor/display_folded = true
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -512.0
@@ -151,6 +152,7 @@ custom_fonts/font = SubResource( 2 )
 text = "KEY_PATCH_TITLE"
 
 [node name="VCMenu" type="VBoxContainer" parent="Layer 2 - GUI"]
+editor/display_folded = true
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5

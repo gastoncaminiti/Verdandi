@@ -549,6 +549,7 @@ custom_constants/separation = 10
 alignment = 1
 
 [node name="VCProsperity" type="VBoxContainer" parent="Layer 2 - GUI/AlignmentContainer"]
+editor/display_folded = true
 margin_left = 2.0
 margin_right = 226.0
 margin_bottom = 99.0
@@ -557,9 +558,9 @@ alignment = 1
 
 [node name="CContainer" type="CenterContainer" parent="Layer 2 - GUI/AlignmentContainer/VCProsperity"]
 editor/display_folded = true
-margin_top = 24.0
+margin_top = 4.0
 margin_right = 224.0
-margin_bottom = 71.0
+margin_bottom = 51.0
 
 [node name="Label" type="Label" parent="Layer 2 - GUI/AlignmentContainer/VCProsperity/CContainer"]
 margin_right = 224.0
@@ -571,10 +572,10 @@ text = "KEY_PROSPERITY"
 align = 1
 
 [node name="IconContainer" type="HBoxContainer" parent="Layer 2 - GUI/AlignmentContainer/VCProsperity"]
-margin_top = 75.0
+margin_top = 55.0
 margin_right = 224.0
-margin_bottom = 75.0
-rect_min_size = Vector2( 150, 0 )
+margin_bottom = 95.0
+rect_min_size = Vector2( 150, 40 )
 alignment = 1
 
 [node name="SeparatorContainerA" type="TextureRect" parent="Layer 2 - GUI/AlignmentContainer"]
@@ -584,6 +585,7 @@ margin_bottom = 99.0
 texture = ExtResource( 11 )
 
 [node name="VCFavor" type="VBoxContainer" parent="Layer 2 - GUI/AlignmentContainer"]
+editor/display_folded = true
 margin_left = 282.0
 margin_right = 438.0
 margin_bottom = 99.0
@@ -591,9 +593,9 @@ alignment = 1
 
 [node name="LabelContainer" type="CenterContainer" parent="Layer 2 - GUI/AlignmentContainer/VCFavor"]
 editor/display_folded = true
-margin_top = 24.0
+margin_top = 4.0
 margin_right = 156.0
-margin_bottom = 71.0
+margin_bottom = 51.0
 
 [node name="Label" type="Label" parent="Layer 2 - GUI/AlignmentContainer/VCFavor/LabelContainer"]
 margin_right = 156.0
@@ -604,10 +606,10 @@ text = "KEY_FAVOR"
 align = 1
 
 [node name="IconContainer" type="HBoxContainer" parent="Layer 2 - GUI/AlignmentContainer/VCFavor"]
-margin_top = 75.0
+margin_top = 55.0
 margin_right = 156.0
-margin_bottom = 75.0
-rect_min_size = Vector2( 150, 0 )
+margin_bottom = 95.0
+rect_min_size = Vector2( 150, 40 )
 alignment = 1
 
 [node name="SeparatorContainerA2" type="TextureRect" parent="Layer 2 - GUI/AlignmentContainer"]
@@ -623,9 +625,9 @@ margin_bottom = 99.0
 alignment = 1
 
 [node name="LabelContainer" type="CenterContainer" parent="Layer 2 - GUI/AlignmentContainer/VCHonor"]
-margin_top = 24.0
+margin_top = 4.0
 margin_right = 162.0
-margin_bottom = 71.0
+margin_bottom = 51.0
 
 [node name="Label" type="Label" parent="Layer 2 - GUI/AlignmentContainer/VCHonor/LabelContainer"]
 margin_right = 162.0
@@ -636,14 +638,13 @@ text = "KEY_HONOR"
 align = 1
 
 [node name="IconContainer" type="HBoxContainer" parent="Layer 2 - GUI/AlignmentContainer/VCHonor"]
-margin_top = 75.0
+margin_top = 55.0
 margin_right = 162.0
-margin_bottom = 75.0
-rect_min_size = Vector2( 150, 0 )
+margin_bottom = 95.0
+rect_min_size = Vector2( 150, 40 )
 alignment = 1
 
 [node name="GridEffectMy" type="GridContainer" parent="Layer 2 - GUI"]
-editor/display_folded = true
 margin_left = 54.0
 margin_top = 100.0
 margin_right = 312.0
