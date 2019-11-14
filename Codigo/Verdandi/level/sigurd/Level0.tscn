@@ -25,15 +25,15 @@ position = Vector2( 301.018, 357.983 )
 move_speed = 50
 cell_range = 1
 path_dimension = 2
-orientation = 4
+orientation = 0
 attack = 15
 
 [node name="Norse-Swordman2" parent="." instance=ExtResource( 3 )]
-position = Vector2( 538.316, 366.662 )
+position = Vector2( 485, 276 )
 move_speed = 50
 cell_range = 1
 path_dimension = 2
-orientation = 4
+orientation = 1
 priority_orientation = 1
 life = 80
 attack_speed = 3

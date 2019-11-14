@@ -61,6 +61,7 @@ font_data = ExtResource( 12 )
 script = ExtResource( 1 )
 
 [node name="Layer 0 - Background" type="CanvasLayer" parent="."]
+editor/display_folded = true
 layer = -3
 
 [node name="TextureRect" type="TextureRect" parent="Layer 0 - Background"]
@@ -91,6 +92,7 @@ position = Vector2( 512, 563 )
 texture = ExtResource( 4 )
 
 [node name="Layer 2 - GUI" type="CanvasLayer" parent="."]
+editor/display_folded = true
 
 [node name="Bag" type="AnimatedSprite" parent="Layer 2 - GUI"]
 position = Vector2( 248, 529 )

@@ -20,11 +20,12 @@ var size_cell_x
 var size_cell_y 
 var flag_move = false
 var flag_priority = false
-
+var flag_attack = false
 
 func _ready():
 	connect_parent_child("map_initiated","_goMapConfig")
 	connect_parent_child("units_moved","_goPahtConfig")
+	hide_areas()
 
 func get_unit_position():
 	return global_position
@@ -228,11 +229,57 @@ func _process(delta: float) -> void:
 		else:
 			flag_move = false
 			orientation_animation("idle")
+			
+	if flag_attack and !flag_move:
+			orientation_animation("attack")
 
 func _on_SelectedManager_mouse_entered():
-	if get_parent().is_in_group("Level"):
-		get_parent().selected_unit(life,attack,defense,attack_speed,global_position)
+	show_areas()
 
 func _on_SelectedManager_mouse_exited():
+	hide_areas()
 	if get_parent().is_in_group("Level"):
 		get_parent().unselected_unit()
+
+func hide_areas():
+	$North/AreaCoordinateNorth/Sprite.visible = false
+	$South/AreaCoordinateSouth/Sprite.visible = false
+	$East/AreaCoordinateEast/Sprite.visible   = false
+	$West/AreaCoordinateWest/Sprite.visible   = false
+	$NorthWest/AreaCoordinateNorthWest/Sprite.visible = false
+	$NorthEast/AreaCoordinateNorthEast/Sprite.visible = false
+	$SouthWest/AreaCoordinateSouthWest/Sprite.visible = false
+	$SouthEast/AreaCoordinateSouthEast/Sprite.visible = false
+
+func show_areas():
+	$North/AreaCoordinateNorth/Sprite.visible = true
+	$South/AreaCoordinateSouth/Sprite.visible = true
+	$East/AreaCoordinateEast/Sprite.visible   = true
+	$West/AreaCoordinateWest/Sprite.visible   = true
+	$NorthWest/AreaCoordinateNorthWest/Sprite.visible = true
+	$NorthEast/AreaCoordinateNorthEast/Sprite.visible = true
+	$SouthWest/AreaCoordinateSouthWest/Sprite.visible = true
+	$SouthEast/AreaCoordinateSouthEast/Sprite.visible = true
+
+
+func _on_SelectedManager_gui_input(event):
+	if event is InputEventMouseButton:
+		if event.button_index  == BUTTON_LEFT and event.pressed:
+			if get_parent().is_in_group("Level"):
+				get_parent().selected_unit(life,attack,defense,attack_speed,global_position)
+
+func _on_AreaCoordinateNorth_body_entered(body):
+	if(body.name != name):
+		print(body.name)
+		print("ENEMY IN NORTH")
+		flag_attack = true
+		orientation = 0
+
+
+func _on_AreaCoordinateSouth_body_entered(body):
+	print(name)
+	if(body.name != name):
+		print(body.name)
+		print("ENEMY IN SOUTH")
+		flag_attack = true
+		orientation = 1

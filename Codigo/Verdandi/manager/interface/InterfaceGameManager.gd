@@ -119,3 +119,4 @@ func update_alignament(alignament, invert):
 				else:
 					if(node.get_children()):
 						node.get_children().back().queue_free()
+		node_level.battle_turn()
