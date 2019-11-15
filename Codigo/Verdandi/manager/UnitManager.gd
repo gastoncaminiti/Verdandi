@@ -268,13 +268,13 @@ func _on_SelectedManager_gui_input(event):
 			if get_parent().is_in_group("Level"):
 				get_parent().selected_unit(life,attack,defense,attack_speed,global_position)
 
+# AREA ENTERED SECCTION
 func _on_AreaCoordinateNorth_body_entered(body):
 	if(body.name != name):
 		print(body.name)
 		print("ENEMY IN NORTH")
 		flag_attack = true
 		orientation = 0
-
 
 func _on_AreaCoordinateSouth_body_entered(body):
 	print(name)
@@ -283,3 +283,53 @@ func _on_AreaCoordinateSouth_body_entered(body):
 		print("ENEMY IN SOUTH")
 		flag_attack = true
 		orientation = 1
+
+func _on_AreaCoordinateEast_body_entered(body):
+	print(name)
+	if(body.name != name):
+		print(body.name)
+		print("ENEMY IN EAST")
+		flag_attack = true
+		orientation = 3
+
+func _on_AreaCoordinateWest_body_entered(body):
+	print(name)
+	if(body.name != name):
+		print(body.name)
+		print("ENEMY IN WEST")
+		flag_attack = true
+		orientation = 2
+
+func _on_AreaCoordinateNorthWest_body_entered(body):
+	print(name)
+	if(body.name != name):
+		print(body.name)
+		print("ENEMY IN NorthWest")
+		flag_attack = true
+		orientation = 4
+
+func _on_AreaCoordinateNorthEast_body_entered(body):
+	print(name)
+	if(body.name != name):
+		print(body.name)
+		print("ENEMY IN NorthEast")
+		flag_attack = true
+		orientation = 5
+
+
+func _on_AreaCoordinateSouthWest_body_entered(body):
+	print(name)
+	if(body.name != name):
+		print(body.name)
+		print("ENEMY IN SouthWest")
+		flag_attack = true
+		orientation = 6
+
+
+func _on_AreaCoordinateSouthEast_body_entered(body):
+	print(name)
+	if(body.name != name):
+		print(body.name)
+		print("ENEMY IN SouthEast")
+		flag_attack = true
+		orientation = 7

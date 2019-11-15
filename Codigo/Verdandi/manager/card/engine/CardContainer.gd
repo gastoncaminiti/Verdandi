@@ -6,7 +6,7 @@ extends Reference
 var CardData = preload("CardData.gd")
 
 signal size_changed(new_size)
-signal card_added(card)
+#signal card_added(card)
 signal multiple_card_added(cards)
 signal card_removed(card)
 

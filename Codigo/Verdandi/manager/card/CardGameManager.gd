@@ -9,7 +9,7 @@ var CardRng  = preload("engine/CardRNG.gd")
 # Time to wait between step to account for animations
 const STEP_WAIT_TIME = 2.0
 
-signal player_energy_changed()
+#signal player_energy_changed()
 signal turn_started()
 
 # Constant values
@@ -25,7 +25,7 @@ var player_hand    = CardHand.new()
 var player_draw    = CardPile.new()
 var player_discard = CardPile.new()
 
-var player_energy     = 3
+#var player_energy     = 3
 var player_max_energy = 3
 
 var _stepper = Timer.new()

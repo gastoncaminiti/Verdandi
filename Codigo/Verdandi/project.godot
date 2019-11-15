@@ -26,6 +26,10 @@ CardConfig="*res://manager/card/CardConfigManager.gd"
 CardEngine="*res://manager/card/CardEngineManager.gd"
 CardGame="*res://manager/card/CardGameManager.gd"
 
+[debug]
+
+shapes/collision/shape_color=Color( 0, 0.6, 0.701961, 0.501961 )
+
 [display]
 
 window/handheld/orientation="reverse_landscape"
