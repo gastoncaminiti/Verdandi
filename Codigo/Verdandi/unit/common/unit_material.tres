@@ -1,0 +1,23 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=2]
+
+[sub_resource type="Shader" id=1]
+code = "shader_type canvas_item;
+
+uniform int armor_value = 0;
+
+vec4 getArmorColor(int index,vec4 color_origin, float time){
+	if(index == 0)
+		return color_origin; //Blue Megaman
+	if(index == 1)
+		return color_origin.rgra * vec4(1.2,0.8,2,1.0);
+}
+
+void fragment() {
+	COLOR = getArmorColor(armor_value,texture(TEXTURE, UV), TIME);
+}
+"
+
+[resource]
+shader = SubResource( 1 )
+shader_param/armor_value = 0
+
