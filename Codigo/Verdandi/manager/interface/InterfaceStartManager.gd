@@ -12,8 +12,10 @@ func _on_LinkButtonPlay_pressed():
 
 
 func _on_LinkButtonOptions_pressed():
-	TranslationServer.set_locale("es")
-
+	if TranslationServer.get_locale() == "en":
+		TranslationServer.set_locale("es")
+	else:
+		TranslationServer.set_locale("en")
 
 func _on_LinkButtonRunes_pressed():
 	if(rune_scene):
