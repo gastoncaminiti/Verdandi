@@ -25,8 +25,9 @@ var flag_attack = false
 
 func _ready():
 	connect_parent_child("map_initiated","_goMapConfig")
-	connect_parent_child("units_moved","_goPahtConfig")
+	connect_parent_child("units_moved","_actions_manager")
 	hide_areas()
+	area_diseable_status(true)
 	$AnimatedSprite.material.set("shader_param/armor_value",color)
 
 func get_unit_position():
@@ -83,7 +84,17 @@ func _goMapConfig(map):
 	coordinates_reposition()
 	orientation_animation("idle")
 
-func _goPahtConfig(nav):
+func _actions_manager(nav):
+	if(flag_attack):
+		reset_noloop_animation()
+		area_diseable_status(true)
+	else:
+		area_diseable_status(false)
+		if(!flag_attack):
+			goPahtConfig(nav)
+
+
+func goPahtConfig(nav):
 		if(my_path):
 			var index_end =  my_path.size() - 1
 			if(my_index_path  < index_end):
@@ -184,6 +195,9 @@ func orientation_animation(prefix):
 			$AnimatedSprite.flip_h = false
 			set_animated(prefix + "_south_east")
 
+func reset_noloop_animation():
+	$AnimatedSprite.set_frame(0)
+
 func orientation_global_position():
 	match orientation:
 		0:
@@ -234,6 +248,7 @@ func _process(delta: float) -> void:
 			
 	if flag_attack and !flag_move:
 			orientation_animation("attack")
+	
 
 func _on_SelectedManager_mouse_entered():
 	show_areas()
@@ -318,3 +333,13 @@ func _on_AreaCoordinateSouthEast_body_entered(body):
 		print("ENEMY IN SouthEast")
 		flag_attack = true
 		orientation = 7
+
+func area_diseable_status(status):
+	$North/AreaCoordinateNorth/CollisionPolygon2D.set_disabled(status)
+	$South/AreaCoordinateSouth/CollisionPolygon2D.set_disabled(status)
+	$East/AreaCoordinateEast/CollisionPolygon2D.set_disabled(status)
+	$West/AreaCoordinateWest/CollisionPolygon2D.set_disabled(status)
+	$NorthWest/AreaCoordinateNorthWest/CollisionPolygon2D.set_disabled(status)
+	$NorthEast/AreaCoordinateNorthEast/CollisionPolygon2D.set_disabled(status)
+	$SouthWest/AreaCoordinateSouthWest/CollisionPolygon2D.set_disabled(status)
+	$SouthEast/AreaCoordinateSouthEast/CollisionPolygon2D.set_disabled(status)
