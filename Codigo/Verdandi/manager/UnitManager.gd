@@ -28,7 +28,8 @@ func _ready():
 	connect_parent_child("units_moved","_actions_manager")
 	hide_areas()
 	area_diseable_status(true)
-	$AnimatedSprite.material.set("shader_param/armor_value",color)
+	if($AnimatedSprite.material):
+		$AnimatedSprite.material.set("shader_param/armor_value",color)
 
 func get_unit_position():
 	return global_position

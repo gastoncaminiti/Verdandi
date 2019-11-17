@@ -1,11 +1,12 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://manager/LevelManager.gd" type="Script" id=1]
 [ext_resource path="res://map/tile/Tiles.tres" type="TileSet" id=2]
 [ext_resource path="res://interface/GameInterface.tscn" type="PackedScene" id=3]
 [ext_resource path="res://unit/norse/soldier/swordman/Player1Swordman.tscn" type="PackedScene" id=4]
 [ext_resource path="res://unit/norse/soldier/swordman/Player2Swordman.tscn" type="PackedScene" id=5]
-[ext_resource path="res://sound/Game - Morning Dew.ogg" type="AudioStream" id=6]
+[ext_resource path="res://unit/norse/hero/sigurd/img/Player1Sigurd.tscn" type="PackedScene" id=6]
+[ext_resource path="res://sound/Game - Morning Dew.ogg" type="AudioStream" id=7]
 
 [node name="Level" type="Node2D" groups=[
 "Level",
@@ -39,7 +40,11 @@ position = Vector2( 663, 245 )
 [node name="Player2Swordman2" parent="." instance=ExtResource( 5 )]
 position = Vector2( 531, 180 )
 
+[node name="Player1Sigurd" parent="." instance=ExtResource( 6 )]
+position = Vector2( 357, 336 )
+orientation = 3
+
 [node name="Music" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 6 )
+stream = ExtResource( 7 )
 autoplay = true
 
