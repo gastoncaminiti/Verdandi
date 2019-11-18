@@ -54,3 +54,6 @@ func apply_effect(data):
 	effects.append(data)
 	papyrus.append(data.milestone[0])
 	emit_signal("units_affected", data, player_name)
+
+func next_level():
+	$GameInterface.show_next_gui()

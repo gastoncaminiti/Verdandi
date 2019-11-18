@@ -48,3 +48,6 @@ func set_rune_view(data):
 	
 func hide_rune_view():
 	get_node("Layer 2 - GUI/RuneDetailInterface").visible = false
+
+func _on_Exit_pressed():
+	return get_tree().change_scene_to(load(ProjectSettings.get_setting("application/run/main_scene")))

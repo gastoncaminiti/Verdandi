@@ -24,6 +24,7 @@ var flag_priority = false
 var flag_attack = false
 var target = null
 var is_invulnerable = false
+var is_dead = false
 
 func _ready():
 	connect_parent_child("map_initiated","_goMapConfig")
@@ -77,6 +78,8 @@ func set_animated(name):
 func hurted(damage):
 	if(!is_invulnerable):
 		life -= damage
+		if life < 1:
+			is_dead = true
 
 # Función que permite conectar una señal de nodo padre con una función del nodo hijo.
 func connect_parent_child(nsignal, nfunction):
@@ -259,7 +262,7 @@ func orientation_reorientation():
 			orientation = priority_orientation
 
 func _process(delta: float) -> void:
-	if flag_move:
+	if flag_move and !is_dead:
 		orientation_animation("walk")
 		var d: float = global_position.distance_to(my_goal_position)
 		if d > 1:
@@ -268,8 +271,10 @@ func _process(delta: float) -> void:
 			flag_move = false
 			orientation_animation("idle")
 			
-	if flag_attack and !flag_move:
+	if flag_attack and !flag_move and !is_dead:
 			orientation_animation("attack")
+	if is_dead:
+		orientation_animation("dead")
 	
 
 func _on_SelectedManager_mouse_entered():
@@ -377,3 +382,6 @@ func area_diseable_status(status):
 func _on_AnimatedSprite_animation_finished():
 	if($AnimatedSprite.get_animation().find("attack") != -1):
 		target.hurted(attack)
+	if($AnimatedSprite.get_animation().find("dead") != -1):
+		if get_parent().is_in_group("Level"):
+			get_parent().next_level()

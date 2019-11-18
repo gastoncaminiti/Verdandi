@@ -1,0 +1,16 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+
+[deps]
+
+files=[ "res://localization/translation/Milestones.en.translation", "res://localization/translation/Milestones.es.translation" ]
+
+source_file="res://localization/translation/Milestones.csv"
+dest_files=[ "res://localization/translation/Milestones.en.translation", "res://localization/translation/Milestones.es.translation" ]
+
+[params]
+
+compress=true
+delimiter=0

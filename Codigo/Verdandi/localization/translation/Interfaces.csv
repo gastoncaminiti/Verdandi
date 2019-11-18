@@ -17,3 +17,6 @@ KEY_LANGUAGE_SWITCH,Spanish,Ingles
 KEY_SAGA_0,The saga of Sigurd,La saga de Sigurd
 KEY_SAGA_0_LEVEL_0,The duel,El duelo
 KEY_SAGA_0_LEVEL_1,The skirmish,La escaramuza
+KEY_VICTORY,Victory,Victoria
+KEY_MESSAGE,Game Over,Fin del Juego
+KEY_NEXT,Next,Siguiente
