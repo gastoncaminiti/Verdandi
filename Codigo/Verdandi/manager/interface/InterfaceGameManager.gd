@@ -5,8 +5,7 @@ func _ready():
 
 func animated_orden():
 	pass
-	
-	
+
 func set_selected_gui(l,a,d,s,p):
 	get_node("Layer 2 - GUI/StatusInterface/BackRect/VContainer/HCLife/NLife").set_text(String(l))
 	get_node("Layer 2 - GUI/StatusInterface/BackRect/VContainer/HCAttack/NAttack").set_text(String(a))
@@ -22,7 +21,7 @@ func set_unselected_gui():
 	get_node("Layer 2 - GUI/StatusInterface").visible = false
 
 func _on_ButtonBag_pressed():
-	var bag    = get_node("Layer 2 - GUI/Bag")
+	var bag = get_node("Layer 2 - GUI/Bag")
 	bag.play("open")
 	bag.set_frame(0)
 	if get_parent().is_in_group("Level"):
@@ -35,7 +34,6 @@ func draw_card(card):
 		if !slot.get_children():
 			slot.add_child(card_widget)
 			return
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func set_rune_view(data, pos):
@@ -75,12 +73,13 @@ func set_rune_view(data, pos):
 func hide_rune_view():
 	get_node("Layer 2 - GUI/RuneDetailInterface").visible = false
 
-func set_rune_gui(character,index, b):
+func set_rune_gui(character,index, b, card_data):
 	var node_effect_gui = "Layer 2 - GUI/GridEffectMy/CEffect"+String(index)+"/Effect"+String(index)
 	var node_papyrus_gui = "Layer 2 - GUI/Papyrus/GridPapyrus/CChar"+String(index)+"/Char"+String(index)
 	var c = character  if b else character.to_upper() 
 	if(get_node(node_effect_gui)):
 		get_node(node_effect_gui).text  =  c
+		get_node(node_effect_gui).get_parent().hint_tooltip = card_data.inverse.description  if b else card_data.effect.description
 	else:
 		var effect_container = get_node("Layer 2 - GUI/GridEffectMy")
 		effect_container.add_child(effect_container.get_children().back().duplicate())
@@ -89,11 +88,12 @@ func set_rune_gui(character,index, b):
 		get_node(node_effect_gui).text  =  c
 	if(get_node(node_papyrus_gui)):
 		get_node(node_papyrus_gui).text  =  c
+		get_node(node_papyrus_gui).get_parent().hint_tooltip = card_data.inverse.milestone[0]  if b else card_data.effect.milestone[0]
 	var avatar = get_node("Layer 2 - GUI/Sidgrida/AnimatedSprite")
 	avatar.play("atack")
 	avatar.set_frame(0)
 
-func update_alignament(alignament, invert):
+func update_alignament(alignament, invert, card_data):
 	if get_parent().is_in_group("Level"):
 		var node_level = get_parent()
 		node_level.alignament_control(alignament, invert)
@@ -119,4 +119,9 @@ func update_alignament(alignament, invert):
 				else:
 					if(node.get_children()):
 						node.get_children().back().queue_free()
+		var effect = card_data.inverse  if invert else  card_data.effect
+		node_level.apply_effect(effect)
 		node_level.battle_turn()
+
+func set_bag_num_runes(value):
+ get_node("Layer 2 - GUI/Bag/LabelBag").text = value

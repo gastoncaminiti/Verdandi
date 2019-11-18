@@ -76,11 +76,10 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 		queue_free()
 		if get_node("../../../../").is_in_group("interface_game"):
 			var node = get_node("../../../../")
-			node.set_rune_gui(_card_data.guifont,CardGame.index_effect, _is_invert)
-			print(_card_data.alignment)
-			node.update_alignament(_card_data.alignment, _is_invert)
+			node.set_rune_gui(_card_data.guifont,CardGame.index_effect, _is_invert, _card_data)
+			node.update_alignament(_card_data.alignment, _is_invert, _card_data)
 			CardGame.index_effect+=1
-			
+
 	if anim_name == "uninvert":
 		_is_invert = false
 	if anim_name == "invert":

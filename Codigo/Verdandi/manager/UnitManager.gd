@@ -99,12 +99,10 @@ func goPahtConfig(nav):
 		if(my_path):
 			var index_end =  my_path.size() - 1
 			if(my_index_path  < index_end):
-				#print("En Camino")
 				my_index_path+=1 
 				my_goal_position = set_center_position_by_cell(get_position_by_cell_index(get_cell_index(my_path[my_index_path])))
 				flag_move = true
 			else:
-				#print("Reorientado")
 				if(my_index_path == index_end):
 					orientation_reorientation()
 					search_path(nav)
@@ -221,21 +219,21 @@ func orientation_global_position():
 func orientation_reorientation():
 	match orientation:
 		0:
-			orientation = 3
+			orientation = priority_orientation
 		1:
-			orientation = 6
+			orientation = priority_orientation
 		2:
-			orientation = 4
+			orientation = priority_orientation
 		3:
-			orientation = 7
+			orientation = priority_orientation
 		4:
-			orientation = 0
+			orientation = priority_orientation
 		5:
-			orientation = 3
+			orientation = priority_orientation
 		6:
-			orientation = 2
+			orientation = priority_orientation
 		7:
-			orientation = 1
+			orientation = priority_orientation
 
 func _process(delta: float) -> void:
 	if flag_move:

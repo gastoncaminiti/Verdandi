@@ -1,12 +1,11 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://manager/LevelManager.gd" type="Script" id=1]
 [ext_resource path="res://map/tile/Tiles.tres" type="TileSet" id=2]
 [ext_resource path="res://interface/GameInterface.tscn" type="PackedScene" id=3]
-[ext_resource path="res://unit/norse/soldier/swordman/Player1Swordman.tscn" type="PackedScene" id=4]
+[ext_resource path="res://unit/norse/hero/sigurd/img/Player1Sigurd.tscn" type="PackedScene" id=4]
 [ext_resource path="res://unit/norse/soldier/swordman/Player2Swordman.tscn" type="PackedScene" id=5]
-[ext_resource path="res://unit/norse/hero/sigurd/img/Player1Sigurd.tscn" type="PackedScene" id=6]
-[ext_resource path="res://sound/Game - Morning Dew.ogg" type="AudioStream" id=7]
+[ext_resource path="res://sound/Game - Morning Dew.ogg" type="AudioStream" id=6]
 
 [node name="Level" type="Node2D" groups=[
 "Level",
@@ -26,25 +25,14 @@ tile_data = PoolIntArray( -262137, 3, 0, -262136, 0, 0, -262135, 3, 0, -196602, 
 [node name="GameInterface" parent="." instance=ExtResource( 3 )]
 position = Vector2( 3.48682, 7.36102 )
 
-[node name="Player1Swordman" parent="." instance=ExtResource( 4 )]
-position = Vector2( 303, 307 )
-color = 0
-
-[node name="Player1Swordman2" parent="." instance=ExtResource( 4 )]
-position = Vector2( 417, 361 )
-color = 0
+[node name="Player1Sigurd" parent="." instance=ExtResource( 4 )]
+position = Vector2( 357, 336 )
 
 [node name="Player2Swordman" parent="." instance=ExtResource( 5 )]
-position = Vector2( 663, 245 )
-
-[node name="Player2Swordman2" parent="." instance=ExtResource( 5 )]
-position = Vector2( 531, 180 )
-
-[node name="Player1Sigurd" parent="." instance=ExtResource( 6 )]
-position = Vector2( 357, 336 )
-orientation = 3
+position = Vector2( 656, 181 )
+priority_orientation = 1
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 7 )
+stream = ExtResource( 6 )
 autoplay = true
 
