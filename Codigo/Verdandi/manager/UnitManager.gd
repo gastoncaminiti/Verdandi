@@ -22,10 +22,13 @@ var size_cell_y
 var flag_move = false
 var flag_priority = false
 var flag_attack = false
+var target = null
+var is_invulnerable = false
 
 func _ready():
 	connect_parent_child("map_initiated","_goMapConfig")
 	connect_parent_child("units_moved","_actions_manager")
+	connect_parent_child("units_affected","_effect_manager")
 	hide_areas()
 	area_diseable_status(true)
 	if($AnimatedSprite.material):
@@ -71,6 +74,10 @@ func move(point, speed):
 func set_animated(name):
 	$AnimatedSprite.play(name)
 
+func hurted(damage):
+	if(!is_invulnerable):
+		life -= damage
+
 # Función que permite conectar una señal de nodo padre con una función del nodo hijo.
 func connect_parent_child(nsignal, nfunction):
 	if get_parent().is_in_group("Level"):
@@ -94,6 +101,22 @@ func _actions_manager(nav):
 		if(!flag_attack):
 			goPahtConfig(nav)
 
+func _effect_manager(data, player):
+	if is_in_group(player):
+		if(data.type == "statistics"):
+			match data.atributte:
+				"life":
+					life += int(data.value)
+				"defense":
+					defense += int(data.value)
+				"attack":
+					attack  += int(data.value)
+				"speed":
+					attack_speed += int(data.value)
+		if(data.type == "spell"):
+			match data.cast:
+				"invulnerable":
+					is_invulnerable = true
 
 func goPahtConfig(nav):
 		if(my_path):
@@ -287,48 +310,56 @@ func _on_SelectedManager_gui_input(event):
 # AREA ENTERED SECCTION
 func _on_AreaCoordinateNorth_body_entered(body):
 	if(get_groups()[1] != body.get_groups()[1]):
+		target = body
 		print("ENEMY IN NORTH")
 		flag_attack = true
 		orientation = 0
 
 func _on_AreaCoordinateSouth_body_entered(body):
 	if(get_groups()[1] != body.get_groups()[1]):
+		target = body
 		print("ENEMY IN SOUTH")
 		flag_attack = true
 		orientation = 1
 
 func _on_AreaCoordinateEast_body_entered(body):
 	if(get_groups()[1] != body.get_groups()[1]):
+		target = body
 		print("ENEMY IN EAST")
 		flag_attack = true
 		orientation = 3
 
 func _on_AreaCoordinateWest_body_entered(body):
 	if(get_groups()[1] != body.get_groups()[1]):
+		target = body
 		print("ENEMY IN WEST")
 		flag_attack = true
 		orientation = 2
 
 func _on_AreaCoordinateNorthWest_body_entered(body):
 	if(get_groups()[1] != body.get_groups()[1]):
+		target = body
 		print("ENEMY IN NorthWest")
 		flag_attack = true
 		orientation = 4
 
 func _on_AreaCoordinateNorthEast_body_entered(body):
 	if(get_groups()[1] != body.get_groups()[1]):
+		target = body
 		print("ENEMY IN NorthEast")
 		flag_attack = true
 		orientation = 5
 
 func _on_AreaCoordinateSouthWest_body_entered(body):
 	if(get_groups()[1] != body.get_groups()[1]):
+		target = body
 		print("ENEMY IN SouthWest")
 		flag_attack = true
 		orientation = 6
 
 func _on_AreaCoordinateSouthEast_body_entered(body):
 	if(get_groups()[1] != body.get_groups()[1]):
+		target = body
 		print("ENEMY IN SouthEast")
 		flag_attack = true
 		orientation = 7
@@ -342,3 +373,7 @@ func area_diseable_status(status):
 	$NorthEast/AreaCoordinateNorthEast/CollisionPolygon2D.set_disabled(status)
 	$SouthWest/AreaCoordinateSouthWest/CollisionPolygon2D.set_disabled(status)
 	$SouthEast/AreaCoordinateSouthEast/CollisionPolygon2D.set_disabled(status)
+
+func _on_AnimatedSprite_animation_finished():
+	if($AnimatedSprite.get_animation().find("attack") != -1):
+		target.hurted(attack)

@@ -3,7 +3,7 @@
 [ext_resource path="res://manager/LevelManager.gd" type="Script" id=1]
 [ext_resource path="res://map/tile/Tiles.tres" type="TileSet" id=2]
 [ext_resource path="res://interface/GameInterface.tscn" type="PackedScene" id=3]
-[ext_resource path="res://unit/norse/hero/sigurd/img/Player1Sigurd.tscn" type="PackedScene" id=4]
+[ext_resource path="res://unit/norse/hero/sigurd/Player1Sigurd.tscn" type="PackedScene" id=4]
 [ext_resource path="res://unit/norse/soldier/swordman/Player2Swordman.tscn" type="PackedScene" id=5]
 [ext_resource path="res://sound/Game - Morning Dew.ogg" type="AudioStream" id=6]
 

@@ -53,3 +53,4 @@ func alignament_control(alignament, invertible):
 func apply_effect(data):
 	effects.append(data)
 	papyrus.append(data.milestone[0])
+	emit_signal("units_affected", data, player_name)
