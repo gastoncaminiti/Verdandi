@@ -2,6 +2,7 @@ extends Node2D
 
 export(String) var deck_name   = "level_starter"
 export(String) var player_name = "player1"
+export(int)    var alignment_limit = 3
 
 signal map_initiated
 signal units_moved
@@ -10,16 +11,20 @@ signal units_affected
 var prosperity = 0
 var favor      = 0
 var honor      = 0
+
+# Control Variables
 var size_deck  = 0
 
 var effects = []
 var papyrus = []
+
 
 func _ready():
 	CardGame.create_game(deck_name, player_name)
 	emit_signal("map_initiated", $Navigation2D/TileMap)
 	size_deck = CardGame.player_deck.size()
 	$GameInterface.set_bag_num_runes(String(size_deck))
+	$GameInterface.alignment_default(alignment_limit)
 
 func battle_turn():
 	emit_signal("units_moved", $Navigation2D)
@@ -45,11 +50,26 @@ func alignament_control(alignament, invertible):
 			favor += -1 if invertible else  1
 		"honor":
 			honor += -1 if invertible else  1 
-	
-	if prosperity < 0: prosperity = 0
-	if favor < 0: favor = 0
-	if honor < 0: honor = 0
-	
+	# Validar valores de alineamiento 
+	if prosperity < 0: 
+		prosperity = 0
+		return
+	if favor < 0: 
+		favor = 0
+		return
+	if honor < 0: 
+		honor = 0
+		return
+	if prosperity > alignment_limit: 
+		$GameInterface.show_next_gui()
+		return
+	if favor > alignment_limit:
+		$GameInterface.show_next_gui()
+		return 
+	if honor > alignment_limit: 
+		$GameInterface.show_next_gui()
+		return
+
 func apply_effect(data):
 	effects.append(data)
 	papyrus.append(data.milestone[0])

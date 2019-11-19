@@ -130,4 +130,10 @@ func show_next_gui():
 	var next_gui = get_node("Layer 2 - GUI/NextInterface")
 	next_gui.global_position.x = 300
 	next_gui.global_position.y = 320
+
+func alignment_default(limit):
+	for i in range(limit):
+		get_node("Layer 2 - GUI/AlignmentContainer/VCProsperity/IconContainer").add_child($Coin.duplicate())
+		get_node("Layer 2 - GUI/AlignmentContainer/VCFavor/IconContainer").add_child($Eye.duplicate())
+		get_node("Layer 2 - GUI/AlignmentContainer/VCHonor/IconContainer").add_child($Axe.duplicate())
 	

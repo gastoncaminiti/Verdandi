@@ -49,6 +49,7 @@ func create_game(deck_id, character_name):
 		printerr("Invalid deck ID while creating a game")
 	
 	_current_step = 0
+	index_effect = 0
 	
 	player_hand.clear()
 	player_draw.clear()
