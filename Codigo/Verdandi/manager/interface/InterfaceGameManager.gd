@@ -97,28 +97,48 @@ func update_alignament(alignament, invert, card_data):
 	if get_parent().is_in_group("Level"):
 		var node_level = get_parent()
 		node_level.alignament_control(alignament, invert)
+		var c  = Color(1,1,1,1)
+		var c2 = Color(0,0,0,0.8)
 		match alignament:
 			"prosperity":
 				var node = get_node("Layer 2 - GUI/AlignmentContainer/VCProsperity/IconContainer")
-				if  node.get_child_count() < node_level.prosperity:
-					node.add_child($Coin.duplicate())
+				if node_level.prosperity > 0: 
+					if(invert):
+						if(node_level.prosperity - 2 > 0):
+							node.get_children()[node_level.prosperity - 2].modulate = c2
+						else:
+							node.get_children()[0].modulate = c2
+					else:
+						node.get_children()[node_level.prosperity - 1].modulate = c
 				else:
-					if(node.get_children()):
-						node.get_children().back().queue_free()
+					node.get_children()[0].modulate = c2
 			"favor":
 				var node = get_node("Layer 2 - GUI/AlignmentContainer/VCFavor/IconContainer")
-				if  node.get_child_count() < node_level.favor:
-					node.add_child($Eye.duplicate())
+				if node_level.favor > 0: 
+					if(invert):
+						print(invert)
+						if(node_level.favor - 2 > 0):
+							print("NO")
+							node.get_children()[node_level.favor - 2].modulate = c2
+						else:
+							print("ACA")
+							node.get_children()[0].modulate = c2
+					else:
+						node.get_children()[node_level.favor - 1].modulate = c
 				else:
-					if(node.get_children()):
-						node.get_children().back().queue_free()
+					node.get_children()[0].modulate = c2
 			"honor":
 				var node = get_node("Layer 2 - GUI/AlignmentContainer/VCHonor/IconContainer")
-				if  node.get_child_count() < node_level.honor:
-					node.add_child($Axe.duplicate())
+				if node_level.honor > 0: 
+					if(invert):
+						if(node_level.honor - 2 > 0):
+							node.get_children()[node_level.honor - 2].modulate = c2
+						else:
+							node.get_children()[0].honor = c2
+					else:
+						node.get_children()[node_level.favor - 1].modulate = c
 				else:
-					if(node.get_children()):
-						node.get_children().back().queue_free()
+					node.get_children()[0].modulate = c2
 		var effect = card_data.inverse  if invert else  card_data.effect
 		node_level.apply_effect(effect)
 		node_level.battle_turn()
@@ -132,8 +152,15 @@ func show_next_gui():
 	next_gui.global_position.y = 320
 
 func alignment_default(limit):
+	var c = Color(0,0,0,0.8)
 	for i in range(limit):
-		get_node("Layer 2 - GUI/AlignmentContainer/VCProsperity/IconContainer").add_child($Coin.duplicate())
-		get_node("Layer 2 - GUI/AlignmentContainer/VCFavor/IconContainer").add_child($Eye.duplicate())
-		get_node("Layer 2 - GUI/AlignmentContainer/VCHonor/IconContainer").add_child($Axe.duplicate())
+		var aux_coin = $Coin.duplicate()
+		var aux_eye  = $Eye.duplicate()
+		var aux_axe  = $Axe.duplicate()
+		aux_coin.modulate = c
+		aux_eye.modulate  = c
+		aux_axe.modulate  = c
+		get_node("Layer 2 - GUI/AlignmentContainer/VCProsperity/IconContainer").add_child(aux_coin)
+		get_node("Layer 2 - GUI/AlignmentContainer/VCFavor/IconContainer").add_child(aux_eye)
+		get_node("Layer 2 - GUI/AlignmentContainer/VCHonor/IconContainer").add_child(aux_axe)
 	
