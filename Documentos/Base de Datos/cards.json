@@ -190,7 +190,103 @@
                 "description": "KEY_EFFECT_GIFT",
                 "milestone" : ["KEY_M_GIFT_01","KEY_M_GIFT_02"]
             }
-        }
+        },
+        "halagaz":{
+            "alignment": "favor",
+            "invertible": false,
+            "image":"10",
+            "guifont":"h",
+            "effect":{
+                "key":"storm",
+                "text": "KEY_STORM",
+                "type":"statistics",
+                "atributte": "life",
+                "target": "all",
+                "duration": 3,
+                "value": -3,
+                "description": "KEY_EFFECT_STORM",
+                "milestone" : ["KEY_M_STORM_01","KEY_M_STORM_02"]
+            }
+        }, 
+        "inguz":{
+            "alignment": "honor",
+            "invertible": false,
+            "image":"20",
+            "guifont":"q",
+            "effect":{
+                "key":"flank",
+                "text": "KEY_FLANK",
+                "type":"order",
+                "cast": "flank",
+                "target": "all",
+                "duration": 1,
+                "value": true,
+                "description": "KEY_EFFECT_FLANK",
+                "milestone" : ["KEY_M_FLANK_01","KEY_M_FLANK_02"]
+            }
+        },
+        "isa":{
+            "alignment": "favor",
+            "invertible": false,
+            "image":"18",
+            "guifont":"i",
+            "effect":{
+                "key":"avalanche",
+                "text": "KEY_AVALANCHE",
+                "type":"order",
+                "cast": "avalanche",
+                "target": "team",
+                "duration": 1,
+                "value": true,
+                "description": "KEY_EFFECT_AVALANCHE",
+                "milestone" : ["KEY_M_AVALANCHE_01","KEY_M_AVALANCHE_02"]
+            }
+        },
+        "jera":{
+            "alignment": "favor",
+            "invertible": false,
+            "image":"14",
+            "guifont":"j",
+            "effect":{
+                "key":"justice",
+                "text": "KEY_JUSTICE",
+                "type":"statistics",
+                "atributte": "attack",
+                "target": "all",
+                "duration": 3,
+                "value": 5,
+                "description": "KEY_EFFECT_JUSTICE",
+                "milestone" : ["KEY_M_JUSTICE_01","KEY_M_JUSTICE_02"]
+            }
+        }, 
+        "kano":{
+            "alignment": "prosperity",
+            "invertible": true,
+            "image":"13",
+            "guifont":"k",
+            "effect":{
+                "key":"bonfire",
+                "text": "KEY_BONFIRE",
+                "type":"statistics",
+                "atributte": "life",
+                "target": "all",
+                "duration": 1,
+                "value": 10,
+                "description": "KEY_EFFECT_BONFIRE",
+                "milestone" : ["KEY_M_BONFIRE_01","KEY_M_BONFIRE_02"]
+            },
+            "inverse":{
+                "key":"fire",
+                "text": "KEY_FIRE",
+                "type":"statistics",
+                "atributte": "life",
+                "target": "all",
+                "duration": 1,
+                "value": -20,
+                "description": "KEY_EFFECT_FIRE",
+                "milestone" : ["KEY_M_FIRE_01","KEY_M_FIRE_02"]
+            }
+        } 
     },
     "decks": {
         "level_starter": {
