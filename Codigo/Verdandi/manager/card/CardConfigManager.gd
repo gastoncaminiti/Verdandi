@@ -4,7 +4,7 @@ var custom_rune = preload("res://deck/norse/Rune.tscn")
 
 # Returns the path to the file containing the card database
 func database_path():
-	return "res://manager/card/cards.json"
+	return "res://data/cards.json"
 
 # Returns the path to the image with the given type and id
 func card_image(img_id):
