@@ -599,6 +599,84 @@
           "gebo": {
             "quantity": 1
           }
-        }
+        },
+        "deck_prosperity": {
+            "fehu": {
+                "quantity": 1
+              },
+              "uruz": {
+                "quantity": 1
+              },
+              "thurisaz": {
+                "quantity": 1
+              },
+              "ansuz": {
+                "quantity": 1
+              },
+              "raido": {
+                "quantity": 1
+              },
+              "kano": {
+                "quantity": 1
+              },
+              "gebo": {
+                "quantity": 1
+              },
+              "wunjo": {
+                "quantity": 1
+              }
+        },
+        "deck_favor": {
+            "halagaz": {
+              "quantity": 1
+            },
+            "nauthiz": {
+              "quantity": 1
+            },
+            "isa": {
+              "quantity": 1
+            },
+            "jera": {
+              "quantity": 1
+            },
+            "eihwaz": {
+              "quantity": 1
+            },
+            "perth": {
+              "quantity": 1
+            },
+            "algiz": {
+              "quantity": 1
+            },
+            "sowelu": {
+              "quantity": 1
+            }
+        }, 
+        "deck_honor": {
+            "teiwaz": {
+              "quantity": 1
+            },
+            "berkana": {
+              "quantity": 1
+            },
+            "ehwaz": {
+              "quantity": 1
+            },
+            "mammaz": {
+              "quantity": 1
+            },
+            "laguz": {
+              "quantity": 1
+            },
+            "inguz": {
+              "quantity": 1
+            },
+            "dagaz": {
+              "quantity": 1
+            },
+            "othila": {
+              "quantity": 1
+            }
+          }
     }
 }   

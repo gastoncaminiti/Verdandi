@@ -1,12 +1,13 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://manager/interface/InterfaceRuneManager.gd" type="Script" id=1]
 [ext_resource path="res://interface/norse/img/background-black.png" type="Texture" id=2]
 [ext_resource path="res://interface/norse/tile/TilesHUB.tres" type="TileSet" id=3]
 [ext_resource path="res://interface/norse/font/Norsebold.otf" type="DynamicFontData" id=4]
-[ext_resource path="res://interface/RuneDetailInterface.tscn" type="PackedScene" id=5]
-[ext_resource path="res://interface/norse/font/NordicaRegular.otf" type="DynamicFontData" id=6]
-[ext_resource path="res://sound/Landing-Vanaheimr.ogg" type="AudioStream" id=7]
+[ext_resource path="res://interface/norse/font/Norse.otf" type="DynamicFontData" id=5]
+[ext_resource path="res://interface/RuneDetailInterface.tscn" type="PackedScene" id=6]
+[ext_resource path="res://interface/norse/font/NordicaRegular.otf" type="DynamicFontData" id=7]
+[ext_resource path="res://sound/Landing-Vanaheimr.ogg" type="AudioStream" id=8]
 
 [sub_resource type="DynamicFont" id=1]
 size = 80
@@ -14,11 +15,17 @@ outline_size = 5
 outline_color = Color( 0.156863, 0.156863, 0.156863, 1 )
 font_data = ExtResource( 4 )
 
+[sub_resource type="DynamicFont" id=3]
+size = 40
+outline_size = 1
+outline_color = Color( 0.705882, 0.709804, 0.705882, 1 )
+font_data = ExtResource( 5 )
+
 [sub_resource type="DynamicFont" id=2]
 size = 25
 outline_size = 2
 outline_color = Color( 0.490196, 0.490196, 0.490196, 1 )
-font_data = ExtResource( 6 )
+font_data = ExtResource( 7 )
 
 [node name="RuneInterface" type="Node2D" groups=[
 "interface_runes",
@@ -48,45 +55,70 @@ tile_data = PoolIntArray( 0, -1073741821, 0, 1, -1073741820, 0, 2, -1073741820, 
 [node name="VCTitle" type="VBoxContainer" parent="Layer 2 - GUI"]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -439.0
-margin_top = 48.0
+margin_left = -470.0
+margin_top = 50.0
 margin_right = 473.0
 margin_bottom = 172.0
-custom_constants/separation = -12
+custom_constants/separation = 10
 alignment = 1
 
 [node name="HCGameTitle" type="HBoxContainer" parent="Layer 2 - GUI/VCTitle"]
-margin_top = 17.0
-margin_right = 912.0
-margin_bottom = 106.0
+editor/display_folded = true
+margin_right = 943.0
+margin_bottom = 89.0
 custom_constants/separation = -26
+alignment = 1
 
 [node name="Label" type="Label" parent="Layer 2 - GUI/VCTitle/HCGameTitle"]
-margin_right = 295.0
+margin_left = 324.0
+margin_right = 619.0
 margin_bottom = 89.0
 custom_fonts/font = SubResource( 1 )
 text = "KEY_RUNES"
+align = 1
 
-[node name="MGrid" type="MarginContainer" parent="Layer 2 - GUI"]
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-margin_left = 182.0
-margin_top = -59.0
-margin_right = -308.0
-margin_bottom = 220.0
+[node name="HCAlignmentSelect" type="HBoxContainer" parent="Layer 2 - GUI/VCTitle"]
+margin_top = 99.0
+margin_right = 943.0
+margin_bottom = 150.0
+custom_constants/separation = 40
+alignment = 1
 
-[node name="Grid" type="GridContainer" parent="Layer 2 - GUI/MGrid"]
-margin_right = 534.0
-margin_bottom = 279.0
-grow_horizontal = 0
-grow_vertical = 0
-custom_constants/vseparation = -10
-custom_constants/hseparation = -30
-columns = 4
+[node name="LinkProsperity" type="Button" parent="Layer 2 - GUI/VCTitle/HCAlignmentSelect"]
+margin_left = 156.0
+margin_right = 381.0
+margin_bottom = 51.0
+focus_mode = 1
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color_hover = Color( 0.764706, 0.384314, 0.0431373, 1 )
+enabled_focus_mode = 1
+text = "KEY_PROSPERITY"
+flat = true
 
-[node name="RuneDetailInterface" parent="Layer 2 - GUI" instance=ExtResource( 5 )]
-position = Vector2( 690, 170 )
+[node name="LinkFavor" type="Button" parent="Layer 2 - GUI/VCTitle/HCAlignmentSelect"]
+margin_left = 421.0
+margin_right = 580.0
+margin_bottom = 51.0
+focus_mode = 1
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color_hover = Color( 0.764706, 0.384314, 0.0431373, 1 )
+enabled_focus_mode = 1
+text = "KEY_FAVOR"
+flat = true
+
+[node name="LinkHonor" type="Button" parent="Layer 2 - GUI/VCTitle/HCAlignmentSelect"]
+margin_left = 620.0
+margin_right = 787.0
+margin_bottom = 51.0
+focus_mode = 1
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color_hover = Color( 0.764706, 0.384314, 0.0431373, 1 )
+enabled_focus_mode = 1
+text = "KEY_HONOR"
+flat = true
+
+[node name="RuneDetailInterface" parent="Layer 2 - GUI" instance=ExtResource( 6 )]
+position = Vector2( 690, 230 )
 
 [node name="Exit" type="Button" parent="Layer 2 - GUI"]
 margin_left = 896.0
@@ -95,14 +127,71 @@ margin_right = 924.0
 margin_bottom = 93.0
 focus_mode = 0
 custom_fonts/font = SubResource( 2 )
+custom_colors/font_color_hover = Color( 0.764706, 0.384314, 0.0431373, 1 )
 action_mode = 0
 enabled_focus_mode = 0
 text = "X"
 flat = true
 
+[node name="MGridProsperity" type="MarginContainer" parent="Layer 2 - GUI"]
+editor/display_folded = true
+margin_left = 150.0
+margin_top = 290.0
+margin_right = 650.0
+margin_bottom = 690.0
+rect_min_size = Vector2( 500, 400 )
+
+[node name="Grid" type="GridContainer" parent="Layer 2 - GUI/MGridProsperity"]
+margin_right = 500.0
+margin_bottom = 400.0
+grow_horizontal = 0
+grow_vertical = 0
+custom_constants/vseparation = -10
+custom_constants/hseparation = -30
+columns = 4
+
+[node name="MGridFavor" type="MarginContainer" parent="Layer 2 - GUI"]
+editor/display_folded = true
+visible = false
+margin_left = 150.0
+margin_top = 290.0
+margin_right = 650.0
+margin_bottom = 690.0
+rect_min_size = Vector2( 500, 400 )
+
+[node name="Grid" type="GridContainer" parent="Layer 2 - GUI/MGridFavor"]
+margin_right = 500.0
+margin_bottom = 400.0
+grow_horizontal = 0
+grow_vertical = 0
+custom_constants/vseparation = -10
+custom_constants/hseparation = -30
+columns = 4
+
+[node name="MGridHonor" type="MarginContainer" parent="Layer 2 - GUI"]
+editor/display_folded = true
+visible = false
+margin_left = 150.0
+margin_top = 290.0
+margin_right = 650.0
+margin_bottom = 690.0
+rect_min_size = Vector2( 500, 400 )
+
+[node name="Grid" type="GridContainer" parent="Layer 2 - GUI/MGridHonor"]
+margin_right = 500.0
+margin_bottom = 400.0
+grow_horizontal = 0
+grow_vertical = 0
+custom_constants/vseparation = -10
+custom_constants/hseparation = -30
+columns = 4
+
 [node name="Music" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 7 )
+stream = ExtResource( 8 )
 autoplay = true
 mix_target = 2
 
+[connection signal="pressed" from="Layer 2 - GUI/VCTitle/HCAlignmentSelect/LinkProsperity" to="." method="_on_LinkProsperity_pressed"]
+[connection signal="pressed" from="Layer 2 - GUI/VCTitle/HCAlignmentSelect/LinkFavor" to="." method="_on_LinkFavor_pressed"]
+[connection signal="pressed" from="Layer 2 - GUI/VCTitle/HCAlignmentSelect/LinkHonor" to="." method="_on_LinkHonor_pressed"]
 [connection signal="pressed" from="Layer 2 - GUI/Exit" to="." method="_on_Exit_pressed"]
