@@ -15,13 +15,13 @@ outline_size = 5
 outline_color = Color( 0.156863, 0.156863, 0.156863, 1 )
 font_data = ExtResource( 4 )
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=2]
 size = 40
 outline_size = 1
 outline_color = Color( 0.705882, 0.709804, 0.705882, 1 )
 font_data = ExtResource( 5 )
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=3]
 size = 25
 outline_size = 2
 outline_color = Color( 0.490196, 0.490196, 0.490196, 1 )
@@ -89,7 +89,7 @@ margin_left = 156.0
 margin_right = 381.0
 margin_bottom = 51.0
 focus_mode = 1
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 2 )
 custom_colors/font_color_hover = Color( 0.764706, 0.384314, 0.0431373, 1 )
 enabled_focus_mode = 1
 text = "KEY_PROSPERITY"
@@ -100,7 +100,7 @@ margin_left = 421.0
 margin_right = 580.0
 margin_bottom = 51.0
 focus_mode = 1
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 2 )
 custom_colors/font_color_hover = Color( 0.764706, 0.384314, 0.0431373, 1 )
 enabled_focus_mode = 1
 text = "KEY_FAVOR"
@@ -111,7 +111,7 @@ margin_left = 620.0
 margin_right = 787.0
 margin_bottom = 51.0
 focus_mode = 1
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 2 )
 custom_colors/font_color_hover = Color( 0.764706, 0.384314, 0.0431373, 1 )
 enabled_focus_mode = 1
 text = "KEY_HONOR"
@@ -126,7 +126,7 @@ margin_top = 57.0
 margin_right = 924.0
 margin_bottom = 93.0
 focus_mode = 0
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
 custom_colors/font_color_hover = Color( 0.764706, 0.384314, 0.0431373, 1 )
 action_mode = 0
 enabled_focus_mode = 0

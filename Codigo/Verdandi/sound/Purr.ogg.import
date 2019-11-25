@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Purr.ogg-a1f9f3bc426e39f69d2e76b79799753b.oggstr"
+
+[deps]
+
+source_file="res://sound/Purr.ogg"
+dest_files=[ "res://.import/Purr.ogg-a1f9f3bc426e39f69d2e76b79799753b.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0
