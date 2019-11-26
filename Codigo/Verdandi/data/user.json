@@ -1,0 +1,16 @@
+{
+    "username": "none",
+    "menu":"res://interface/StartInterface.tscn",
+    "avatar": "Sidgrida",
+    "points": 0,
+    "configuration":{
+        "language": "en",
+        "sound": true
+    },
+    "progression":{
+        "saga": "sigurd",
+        "saga_index": 1,
+        "act_index" : 1,
+        "legends": {}
+    }
+}

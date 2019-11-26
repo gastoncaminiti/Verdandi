@@ -15,7 +15,7 @@ func _on_Tween_tween_completed(object, key):
 
 func _input(event):
 	if event.is_action_pressed("ui_accept"):
-		return get_tree().change_scene_to(load(ProjectSettings.get_setting("application/run/main_scene")))
+		return get_tree().change_scene_to(load(DataManager.user_data.menu))
 
 func _on_Music_finished():
-	return get_tree().change_scene_to(load(ProjectSettings.get_setting("application/run/main_scene")))
+	return get_tree().change_scene_to(load(DataManager.user_data.menu))

@@ -16,7 +16,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Verdandi"
-run/main_scene="res://interface/StartInterface.tscn"
+run/main_scene="res://interface/LogoInterface.tscn"
 boot_splash/bg_color=Color( 0, 0, 0, 1 )
 config/icon="res://icon.png"
 
@@ -25,6 +25,7 @@ config/icon="res://icon.png"
 CardConfig="*res://manager/card/CardConfigManager.gd"
 CardEngine="*res://manager/card/CardEngineManager.gd"
 CardGame="*res://manager/card/CardGameManager.gd"
+DataManager="*res://manager/DataManager.gd"
 
 [debug]
 
