@@ -14,8 +14,9 @@ func _on_Tween_tween_completed(object, key):
 	$Tween2.start()
 
 func _input(event):
-	if event.is_action_pressed("ui_accept"):
-		return get_tree().change_scene_to(load(DataManager.user_data.menu))
+	if event is InputEventKey:
+		if event.pressed:
+			return get_tree().change_scene_to(load("res://interface/IntroInterface.tscn"))
 
 func _on_Music_finished():
-	return get_tree().change_scene_to(load(DataManager.user_data.menu))
+	return get_tree().change_scene_to(load("res://interface/IntroInterface.tscn"))

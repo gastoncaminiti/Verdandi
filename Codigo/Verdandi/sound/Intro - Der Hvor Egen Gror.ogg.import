@@ -11,5 +11,5 @@ dest_files=[ "res://.import/Intro - Der Hvor Egen Gror.ogg-85ecf7bee4f1cde006ada
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0
