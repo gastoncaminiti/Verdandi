@@ -3,45 +3,45 @@
 [ext_resource path="res://manager/interface/InterfaceIntroManager.gd" type="Script" id=1]
 [ext_resource path="res://interface/norse/img/background-black.png" type="Texture" id=2]
 [ext_resource path="res://interface/norse/tile/TilesHUB.tres" type="TileSet" id=3]
-[ext_resource path="res://interface/norse/font/Pixeled.ttf" type="DynamicFontData" id=4]
-[ext_resource path="res://unit/norse/hero/sigurd/img/attack/Hero_Sword_Attack_17.png" type="Texture" id=5]
-[ext_resource path="res://unit/norse/hero/sigurd/img/attack/Hero_Sword_Attack_18.png" type="Texture" id=6]
-[ext_resource path="res://unit/norse/hero/sigurd/img/attack/Hero_Sword_Attack_16.png" type="Texture" id=7]
-[ext_resource path="res://unit/norse/hero/sigurd/img/walk/Hero_Sword_Walk_05.png" type="Texture" id=8]
-[ext_resource path="res://unit/norse/hero/sigurd/img/walk/Hero_Sword_Walk_06.png" type="Texture" id=9]
-[ext_resource path="res://unit/norse/hero/sigurd/img/walk/Hero_Sword_Walk_07.png" type="Texture" id=10]
-[ext_resource path="res://unit/norse/hero/sigurd/img/walk/Hero_Sword_Walk_08.png" type="Texture" id=11]
-[ext_resource path="res://unit/norse/hero/sigurd/img/walk/Hero_Sword_Walk_09.png" type="Texture" id=12]
-[ext_resource path="res://deck/norse/img/Rune_18.png" type="Texture" id=13]
-[ext_resource path="res://deck/norse/img/Rune_15.png" type="Texture" id=14]
-[ext_resource path="res://deck/norse/img/Rune_00.png" type="Texture" id=15]
-[ext_resource path="res://deck/norse/img/Rune_08.png" type="Texture" id=16]
-[ext_resource path="res://deck/norse/img/Rune_11.png" type="Texture" id=17]
-[ext_resource path="res://deck/norse/img/Rune_12.png" type="Texture" id=18]
-[ext_resource path="res://deck/norse/img/Rune_01.png" type="Texture" id=19]
-[ext_resource path="res://deck/norse/img/Rune_04.png" type="Texture" id=20]
-[ext_resource path="res://deck/norse/img/Rune_06.png" type="Texture" id=21]
-[ext_resource path="res://deck/norse/img/Rune_22.png" type="Texture" id=22]
+[ext_resource path="res://unit/norse/hero/sigurd/img/attack/Hero_Sword_Attack_17.png" type="Texture" id=4]
+[ext_resource path="res://unit/norse/hero/sigurd/img/attack/Hero_Sword_Attack_18.png" type="Texture" id=5]
+[ext_resource path="res://unit/norse/hero/sigurd/img/attack/Hero_Sword_Attack_16.png" type="Texture" id=6]
+[ext_resource path="res://unit/norse/hero/sigurd/img/walk/Hero_Sword_Walk_05.png" type="Texture" id=7]
+[ext_resource path="res://unit/norse/hero/sigurd/img/walk/Hero_Sword_Walk_06.png" type="Texture" id=8]
+[ext_resource path="res://unit/norse/hero/sigurd/img/walk/Hero_Sword_Walk_07.png" type="Texture" id=9]
+[ext_resource path="res://unit/norse/hero/sigurd/img/walk/Hero_Sword_Walk_08.png" type="Texture" id=10]
+[ext_resource path="res://unit/norse/hero/sigurd/img/walk/Hero_Sword_Walk_09.png" type="Texture" id=11]
+[ext_resource path="res://deck/norse/img/Rune_18.png" type="Texture" id=12]
+[ext_resource path="res://deck/norse/img/Rune_15.png" type="Texture" id=13]
+[ext_resource path="res://deck/norse/img/Rune_00.png" type="Texture" id=14]
+[ext_resource path="res://deck/norse/img/Rune_08.png" type="Texture" id=15]
+[ext_resource path="res://deck/norse/img/Rune_11.png" type="Texture" id=16]
+[ext_resource path="res://deck/norse/img/Rune_12.png" type="Texture" id=17]
+[ext_resource path="res://deck/norse/img/Rune_01.png" type="Texture" id=18]
+[ext_resource path="res://deck/norse/img/Rune_04.png" type="Texture" id=19]
+[ext_resource path="res://deck/norse/img/Rune_06.png" type="Texture" id=20]
+[ext_resource path="res://deck/norse/img/Rune_22.png" type="Texture" id=21]
+[ext_resource path="res://interface/norse/font/Norsebold.otf" type="DynamicFontData" id=22]
 [ext_resource path="res://sound/Intro - Der Hvor Egen Gror.ogg" type="AudioStream" id=23]
 
-[sub_resource type="DynamicFont" id=1]
-size = 26
-outline_size = 2
-outline_color = Color( 0.6, 0.580392, 0.580392, 1 )
-font_data = ExtResource( 4 )
-
-[sub_resource type="SpriteFrames" id=2]
+[sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 6 ), ExtResource( 5 ) ],
+"frames": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 4 ) ],
 "loop": false,
 "name": "attack",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ) ],
+"frames": [ ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ) ],
 "loop": true,
 "name": "walk",
 "speed": 5.0
 } ]
+
+[sub_resource type="DynamicFont" id=2]
+size = 70
+outline_size = 5
+outline_color = Color( 0.168627, 0.168627, 0.168627, 1 )
+font_data = ExtResource( 22 )
 
 [node name="IntroInterface" type="Node2D"]
 script = ExtResource( 1 )
@@ -68,22 +68,11 @@ tile_data = PoolIntArray( 0, -1073741821, 0, 1, -1073741820, 0, 2, -1073741820, 
 
 [node name="Layer 2 - GUI" type="CanvasLayer" parent="."]
 
-[node name="Label" type="Label" parent="Layer 2 - GUI"]
-modulate = Color( 1, 1, 1, 0 )
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_top = -74.0
-custom_fonts/font = SubResource( 1 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Chatora Games"
-align = 1
-
 [node name="Hero" type="AnimatedSprite" parent="Layer 2 - GUI"]
 modulate = Color( 1, 1, 1, 0 )
-position = Vector2( 516, 249 )
+position = Vector2( 512, 225 )
 scale = Vector2( 5, 5 )
-frames = SubResource( 2 )
+frames = SubResource( 1 )
 animation = "walk"
 speed_scale = 0.6
 
@@ -91,60 +80,71 @@ speed_scale = 0.6
 position = Vector2( 550, -100 )
 rotation = 0.244278
 scale = Vector2( 1.2, 1.2 )
-texture = ExtResource( 13 )
+texture = ExtResource( 12 )
 
 [node name="Rune_2" type="Sprite" parent="Layer 2 - GUI"]
 position = Vector2( 318, -142 )
 rotation = 0.84794
 scale = Vector2( 1.2, 1.2 )
-texture = ExtResource( 14 )
+texture = ExtResource( 13 )
 
 [node name="Rune_3" type="Sprite" parent="Layer 2 - GUI"]
 position = Vector2( 636, -418 )
 rotation = 0.584494
 scale = Vector2( 1.2, 1.2 )
-texture = ExtResource( 15 )
+texture = ExtResource( 14 )
 
 [node name="Rune_4" type="Sprite" parent="Layer 2 - GUI"]
 position = Vector2( 209, -391 )
 rotation = -0.398391
 scale = Vector2( 1.2, 1.2 )
-texture = ExtResource( 16 )
+texture = ExtResource( 15 )
 
 [node name="Rune_5" type="Sprite" parent="Layer 2 - GUI"]
 position = Vector2( 695, -118 )
 rotation = -0.138491
 scale = Vector2( 1.2, 1.2 )
-texture = ExtResource( 17 )
+texture = ExtResource( 16 )
 
 [node name="Rune_6" type="Sprite" parent="Layer 2 - GUI"]
 position = Vector2( 256, -622 )
 rotation = 0.84794
 scale = Vector2( 1.2, 1.2 )
-texture = ExtResource( 18 )
+texture = ExtResource( 17 )
 
 [node name="Rune_7" type="Sprite" parent="Layer 2 - GUI"]
 position = Vector2( 823, -151 )
 rotation = -0.624645
 scale = Vector2( 1.2, 1.2 )
-texture = ExtResource( 19 )
+texture = ExtResource( 18 )
 
 [node name="Rune_8" type="Sprite" parent="Layer 2 - GUI"]
 position = Vector2( 120, -151 )
 rotation = 2.45579
 scale = Vector2( 1.2, 1.2 )
-texture = ExtResource( 20 )
+texture = ExtResource( 19 )
 
 [node name="Rune_10" type="Sprite" parent="Layer 2 - GUI"]
 position = Vector2( 37, -368 )
 rotation = 2.66354
 scale = Vector2( 1.2, 1.2 )
-texture = ExtResource( 21 )
+texture = ExtResource( 20 )
 
 [node name="Rune_9" type="Sprite" parent="Layer 2 - GUI"]
 position = Vector2( 1003, -191 )
+rotation = 0.261799
 scale = Vector2( 1.2, 1.2 )
-texture = ExtResource( 22 )
+texture = ExtResource( 21 )
+
+[node name="Label" type="Label" parent="Layer 2 - GUI"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -78.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.964706, 0.964706, 0.964706, 1 )
+text = "KEY_INTRO_INDEX_0"
+align = 1
 
 [node name="TweenRune1" type="Tween" parent="."]
 
@@ -158,8 +158,6 @@ texture = ExtResource( 22 )
 
 [node name="TweenLabel" type="Tween" parent="."]
 
-[node name="TweenRandom" type="Tween" parent="."]
-
 [node name="TweenAvatar" type="Tween" parent="."]
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
@@ -172,4 +170,4 @@ mix_target = 2
 [connection signal="tween_completed" from="TweenRune3" to="." method="_on_TweenRune3_tween_completed"]
 [connection signal="tween_completed" from="TweenRune4" to="." method="_on_TweenRune4_tween_completed"]
 [connection signal="tween_completed" from="TweenRune5" to="." method="_on_TweenRune5_tween_completed"]
-[connection signal="finished" from="Music" to="." method="_on_Music_finished"]
+[connection signal="tween_completed" from="TweenLabel" to="." method="_on_TweenLabel_tween_completed"]

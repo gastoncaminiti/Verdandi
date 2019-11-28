@@ -29,6 +29,7 @@ DataManager="*res://manager/DataManager.gd"
 
 [debug]
 
+gdscript/warnings/enable=false
 shapes/collision/shape_color=Color( 0, 0.6, 0.701961, 0.501961 )
 
 [display]
