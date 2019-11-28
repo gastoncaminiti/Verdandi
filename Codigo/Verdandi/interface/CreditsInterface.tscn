@@ -1,0 +1,315 @@
+[gd_scene load_steps=22 format=2]
+
+[ext_resource path="res://manager/interface/InterfaceCreditsManager.gd" type="Script" id=1]
+[ext_resource path="res://interface/norse/img/background-black.png" type="Texture" id=2]
+[ext_resource path="res://interface/norse/tile/TilesHUB.tres" type="TileSet" id=3]
+[ext_resource path="res://interface/norse/font/Norsebold.otf" type="DynamicFontData" id=4]
+[ext_resource path="res://interface/norse/font/Norse.otf" type="DynamicFontData" id=5]
+[ext_resource path="res://interface/norse/font/NordicaRegular.otf" type="DynamicFontData" id=6]
+[ext_resource path="res://sound/Intro - Der Hvor Egen Gror.ogg" type="AudioStream" id=7]
+[ext_resource path="res://interface/norse/img/logo/credits/Logo_Credit_0.png" type="Texture" id=8]
+[ext_resource path="res://interface/norse/img/logo/credits/Logo_Credit_1.png" type="Texture" id=9]
+[ext_resource path="res://interface/norse/img/logo/credits/Logo_Credit_2.png" type="Texture" id=10]
+[ext_resource path="res://interface/norse/img/logo/credits/Logo_Credit_3.png" type="Texture" id=11]
+[ext_resource path="res://interface/norse/img/logo/credits/Logo_Credit_4.png" type="Texture" id=12]
+[ext_resource path="res://interface/norse/img/logo/credits/Logo_Credit_5.png" type="Texture" id=13]
+[ext_resource path="res://interface/norse/img/logo/credits/Logo_Credit_6.png" type="Texture" id=14]
+[ext_resource path="res://interface/norse/img/logo/credits/Logo_Credit_7.png" type="Texture" id=15]
+
+[sub_resource type="DynamicFont" id=1]
+size = 70
+outline_size = 5
+outline_color = Color( 0.168627, 0.168627, 0.168627, 1 )
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 40
+outline_size = 4
+outline_color = Color( 0.235294, 0.172549, 0.00392157, 1 )
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 31
+outline_size = 2
+outline_color = Color( 0.368627, 0.298039, 0.0235294, 1 )
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 25
+outline_size = 1
+outline_color = Color( 0.109804, 0.109804, 0.105882, 1 )
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 25
+outline_size = 2
+outline_color = Color( 0.490196, 0.490196, 0.490196, 1 )
+font_data = ExtResource( 6 )
+
+[sub_resource type="SpriteFrames" id=5]
+animations = [ {
+"frames": [ ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="CreditsInterface" type="Node2D"]
+editor/display_folded = true
+script = ExtResource( 1 )
+
+[node name="Layer 0 - Background" type="CanvasLayer" parent="."]
+layer = -3
+
+[node name="TextureRect" type="TextureRect" parent="Layer 0 - Background"]
+modulate = Color( 1, 1, 1, 0.117647 )
+margin_top = -5.0
+margin_right = 1024.0
+margin_bottom = 595.0
+texture = ExtResource( 2 )
+
+[node name="Layer 1 - Border" type="CanvasLayer" parent="."]
+layer = -2
+
+[node name="TileMap" type="TileMap" parent="Layer 1 - Border"]
+position = Vector2( 10, 5 )
+tile_set = ExtResource( 3 )
+cell_size = Vector2( 84, 84 )
+format = 1
+tile_data = PoolIntArray( 0, -1073741821, 0, 1, -1073741820, 0, 2, -1073741820, 0, 3, -1073741820, 0, 4, -1073741820, 0, 5, -1073741820, 0, 6, -1073741820, 0, 7, -1073741820, 0, 8, -1073741820, 0, 9, -1073741820, 0, 10, -1073741820, 0, 11, 3, 0, 65536, 1610612740, 0, 65547, 4, 0, 131072, 1610612740, 0, 131083, 4, 0, 196608, 1610612740, 0, 196619, 4, 0, 262144, 1610612740, 0, 262155, 4, 0, 327680, 1610612740, 0, 327691, 4, 0, 393216, 1610612739, 0, 393217, -1610612732, 0, 393218, -1610612732, 0, 393219, -1610612732, 0, 393220, -1610612732, 0, 393221, -1610612732, 0, 393222, -1610612732, 0, 393223, -1610612732, 0, 393224, -1610612732, 0, 393225, -1610612732, 0, 393226, -1610612732, 0, 393227, -1610612733, 0 )
+
+[node name="Layer 2 - GUI" type="CanvasLayer" parent="."]
+
+[node name="VAllContainer" type="VBoxContainer" parent="Layer 2 - GUI"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 50.0
+margin_top = -550.0
+margin_right = 1020.0
+margin_bottom = -50.0
+rect_min_size = Vector2( 970, 500 )
+custom_constants/separation = 20
+
+[node name="Label" type="Label" parent="Layer 2 - GUI/VAllContainer"]
+margin_right = 970.0
+margin_bottom = 78.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.964706, 0.964706, 0.964706, 1 )
+text = "KEY_CREDITS"
+align = 1
+
+[node name="HContainerCredit" type="HBoxContainer" parent="Layer 2 - GUI/VAllContainer"]
+margin_top = 98.0
+margin_right = 970.0
+margin_bottom = 398.0
+rect_min_size = Vector2( 600, 300 )
+
+[node name="VContainerA" type="VBoxContainer" parent="Layer 2 - GUI/VAllContainer/HContainerCredit"]
+margin_right = 300.0
+margin_bottom = 300.0
+rect_min_size = Vector2( 300, 300 )
+custom_constants/separation = 50
+
+[node name="CenterContainer" type="CenterContainer" parent="Layer 2 - GUI/VAllContainer/HContainerCredit/VContainerA"]
+margin_right = 300.0
+margin_bottom = 84.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Layer 2 - GUI/VAllContainer/HContainerCredit/VContainerA/CenterContainer"]
+margin_left = 67.0
+margin_right = 233.0
+margin_bottom = 84.0
+
+[node name="Text_Title" type="Label" parent="Layer 2 - GUI/VAllContainer/HContainerCredit/VContainerA/CenterContainer/VBoxContainer"]
+margin_right = 166.0
+margin_bottom = 45.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.862745, 0.862745, 0.862745, 1 )
+text = "KEY_DESING"
+align = 1
+
+[node name="Text_Text" type="Label" parent="Layer 2 - GUI/VAllContainer/HContainerCredit/VContainerA/CenterContainer/VBoxContainer"]
+margin_top = 49.0
+margin_right = 166.0
+margin_bottom = 84.0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Gaston Caminiti"
+align = 1
+
+[node name="CenterContainer2" type="CenterContainer" parent="Layer 2 - GUI/VAllContainer/HContainerCredit/VContainerA"]
+margin_top = 134.0
+margin_right = 300.0
+margin_bottom = 218.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Layer 2 - GUI/VAllContainer/HContainerCredit/VContainerA/CenterContainer2"]
+margin_left = 36.0
+margin_right = 263.0
+margin_bottom = 84.0
+
+[node name="Text_Title" type="Label" parent="Layer 2 - GUI/VAllContainer/HContainerCredit/VContainerA/CenterContainer2/VBoxContainer"]
+margin_right = 227.0
+margin_bottom = 45.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.862745, 0.862745, 0.862745, 1 )
+text = "KEY_PROGRAMING"
+align = 1
+
+[node name="Text_Text" type="Label" parent="Layer 2 - GUI/VAllContainer/HContainerCredit/VContainerA/CenterContainer2/VBoxContainer"]
+margin_top = 49.0
+margin_right = 227.0
+margin_bottom = 84.0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0.862745, 0.862745, 0.862745, 1 )
+text = "Gaston Caminiti"
+align = 1
+
+[node name="VContainerA2" type="VBoxContainer" parent="Layer 2 - GUI/VAllContainer/HContainerCredit"]
+margin_left = 304.0
+margin_right = 604.0
+margin_bottom = 300.0
+rect_min_size = Vector2( 300, 300 )
+custom_constants/separation = 12
+
+[node name="CenterContainer" type="CenterContainer" parent="Layer 2 - GUI/VAllContainer/HContainerCredit/VContainerA2"]
+margin_right = 300.0
+margin_bottom = 123.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Layer 2 - GUI/VAllContainer/HContainerCredit/VContainerA2/CenterContainer"]
+margin_left = 46.0
+margin_right = 254.0
+margin_bottom = 123.0
+
+[node name="Text_Title" type="Label" parent="Layer 2 - GUI/VAllContainer/HContainerCredit/VContainerA2/CenterContainer/VBoxContainer"]
+margin_right = 208.0
+margin_bottom = 45.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.862745, 0.862745, 0.862745, 1 )
+text = "KEY_ART"
+align = 1
+
+[node name="Text_Text" type="Label" parent="Layer 2 - GUI/VAllContainer/HContainerCredit/VContainerA2/CenterContainer/VBoxContainer"]
+margin_top = 49.0
+margin_right = 208.0
+margin_bottom = 84.0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0.862745, 0.862745, 0.862745, 1 )
+text = "Alejandra MArtinez"
+align = 1
+
+[node name="Text_Text2" type="Label" parent="Layer 2 - GUI/VAllContainer/HContainerCredit/VContainerA2/CenterContainer/VBoxContainer"]
+margin_top = 88.0
+margin_right = 208.0
+margin_bottom = 123.0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0.862745, 0.862745, 0.862745, 1 )
+text = "Gaston Caminiti"
+align = 1
+
+[node name="CenterContainer2" type="CenterContainer" parent="Layer 2 - GUI/VAllContainer/HContainerCredit/VContainerA2"]
+margin_top = 135.0
+margin_right = 300.0
+margin_bottom = 297.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Layer 2 - GUI/VAllContainer/HContainerCredit/VContainerA2/CenterContainer2"]
+margin_left = 26.0
+margin_right = 273.0
+margin_bottom = 162.0
+
+[node name="Text_Title" type="Label" parent="Layer 2 - GUI/VAllContainer/HContainerCredit/VContainerA2/CenterContainer2/VBoxContainer"]
+margin_right = 247.0
+margin_bottom = 45.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.862745, 0.862745, 0.862745, 1 )
+text = "KEY_OTHER_ASSET"
+align = 1
+
+[node name="Text_Text2" type="Label" parent="Layer 2 - GUI/VAllContainer/HContainerCredit/VContainerA2/CenterContainer2/VBoxContainer"]
+margin_top = 49.0
+margin_right = 247.0
+margin_bottom = 84.0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0.862745, 0.862745, 0.862745, 1 )
+text = "Halindir (soundcloud)"
+align = 1
+
+[node name="Text_Text3" type="Label" parent="Layer 2 - GUI/VAllContainer/HContainerCredit/VContainerA2/CenterContainer2/VBoxContainer"]
+margin_top = 88.0
+margin_right = 247.0
+margin_bottom = 123.0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0.862745, 0.862745, 0.862745, 1 )
+text = "Mathieu Klomp (dafont)"
+align = 1
+
+[node name="Text_Text4" type="Label" parent="Layer 2 - GUI/VAllContainer/HContainerCredit/VContainerA2/CenterContainer2/VBoxContainer"]
+margin_top = 127.0
+margin_right = 247.0
+margin_bottom = 162.0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0.862745, 0.862745, 0.862745, 1 )
+text = "Peter Rempel (dafont)"
+align = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Layer 2 - GUI/VAllContainer"]
+margin_top = 418.0
+margin_right = 970.0
+margin_bottom = 506.0
+rect_min_size = Vector2( 600, 0 )
+custom_constants/separation = 2
+
+[node name="Text_Title2" type="Label" parent="Layer 2 - GUI/VAllContainer/VBoxContainer"]
+modulate = Color( 1, 1, 1, 0.784314 )
+margin_right = 970.0
+margin_bottom = 28.0
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 0.862745, 0.862745, 0.862745, 1 )
+text = "KEY_PROJECT"
+align = 1
+
+[node name="Text_Title3" type="Label" parent="Layer 2 - GUI/VAllContainer/VBoxContainer"]
+modulate = Color( 1, 1, 1, 0.784314 )
+margin_top = 30.0
+margin_right = 970.0
+margin_bottom = 58.0
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 0.862745, 0.862745, 0.862745, 1 )
+text = "KEY_UNIVERSITY"
+align = 1
+
+[node name="Text_Title4" type="Label" parent="Layer 2 - GUI/VAllContainer/VBoxContainer"]
+modulate = Color( 1, 1, 1, 0.784314 )
+margin_top = 60.0
+margin_right = 970.0
+margin_bottom = 88.0
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 0.862745, 0.862745, 0.862745, 1 )
+text = "KEY_PROFESSOR"
+align = 1
+
+[node name="Button" type="Button" parent="Layer 2 - GUI"]
+margin_left = 902.0
+margin_top = 64.0
+margin_right = 930.0
+margin_bottom = 100.0
+focus_mode = 0
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color_hover = Color( 0.764706, 0.384314, 0.0431373, 1 )
+enabled_focus_mode = 0
+text = "X"
+flat = true
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+autoplay = true
+mix_target = 2
+
+[node name="Logo" type="AnimatedSprite" parent="."]
+position = Vector2( 829, 307 )
+frames = SubResource( 5 )
+frame = 3
+playing = true
+
+[connection signal="pressed" from="Layer 2 - GUI/Button" to="." method="_on_Button_pressed"]
+[connection signal="finished" from="Music" to="." method="_on_Music_finished"]
