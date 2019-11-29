@@ -22,10 +22,10 @@ KEY_MESSAGE,Game Over,Fin del Juego
 KEY_NEXT,Next,Siguiente
 KEY_INTRO_INDEX_0,Humans,Humanos
 KEY_INTRO_INDEX_1,seeking eternal glory,buscando gloria eterna
-KEY_INTRO_INDEX_2,in an ephemeral existence,en una existencia efímera
+KEY_INTRO_INDEX_2,in an ephemeral existence,en una existencia efimera
 KEY_INTRO_INDEX_3,your path is a test,su camino es una prueba
 KEY_INTRO_INDEX_4,before the eyes of the gods,ante los ojos de los dioses
-KEY_INTRO_INDEX_5,your heroism is the key,su heroísmo es la llave
+KEY_INTRO_INDEX_5,your heroism is the key,su heroismo es la llave
 KEY_INTRO_INDEX_6,that will open the doors of Valhalla,que abrira las puertas del Valhalla
 KEY_DESING,Desing,Concepto
 KEY_PROGRAMING,Programing,Programacion
@@ -35,3 +35,7 @@ KEY_PROJECT,Verdandi is a final project of the technical career in Design and Pr
 KEY_UNIVERSITY,National University of the Littoral - UNLVirtual.,Universidad Nacional del Litoral - UNLVirtual.
 KEY_PROFESSOR,Professor:  Pablo Andres Abratte - Student: Gaston Alberto Caminiti - 2018/2019.,Profesor:  Pablo Andres Abratte - Estudiante: Gaston Alberto Caminiti - 2018/2019.
 KEY_CREDITS,Credits,Creditos
+KEY_LANGUAGE,Language,Idioma
+KEY_YES,Yes,Si
+KEY_NO,No,No
+KEY_MUSIC,Music,Musica

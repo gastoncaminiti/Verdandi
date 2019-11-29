@@ -1,16 +1,1 @@
-{
-    "username": "none",
-    "menu":"res://interface/StartInterface.tscn",
-    "avatar": "Sidgrida",
-    "points": 0,
-    "configuration":{
-        "language": "en",
-        "sound": true
-    },
-    "progression":{
-        "saga": "sigurd",
-        "saga_index": 1,
-        "act_index" : 1,
-        "legends": {}
-    }
-}
+{"avatar":"Sidgrida","configuration":{"language":"en","sound":true},"menu":"res://interface/StartInterface.tscn","points":0,"progression":{"act_index":1,"legends":{},"saga":"sigurd","saga_index":1},"username":"none"}

@@ -6,6 +6,7 @@ func _ready():
 	$Tween2.interpolate_property(get_node("Layer 0 - Background/TextureRect"), "modulate",   Color(1, 1, 1, 1), Color(1, 1, 1, 0), 2.5, Tween.TRANS_LINEAR, Tween.EASE_IN)
 	$Tween.start()
 	$Tween2.start()
+	TranslationServer.set_locale(DataManager.user_data.configuration.language)
 
 func _on_Tween_tween_completed(object, key):
 	object.play("stand")
