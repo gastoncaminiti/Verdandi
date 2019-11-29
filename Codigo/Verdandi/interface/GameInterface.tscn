@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://manager/interface/InterfaceGameManager.gd" type="Script" id=1]
 [ext_resource path="res://interface/norse/img/background.png" type="Texture" id=2]
@@ -19,7 +19,7 @@
 [ext_resource path="res://interface/norse/element/Axe.tscn" type="PackedScene" id=17]
 [ext_resource path="res://interface/norse/element/Eye.tscn" type="PackedScene" id=18]
 
-[sub_resource type="SpriteFrames" id=1]
+[sub_resource type="SpriteFrames" id=2]
 animations = [ {
 "frames": [ ExtResource( 5 ) ],
 "loop": true,
@@ -32,13 +32,13 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=3]
 size = 35
 outline_size = 2
 outline_color = Color( 0.305882, 0.254902, 0.054902, 1 )
 font_data = ExtResource( 7 )
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=4]
 size = 26
 outline_size = 1
 outline_color = Color( 0.854902, 0.584314, 0.266667, 1 )
@@ -49,13 +49,24 @@ extra_spacing_char = -5
 extra_spacing_space = -5
 font_data = ExtResource( 10 )
 
-[sub_resource type="DynamicFont" id=4]
+[sub_resource type="DynamicFont" id=1]
+size = 26
+outline_size = 1
+outline_color = Color( 0.854902, 0.584314, 0.266667, 1 )
+use_filter = true
+extra_spacing_top = -5
+extra_spacing_bottom = -5
+extra_spacing_char = -5
+extra_spacing_space = -5
+font_data = ExtResource( 10 )
+
+[sub_resource type="DynamicFont" id=5]
 size = 42
 outline_size = 3
 outline_color = Color( 0.027451, 0.0156863, 0, 1 )
 font_data = ExtResource( 7 )
 
-[sub_resource type="DynamicFont" id=5]
+[sub_resource type="DynamicFont" id=6]
 size = 45
 outline_size = 2
 outline_color = Color( 0.619608, 0.290196, 0.027451, 1 )
@@ -103,7 +114,7 @@ texture = ExtResource( 4 )
 [node name="Bag" type="AnimatedSprite" parent="Layer 2 - GUI"]
 position = Vector2( 248, 529 )
 scale = Vector2( 1.2, 1.2 )
-frames = SubResource( 1 )
+frames = SubResource( 2 )
 
 [node name="LabelBag" type="Label" parent="Layer 2 - GUI/Bag"]
 margin_left = -36.6667
@@ -111,7 +122,7 @@ margin_top = -5.83331
 margin_right = 27.3333
 margin_bottom = 87.1667
 rect_min_size = Vector2( 64, 0 )
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0.815686, 0.815686, 0.815686, 1 )
 text = "5
 "
@@ -131,7 +142,6 @@ flat = true
 position = Vector2( -60, 99 )
 
 [node name="Papyrus" type="TextureRect" parent="Layer 2 - GUI"]
-editor/display_folded = true
 margin_left = 820.0
 margin_top = 340.0
 margin_right = 958.0
@@ -142,7 +152,6 @@ expand = true
 stretch_mode = 1
 
 [node name="GridPapyrus" type="GridContainer" parent="Layer 2 - GUI/Papyrus"]
-editor/display_folded = true
 margin_left = 17.0
 margin_top = 25.0
 margin_right = 130.0
@@ -164,13 +173,12 @@ margin_left = 16.0
 margin_top = 1.0
 margin_right = 16.0
 margin_bottom = 19.0
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
 
 [node name="CChar1" type="CenterContainer" parent="Layer 2 - GUI/Papyrus/GridPapyrus"]
-editor/display_folded = true
 margin_left = 18.0
 margin_right = 51.0
 margin_bottom = 20.0
@@ -181,7 +189,7 @@ margin_left = 16.0
 margin_top = 1.0
 margin_right = 16.0
 margin_bottom = 19.0
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
@@ -198,7 +206,7 @@ margin_left = 16.0
 margin_top = 1.0
 margin_right = 16.0
 margin_bottom = 19.0
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
@@ -215,7 +223,7 @@ margin_left = 16.0
 margin_top = 1.0
 margin_right = 16.0
 margin_bottom = 19.0
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
@@ -232,7 +240,7 @@ margin_left = 16.0
 margin_top = 1.0
 margin_right = 16.0
 margin_bottom = 19.0
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
@@ -249,7 +257,7 @@ margin_left = 16.0
 margin_top = 1.0
 margin_right = 16.0
 margin_bottom = 19.0
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
@@ -267,7 +275,7 @@ margin_left = 16.0
 margin_top = 1.0
 margin_right = 16.0
 margin_bottom = 19.0
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
@@ -285,7 +293,7 @@ margin_left = 16.0
 margin_top = 1.0
 margin_right = 16.0
 margin_bottom = 19.0
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
@@ -303,7 +311,7 @@ margin_left = 16.0
 margin_top = 1.0
 margin_right = 16.0
 margin_bottom = 19.0
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
@@ -320,7 +328,7 @@ margin_left = 16.0
 margin_top = 1.0
 margin_right = 16.0
 margin_bottom = 19.0
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
@@ -336,7 +344,7 @@ margin_left = 16.0
 margin_top = 1.0
 margin_right = 16.0
 margin_bottom = 19.0
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
@@ -353,7 +361,7 @@ margin_left = 16.0
 margin_top = 1.0
 margin_right = 16.0
 margin_bottom = 19.0
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
@@ -370,7 +378,7 @@ margin_left = 16.0
 margin_top = 1.0
 margin_right = 16.0
 margin_bottom = 19.0
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
@@ -387,7 +395,7 @@ margin_left = 16.0
 margin_top = 1.0
 margin_right = 16.0
 margin_bottom = 19.0
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
@@ -404,7 +412,7 @@ margin_left = 16.0
 margin_top = 1.0
 margin_right = 16.0
 margin_bottom = 19.0
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
@@ -420,7 +428,7 @@ margin_left = 16.0
 margin_top = 1.0
 margin_right = 16.0
 margin_bottom = 19.0
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
@@ -437,7 +445,7 @@ margin_left = 16.0
 margin_top = 1.0
 margin_right = 16.0
 margin_bottom = 19.0
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
@@ -454,7 +462,7 @@ margin_left = 16.0
 margin_top = 1.0
 margin_right = 16.0
 margin_bottom = 19.0
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
@@ -471,7 +479,7 @@ margin_left = 16.0
 margin_top = 1.0
 margin_right = 16.0
 margin_bottom = 19.0
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
@@ -488,7 +496,7 @@ margin_left = 16.0
 margin_top = 1.0
 margin_right = 16.0
 margin_bottom = 19.0
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
@@ -504,7 +512,7 @@ margin_left = 16.0
 margin_top = 1.0
 margin_right = 16.0
 margin_bottom = 19.0
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
@@ -521,7 +529,7 @@ margin_left = 16.0
 margin_top = 1.0
 margin_right = 16.0
 margin_bottom = 19.0
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
@@ -538,7 +546,7 @@ margin_left = 16.0
 margin_top = 1.0
 margin_right = 16.0
 margin_bottom = 19.0
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
@@ -555,7 +563,7 @@ margin_left = 16.0
 margin_top = 1.0
 margin_right = 16.0
 margin_bottom = 19.0
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
@@ -585,7 +593,7 @@ margin_bottom = 51.0
 margin_right = 224.0
 margin_bottom = 47.0
 rect_min_size = Vector2( 150, 0 )
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "KEY_PROSPERITY"
 align = 1
@@ -618,7 +626,7 @@ margin_bottom = 51.0
 margin_right = 156.0
 margin_bottom = 47.0
 rect_min_size = Vector2( 150, 0 )
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
 text = "KEY_FAVOR"
 align = 1
 
@@ -650,7 +658,7 @@ margin_bottom = 51.0
 margin_right = 162.0
 margin_bottom = 47.0
 rect_min_size = Vector2( 150, 0 )
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
 text = "KEY_HONOR"
 align = 1
 
@@ -678,7 +686,7 @@ rect_min_size = Vector2( 45, 45 )
 margin_left = 22.0
 margin_right = 22.0
 margin_bottom = 45.0
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 6 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_outline_modulate = Color( 1, 0.752941, 0.0980392, 1 )
 custom_colors/font_color_shadow = Color( 0.364706, 0.0235294, 0.0235294, 1 )
@@ -694,7 +702,7 @@ hint_tooltip = "A"
 margin_left = 22.0
 margin_right = 22.0
 margin_bottom = 45.0
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 6 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_outline_modulate = Color( 1, 0.752941, 0.0980392, 1 )
 custom_colors/font_color_shadow = Color( 0.364706, 0.0235294, 0.0235294, 1 )
@@ -709,7 +717,7 @@ rect_min_size = Vector2( 45, 45 )
 margin_left = 22.0
 margin_right = 22.0
 margin_bottom = 45.0
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 6 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_outline_modulate = Color( 1, 0.752941, 0.0980392, 1 )
 custom_colors/font_color_shadow = Color( 0.364706, 0.0235294, 0.0235294, 1 )
@@ -724,7 +732,7 @@ rect_min_size = Vector2( 45, 45 )
 margin_left = 22.0
 margin_right = 22.0
 margin_bottom = 45.0
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 6 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_outline_modulate = Color( 1, 0.752941, 0.0980392, 1 )
 custom_colors/font_color_shadow = Color( 0.364706, 0.0235294, 0.0235294, 1 )
@@ -746,7 +754,7 @@ rect_min_size = Vector2( 45, 45 )
 margin_left = 22.0
 margin_right = 22.0
 margin_bottom = 45.0
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 6 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_outline_modulate = Color( 1, 0.752941, 0.0980392, 1 )
 custom_colors/font_color_shadow = Color( 0.364706, 0.0235294, 0.0235294, 1 )
@@ -761,7 +769,7 @@ rect_min_size = Vector2( 45, 45 )
 margin_left = 22.0
 margin_right = 22.0
 margin_bottom = 45.0
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 6 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_outline_modulate = Color( 1, 0.752941, 0.0980392, 1 )
 custom_colors/font_color_shadow = Color( 0.364706, 0.0235294, 0.0235294, 1 )
@@ -776,7 +784,7 @@ rect_min_size = Vector2( 45, 45 )
 margin_left = 22.0
 margin_right = 22.0
 margin_bottom = 45.0
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 6 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_outline_modulate = Color( 1, 0.752941, 0.0980392, 1 )
 custom_colors/font_color_shadow = Color( 0.364706, 0.0235294, 0.0235294, 1 )
@@ -791,7 +799,7 @@ rect_min_size = Vector2( 45, 45 )
 margin_left = 22.0
 margin_right = 22.0
 margin_bottom = 45.0
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 6 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_outline_modulate = Color( 1, 0.752941, 0.0980392, 1 )
 custom_colors/font_color_shadow = Color( 0.364706, 0.0235294, 0.0235294, 1 )
