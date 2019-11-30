@@ -61,19 +61,22 @@ func alignament_control(alignament, invertible):
 		honor = 0
 		return
 	if prosperity > alignment_limit: 
-		$GameInterface.show_next_gui()
+		next_level()
 		return
 	if favor > alignment_limit:
-		$GameInterface.show_next_gui()
+		next_level()
 		return 
 	if honor > alignment_limit: 
-		$GameInterface.show_next_gui()
+		next_level()
 		return
 
-func apply_effect(data):
+func apply_effect(data , key):
 	effects.append(data)
-	papyrus.append(data.milestone[0])
+	papyrus.append({"key": key, "milestone": data.milestone[0]})
 	emit_signal("units_affected", data, player_name)
 
 func next_level():
 	$GameInterface.show_next_gui()
+	var aux_key = String(DataManager.user_data.progression.saga_index) + String(DataManager.user_data.progression.act_index)
+	DataManager.user_data.progression.legends[aux_key] = papyrus
+	DataManager.update_data()

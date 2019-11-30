@@ -81,14 +81,30 @@ rect_min_size = Vector2( 324, 0 )
 custom_constants/separation = 8
 alignment = 1
 
-[node name="CContainer" type="CenterContainer" parent="BackRect/VContainer/HCAlignment"]
-margin_right = 340.0
+[node name="CContainerRetry" type="CenterContainer" parent="BackRect/VContainer/HCAlignment"]
+margin_left = 51.0
+margin_right = 171.0
 margin_bottom = 40.0
-rect_min_size = Vector2( 340, 0 )
+rect_min_size = Vector2( 100, 0 )
+
+[node name="ButtonRetry" type="Button" parent="BackRect/VContainer/HCAlignment/CContainerRetry"]
+margin_right = 120.0
+margin_bottom = 40.0
+focus_mode = 0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color_hover = Color( 0.498039, 0.419608, 0, 1 )
+enabled_focus_mode = 0
+text = "KEY_RETRY"
+flat = true
+
+[node name="CContainer" type="CenterContainer" parent="BackRect/VContainer/HCAlignment"]
+margin_left = 179.0
+margin_right = 289.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 100, 0 )
 
 [node name="Button" type="Button" parent="BackRect/VContainer/HCAlignment/CContainer"]
-margin_left = 115.0
-margin_right = 225.0
+margin_right = 110.0
 margin_bottom = 40.0
 focus_mode = 0
 custom_fonts/font = SubResource( 3 )
@@ -103,4 +119,5 @@ cell_size = Vector2( 84, 84 )
 format = 1
 tile_data = PoolIntArray( 0, 1073741826, 0, 4, 1610612738, 0, 65536, 1073741825, 0, 65540, 1610612737, 0, 131072, 2, 0, 131076, 536870914, 0 )
 
+[connection signal="pressed" from="BackRect/VContainer/HCAlignment/CContainerRetry/ButtonRetry" to="." method="_on_ButtonRetry_pressed"]
 [connection signal="pressed" from="BackRect/VContainer/HCAlignment/CContainer/Button" to="." method="_on_Button_pressed"]

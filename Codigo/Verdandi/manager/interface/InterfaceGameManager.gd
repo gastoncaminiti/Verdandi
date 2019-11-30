@@ -140,7 +140,7 @@ func update_alignament(alignament, invert, card_data):
 				else:
 					node.get_children()[0].modulate = c2
 		var effect = card_data.inverse  if invert else  card_data.effect
-		node_level.apply_effect(effect)
+		node_level.apply_effect(effect, card_data.guifont if invert else card_data.guifont.to_upper())
 		node_level.battle_turn()
 
 func set_bag_num_runes(value):

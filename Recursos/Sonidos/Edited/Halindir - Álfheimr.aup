@@ -1,0 +1,69 @@
+<?xml version="1.0" standalone="no" ?>
+<!DOCTYPE project PUBLIC "-//audacityproject-1.3.0//DTD//EN" "http://audacity.sourceforge.net/xml/audacityproject-1.3.0.dtd" >
+<project xmlns="http://audacity.sourceforge.net/xml/" projname="Halindir - Álfheimr_data" version="1.3.0" audacityversion="2.2.2" sel0="0.0000000000" sel1="0.0000000000" vpos="0" h="0.0000000000" zoom="6.8298683585" rate="44100.0" snapto="off" selectionformat="Cuadros CDDA (75 fps)" frequencyformat="Hz" bandwidthformat="octavas">
+	<tags>
+		<tag name="Software" value="FL Studio 9"/>
+	</tags>
+	<wavetrack name="Halindir - Álfheimr" channel="0" linked="1" mute="0" solo="0" height="150" minimized="0" isSelected="1" rate="44100" gain="1.0" pan="0.0" colorindex="0">
+		<waveclip offset="0.00000000" colorindex="0">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="1859597">
+				<waveblock start="0">
+					<simpleblockfile filename="e0808a91.au" len="143329" min="-0.92276" max="0.95636" rms="0.144417"/>
+				</waveblock>
+				<waveblock start="143329">
+					<pcmaliasblockfile summaryfile="e0808de6.auf" aliasfile="D:\ESTUDIO\UNLVIRTUAL\TRABAJO FINAL\Verdandi\Recursos\Sonidos\Original\Halindir - Álfheimr.wav" aliasstart="524288" aliaslen="262144" aliaschannel="0" min="-0.774902" max="0.805603" rms="0.146159"/>
+				</waveblock>
+				<waveblock start="405473">
+					<pcmaliasblockfile summaryfile="e0808dab.auf" aliasfile="D:\ESTUDIO\UNLVIRTUAL\TRABAJO FINAL\Verdandi\Recursos\Sonidos\Original\Halindir - Álfheimr.wav" aliasstart="786432" aliaslen="262144" aliaschannel="0" min="-0.772461" max="0.828705" rms="0.155078"/>
+				</waveblock>
+				<waveblock start="667617">
+					<pcmaliasblockfile summaryfile="e08080e6.auf" aliasfile="D:\ESTUDIO\UNLVIRTUAL\TRABAJO FINAL\Verdandi\Recursos\Sonidos\Original\Halindir - Álfheimr.wav" aliasstart="1048576" aliaslen="262144" aliaschannel="0" min="-0.913239" max="0.975067" rms="0.208795"/>
+				</waveblock>
+				<waveblock start="929761">
+					<pcmaliasblockfile summaryfile="e0808e1e.auf" aliasfile="D:\ESTUDIO\UNLVIRTUAL\TRABAJO FINAL\Verdandi\Recursos\Sonidos\Original\Halindir - Álfheimr.wav" aliasstart="1310720" aliaslen="262144" aliaschannel="0" min="-0.869476" max="0.975159" rms="0.187844"/>
+				</waveblock>
+				<waveblock start="1191905">
+					<pcmaliasblockfile summaryfile="e0808943.auf" aliasfile="D:\ESTUDIO\UNLVIRTUAL\TRABAJO FINAL\Verdandi\Recursos\Sonidos\Original\Halindir - Álfheimr.wav" aliasstart="1572864" aliaslen="262144" aliaschannel="0" min="-0.949829" max="0.975098" rms="0.219837"/>
+				</waveblock>
+				<waveblock start="1454049">
+					<pcmaliasblockfile summaryfile="e0808c44.auf" aliasfile="D:\ESTUDIO\UNLVIRTUAL\TRABAJO FINAL\Verdandi\Recursos\Sonidos\Original\Halindir - Álfheimr.wav" aliasstart="1835008" aliaslen="262144" aliaschannel="0" min="-0.895416" max="0.975067" rms="0.191215"/>
+				</waveblock>
+				<waveblock start="1716193">
+					<simpleblockfile filename="e08087d5.au" len="143404" min="-0.588698" max="0.639659" rms="0.110261"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+	<wavetrack name="Halindir - Álfheimr" channel="1" linked="0" mute="0" solo="0" height="150" minimized="0" isSelected="1" rate="44100" gain="1.0" pan="0.0" colorindex="0">
+		<waveclip offset="0.00000000" colorindex="0">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="1859597">
+				<waveblock start="0">
+					<simpleblockfile filename="e08081c2.au" len="143329" min="-0.949615" max="0.974976" rms="0.129025"/>
+				</waveblock>
+				<waveblock start="143329">
+					<pcmaliasblockfile summaryfile="e0808329.auf" aliasfile="D:\ESTUDIO\UNLVIRTUAL\TRABAJO FINAL\Verdandi\Recursos\Sonidos\Original\Halindir - Álfheimr.wav" aliasstart="524288" aliaslen="262144" aliaschannel="1" min="-0.85788" max="0.90744" rms="0.136853"/>
+				</waveblock>
+				<waveblock start="405473">
+					<pcmaliasblockfile summaryfile="e080850c.auf" aliasfile="D:\ESTUDIO\UNLVIRTUAL\TRABAJO FINAL\Verdandi\Recursos\Sonidos\Original\Halindir - Álfheimr.wav" aliasstart="786432" aliaslen="262144" aliaschannel="1" min="-0.849518" max="0.885651" rms="0.127909"/>
+				</waveblock>
+				<waveblock start="667617">
+					<pcmaliasblockfile summaryfile="e0808b58.auf" aliasfile="D:\ESTUDIO\UNLVIRTUAL\TRABAJO FINAL\Verdandi\Recursos\Sonidos\Original\Halindir - Álfheimr.wav" aliasstart="1048576" aliaslen="262144" aliaschannel="1" min="-0.975006" max="0.975189" rms="0.203238"/>
+				</waveblock>
+				<waveblock start="929761">
+					<pcmaliasblockfile summaryfile="e080831b.auf" aliasfile="D:\ESTUDIO\UNLVIRTUAL\TRABAJO FINAL\Verdandi\Recursos\Sonidos\Original\Halindir - Álfheimr.wav" aliasstart="1310720" aliaslen="262144" aliaschannel="1" min="-0.971466" max="0.846771" rms="0.174154"/>
+				</waveblock>
+				<waveblock start="1191905">
+					<pcmaliasblockfile summaryfile="e0808848.auf" aliasfile="D:\ESTUDIO\UNLVIRTUAL\TRABAJO FINAL\Verdandi\Recursos\Sonidos\Original\Halindir - Álfheimr.wav" aliasstart="1572864" aliaslen="262144" aliaschannel="1" min="-0.975037" max="0.975342" rms="0.210885"/>
+				</waveblock>
+				<waveblock start="1454049">
+					<pcmaliasblockfile summaryfile="e08084b1.auf" aliasfile="D:\ESTUDIO\UNLVIRTUAL\TRABAJO FINAL\Verdandi\Recursos\Sonidos\Original\Halindir - Álfheimr.wav" aliasstart="1835008" aliaslen="262144" aliaschannel="1" min="-0.975037" max="0.951508" rms="0.177789"/>
+				</waveblock>
+				<waveblock start="1716193">
+					<simpleblockfile filename="e0808023.au" len="143404" min="-0.670898" max="0.63443" rms="0.112972"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+</project>
