@@ -21,11 +21,12 @@ func set_unselected_gui():
 	get_node("Layer 2 - GUI/StatusInterface").visible = false
 
 func _on_ButtonBag_pressed():
-	var bag = get_node("Layer 2 - GUI/Bag")
-	bag.play("open")
-	bag.set_frame(0)
-	if get_parent().is_in_group("Level"):
-		get_parent().add_rune()
+	if(CardGame.get_player_hand_cards().size() < CardGame.HAND_LIMIT):
+		var bag = get_node("Layer 2 - GUI/Bag")
+		bag.play("open")
+		bag.set_frame(0)
+		if get_parent().is_in_group("Level"):
+			get_parent().add_rune()
 
 func draw_card(card):
 	var card_widget  = CardConfig.card_instance()

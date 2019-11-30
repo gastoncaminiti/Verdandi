@@ -15,3 +15,11 @@ Desarrollado con Godot Engine Versión 3.1
 ![Prototipo 01 Preview 03](Prototipos/Prototipo01/Documentos/Preview3.png)
 
 ![Prototipo 01 Preview 02](Prototipos/Prototipo01/Documentos/Preview1.png)
+
+#### Prototipo 02 (Videojuego - Test de Jugabilidad)
+[Ejecutable](Prototipos/Prototipo02)  
+[Documentación de Desarrollo](Prototipos/Prototipo02/Documentos/Diario_Desarrollo_VerdandiP02.pdf)
+
+![Prototipo 02 Preview 01](Prototipos/Prototipo02/Documentos/Preview1.png)
+
+![Prototipo 02 Preview 02](Prototipos/Prototipo02/Documentos/Preview2.png)

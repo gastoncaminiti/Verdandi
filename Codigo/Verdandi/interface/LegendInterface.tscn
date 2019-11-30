@@ -48,7 +48,7 @@ outline_size = 2
 outline_color = Color( 0.490196, 0.490196, 0.490196, 1 )
 font_data = ExtResource( 7 )
 
-[sub_resource type="DynamicFont" id=7]
+[sub_resource type="DynamicFont" id=6]
 size = 44
 outline_size = 5
 outline_color = Color( 0.156863, 0.156863, 0.156863, 1 )
@@ -56,7 +56,7 @@ use_filter = true
 extra_spacing_char = 5
 font_data = ExtResource( 8 )
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=7]
 tracks/0/type = "value"
 tracks/0/path = NodePath("Layer 2 - GUI/Sprite:position")
 tracks/0/interp = 1
@@ -867,7 +867,7 @@ anchor_bottom = 1.0
 margin_left = -188.0
 margin_top = -55.0
 focus_mode = 0
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 6 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 0.764706, 0.384314, 0.0431373, 1 )
 action_mode = 0
@@ -888,7 +888,7 @@ mix_target = 2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 playback_speed = 0.6
-anims/EnterPapyrus = SubResource( 6 )
+anims/EnterPapyrus = SubResource( 7 )
 
 [connection signal="pressed" from="Layer 2 - GUI/Exit" to="." method="_on_Exit_pressed"]
 [connection signal="pressed" from="Layer 2 - GUI/LinkButtonNext" to="." method="_on_LinkButtonNext_pressed"]

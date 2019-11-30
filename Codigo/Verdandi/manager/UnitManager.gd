@@ -380,17 +380,26 @@ func area_diseable_status(status):
 	$SouthEast/AreaCoordinateSouthEast/CollisionPolygon2D.set_disabled(status)
 
 func _on_AnimatedSprite_animation_finished():
+	if($AnimatedSprite.get_animation().find("walk") != -1):
+		get_parent().unit_check()
+		return
 	if($AnimatedSprite.get_animation().find("attack") != -1):
 		target.hurted(attack)
+		if get_parent().is_in_group("Level"):
+			get_parent().unit_check()
+			return
 	if($AnimatedSprite.get_animation().find("dead") != -1):
 		if get_parent().is_in_group("Level"):
 			if is_in_group("hero"):
-				get_parent().next_level(false, "KEY_LOSE_ENEMY")
+				print("IS HERO")
+				get_parent().my_hero_dead = true
+				get_parent().unit_check()
 				return
 			if is_in_group("player1"):
 				get_parent().my_units(self)
+				get_parent().unit_check()
 				return
 			if is_in_group("player2"):
 				get_parent().erase_enemy(self)
-				get_parent().next_level(true, "KEY_WIN_HERO")
+				get_parent().unit_check()
 				return

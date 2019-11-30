@@ -39,3 +39,8 @@ KEY_LANGUAGE,Language,Idioma
 KEY_YES,Yes,Si
 KEY_NO,No,No
 KEY_MUSIC,Music,Musica
+KEY_LOSE_ENEMY,Game Over,Game Over
+KEY_LOSE_TABLE,Without glory,sin gloria
+KEY_WIN_HERO,I can see the valhalla ,Puedo ver el valhalla
+KEY_DEFEAT,Defeat,Derrota
+KEY_RETRY,Retry,Reintentar
