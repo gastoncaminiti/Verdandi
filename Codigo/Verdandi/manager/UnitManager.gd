@@ -384,4 +384,13 @@ func _on_AnimatedSprite_animation_finished():
 		target.hurted(attack)
 	if($AnimatedSprite.get_animation().find("dead") != -1):
 		if get_parent().is_in_group("Level"):
-			get_parent().next_level()
+			if is_in_group("hero"):
+				get_parent().next_level(false, "KEY_LOSE_ENEMY")
+				return
+			if is_in_group("player1"):
+				get_parent().my_units(self)
+				return
+			if is_in_group("player2"):
+				get_parent().erase_enemy(self)
+				get_parent().next_level(true, "KEY_WIN_HERO")
+				return

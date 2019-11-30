@@ -99,3 +99,7 @@ func remove_last():
 	var card = _cards.pop_back()
 	emit_signal("size_changed", size())
 	emit_signal("card_removed", card)
+
+func delete_one_card(card):
+	_cards.erase(card) 
+

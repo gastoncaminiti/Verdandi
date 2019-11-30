@@ -42,11 +42,11 @@ margin_left = -10.0
 margin_top = 5.0
 custom_constants/separation = 5
 
-[node name="CCRuneName" type="MarginContainer" parent="BackRect/VContainer"]
+[node name="CCTitle" type="MarginContainer" parent="BackRect/VContainer"]
 margin_right = 340.0
 margin_bottom = 45.0
 
-[node name="LRuneName" type="Label" parent="BackRect/VContainer/CCRuneName"]
+[node name="LTitle" type="Label" parent="BackRect/VContainer/CCTitle"]
 margin_right = 340.0
 margin_bottom = 45.0
 rect_min_size = Vector2( 340, 0 )

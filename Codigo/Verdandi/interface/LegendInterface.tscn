@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://manager/interface/InterfaceLegendManager.gd" type="Script" id=1]
 [ext_resource path="res://interface/norse/img/background-black.png" type="Texture" id=2]
@@ -7,7 +7,8 @@
 [ext_resource path="res://interface/norse/img/ShowPapyrus.png" type="Texture" id=5]
 [ext_resource path="res://interface/norse/font/Runes2.TTF" type="DynamicFontData" id=6]
 [ext_resource path="res://interface/norse/font/NordicaRegular.otf" type="DynamicFontData" id=7]
-[ext_resource path="res://sound/Halindir - Álfheimr.ogg" type="AudioStream" id=8]
+[ext_resource path="res://interface/norse/font/Norse.otf" type="DynamicFontData" id=8]
+[ext_resource path="res://sound/Halindir - Álfheimr.ogg" type="AudioStream" id=9]
 
 [sub_resource type="DynamicFont" id=1]
 size = 80
@@ -46,6 +47,14 @@ size = 25
 outline_size = 2
 outline_color = Color( 0.490196, 0.490196, 0.490196, 1 )
 font_data = ExtResource( 7 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 44
+outline_size = 5
+outline_color = Color( 0.156863, 0.156863, 0.156863, 1 )
+use_filter = true
+extra_spacing_char = 5
+font_data = ExtResource( 8 )
 
 [sub_resource type="Animation" id=6]
 tracks/0/type = "value"
@@ -94,12 +103,14 @@ layer = -3
 [node name="TextureRect" type="TextureRect" parent="Layer 0 - Background"]
 margin_top = -3.0
 margin_right = 1024.0
-margin_bottom = 597.0
+margin_bottom = 600.0
 texture = ExtResource( 2 )
+expand = true
 
 [node name="Layer 2 - GUI" type="CanvasLayer" parent="."]
 
 [node name="VContainer" type="VBoxContainer" parent="Layer 2 - GUI"]
+editor/display_folded = true
 margin_left = 10.0
 margin_right = 590.0
 margin_bottom = 600.0
@@ -415,6 +426,7 @@ scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 4 )
 
 [node name="Papyrus" type="TextureRect" parent="Layer 2 - GUI"]
+editor/display_folded = true
 modulate = Color( 1, 1, 1, 0 )
 anchor_left = 1.0
 anchor_top = 0.5
@@ -443,14 +455,13 @@ rect_min_size = Vector2( 33, 20 )
 hint_tooltip = "KEY_QUIT"
 
 [node name="Char0" type="Label" parent="Layer 2 - GUI/Papyrus/GridContainer/CChar0"]
-margin_left = 6.0
-margin_right = 27.0
+margin_left = 16.0
+margin_right = 16.0
 margin_bottom = 53.0
 custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
-text = "a"
 
 [node name="CChar1" type="CenterContainer" parent="Layer 2 - GUI/Papyrus/GridContainer"]
 margin_left = 37.0
@@ -460,63 +471,61 @@ rect_min_size = Vector2( 33, 20 )
 hint_tooltip = "KEY_QUIT"
 
 [node name="Char0" type="Label" parent="Layer 2 - GUI/Papyrus/GridContainer/CChar1"]
-margin_left = 5.0
-margin_right = 28.0
+margin_left = 16.0
+margin_right = 16.0
 margin_bottom = 53.0
 custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
-text = "B"
 
 [node name="CChar2" type="CenterContainer" parent="Layer 2 - GUI/Papyrus/GridContainer"]
 margin_left = 74.0
-margin_right = 114.0
+margin_right = 107.0
 margin_bottom = 53.0
 rect_min_size = Vector2( 33, 20 )
 hint_tooltip = "KEY_QUIT"
 
 [node name="Char0" type="Label" parent="Layer 2 - GUI/Papyrus/GridContainer/CChar2"]
-margin_right = 40.0
+margin_left = 16.0
+margin_right = 16.0
 margin_bottom = 53.0
 custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
-text = "D"
 
 [node name="CChar3" type="CenterContainer" parent="Layer 2 - GUI/Papyrus/GridContainer"]
-margin_left = 118.0
-margin_right = 156.0
+margin_left = 111.0
+margin_right = 144.0
 margin_bottom = 53.0
 rect_min_size = Vector2( 33, 20 )
 hint_tooltip = "KEY_QUIT"
 
 [node name="Char0" type="Label" parent="Layer 2 - GUI/Papyrus/GridContainer/CChar3"]
-margin_right = 38.0
+margin_left = 16.0
+margin_right = 16.0
 margin_bottom = 53.0
 custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
-text = "E"
 
 [node name="CChar4" type="CenterContainer" parent="Layer 2 - GUI/Papyrus/GridContainer"]
-margin_left = 160.0
-margin_right = 193.0
+margin_left = 148.0
+margin_right = 181.0
 margin_bottom = 53.0
 rect_min_size = Vector2( 33, 20 )
 hint_tooltip = "KEY_QUIT"
 
 [node name="Char0" type="Label" parent="Layer 2 - GUI/Papyrus/GridContainer/CChar4"]
-margin_left = 5.0
-margin_right = 27.0
+margin_left = 16.0
+margin_right = 16.0
 margin_bottom = 53.0
 custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
-text = "H"
 
 [node name="CChar5" type="CenterContainer" parent="Layer 2 - GUI/Papyrus/GridContainer"]
 margin_top = 57.0
@@ -526,14 +535,13 @@ rect_min_size = Vector2( 33, 20 )
 hint_tooltip = "KEY_QUIT"
 
 [node name="Char0" type="Label" parent="Layer 2 - GUI/Papyrus/GridContainer/CChar5"]
-margin_left = 4.0
-margin_right = 28.0
+margin_left = 16.0
+margin_right = 16.0
 margin_bottom = 53.0
 custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
-text = "N"
 
 [node name="CChar6" type="CenterContainer" parent="Layer 2 - GUI/Papyrus/GridContainer"]
 margin_left = 37.0
@@ -544,43 +552,42 @@ rect_min_size = Vector2( 33, 20 )
 hint_tooltip = "KEY_QUIT"
 
 [node name="Char0" type="Label" parent="Layer 2 - GUI/Papyrus/GridContainer/CChar6"]
-margin_left = 1.0
-margin_right = 31.0
+margin_left = 16.0
+margin_right = 16.0
 margin_bottom = 53.0
 custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
-text = "o"
 
 [node name="CChar7" type="CenterContainer" parent="Layer 2 - GUI/Papyrus/GridContainer"]
 margin_left = 74.0
 margin_top = 57.0
-margin_right = 114.0
+margin_right = 107.0
 margin_bottom = 110.0
 rect_min_size = Vector2( 33, 20 )
 hint_tooltip = "KEY_QUIT"
 
 [node name="Char0" type="Label" parent="Layer 2 - GUI/Papyrus/GridContainer/CChar7"]
-margin_right = 40.0
+margin_left = 16.0
+margin_right = 16.0
 margin_bottom = 53.0
 custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
-text = "p"
 
 [node name="CChar8" type="CenterContainer" parent="Layer 2 - GUI/Papyrus/GridContainer"]
-margin_left = 118.0
+margin_left = 111.0
 margin_top = 57.0
-margin_right = 156.0
+margin_right = 144.0
 margin_bottom = 110.0
 rect_min_size = Vector2( 33, 20 )
 hint_tooltip = "KEY_QUIT"
 
 [node name="Char0" type="Label" parent="Layer 2 - GUI/Papyrus/GridContainer/CChar8"]
-margin_left = 19.0
-margin_right = 19.0
+margin_left = 16.0
+margin_right = 16.0
 margin_bottom = 53.0
 custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
@@ -588,9 +595,9 @@ custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
 
 [node name="CChar9" type="CenterContainer" parent="Layer 2 - GUI/Papyrus/GridContainer"]
-margin_left = 160.0
+margin_left = 148.0
 margin_top = 57.0
-margin_right = 193.0
+margin_right = 181.0
 margin_bottom = 110.0
 rect_min_size = Vector2( 33, 20 )
 hint_tooltip = "KEY_QUIT"
@@ -640,14 +647,14 @@ custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
 [node name="CChar12" type="CenterContainer" parent="Layer 2 - GUI/Papyrus/GridContainer"]
 margin_left = 74.0
 margin_top = 114.0
-margin_right = 114.0
+margin_right = 107.0
 margin_bottom = 167.0
 rect_min_size = Vector2( 33, 20 )
 hint_tooltip = "KEY_QUIT"
 
 [node name="Char0" type="Label" parent="Layer 2 - GUI/Papyrus/GridContainer/CChar12"]
-margin_left = 20.0
-margin_right = 20.0
+margin_left = 16.0
+margin_right = 16.0
 margin_bottom = 53.0
 custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
@@ -655,16 +662,16 @@ custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
 
 [node name="CChar13" type="CenterContainer" parent="Layer 2 - GUI/Papyrus/GridContainer"]
-margin_left = 118.0
+margin_left = 111.0
 margin_top = 114.0
-margin_right = 156.0
+margin_right = 144.0
 margin_bottom = 167.0
 rect_min_size = Vector2( 33, 20 )
 hint_tooltip = "KEY_QUIT"
 
 [node name="Char0" type="Label" parent="Layer 2 - GUI/Papyrus/GridContainer/CChar13"]
-margin_left = 19.0
-margin_right = 19.0
+margin_left = 16.0
+margin_right = 16.0
 margin_bottom = 53.0
 custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
@@ -672,9 +679,9 @@ custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
 
 [node name="CChar14" type="CenterContainer" parent="Layer 2 - GUI/Papyrus/GridContainer"]
-margin_left = 160.0
+margin_left = 148.0
 margin_top = 114.0
-margin_right = 193.0
+margin_right = 181.0
 margin_bottom = 167.0
 rect_min_size = Vector2( 33, 20 )
 hint_tooltip = "KEY_QUIT"
@@ -724,14 +731,14 @@ custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
 [node name="CChar17" type="CenterContainer" parent="Layer 2 - GUI/Papyrus/GridContainer"]
 margin_left = 74.0
 margin_top = 171.0
-margin_right = 114.0
+margin_right = 107.0
 margin_bottom = 224.0
 rect_min_size = Vector2( 33, 20 )
 hint_tooltip = "KEY_QUIT"
 
 [node name="Char0" type="Label" parent="Layer 2 - GUI/Papyrus/GridContainer/CChar17"]
-margin_left = 20.0
-margin_right = 20.0
+margin_left = 16.0
+margin_right = 16.0
 margin_bottom = 53.0
 custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
@@ -739,16 +746,16 @@ custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
 
 [node name="CChar18" type="CenterContainer" parent="Layer 2 - GUI/Papyrus/GridContainer"]
-margin_left = 118.0
+margin_left = 111.0
 margin_top = 171.0
-margin_right = 156.0
+margin_right = 144.0
 margin_bottom = 224.0
 rect_min_size = Vector2( 33, 20 )
 hint_tooltip = "KEY_QUIT"
 
 [node name="Char0" type="Label" parent="Layer 2 - GUI/Papyrus/GridContainer/CChar18"]
-margin_left = 19.0
-margin_right = 19.0
+margin_left = 16.0
+margin_right = 16.0
 margin_bottom = 53.0
 custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
@@ -756,9 +763,9 @@ custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
 
 [node name="CChar19" type="CenterContainer" parent="Layer 2 - GUI/Papyrus/GridContainer"]
-margin_left = 160.0
+margin_left = 148.0
 margin_top = 171.0
-margin_right = 193.0
+margin_right = 181.0
 margin_bottom = 224.0
 rect_min_size = Vector2( 33, 20 )
 hint_tooltip = "KEY_QUIT"
@@ -808,14 +815,14 @@ custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
 [node name="CChar22" type="CenterContainer" parent="Layer 2 - GUI/Papyrus/GridContainer"]
 margin_left = 74.0
 margin_top = 228.0
-margin_right = 114.0
+margin_right = 107.0
 margin_bottom = 281.0
 rect_min_size = Vector2( 33, 20 )
 hint_tooltip = "KEY_QUIT"
 
 [node name="Char0" type="Label" parent="Layer 2 - GUI/Papyrus/GridContainer/CChar22"]
-margin_left = 20.0
-margin_right = 20.0
+margin_left = 16.0
+margin_right = 16.0
 margin_bottom = 53.0
 custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
@@ -823,16 +830,16 @@ custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
 
 [node name="CChar23" type="CenterContainer" parent="Layer 2 - GUI/Papyrus/GridContainer"]
-margin_left = 118.0
+margin_left = 111.0
 margin_top = 228.0
-margin_right = 156.0
+margin_right = 144.0
 margin_bottom = 281.0
 rect_min_size = Vector2( 33, 20 )
 hint_tooltip = "KEY_QUIT"
 
 [node name="Char0" type="Label" parent="Layer 2 - GUI/Papyrus/GridContainer/CChar23"]
-margin_left = 19.0
-margin_right = 19.0
+margin_left = 16.0
+margin_right = 16.0
 margin_bottom = 53.0
 custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
@@ -852,6 +859,22 @@ enabled_focus_mode = 0
 text = "X"
 flat = true
 
+[node name="LinkButtonNext" type="Button" parent="Layer 2 - GUI"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -188.0
+margin_top = -55.0
+focus_mode = 0
+custom_fonts/font = SubResource( 7 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 0.764706, 0.384314, 0.0431373, 1 )
+action_mode = 0
+enabled_focus_mode = 0
+text = "KEY_NEXT"
+flat = true
+
 [node name="Tween" type="Tween" parent="."]
 
 [node name="TweenPapyrus" type="Tween" parent="."]
@@ -859,7 +882,7 @@ flat = true
 [node name="TweenSaga" type="Tween" parent="."]
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 8 )
+stream = ExtResource( 9 )
 autoplay = true
 mix_target = 2
 
@@ -868,6 +891,7 @@ playback_speed = 0.6
 anims/EnterPapyrus = SubResource( 6 )
 
 [connection signal="pressed" from="Layer 2 - GUI/Exit" to="." method="_on_Exit_pressed"]
+[connection signal="pressed" from="Layer 2 - GUI/LinkButtonNext" to="." method="_on_LinkButtonNext_pressed"]
 [connection signal="tween_completed" from="Tween" to="." method="_on_Tween_tween_completed"]
 [connection signal="tween_completed" from="TweenPapyrus" to="." method="_on_TweenPapyrus_tween_completed"]
 [connection signal="tween_completed" from="TweenSaga" to="." method="_on_TweenSaga_tween_completed"]

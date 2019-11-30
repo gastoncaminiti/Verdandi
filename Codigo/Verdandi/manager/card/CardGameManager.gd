@@ -86,3 +86,6 @@ func _on_stepper_timeout():
 
 func get_player_hand_cards():
 	return player_hand.cards() 
+
+func remove_card(card):
+	return player_hand.delete_one_card(card) 

@@ -73,6 +73,7 @@ func _on_SelectedManager_gui_input(event):
 
 func _on_AnimationPlayer_animation_finished(anim_name):
 	if anim_name == "played":
+		CardGame.remove_card(_card_data)
 		queue_free()
 		if get_node("../../../../").is_in_group("interface_game"):
 			var node = get_node("../../../../")

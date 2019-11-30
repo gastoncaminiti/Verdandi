@@ -146,10 +146,8 @@ func update_alignament(alignament, invert, card_data):
 func set_bag_num_runes(value):
  get_node("Layer 2 - GUI/Bag/LabelBag").text = value
 
-func show_next_gui():
-	var next_gui = get_node("Layer 2 - GUI/NextInterface")
-	next_gui.global_position.x = 300
-	next_gui.global_position.y = 320
+func show_next_gui(status, message):
+	var next_gui = get_node("Layer 2 - GUI/NextInterface").update_next_inteface(status,message,300,320)
 
 func alignment_default(limit):
 	var c = Color(0,0,0,0.8)

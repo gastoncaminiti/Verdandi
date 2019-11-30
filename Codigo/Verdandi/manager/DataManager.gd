@@ -1,6 +1,9 @@
 extends Node
 
 var user_data
+var maped_levels = {
+	"00": "res://level/sigurd/Level0.tscn"
+}
 
 func _ready():
 	get_data()

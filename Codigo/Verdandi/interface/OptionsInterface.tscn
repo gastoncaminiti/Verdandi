@@ -136,6 +136,7 @@ margin_bottom = 40.0
 focus_mode = 0
 custom_fonts/font = SubResource( 3 )
 custom_colors/font_color_hover = Color( 0.87451, 0.690196, 0.0509804, 1 )
+disabled = true
 action_mode = 0
 enabled_focus_mode = 0
 text = "YES"
