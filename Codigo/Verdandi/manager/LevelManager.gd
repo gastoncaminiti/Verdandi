@@ -126,7 +126,7 @@ func _on_cooldown_timeout():
 			next_level(true, "KEY_WIN_HERO")
 			var aux_key = String(DataManager.user_data.progression.saga_index) + String(DataManager.user_data.progression.act_index)
 			DataManager.user_data.progression.legends[aux_key] = papyrus
-			DataManager.update_data()
+			DataManager.save_user_data_encrypted()
 			return
 		if CardGame.get_player_hand_cards().size() == 0 and size_deck == 0:
 			next_level(false, "KEY_LOSE_TABLE")

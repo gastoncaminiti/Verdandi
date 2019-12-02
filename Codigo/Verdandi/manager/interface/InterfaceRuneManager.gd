@@ -38,16 +38,18 @@ func set_rune_view(data):
 	get_node("Layer 2 - GUI/RuneDetailInterface/BackRect/VContainer/CCRuneName/LRuneName").text = data.id
 	if(data.invertible):
 		get_node("Layer 2 - GUI/RuneDetailInterface/BackRect/VContainer/CCRuneStatus/LRuneStatus").text = "KEY_INVERTIBLE"
-		get_node("Layer 2 - GUI/RuneDetailInterface/BackRect/VContainer/HCEffect/LEffect").text = data.effect.text
-		get_node("Layer 2 - GUI/RuneDetailInterface/BackRect/VContainer/HCEffect/LIEffect").text = data.inverse.text
-		get_node("Layer 2 - GUI/RuneDetailInterface/BackRect/VContainer/HCEffect/LIEffect").visible = true
+		get_node("Layer 2 - GUI/RuneDetailInterface/BackRect/VContainer/HCEffect/VLEContainer/LEffect").text = data.effect.text
+		get_node("Layer 2 - GUI/RuneDetailInterface/BackRect/VContainer/HCEffect/VLIEContainer/LIEffect").text = data.inverse.text
+		get_node("Layer 2 - GUI/RuneDetailInterface/BackRect/VContainer/HCEffect/VLIEContainer/LIEffect").visible = true
+		get_node("Layer 2 - GUI/RuneDetailInterface/BackRect/VContainer/HCEffect/VLIEContainer/Label").visible = true
 		get_node("Layer 2 - GUI/RuneDetailInterface/BackRect/VContainer/CCEffectDescription/LEffectDescription").text = TranslationServer.translate(data.effect.description)+" "+TranslationServer.translate("KEY_OR")+" "+TranslationServer.translate(data.inverse.description)
+		get_node("Layer 2 - GUI/RuneDetailInterface/BackRect/VContainer/HCEffect/VLIEContainer/Label").text = String(data.effect.duration) +" turns"
 	else:
 		get_node("Layer 2 - GUI/RuneDetailInterface/BackRect/VContainer/CCRuneStatus/LRuneStatus").text = "KEY_NOINVERTIBLE"
-		get_node("Layer 2 - GUI/RuneDetailInterface/BackRect/VContainer/HCEffect/LEffect").text = data.effect.text
-		get_node("Layer 2 - GUI/RuneDetailInterface/BackRect/VContainer/HCEffect/LIEffect").visible = false
+		get_node("Layer 2 - GUI/RuneDetailInterface/BackRect/VContainer/HCEffect/VLEContainer/LEffect").text = data.effect.text
+		get_node("Layer 2 - GUI/RuneDetailInterface/BackRect/VContainer/HCEffect/VLIEContainer/LIEffect").visible = false
 		get_node("Layer 2 - GUI/RuneDetailInterface/BackRect/VContainer/CCEffectDescription/LEffectDescription").text = data.effect.description
-	
+		get_node("Layer 2 - GUI/RuneDetailInterface/BackRect/VContainer/HCEffect/VLIEContainer/Label").visible = false
 	match data.alignment:
 		"prosperity":
 			get_node("Layer 2 - GUI/RuneDetailInterface/BackRect/VContainer/HCAlignment/MCAlignment/Axe").visible = false
