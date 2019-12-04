@@ -28,8 +28,8 @@ func _on_ButtonLanguage_pressed():
 		get_node("BackRect/VContainer/HCLanguage/MButton/ButtonLanguage").text = "EN"
 		DataManager.user_data.configuration.language = "en"
 		TranslationServer.set_locale("en")
-	DataManager.update_data()
-
+	DataManager.save_user_data_encrypted()
+	
 func _on_Exit_pressed():
 	queue_free()
 

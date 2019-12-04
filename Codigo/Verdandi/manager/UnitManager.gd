@@ -6,6 +6,7 @@ export(int) var cell_range =  2
 export(int) var path_dimension  =  3
 export(int, "North", "South","West","East","NorthWest","NorthEast","SouthWest","SouthEast") var orientation = 0
 export(int, "North", "South","West","East","NorthWest","NorthEast","SouthWest","SouthEast") var priority_orientation = 0
+export(String, "player1", "player2") var collision_group = "player1"
 export(int, "Origin", "Color1") var color = 0
 # Game VAR
 export(int) var life = 100
@@ -32,6 +33,7 @@ func _ready():
 	connect_parent_child("units_affected","_effect_manager")
 	hide_areas()
 	area_diseable_status(true)
+	print(collision_group)
 	if($AnimatedSprite.material):
 		$AnimatedSprite.material.set("shader_param/armor_value",color)
 
@@ -314,56 +316,56 @@ func _on_SelectedManager_gui_input(event):
 
 # AREA ENTERED SECCTION
 func _on_AreaCoordinateNorth_body_entered(body):
-	if(get_groups()[1] != body.get_groups()[1]):
+	if !body.is_in_group(collision_group):
 		target = body
 		print("ENEMY IN NORTH")
 		flag_attack = true
 		orientation = 0
 
 func _on_AreaCoordinateSouth_body_entered(body):
-	if(get_groups()[1] != body.get_groups()[1]):
+	if !body.is_in_group(collision_group):
 		target = body
 		print("ENEMY IN SOUTH")
 		flag_attack = true
 		orientation = 1
 
 func _on_AreaCoordinateEast_body_entered(body):
-	if(get_groups()[1] != body.get_groups()[1]):
+	if !body.is_in_group(collision_group):
 		target = body
 		print("ENEMY IN EAST")
 		flag_attack = true
 		orientation = 3
 
 func _on_AreaCoordinateWest_body_entered(body):
-	if(get_groups()[1] != body.get_groups()[1]):
+	if !body.is_in_group(collision_group):
 		target = body
 		print("ENEMY IN WEST")
 		flag_attack = true
 		orientation = 2
 
 func _on_AreaCoordinateNorthWest_body_entered(body):
-	if(get_groups()[1] != body.get_groups()[1]):
+	if !body.is_in_group(collision_group):
 		target = body
 		print("ENEMY IN NorthWest")
 		flag_attack = true
 		orientation = 4
 
 func _on_AreaCoordinateNorthEast_body_entered(body):
-	if(get_groups()[1] != body.get_groups()[1]):
+	if !body.is_in_group(collision_group):
 		target = body
 		print("ENEMY IN NorthEast")
 		flag_attack = true
 		orientation = 5
 
 func _on_AreaCoordinateSouthWest_body_entered(body):
-	if(get_groups()[1] != body.get_groups()[1]):
+	if !body.is_in_group(collision_group):
 		target = body
 		print("ENEMY IN SouthWest")
 		flag_attack = true
 		orientation = 6
 
 func _on_AreaCoordinateSouthEast_body_entered(body):
-	if(get_groups()[1] != body.get_groups()[1]):
+	if !body.is_in_group(collision_group):
 		target = body
 		print("ENEMY IN SouthEast")
 		flag_attack = true

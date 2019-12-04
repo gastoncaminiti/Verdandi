@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://manager/interface/InterfaceGameManager.gd" type="Script" id=1]
 [ext_resource path="res://interface/norse/img/background.png" type="Texture" id=2]
@@ -15,9 +15,17 @@
 [ext_resource path="res://interface/StatusInterface.tscn" type="PackedScene" id=13]
 [ext_resource path="res://interface/RuneDetailInterface.tscn" type="PackedScene" id=14]
 [ext_resource path="res://interface/NextInterface.tscn" type="PackedScene" id=15]
-[ext_resource path="res://interface/norse/element/Coin.tscn" type="PackedScene" id=16]
-[ext_resource path="res://interface/norse/element/Axe.tscn" type="PackedScene" id=17]
-[ext_resource path="res://interface/norse/element/Eye.tscn" type="PackedScene" id=18]
+[ext_resource path="res://interface/norse/img/hourglass/0.png" type="Texture" id=16]
+[ext_resource path="res://interface/norse/img/hourglass/1.png" type="Texture" id=17]
+[ext_resource path="res://interface/norse/img/hourglass/2.png" type="Texture" id=18]
+[ext_resource path="res://interface/norse/img/hourglass/3.png" type="Texture" id=19]
+[ext_resource path="res://interface/norse/img/hourglass/4.png" type="Texture" id=20]
+[ext_resource path="res://interface/norse/img/hourglass/5.png" type="Texture" id=21]
+[ext_resource path="res://interface/norse/img/hourglass/6.png" type="Texture" id=22]
+[ext_resource path="res://interface/norse/img/hourglass/7.png" type="Texture" id=23]
+[ext_resource path="res://interface/norse/element/Coin.tscn" type="PackedScene" id=24]
+[ext_resource path="res://interface/norse/element/Axe.tscn" type="PackedScene" id=25]
+[ext_resource path="res://interface/norse/element/Eye.tscn" type="PackedScene" id=26]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -73,6 +81,14 @@ outline_color = Color( 0.619608, 0.290196, 0.027451, 1 )
 use_filter = true
 font_data = ExtResource( 12 )
 
+[sub_resource type="SpriteFrames" id=7]
+animations = [ {
+"frames": [ ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ) ],
+"loop": true,
+"name": "tic-tac",
+"speed": 5.0
+} ]
+
 [node name="GameInterface" type="Node2D" groups=[
 "interface_game",
 ]]
@@ -112,6 +128,7 @@ texture = ExtResource( 4 )
 [node name="Layer 2 - GUI" type="CanvasLayer" parent="."]
 
 [node name="Bag" type="AnimatedSprite" parent="Layer 2 - GUI"]
+editor/display_folded = true
 position = Vector2( 248, 529 )
 scale = Vector2( 1.2, 1.2 )
 frames = SubResource( 1 )
@@ -142,6 +159,7 @@ flat = true
 position = Vector2( -60, 99 )
 
 [node name="Papyrus" type="TextureRect" parent="Layer 2 - GUI"]
+editor/display_folded = true
 margin_left = 820.0
 margin_top = 340.0
 margin_right = 958.0
@@ -569,6 +587,7 @@ custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
 
 [node name="AlignmentContainer" type="HBoxContainer" parent="Layer 2 - GUI"]
+editor/display_folded = true
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -329.0
@@ -828,19 +847,26 @@ position = Vector2( 125, 40 )
 [node name="NextInterface" parent="Layer 2 - GUI" instance=ExtResource( 15 )]
 position = Vector2( 1200, 230 )
 
-[node name="Coin" parent="." instance=ExtResource( 16 )]
+[node name="Hourglass" type="AnimatedSprite" parent="Layer 2 - GUI"]
+position = Vector2( 1200, 400 )
+scale = Vector2( 0.7, 0.7 )
+frames = SubResource( 7 )
+animation = "tic-tac"
+frame = 2
+
+[node name="Coin" parent="." instance=ExtResource( 24 )]
 margin_left = 1077.0
 margin_top = 244.0
 margin_right = 1107.0
 margin_bottom = 274.0
 
-[node name="Axe" parent="." instance=ExtResource( 17 )]
+[node name="Axe" parent="." instance=ExtResource( 25 )]
 margin_left = 1158.0
 margin_top = 245.0
 margin_right = 1188.0
 margin_bottom = 275.0
 
-[node name="Eye" parent="." instance=ExtResource( 18 )]
+[node name="Eye" parent="." instance=ExtResource( 26 )]
 margin_left = 1117.0
 margin_top = 244.0
 margin_right = 1147.0

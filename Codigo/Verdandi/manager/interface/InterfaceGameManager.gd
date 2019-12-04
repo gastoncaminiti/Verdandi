@@ -1,10 +1,22 @@
 extends Node
 
+var flag_hourglass = false
+var hourglass
+
 func _ready():
-	pass
+	hourglass = get_node("Layer 2 - GUI/Hourglass")
 
 func animated_orden():
 	pass
+
+func _process(delta):
+	if flag_hourglass:
+		hourglass.play("tic-tac")
+		hourglass.global_position = get_viewport().get_mouse_position()
+
+func disiable_hourglass():
+	flag_hourglass = false
+	hourglass.global_position = Vector2(1200,400)
 
 func set_selected_gui(l,a,d,s,p):
 	get_node("Layer 2 - GUI/StatusInterface/BackRect/VContainer/HCLife/NLife").set_text(String(l))
