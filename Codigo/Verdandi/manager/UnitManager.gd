@@ -33,7 +33,6 @@ func _ready():
 	connect_parent_child("units_affected","_effect_manager")
 	hide_areas()
 	area_diseable_status(true)
-	print(collision_group)
 	if($AnimatedSprite.material):
 		$AnimatedSprite.material.set("shader_param/armor_value",color)
 
@@ -154,7 +153,6 @@ func valid_path(my_path, my_nav):
 	if(my_path.size() < path_dimension):
 		return false
 	set_center_path()
-	#print(my_path[0].distance_to(my_path[1]))
 	if(my_path[0].distance_to(my_path[1]) < my_map.cell_size.y):
 		return false
 	return true
@@ -393,7 +391,6 @@ func _on_AnimatedSprite_animation_finished():
 	if($AnimatedSprite.get_animation().find("dead") != -1):
 		if get_parent().is_in_group("Level"):
 			if is_in_group("hero"):
-				print("IS HERO")
 				get_parent().my_hero_dead = true
 				get_parent().unit_check()
 				return

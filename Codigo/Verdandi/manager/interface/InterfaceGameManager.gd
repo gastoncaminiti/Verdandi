@@ -91,24 +91,36 @@ func hide_rune_view():
 	get_node("Layer 2 - GUI/RuneDetailInterface").visible = false
 
 func set_rune_gui(character,index, b, card_data):
-	var node_effect_gui = "Layer 2 - GUI/GridEffectMy/CEffect"+String(index)+"/Effect"+String(index)
-	var node_papyrus_gui = "Layer 2 - GUI/Papyrus/GridPapyrus/CChar"+String(index)+"/Char"+String(index)
-	var c = character  if b else character.to_upper() 
-	if(get_node(node_effect_gui)):
-		get_node(node_effect_gui).text  =  c
-		get_node(node_effect_gui).get_parent().hint_tooltip = card_data.inverse.description  if b else card_data.effect.description
-	else:
-		var effect_container = get_node("Layer 2 - GUI/GridEffectMy")
-		effect_container.add_child(effect_container.get_children().back().duplicate())
-		effect_container.get_children().back().set_name("CEffect"+String(index))
-		effect_container.get_children().back().get_children().back().set_name("Effect"+String(index))
-		get_node(node_effect_gui).text  =  c
-	if(get_node(node_papyrus_gui)):
-		get_node(node_papyrus_gui).text  =  c
-		get_node(node_papyrus_gui).get_parent().hint_tooltip = card_data.inverse.milestone[0]  if b else card_data.effect.milestone[0]
 	var avatar = get_node("Layer 2 - GUI/Sidgrida/AnimatedSprite")
 	avatar.play("atack")
 	avatar.set_frame(0)
+	var c = character  if b else character.to_upper() 
+	#var node_effect_gui = "Layer 2 - GUI/GridEffectMy/CEffect"+String(index)+"/Effect"+String(index)
+	var node_papyrus_gui = "Layer 2 - GUI/Papyrus/GridPapyrus/CChar"+String(index)+"/Char"+String(index)
+	if(get_node(node_papyrus_gui)):
+		get_node(node_papyrus_gui).text  =  c
+		get_node(node_papyrus_gui).get_parent().hint_tooltip = card_data.inverse.milestone[0]  if b else card_data.effect.milestone[0]
+	if b:
+		var aux_inverse = $CEInverse.duplicate()
+		aux_inverse.get_child(0).text = c
+		aux_inverse.hint_tooltip = TranslationServer.translate(card_data.inverse.description) +" (turn "+ String(card_data.inverse.duration) +")"
+		get_node("Layer 2 - GUI/GridEffectMy").add_child(aux_inverse)
+		$Tween.interpolate_property(aux_inverse, "modulate",   Color(1, 1, 1, 0), Color(1, 1, 1, 1), 2, Tween.TRANS_LINEAR, Tween.EASE_IN)
+		$Tween.start()
+	else:
+		var aux_effect  = $CEffect.duplicate()
+		aux_effect.get_child(0).text = c
+		aux_effect.hint_tooltip = TranslationServer.translate(card_data.effect.description) +" (turn "+ String(card_data.effect.duration) +")" 
+		get_node("Layer 2 - GUI/GridEffectMy").add_child(aux_effect)
+		$Tween.interpolate_property(aux_effect, "modulate",   Color(1, 1, 1, 0), Color(1, 1, 1, 1), 1, Tween.TRANS_LINEAR, Tween.EASE_IN)
+		$Tween.start()
+
+func erase_effect_gui(k):
+	for e in get_node("Layer 2 - GUI/GridEffectMy").get_children():
+		if e.get_child(0).text == k:
+			$TweenEnd.interpolate_property(e, "modulate",   Color(1, 1, 1, 1), Color(1, 1, 1, 0), 1, Tween.TRANS_LINEAR, Tween.EASE_IN)
+			$TweenEnd.start()
+			return
 
 func update_alignament(alignament, invert, card_data):
 	if get_parent().is_in_group("Level"):
@@ -179,3 +191,6 @@ func alignment_default(limit):
 		get_node("Layer 2 - GUI/AlignmentContainer/VCFavor/IconContainer").add_child(aux_eye)
 		get_node("Layer 2 - GUI/AlignmentContainer/VCHonor/IconContainer").add_child(aux_axe)
 	
+
+func _on_TweenEnd_tween_completed(object, key):
+	object.queue_free()

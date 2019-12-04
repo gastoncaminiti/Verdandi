@@ -112,7 +112,7 @@ func alignament_control(alignament, invertible):
 		
 # Función: Aplicar efectos de runa jugada al nivel.
 func apply_effect(data , key):
-	effects.append({"order": CardGame.index_effect, "effect": data})
+	effects.append({"key": key,"order": CardGame.index_effect, "effect": data , "turns":data.duration})
 	papyrus.append({"key": key, "milestone": data.milestone[0]})
 	emit_signal("units_affected", data, player_name)
 
@@ -133,11 +133,14 @@ func unit_check():
 	
 func _on_cooldown_timeout():
 	if is_all_check():
-		print(unit_checks)
-		print(my_hero_dead)
 		$GameInterface.disiable_hourglass()
 		get_tree().get_root().set_disable_input(false)
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		for e in effects:
+			e.turns -=1
+			if(e.turns < 0):
+				$GameInterface.erase_effect_gui(e.key)
+				effects.erase(e)
 		if my_hero_dead:
 			next_level(false, "KEY_LOSE_ENEMY")
 			return
