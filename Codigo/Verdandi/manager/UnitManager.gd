@@ -23,7 +23,8 @@ var size_cell_y
 var flag_move = false
 var flag_priority = false
 var flag_attack = false
-var target = null
+var targets = []
+var index_target = 0
 var is_invulnerable = false
 var is_dead = false
 
@@ -99,7 +100,7 @@ func _goMapConfig(map):
 func _actions_manager(nav):
 	if(flag_attack):
 		reset_noloop_animation()
-		area_diseable_status(true)
+		area_diseable_status(false)
 	else:
 		area_diseable_status(false)
 		if(!flag_attack):
@@ -120,7 +121,7 @@ func _effect_manager(data, player):
 		if(data.type == "spell"):
 			match data.cast:
 				"invulnerable":
-					is_invulnerable = true
+					is_invulnerable = data.value
 
 func goPahtConfig(nav):
 		if(my_path):
@@ -274,7 +275,7 @@ func _process(delta: float) -> void:
 	if flag_attack and !flag_move and !is_dead:
 			orientation_animation("attack")
 	if is_dead:
-		orientation_animation("dead")
+		$AnimatedSprite.play("dead_east")
 	
 
 func _on_SelectedManager_mouse_entered():
@@ -315,59 +316,59 @@ func _on_SelectedManager_gui_input(event):
 # AREA ENTERED SECCTION
 func _on_AreaCoordinateNorth_body_entered(body):
 	if !body.is_in_group(collision_group):
-		target = body
+		targets.append({"obj":body, "orientation": 0})
 		print("ENEMY IN NORTH")
 		flag_attack = true
-		orientation = 0
+		orientation = targets[index_target].orientation
 
 func _on_AreaCoordinateSouth_body_entered(body):
 	if !body.is_in_group(collision_group):
-		target = body
+		targets.append({"obj":body, "orientation": 1})
 		print("ENEMY IN SOUTH")
 		flag_attack = true
-		orientation = 1
+		orientation = targets[index_target].orientation
 
 func _on_AreaCoordinateEast_body_entered(body):
 	if !body.is_in_group(collision_group):
-		target = body
+		targets.append({"obj":body, "orientation": 3})
 		print("ENEMY IN EAST")
 		flag_attack = true
-		orientation = 3
+		orientation = targets[index_target].orientation
 
 func _on_AreaCoordinateWest_body_entered(body):
 	if !body.is_in_group(collision_group):
-		target = body
+		targets.append({"obj":body, "orientation": 2})
 		print("ENEMY IN WEST")
 		flag_attack = true
-		orientation = 2
+		orientation = targets[index_target].orientation
 
 func _on_AreaCoordinateNorthWest_body_entered(body):
 	if !body.is_in_group(collision_group):
-		target = body
+		targets.append({"obj":body, "orientation": 4})
 		print("ENEMY IN NorthWest")
 		flag_attack = true
-		orientation = 4
+		orientation = targets[index_target].orientation
 
 func _on_AreaCoordinateNorthEast_body_entered(body):
 	if !body.is_in_group(collision_group):
-		target = body
+		targets.append({"obj":body, "orientation": 5})
 		print("ENEMY IN NorthEast")
 		flag_attack = true
-		orientation = 5
+		orientation = targets[index_target].orientation
 
 func _on_AreaCoordinateSouthWest_body_entered(body):
 	if !body.is_in_group(collision_group):
-		target = body
+		targets.append({"obj":body, "orientation": 6})
 		print("ENEMY IN SouthWest")
 		flag_attack = true
-		orientation = 6
+		orientation = targets[index_target].orientation
 
 func _on_AreaCoordinateSouthEast_body_entered(body):
 	if !body.is_in_group(collision_group):
-		target = body
+		targets.append({"obj":body, "orientation": 7})
 		print("ENEMY IN SouthEast")
 		flag_attack = true
-		orientation = 7
+		orientation = targets[index_target].orientation
 
 func area_diseable_status(status):
 	$North/AreaCoordinateNorth/CollisionPolygon2D.set_disabled(status)
@@ -384,7 +385,11 @@ func _on_AnimatedSprite_animation_finished():
 		get_parent().unit_check()
 		return
 	if($AnimatedSprite.get_animation().find("attack") != -1):
-		target.hurted(attack)
+		targets[index_target].obj.hurted(attack)
+		if targets[index_target].obj.is_dead and index_target < targets.size() - 1:
+			targets[index_target].obj.area_diseable_status(true)
+			index_target+=1
+			orientation = targets[index_target].orientation
 		if get_parent().is_in_group("Level"):
 			get_parent().unit_check()
 			return

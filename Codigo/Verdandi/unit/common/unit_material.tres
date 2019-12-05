@@ -7,9 +7,9 @@ uniform int armor_value = 0;
 
 vec4 getArmorColor(int index,vec4 color_origin, float time){
 	if(index == 0)
-		return color_origin; //Blue Megaman
+		return color_origin; 
 	if(index == 1)
-		return color_origin.rgra * vec4(1.2,0.8,2,1.0);
+		return (color_origin.rgra * vec4(1.2,0.8,2,1.0)) + vec4(.02,0,.4,0);
 }
 
 void fragment() {

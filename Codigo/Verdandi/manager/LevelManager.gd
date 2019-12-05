@@ -55,7 +55,7 @@ func _ready():
 # Función: Definición de eventos durante el combate.
 func battle_turn():
 	unit_checks = 0
-	update_effects_gui()
+	update_effects_status()
 	# Desactivar input y ocultar cursor.
 	get_tree().get_root().set_disable_input(true)
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
@@ -158,9 +158,20 @@ func pass_turn_effects():
 	for e in effects:
 		e.turns -=1
 
-func update_effects_gui():
+func update_effects_status():
 	for e in effects:
 		if(e.turns < 1):
 			$GameInterface.erase_effect_gui(e.key)
+			reverse_card_effect(e)
 			effects.erase(e)
+
+func reverse_card_effect(data):
+	if(data.effect.type == "statistics"):
+		data.effect.value = int(data.effect.value) * -1
+		emit_signal("units_affected", data.effect, player_name)
+		return
+	if(data.effect.type == "spell"):
+		data.effect.value = !data.effect.value
+		emit_signal("units_affected", data.effect, player_name)
+		return
 	

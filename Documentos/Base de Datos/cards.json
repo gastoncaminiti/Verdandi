@@ -586,7 +586,7 @@
         }
     },
     "decks": {
-        "level_starter": {
+        "level_00": {
           "algiz": {
             "quantity": 1
           },
@@ -600,6 +600,36 @@
             "quantity": 1
           }
         },
+        "level_01": {
+            "algiz": {
+              "quantity": 1
+            },
+            "eihwaz": {
+              "quantity": 1
+            },
+            "fehu": {
+              "quantity": 1
+            },
+            "gebo": {
+              "quantity": 1
+            },
+            "perth": {
+              "quantity": 1
+            },
+            "uruz": {
+              "quantity": 1
+            },
+            "dagaz": {
+              "quantity": 1
+            },
+            "teiwaz": {
+              "quantity": 1
+            },
+            "berkana": {
+              "quantity": 1
+            }
+            
+          },
         "deck_prosperity": {
             "fehu": {
                 "quantity": 1
