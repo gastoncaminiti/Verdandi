@@ -40,15 +40,17 @@ func set_rune_view(data):
 		get_node("Layer 2 - GUI/RuneDetailInterface/BackRect/VContainer/CCRuneStatus/LRuneStatus").text = "KEY_INVERTIBLE"
 		get_node("Layer 2 - GUI/RuneDetailInterface/BackRect/VContainer/HCEffect/VLEContainer/LEffect").text = data.effect.text
 		get_node("Layer 2 - GUI/RuneDetailInterface/BackRect/VContainer/HCEffect/VLIEContainer/LIEffect").text = data.inverse.text
+		get_node("Layer 2 - GUI/RuneDetailInterface/BackRect/VContainer/HCEffect/VLEContainer/Label").text = String(data.effect.duration) +" turns"
 		get_node("Layer 2 - GUI/RuneDetailInterface/BackRect/VContainer/HCEffect/VLIEContainer/LIEffect").visible = true
 		get_node("Layer 2 - GUI/RuneDetailInterface/BackRect/VContainer/HCEffect/VLIEContainer/Label").visible = true
 		get_node("Layer 2 - GUI/RuneDetailInterface/BackRect/VContainer/CCEffectDescription/LEffectDescription").text = TranslationServer.translate(data.effect.description)+" "+TranslationServer.translate("KEY_OR")+" "+TranslationServer.translate(data.inverse.description)
-		get_node("Layer 2 - GUI/RuneDetailInterface/BackRect/VContainer/HCEffect/VLIEContainer/Label").text = String(data.effect.duration) +" turns"
+		get_node("Layer 2 - GUI/RuneDetailInterface/BackRect/VContainer/HCEffect/VLIEContainer/Label").text = String(data.inverse.duration) +" turns"
 	else:
 		get_node("Layer 2 - GUI/RuneDetailInterface/BackRect/VContainer/CCRuneStatus/LRuneStatus").text = "KEY_NOINVERTIBLE"
 		get_node("Layer 2 - GUI/RuneDetailInterface/BackRect/VContainer/HCEffect/VLEContainer/LEffect").text = data.effect.text
 		get_node("Layer 2 - GUI/RuneDetailInterface/BackRect/VContainer/HCEffect/VLIEContainer/LIEffect").visible = false
 		get_node("Layer 2 - GUI/RuneDetailInterface/BackRect/VContainer/CCEffectDescription/LEffectDescription").text = data.effect.description
+		get_node("Layer 2 - GUI/RuneDetailInterface/BackRect/VContainer/HCEffect/VLEContainer/Label").text = String(data.effect.duration) +" turns"
 		get_node("Layer 2 - GUI/RuneDetailInterface/BackRect/VContainer/HCEffect/VLIEContainer/Label").visible = false
 	match data.alignment:
 		"prosperity":

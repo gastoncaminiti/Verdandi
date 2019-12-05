@@ -55,6 +55,7 @@ func _ready():
 # Función: Definición de eventos durante el combate.
 func battle_turn():
 	unit_checks = 0
+	update_effects_gui()
 	# Desactivar input y ocultar cursor.
 	get_tree().get_root().set_disable_input(true)
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
@@ -136,11 +137,8 @@ func _on_cooldown_timeout():
 		$GameInterface.disiable_hourglass()
 		get_tree().get_root().set_disable_input(false)
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-		for e in effects:
-			e.turns -=1
-			if(e.turns < 0):
-				$GameInterface.erase_effect_gui(e.key)
-				effects.erase(e)
+		pass_turn_effects()
+		$GameInterface.decrement_my_turn_gui()
 		if my_hero_dead:
 			next_level(false, "KEY_LOSE_ENEMY")
 			return
@@ -156,3 +154,13 @@ func _on_cooldown_timeout():
 	else:
 		_cooldown.start()
 
+func pass_turn_effects():
+	for e in effects:
+		e.turns -=1
+
+func update_effects_gui():
+	for e in effects:
+		if(e.turns < 1):
+			$GameInterface.erase_effect_gui(e.key)
+			effects.erase(e)
+	

@@ -60,10 +60,11 @@ func set_rune_view(data, pos):
 		get_node("Layer 2 - GUI/RuneDetailInterface/BackRect/VContainer/HCEffect/VLIEContainer/LIEffect").visible = true
 		get_node("Layer 2 - GUI/RuneDetailInterface/BackRect/VContainer/HCEffect/VLIEContainer/Label").visible = true
 		get_node("Layer 2 - GUI/RuneDetailInterface/BackRect/VContainer/CCEffectDescription/LEffectDescription").text = TranslationServer.translate(data.effect.description)+" "+TranslationServer.translate("KEY_OR")+" "+TranslationServer.translate(data.inverse.description)
-		get_node("Layer 2 - GUI/RuneDetailInterface/BackRect/VContainer/HCEffect/VLIEContainer/Label").text = String(data.effect.duration) +" turns"
+		get_node("Layer 2 - GUI/RuneDetailInterface/BackRect/VContainer/HCEffect/VLIEContainer/Label").text = String(data.inverse.duration) +" turns"
 	else:
 		get_node("Layer 2 - GUI/RuneDetailInterface/BackRect/VContainer/CCRuneStatus/LRuneStatus").text = "KEY_NOINVERTIBLE"
 		get_node("Layer 2 - GUI/RuneDetailInterface/BackRect/VContainer/HCEffect/VLEContainer/LEffect").text = data.effect.text
+		get_node("Layer 2 - GUI/RuneDetailInterface/BackRect/VContainer/HCEffect/VLEContainer/Label").text = String(data.effect.duration) +" turns"
 		get_node("Layer 2 - GUI/RuneDetailInterface/BackRect/VContainer/HCEffect/VLIEContainer/LIEffect").visible = false
 		get_node("Layer 2 - GUI/RuneDetailInterface/BackRect/VContainer/HCEffect/VLIEContainer/Label").visible = false
 		get_node("Layer 2 - GUI/RuneDetailInterface/BackRect/VContainer/CCEffectDescription/LEffectDescription").text = data.effect.description
@@ -103,14 +104,16 @@ func set_rune_gui(character,index, b, card_data):
 	if b:
 		var aux_inverse = $CEInverse.duplicate()
 		aux_inverse.get_child(0).text = c
-		aux_inverse.hint_tooltip = TranslationServer.translate(card_data.inverse.description) +" (turn "+ String(card_data.inverse.duration) +")"
+		aux_inverse.get_child(1).text =  String(card_data.inverse.duration)
+		aux_inverse.hint_tooltip = card_data.inverse.description
 		get_node("Layer 2 - GUI/GridEffectMy").add_child(aux_inverse)
 		$Tween.interpolate_property(aux_inverse, "modulate",   Color(1, 1, 1, 0), Color(1, 1, 1, 1), 2, Tween.TRANS_LINEAR, Tween.EASE_IN)
 		$Tween.start()
 	else:
 		var aux_effect  = $CEffect.duplicate()
 		aux_effect.get_child(0).text = c
-		aux_effect.hint_tooltip = TranslationServer.translate(card_data.effect.description) +" (turn "+ String(card_data.effect.duration) +")" 
+		aux_effect.get_child(1).text = String(card_data.effect.duration)
+		aux_effect.hint_tooltip = card_data.effect.description
 		get_node("Layer 2 - GUI/GridEffectMy").add_child(aux_effect)
 		$Tween.interpolate_property(aux_effect, "modulate",   Color(1, 1, 1, 0), Color(1, 1, 1, 1), 1, Tween.TRANS_LINEAR, Tween.EASE_IN)
 		$Tween.start()
@@ -194,3 +197,10 @@ func alignment_default(limit):
 
 func _on_TweenEnd_tween_completed(object, key):
 	object.queue_free()
+
+func decrement_my_turn_gui():
+	for gui_effect in get_node("Layer 2 - GUI/GridEffectMy").get_children():
+		#var aux = gui_effect.get_child(1).text
+		#print(aux)
+		gui_effect.get_child(1).text = String( int(gui_effect.get_child(1).text) - 1)
+

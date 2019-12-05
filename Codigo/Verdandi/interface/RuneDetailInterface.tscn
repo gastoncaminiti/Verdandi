@@ -28,7 +28,7 @@ outline_size = 2
 outline_color = Color( 0.0980392, 0.262745, 0.00392157, 1 )
 font_data = ExtResource( 2 )
 
-[sub_resource type="DynamicFont" id=7]
+[sub_resource type="DynamicFont" id=4]
 outline_size = 2
 outline_color = Color( 0.215686, 0.133333, 0.0196078, 1 )
 use_filter = true
@@ -36,13 +36,13 @@ extra_spacing_char = 2
 extra_spacing_space = 4
 font_data = ExtResource( 4 )
 
-[sub_resource type="DynamicFont" id=4]
+[sub_resource type="DynamicFont" id=5]
 size = 25
 outline_size = 2
 outline_color = Color( 0.439216, 0.0392157, 0.0392157, 1 )
 font_data = ExtResource( 2 )
 
-[sub_resource type="DynamicFont" id=5]
+[sub_resource type="DynamicFont" id=6]
 size = 25
 outline_size = 3
 outline_color = Color( 0.231373, 0.117647, 0.0156863, 1 )
@@ -50,7 +50,7 @@ use_filter = true
 extra_spacing_char = 1
 font_data = ExtResource( 2 )
 
-[sub_resource type="DynamicFont" id=6]
+[sub_resource type="DynamicFont" id=7]
 size = 30
 outline_size = 2
 outline_color = Color( 0.254902, 0.184314, 0.0156863, 1 )
@@ -125,7 +125,7 @@ align = 1
 margin_top = 32.0
 margin_right = 110.0
 margin_bottom = 51.0
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "3 turns"
 align = 1
@@ -139,7 +139,7 @@ margin_bottom = 51.0
 margin_right = 110.0
 margin_bottom = 28.0
 rect_min_size = Vector2( 110, 0 )
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
 text = "EFFECT"
 align = 1
 
@@ -147,7 +147,7 @@ align = 1
 margin_top = 32.0
 margin_right = 110.0
 margin_bottom = 51.0
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "7 turns"
 align = 1
@@ -162,7 +162,7 @@ margin_left = 4.0
 margin_right = 224.0
 margin_bottom = 100.0
 rect_min_size = Vector2( 220, 100 )
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 6 )
 custom_colors/font_color = Color( 0.839216, 0.839216, 0.839216, 1 )
 custom_constants/line_spacing = 8
 text = "EFFECT EFFECTEFF ECTEFF ECTEFFE CTEFFECT FFECT FFECT  FFECT FFECTFFECT FFECT"
@@ -202,6 +202,6 @@ margin_left = 50.0
 margin_right = 220.0
 margin_bottom = 34.0
 rect_min_size = Vector2( 170, 0 )
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 7 )
 text = "KEY_ALING"
 
