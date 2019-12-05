@@ -82,6 +82,7 @@ func hurted(damage):
 		life -= damage
 		if life < 1:
 			is_dead = true
+			$AnimatedSprite.play("dead_east")
 
 # Función que permite conectar una señal de nodo padre con una función del nodo hijo.
 func connect_parent_child(nsignal, nfunction):
@@ -262,21 +263,23 @@ func orientation_reorientation():
 		7:
 			orientation = priority_orientation
 
-func _process(delta: float) -> void:
-	if flag_move and !is_dead:
-		orientation_animation("walk")
-		var d: float = global_position.distance_to(my_goal_position)
-		if d > 1:
-			move(my_goal_position, (move_speed * delta)/d)
-		else:
-			flag_move = false
-			orientation_animation("idle")
-			
-	if flag_attack and !flag_move and !is_dead:
-			orientation_animation("attack")
-	if is_dead:
-		$AnimatedSprite.play("dead_east")
+func _physics_process(delta):
 	
+	if !is_dead:
+		if flag_move and !is_dead:
+			orientation_animation("walk")
+			var d: float = global_position.distance_to(my_goal_position)
+			if d > 1:
+				move(my_goal_position, (move_speed * delta)/d)
+				return
+			else:
+				flag_move = false
+				orientation_animation("idle")
+				return
+	
+		if flag_attack and !flag_move and !is_dead:
+				orientation_animation("attack")
+				return
 
 func _on_SelectedManager_mouse_entered():
 	show_areas()
@@ -401,9 +404,16 @@ func _on_AnimatedSprite_animation_finished():
 				return
 			if is_in_group("player1"):
 				get_parent().my_units(self)
+				get_parent().erase_all(self)
 				get_parent().unit_check()
 				return
 			if is_in_group("player2"):
 				get_parent().erase_enemy(self)
+				get_parent().erase_all(self)
 				get_parent().unit_check()
+				$Tween.interpolate_property(self, "modulate",   Color(1, 1, 1, 1), Color(1, 1, 1, 0), 3, Tween.TRANS_LINEAR, Tween.EASE_IN)
+				$Tween.start()
 				return
+
+func _on_Tween_tween_completed(object, key):
+	queue_free()

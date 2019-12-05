@@ -122,6 +122,9 @@ func erase_unit(unit):
 
 func erase_enemy(unit):
 	my_enemies.erase(unit)
+	
+func erase_all(unit):
+	all_units.erase(unit)
 
 func next_level(status, message):
 	$GameInterface.show_next_gui(status, message)
@@ -174,4 +177,3 @@ func reverse_card_effect(data):
 		data.effect.value = !data.effect.value
 		emit_signal("units_affected", data.effect, player_name)
 		return
-	
