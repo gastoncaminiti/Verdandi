@@ -36,3 +36,6 @@ func _on_Exit_pressed():
 func _input(event):
 	if event.is_action_pressed("ui_cancel"):
 		queue_free()
+
+func _on_ButtonScreen_pressed():
+	OS.window_fullscreen = !OS.window_fullscreen

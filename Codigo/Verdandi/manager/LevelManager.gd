@@ -93,24 +93,24 @@ func alignament_control(alignament, invertible):
 			honor += -1 if invertible else  1  
 	if prosperity < 0: 
 		prosperity = 0
-		return
+		return true
 	if favor < 0: 
 		favor = 0
-		return
+		return true
 	if honor < 0: 
 		honor = 0
-		return
+		return true
 	# Verificación de estado de partida a razón de la alineación.
 	if prosperity > alignment_limit: 
 		next_level(false, "KEY_LOSE_PROSPERITY")
-		return
+		return false
 	if favor > alignment_limit:
 		next_level(false,"KEY_LOSE_FAVOR")
-		return 
+		return false
 	if honor > alignment_limit: 
 		next_level(false,"KEY_LOSE_HONOR")
-		return
-		
+		return false
+	return true
 # Función: Aplicar efectos de runa jugada al nivel.
 func apply_effect(data , key):
 	effects.append({"key": key,"order": CardGame.index_effect, "effect": data , "turns":data.duration})

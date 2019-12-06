@@ -12,6 +12,7 @@
 ]]
 script = ExtResource( 1 )
 deck_name = "level_00"
+alignment_limit = 2
 
 [node name="Navigation2D" type="Navigation2D" parent="."]
 editor/display_folded = true

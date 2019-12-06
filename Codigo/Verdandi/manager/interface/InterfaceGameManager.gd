@@ -128,52 +128,52 @@ func erase_effect_gui(k):
 func update_alignament(alignament, invert, card_data):
 	if get_parent().is_in_group("Level"):
 		var node_level = get_parent()
-		node_level.alignament_control(alignament, invert)
-		var c  = Color(1,1,1,1)
-		var c2 = Color(0,0,0,0.8)
-		match alignament:
-			"prosperity":
-				var node = get_node("Layer 2 - GUI/AlignmentContainer/VCProsperity/IconContainer")
-				if node_level.prosperity > 0: 
-					if(invert):
-						if(node_level.prosperity - 2 > 0):
-							node.get_children()[node_level.prosperity - 2].modulate = c2
+		if node_level.alignament_control(alignament, invert):
+			var c  = Color(1,1,1,1)
+			var c2 = Color(0,0,0,0.8)
+			match alignament:
+				"prosperity":
+					var node = get_node("Layer 2 - GUI/AlignmentContainer/VCProsperity/IconContainer")
+					if node_level.prosperity > 0: 
+						if(invert):
+							if(node_level.prosperity - 2 > 0):
+								node.get_children()[node_level.prosperity - 2].modulate = c2
+							else:
+								node.get_children()[0].modulate = c2
 						else:
-							node.get_children()[0].modulate = c2
+							node.get_children()[node_level.prosperity - 1].modulate = c
 					else:
-						node.get_children()[node_level.prosperity - 1].modulate = c
-				else:
-					node.get_children()[0].modulate = c2
-			"favor":
-				var node = get_node("Layer 2 - GUI/AlignmentContainer/VCFavor/IconContainer")
-				if node_level.favor > 0: 
-					if(invert):
-						print(invert)
-						if(node_level.favor - 2 > 0):
-							print("NO")
-							node.get_children()[node_level.favor - 2].modulate = c2
+						node.get_children()[0].modulate = c2
+				"favor":
+					var node = get_node("Layer 2 - GUI/AlignmentContainer/VCFavor/IconContainer")
+					if node_level.favor > 0: 
+						if(invert):
+							print(invert)
+							if(node_level.favor - 2 > 0):
+								print("NO")
+								node.get_children()[node_level.favor - 2].modulate = c2
+							else:
+								print("ACA")
+								node.get_children()[0].modulate = c2
 						else:
-							print("ACA")
-							node.get_children()[0].modulate = c2
+							node.get_children()[node_level.favor - 1].modulate = c
 					else:
-						node.get_children()[node_level.favor - 1].modulate = c
-				else:
-					node.get_children()[0].modulate = c2
-			"honor":
-				var node = get_node("Layer 2 - GUI/AlignmentContainer/VCHonor/IconContainer")
-				if node_level.honor > 0: 
-					if(invert):
-						if(node_level.honor - 2 > 0):
-							node.get_children()[node_level.honor - 2].modulate = c2
+						node.get_children()[0].modulate = c2
+				"honor":
+					var node = get_node("Layer 2 - GUI/AlignmentContainer/VCHonor/IconContainer")
+					if node_level.honor > 0: 
+						if(invert):
+							if(node_level.honor - 2 > 0):
+								node.get_children()[node_level.honor - 2].modulate = c2
+							else:
+								node.get_children()[0].honor = c2
 						else:
-							node.get_children()[0].honor = c2
+							node.get_children()[node_level.honor - 1].modulate = c
 					else:
-						node.get_children()[node_level.favor - 1].modulate = c
-				else:
-					node.get_children()[0].modulate = c2
-		var effect = card_data.inverse  if invert else  card_data.effect
-		node_level.apply_effect(effect, card_data.guifont if invert else card_data.guifont.to_upper())
-		node_level.battle_turn()
+						node.get_children()[0].modulate = c2
+			var effect = card_data.inverse  if invert else  card_data.effect
+			node_level.apply_effect(effect, card_data.guifont if invert else card_data.guifont.to_upper())
+			node_level.battle_turn()
 
 func set_bag_num_runes(value):
  get_node("Layer 2 - GUI/Bag/LabelBag").text = value
