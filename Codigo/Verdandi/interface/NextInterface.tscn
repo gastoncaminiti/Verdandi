@@ -61,16 +61,17 @@ margin_right = 340.0
 margin_bottom = 140.0
 
 [node name="LEffectDescription" type="Label" parent="BackRect/VContainer/CCEffectDescription"]
-margin_left = 30.0
-margin_right = 310.0
+margin_left = 40.0
+margin_right = 300.0
 margin_bottom = 90.0
-rect_min_size = Vector2( 280, 90 )
+rect_min_size = Vector2( 260, 90 )
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0.839216, 0.839216, 0.839216, 1 )
 custom_constants/line_spacing = 8
-text = "KEY_MESSAGE"
+text = "KEY_MESSAGE KEY_MESSAGE KEY_MESSAGE KEY_MESSAGE"
 align = 1
 valign = 1
+autowrap = true
 clip_text = true
 
 [node name="HCAlignment" type="HBoxContainer" parent="BackRect/VContainer"]

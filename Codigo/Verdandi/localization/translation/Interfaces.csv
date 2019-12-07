@@ -39,8 +39,14 @@ KEY_LANGUAGE,Language,Idioma
 KEY_YES,Yes,Si
 KEY_NO,No,No
 KEY_MUSIC,Music,Musica
-KEY_LOSE_ENEMY,Game Over,Game Over
-KEY_LOSE_TABLE,Without glory,sin gloria
-KEY_WIN_HERO,I can see the valhalla ,Puedo ver el valhalla
+KEY_LOSE_ENEMY,The enemies defeat us,Los enemigos nos derrotan
+KEY_LOSE_TABLE,Without glory in battle,Sin gloria en la batalla
+KEY_WIN_HERO,I can enter the valhalla ,Puedo entrar en el valhalla 
 KEY_DEFEAT,Defeat,Derrota
 KEY_RETRY,Retry,Reintentar
+KEY_SAGA_0_LEVEL_2,The battle ,La batalla 
+KEY_SAGA_0_LEVEL_3,The end,El fin
+KEY_LOSE_PROSPERITY,Greed consumes the warrior's soul,La avaricia consume el alma del guerrero
+KEY_LOSE_FAVOR,The gods can't fight your battles,Los dioses no pueden luchar tus batallas
+KEY_LOSE_HONOR,The ego poisons our faith,El ego envenena nuestra fe
+KEY_SCREEN,Fullscreen,Fullscreen

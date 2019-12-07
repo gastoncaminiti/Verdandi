@@ -7,7 +7,8 @@ var data_template_filename = "res://data/user.json"
 var user_data    = {}
 # Contenidor de niveles disponibles al jugador
 var maped_levels = {
-	"00": "res://level/sigurd/Level0.tscn"
+	"00": "res://level/sigurd/Level0.tscn",
+	"01": "res://level/sigurd/Level1.tscn"
 }
 
 # Función: Determinar si existe el archivo de persistencia. Si es necesario crea una copia con el formato requerido

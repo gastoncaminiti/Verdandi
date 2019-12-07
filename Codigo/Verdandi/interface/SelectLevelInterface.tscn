@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://manager/interface/InterfaceSelectManager.gd" type="Script" id=1]
 [ext_resource path="res://level/sigurd/Level0.tscn" type="PackedScene" id=2]
@@ -9,7 +9,8 @@
 [ext_resource path="res://interface/norse/img/hero/sigurd/Hero_GUI_1.png" type="Texture" id=7]
 [ext_resource path="res://interface/norse/img/hero/sigurd/Hero_GUI_2.png" type="Texture" id=8]
 [ext_resource path="res://interface/norse/font/Norse.otf" type="DynamicFontData" id=9]
-[ext_resource path="res://sound/Landing-Vanaheimr.ogg" type="AudioStream" id=10]
+[ext_resource path="res://interface/norse/font/NordicaRegular.otf" type="DynamicFontData" id=10]
+[ext_resource path="res://sound/Landing-Vanaheimr.ogg" type="AudioStream" id=11]
 
 [sub_resource type="DynamicFont" id=1]
 size = 80
@@ -41,6 +42,12 @@ size = 32
 outline_size = 2
 outline_color = Color( 0.309804, 0.301961, 0.301961, 1 )
 font_data = ExtResource( 9 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 25
+outline_size = 2
+outline_color = Color( 0.490196, 0.490196, 0.490196, 1 )
+font_data = ExtResource( 10 )
 
 [node name="SelectLevelInterface" type="Node2D"]
 script = ExtResource( 1 )
@@ -92,11 +99,12 @@ text = "KEY_LEGENDS"
 [node name="HCSagasContainer" type="HBoxContainer" parent="Layer 2 - GUI/VCInterface"]
 margin_top = 89.0
 margin_right = 912.0
-margin_bottom = 425.0
+margin_bottom = 497.0
 
 [node name="VCSaga0" type="VBoxContainer" parent="Layer 2 - GUI/VCInterface/HCSagasContainer"]
 margin_right = 300.0
-margin_bottom = 336.0
+margin_bottom = 408.0
+custom_constants/separation = 0
 
 [node name="CContainer" type="MarginContainer" parent="Layer 2 - GUI/VCInterface/HCSagasContainer/VCSaga0"]
 margin_right = 300.0
@@ -111,17 +119,17 @@ frames = SubResource( 2 )
 animation = "idle"
 
 [node name="SagaTitle" type="Label" parent="Layer 2 - GUI/VCInterface/HCSagasContainer/VCSaga0"]
-margin_top = 204.0
+margin_top = 200.0
 margin_right = 300.0
-margin_bottom = 244.0
+margin_bottom = 240.0
 custom_fonts/font = SubResource( 3 )
 text = "KEY_SAGA_0"
 align = 1
 
 [node name="BLevel0" type="Button" parent="Layer 2 - GUI/VCInterface/HCSagasContainer/VCSaga0"]
-margin_top = 248.0
+margin_top = 240.0
 margin_right = 300.0
-margin_bottom = 290.0
+margin_bottom = 282.0
 focus_mode = 0
 custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
@@ -132,9 +140,9 @@ text = "KEY_SAGA_0_LEVEL_0"
 flat = true
 
 [node name="BLevel1" type="Button" parent="Layer 2 - GUI/VCInterface/HCSagasContainer/VCSaga0"]
-margin_top = 294.0
+margin_top = 282.0
 margin_right = 300.0
-margin_bottom = 336.0
+margin_bottom = 324.0
 focus_mode = 0
 custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
@@ -146,37 +154,51 @@ text = "KEY_SAGA_0_LEVEL_1"
 flat = true
 
 [node name="BLevel2" type="Button" parent="Layer 2 - GUI/VCInterface/HCSagasContainer/VCSaga0"]
-visible = false
-margin_top = 332.0
+margin_top = 324.0
 margin_right = 300.0
-margin_bottom = 370.0
+margin_bottom = 366.0
 focus_mode = 0
 custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 0.854902, 0.447059, 0.0862745, 1 )
+disabled = true
 action_mode = 0
 enabled_focus_mode = 0
-text = "KEY_SAGA_0_LEVEL_0"
+text = "KEY_SAGA_0_LEVEL_2"
 flat = true
 
 [node name="BLevel3" type="Button" parent="Layer 2 - GUI/VCInterface/HCSagasContainer/VCSaga0"]
-visible = false
-margin_top = 332.0
+margin_top = 366.0
 margin_right = 300.0
-margin_bottom = 370.0
+margin_bottom = 408.0
 focus_mode = 0
 custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 0.854902, 0.447059, 0.0862745, 1 )
+disabled = true
 action_mode = 0
 enabled_focus_mode = 0
-text = "KEY_SAGA_0_LEVEL_0"
+text = "KEY_SAGA_0_LEVEL_3"
+flat = true
+
+[node name="Exit" type="Button" parent="Layer 2 - GUI"]
+margin_left = 896.0
+margin_top = 57.0
+margin_right = 924.0
+margin_bottom = 93.0
+focus_mode = 0
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color_hover = Color( 0.764706, 0.384314, 0.0431373, 1 )
+action_mode = 0
+enabled_focus_mode = 0
+text = "X"
 flat = true
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 10 )
+stream = ExtResource( 11 )
 autoplay = true
 mix_target = 2
 
 [connection signal="animation_finished" from="Layer 2 - GUI/VCInterface/HCSagasContainer/VCSaga0/CContainer/AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]
 [connection signal="pressed" from="Layer 2 - GUI/VCInterface/HCSagasContainer/VCSaga0/BLevel0" to="." method="_on_BLevel0_pressed"]
+[connection signal="pressed" from="Layer 2 - GUI/Exit" to="." method="_on_Exit_pressed"]

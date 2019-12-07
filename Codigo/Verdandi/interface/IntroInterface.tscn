@@ -3,14 +3,14 @@
 [ext_resource path="res://manager/interface/InterfaceIntroManager.gd" type="Script" id=1]
 [ext_resource path="res://interface/norse/img/background-black.png" type="Texture" id=2]
 [ext_resource path="res://interface/norse/tile/TilesHUB.tres" type="TileSet" id=3]
-[ext_resource path="res://unit/norse/hero/sigurd/img/attack/Hero_Sword_Attack_17.png" type="Texture" id=4]
-[ext_resource path="res://unit/norse/hero/sigurd/img/attack/Hero_Sword_Attack_18.png" type="Texture" id=5]
-[ext_resource path="res://unit/norse/hero/sigurd/img/attack/Hero_Sword_Attack_16.png" type="Texture" id=6]
-[ext_resource path="res://unit/norse/hero/sigurd/img/walk/Hero_Sword_Walk_05.png" type="Texture" id=7]
-[ext_resource path="res://unit/norse/hero/sigurd/img/walk/Hero_Sword_Walk_06.png" type="Texture" id=8]
-[ext_resource path="res://unit/norse/hero/sigurd/img/walk/Hero_Sword_Walk_07.png" type="Texture" id=9]
-[ext_resource path="res://unit/norse/hero/sigurd/img/walk/Hero_Sword_Walk_08.png" type="Texture" id=10]
-[ext_resource path="res://unit/norse/hero/sigurd/img/walk/Hero_Sword_Walk_09.png" type="Texture" id=11]
+[ext_resource path="res://unit/norse/hero/sigurd/img/walk/Hero_Sword_Walk_05.png" type="Texture" id=4]
+[ext_resource path="res://unit/norse/hero/sigurd/img/walk/Hero_Sword_Walk_06.png" type="Texture" id=5]
+[ext_resource path="res://unit/norse/hero/sigurd/img/walk/Hero_Sword_Walk_07.png" type="Texture" id=6]
+[ext_resource path="res://unit/norse/hero/sigurd/img/walk/Hero_Sword_Walk_08.png" type="Texture" id=7]
+[ext_resource path="res://unit/norse/hero/sigurd/img/walk/Hero_Sword_Walk_09.png" type="Texture" id=8]
+[ext_resource path="res://unit/norse/hero/sigurd/img/attack/Hero_Sword_Attack_17.png" type="Texture" id=9]
+[ext_resource path="res://unit/norse/hero/sigurd/img/attack/Hero_Sword_Attack_18.png" type="Texture" id=10]
+[ext_resource path="res://unit/norse/hero/sigurd/img/attack/Hero_Sword_Attack_16.png" type="Texture" id=11]
 [ext_resource path="res://deck/norse/img/Rune_18.png" type="Texture" id=12]
 [ext_resource path="res://deck/norse/img/Rune_15.png" type="Texture" id=13]
 [ext_resource path="res://deck/norse/img/Rune_00.png" type="Texture" id=14]
@@ -26,14 +26,14 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 4 ) ],
-"loop": false,
-"name": "attack",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ) ],
+"frames": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ) ],
 "loop": true,
 "name": "walk",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 10 ), ExtResource( 9 ) ],
+"loop": false,
+"name": "attack",
 "speed": 5.0
 } ]
 
@@ -51,9 +51,10 @@ layer = -3
 
 [node name="TextureRect" type="TextureRect" parent="Layer 0 - Background"]
 margin_top = -5.0
-margin_right = 1024.0
-margin_bottom = 595.0
+margin_right = 1026.0
+margin_bottom = 606.0
 texture = ExtResource( 2 )
+expand = true
 
 [node name="Layer 1 - Border" type="CanvasLayer" parent="."]
 layer = -2

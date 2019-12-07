@@ -307,7 +307,6 @@ mix_target = 2
 [node name="Logo" type="AnimatedSprite" parent="."]
 position = Vector2( 829, 307 )
 frames = SubResource( 6 )
-frame = 6
 playing = true
 
 [connection signal="pressed" from="Layer 2 - GUI/Button" to="." method="_on_Button_pressed"]

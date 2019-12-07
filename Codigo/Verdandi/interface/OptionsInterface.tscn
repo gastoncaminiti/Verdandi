@@ -102,7 +102,7 @@ enabled_focus_mode = 0
 text = "EN"
 flat = true
 
-[node name="HCLanguage2" type="HBoxContainer" parent="BackRect/VContainer"]
+[node name="HCMusic" type="HBoxContainer" parent="BackRect/VContainer"]
 margin_top = 95.0
 margin_right = 340.0
 margin_bottom = 135.0
@@ -110,13 +110,13 @@ rect_min_size = Vector2( 324, 0 )
 custom_constants/separation = 8
 alignment = 1
 
-[node name="MLabel" type="MarginContainer" parent="BackRect/VContainer/HCLanguage2"]
+[node name="MLabel" type="MarginContainer" parent="BackRect/VContainer/HCMusic"]
 margin_left = 66.0
 margin_right = 166.0
 margin_bottom = 40.0
 rect_min_size = Vector2( 100, 0 )
 
-[node name="Label" type="Label" parent="BackRect/VContainer/HCLanguage2/MLabel"]
+[node name="Label" type="Label" parent="BackRect/VContainer/HCMusic/MLabel"]
 margin_top = 6.0
 margin_right = 100.0
 margin_bottom = 34.0
@@ -124,25 +124,24 @@ custom_fonts/font = SubResource( 2 )
 text = "KEY_MUSIC"
 align = 1
 
-[node name="MButton" type="MarginContainer" parent="BackRect/VContainer/HCLanguage2"]
+[node name="MButton" type="MarginContainer" parent="BackRect/VContainer/HCMusic"]
 margin_left = 174.0
 margin_right = 274.0
 margin_bottom = 40.0
 rect_min_size = Vector2( 100, 0 )
 
-[node name="ButtonMusic" type="Button" parent="BackRect/VContainer/HCLanguage2/MButton"]
+[node name="ButtonMusic" type="Button" parent="BackRect/VContainer/HCMusic/MButton"]
 margin_right = 100.0
 margin_bottom = 40.0
 focus_mode = 0
 custom_fonts/font = SubResource( 3 )
 custom_colors/font_color_hover = Color( 0.87451, 0.690196, 0.0509804, 1 )
-disabled = true
 action_mode = 0
 enabled_focus_mode = 0
 text = "YES"
 flat = true
 
-[node name="HCLanguage3" type="HBoxContainer" parent="BackRect/VContainer"]
+[node name="HCScreen" type="HBoxContainer" parent="BackRect/VContainer"]
 margin_top = 140.0
 margin_right = 340.0
 margin_bottom = 180.0
@@ -150,13 +149,13 @@ rect_min_size = Vector2( 324, 0 )
 custom_constants/separation = 8
 alignment = 1
 
-[node name="MLabel" type="MarginContainer" parent="BackRect/VContainer/HCLanguage3"]
+[node name="MLabel" type="MarginContainer" parent="BackRect/VContainer/HCScreen"]
 margin_left = 66.0
 margin_right = 166.0
 margin_bottom = 40.0
 rect_min_size = Vector2( 100, 0 )
 
-[node name="Label" type="Label" parent="BackRect/VContainer/HCLanguage3/MLabel"]
+[node name="Label" type="Label" parent="BackRect/VContainer/HCScreen/MLabel"]
 margin_top = 6.0
 margin_right = 100.0
 margin_bottom = 34.0
@@ -164,13 +163,13 @@ custom_fonts/font = SubResource( 2 )
 text = "KEY_SCREEN"
 align = 1
 
-[node name="MButton" type="MarginContainer" parent="BackRect/VContainer/HCLanguage3"]
+[node name="MButton" type="MarginContainer" parent="BackRect/VContainer/HCScreen"]
 margin_left = 174.0
 margin_right = 274.0
 margin_bottom = 40.0
 rect_min_size = Vector2( 100, 0 )
 
-[node name="ButtonScreen" type="Button" parent="BackRect/VContainer/HCLanguage3/MButton"]
+[node name="ButtonScreen" type="Button" parent="BackRect/VContainer/HCScreen/MButton"]
 margin_right = 100.0
 margin_bottom = 40.0
 focus_mode = 0
@@ -195,6 +194,6 @@ margin_bottom = 63.0
 custom_fonts/font = SubResource( 4 )
 
 [connection signal="pressed" from="BackRect/VContainer/HCLanguage/MButton/ButtonLanguage" to="." method="_on_ButtonLanguage_pressed"]
-[connection signal="pressed" from="BackRect/VContainer/HCLanguage2/MButton/ButtonMusic" to="." method="_on_ButtonMusic_pressed"]
-[connection signal="pressed" from="BackRect/VContainer/HCLanguage3/MButton/ButtonScreen" to="." method="_on_ButtonScreen_pressed"]
+[connection signal="pressed" from="BackRect/VContainer/HCMusic/MButton/ButtonMusic" to="." method="_on_ButtonMusic_pressed"]
+[connection signal="pressed" from="BackRect/VContainer/HCScreen/MButton/ButtonScreen" to="." method="_on_ButtonScreen_pressed"]
 [connection signal="pressed" from="Exit" to="." method="_on_Exit_pressed"]

@@ -5,7 +5,8 @@
     "points": 0,
     "configuration":{
         "language": "en",
-        "sound": true
+        "sound": false,
+        "fullscreen": true
     },
     "progression":{
         "saga": "sigurd",

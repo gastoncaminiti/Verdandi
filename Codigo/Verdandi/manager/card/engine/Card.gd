@@ -9,7 +9,6 @@ func _ready():
 	_is_ready = true
 	_update_card()
 
-
 # Sets the data to use for displaying a card with this widget
 func set_card_data(card_data):
 	_card_data = card_data

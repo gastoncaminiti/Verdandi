@@ -7,6 +7,9 @@ func _ready():
 	$Tween.start()
 	$Tween2.start()
 	TranslationServer.set_locale(DataManager.user_data.configuration.language)
+	OS.window_fullscreen = DataManager.user_data.configuration.fullscreen
+	print(DataManager.user_data.configuration.sound)
+	AudioServer.set_bus_mute(AudioServer.get_bus_index("Master"), DataManager.user_data.configuration.sound)
 
 func _on_Tween_tween_completed(object, key):
 	object.play("stand")

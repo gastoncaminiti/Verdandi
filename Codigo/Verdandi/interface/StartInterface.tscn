@@ -12,19 +12,19 @@
 [ext_resource path="res://interface/norse/font/Norse.otf" type="DynamicFontData" id=10]
 [ext_resource path="res://sound/Landing-Vanaheimr.ogg" type="AudioStream" id=11]
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=1]
 size = 138
 outline_size = 5
 outline_color = Color( 0.156863, 0.156863, 0.156863, 1 )
 font_data = ExtResource( 7 )
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=2]
 size = 42
 outline_size = 1
 outline_color = Color( 0.764706, 0.384314, 0.0431373, 1 )
 font_data = ExtResource( 10 )
 
-[sub_resource type="DynamicFont" id=4]
+[sub_resource type="DynamicFont" id=3]
 size = 44
 outline_size = 5
 outline_color = Color( 0.156863, 0.156863, 0.156863, 1 )
@@ -32,7 +32,7 @@ use_filter = true
 extra_spacing_char = 5
 font_data = ExtResource( 10 )
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="DynamicFont" id=4]
 size = 44
 outline_size = 5
 outline_color = Color( 0.156863, 0.156863, 0.156863, 1 )
@@ -117,7 +117,7 @@ margin_left = 248.0
 margin_top = 4.0
 margin_right = 357.0
 margin_bottom = 156.0
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 1 )
 text = "Ve"
 
 [node name="TextureRect" type="TextureRect" parent="Layer 2 - GUI/VCTitle/HCGameTitle"]
@@ -131,7 +131,7 @@ margin_left = 465.0
 margin_top = 4.0
 margin_right = 579.0
 margin_bottom = 156.0
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 1 )
 text = "DA"
 
 [node name="TextureRect2" type="TextureRect" parent="Layer 2 - GUI/VCTitle/HCGameTitle"]
@@ -145,7 +145,7 @@ margin_left = 687.0
 margin_top = 4.0
 margin_right = 775.0
 margin_bottom = 156.0
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 1 )
 text = "Di"
 
 [node name="CCPatchTitle" type="CenterContainer" parent="Layer 2 - GUI/VCTitle"]
@@ -157,7 +157,7 @@ margin_bottom = 195.0
 margin_left = 393.0
 margin_right = 630.0
 margin_bottom = 47.0
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 2 )
 text = "KEY_PATCH_TITLE"
 
 [node name="VCMenu" type="VBoxContainer" parent="Layer 2 - GUI"]
@@ -179,7 +179,7 @@ margin_left = 420.0
 margin_right = 604.0
 margin_bottom = 55.0
 focus_mode = 0
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 0.764706, 0.384314, 0.0431373, 1 )
 action_mode = 0
@@ -197,7 +197,7 @@ margin_left = 392.0
 margin_right = 632.0
 margin_bottom = 55.0
 focus_mode = 0
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 0.854902, 0.447059, 0.0862745, 1 )
 disabled = true
@@ -216,7 +216,7 @@ margin_left = 406.0
 margin_right = 618.0
 margin_bottom = 55.0
 focus_mode = 0
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 0.854902, 0.447059, 0.0862745, 1 )
 action_mode = 0
@@ -234,7 +234,7 @@ margin_left = 387.0
 margin_right = 636.0
 margin_bottom = 55.0
 focus_mode = 0
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 0.854902, 0.447059, 0.0862745, 1 )
 action_mode = 0
@@ -252,7 +252,7 @@ margin_left = 420.0
 margin_right = 603.0
 margin_bottom = 55.0
 focus_mode = 0
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 0.854902, 0.447059, 0.0862745, 1 )
 action_mode = 0

@@ -31,7 +31,6 @@ func _ready():
 		get_node("Layer 2 - GUI/MGridHonor/Grid").add_child(node_control)
 		node_control.add_child(card_widget)
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func set_rune_view(data):
 	get_node("Layer 2 - GUI/RuneDetailInterface").visible = true
