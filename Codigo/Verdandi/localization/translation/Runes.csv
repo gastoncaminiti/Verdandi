@@ -28,3 +28,15 @@ KEY_OXIDE,Oxide,Oxido
 KEY_EFFECT_OXIDE,Attack -10,Ataque -10
 KEY_GIFT,Gift,Regalo
 KEY_EFFECT_GIFT,Hero defense +20,Defensa del Heroe +20
+KEY_LUCK,Luck,Suerte
+KEY_EFFECT_LUCK,Performs critical attack,Realiza ataques criticos
+KEY_FATALITY,Fatality,Fatalidad
+KEY_EFFECT_FATALITY,Receives critical attack,Recibe ataque critico
+KEY_FURY ,Fury,Furia
+KEY_EFFECT_FURY,Increased attack speed,Velocidad de ataque aumentada
+KEY_DREAD,Dread,Temor
+KEY_EFFECT_DREAD,Decreased attack speed,Disminucion de la velocidad de ataque
+KEY_PROVISIONS,Provision,Provisiones
+KEY_EFFECT_PROVISIONS,+10 live per turn,+10 de vida por turno
+KEY_HUNGER,Hunger,Hambre
+KEY_HUNGER_COLLAPSE,-10 live per turn,-10 de vida por turno
