@@ -115,7 +115,30 @@ func alignament_control(alignament, invertible):
 func apply_effect(data , key):
 	effects.append({"key": key,"order": CardGame.index_effect, "effect": data , "turns":data.duration})
 	papyrus.append({"key": key, "milestone": data.milestone[0]})
-	emit_signal("units_affected", data, player_name)
+	match data.key:
+		"resilience":
+			for i in range(effects.size()):
+				if effects[i].effect.type == "spell":
+					if !effects[i].effect.value:
+						effects[i].turns = 0
+						$GameInterface.update_turn_gui_one_effect(i,String(effects[i].turns))
+						return
+				if effects[i].effect.type == "statistics":
+					if int(effects[i].effect.value) < 0:
+						effects[i].turns = 0
+						$GameInterface.update_turn_gui_one_effect(i,String(effects[i].turns))
+						return
+		"strategy":
+			if effects[0]:
+				effects[0].turns += 1
+				$GameInterface.update_turn_gui_one_effect(0,String(effects[0].turns))
+		"imprudence":
+			if effects[0]:
+				effects[0].turns -= 1
+				$GameInterface.update_turn_gui_one_effect(0,String(effects[0].turns))
+		_:
+			# Efecto de Estadisticas de unidades.
+			emit_signal("units_affected", data, player_name)
 
 func erase_unit(unit):
 	my_units.erase(unit)

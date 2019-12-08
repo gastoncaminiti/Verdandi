@@ -91,6 +91,9 @@ func set_rune_view(data, pos):
 func hide_rune_view():
 	get_node("Layer 2 - GUI/RuneDetailInterface").visible = false
 
+func update_turn_gui_one_effect(i,t):
+	get_node("Layer 2 - GUI/GridEffectMy").get_child(i).get_child(1).text = t
+
 func set_rune_gui(character,index, b, card_data):
 	var avatar = get_node("Layer 2 - GUI/Sidgrida/AnimatedSprite")
 	avatar.play("atack")

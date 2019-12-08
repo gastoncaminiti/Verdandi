@@ -67,7 +67,7 @@
                 "type":"spell",
                 "cast": "boost",
                 "target": "all",
-                "duration": 2,
+                "duration": 1,
                 "value": true,
                 "description": "KEY_EFFECT_STRATEGY",
                 "milestone" : ["KEY_M_STRATEGY_01","KEY_M_STRATEGY_02"]
@@ -78,7 +78,7 @@
                 "type":"spell",
                 "cast": "boost",
                 "target": "all",
-                "duration": 2,
+                "duration": 1,
                 "value": false,
                 "description": "KEY_EFFECT_IMPRUDENCE",
                 "milestone" : ["KEY_M_IMPRUDENCE_01","KEY_M_IMPRUDENCE_02"]

@@ -123,6 +123,12 @@ func _effect_manager(data, player):
 			match data.cast:
 				"invulnerable":
 					is_invulnerable = data.value
+				"fury":
+					attack_speed = attack_speed + 1 if data.value else attack_speed - 1
+				"luck":
+					attack = attack * 2 if data.value else attack/2
+				"provisions":
+					life = life + 10 if data.value else life - 10
 
 func goPahtConfig(nav):
 		if(my_path):
