@@ -90,13 +90,13 @@ outline_color = Color( 0.619608, 0.290196, 0.027451, 1 )
 use_filter = true
 font_data = ExtResource( 26 )
 
-[sub_resource type="DynamicFont" id=9]
+[sub_resource type="DynamicFont" id=8]
 outline_size = 2
 outline_color = Color( 0.0470588, 0.196078, 0.0156863, 1 )
 use_filter = true
 font_data = ExtResource( 27 )
 
-[sub_resource type="DynamicFont" id=8]
+[sub_resource type="DynamicFont" id=9]
 outline_size = 2
 outline_color = Color( 0.521569, 0.0313726, 0.0313726, 1 )
 use_filter = true
@@ -791,7 +791,7 @@ align = 1
 margin_top = 47.0
 margin_right = 45.0
 margin_bottom = 66.0
-custom_fonts/font = SubResource( 9 )
+custom_fonts/font = SubResource( 8 )
 text = "3"
 align = 1
 valign = 1
@@ -818,7 +818,7 @@ align = 1
 margin_top = 47.0
 margin_right = 45.0
 margin_bottom = 66.0
-custom_fonts/font = SubResource( 8 )
+custom_fonts/font = SubResource( 9 )
 text = "3"
 align = 1
 valign = 1

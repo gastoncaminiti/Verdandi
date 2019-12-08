@@ -110,7 +110,6 @@ expand = true
 [node name="Layer 2 - GUI" type="CanvasLayer" parent="."]
 
 [node name="VContainer" type="VBoxContainer" parent="Layer 2 - GUI"]
-editor/display_folded = true
 margin_left = 10.0
 margin_right = 590.0
 margin_bottom = 600.0

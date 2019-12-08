@@ -7,6 +7,7 @@ var legend_key
 func _ready():
 	legend_key = String(DataManager.user_data.progression.saga_index) + String(DataManager.user_data.progression.act_index)
 	legend_size = DataManager.user_data.progression.legends[legend_key].size()
+	get_node("Layer 2 - GUI/VContainer/VTitleContainer/LRuneName").text = "KEY_SAGA_0_LEVEL_"+String(DataManager.user_data.progression.act_index)
 	for i in range(legend_size):
 		get_node("Layer 2 - GUI/Papyrus/GridContainer/CChar"+String(i)+"/Char0").text = DataManager.user_data.progression.legends[legend_key][i].key
 		get_node("Layer 2 - GUI/VContainer/ScrollContainer/VSagaContainer/LMilestone"+String(i)).text = DataManager.user_data.progression.legends[legend_key][i].milestone

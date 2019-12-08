@@ -1,57 +1,55 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://manager/interface/InterfaceSelectManager.gd" type="Script" id=1]
-[ext_resource path="res://level/sigurd/Level0.tscn" type="PackedScene" id=2]
-[ext_resource path="res://interface/norse/img/background-black.png" type="Texture" id=3]
-[ext_resource path="res://interface/norse/tile/TilesHUB.tres" type="TileSet" id=4]
-[ext_resource path="res://interface/norse/font/Norsebold.otf" type="DynamicFontData" id=5]
-[ext_resource path="res://interface/norse/img/hero/sigurd/Hero_GUI_0.png" type="Texture" id=6]
-[ext_resource path="res://interface/norse/img/hero/sigurd/Hero_GUI_1.png" type="Texture" id=7]
-[ext_resource path="res://interface/norse/img/hero/sigurd/Hero_GUI_2.png" type="Texture" id=8]
-[ext_resource path="res://interface/norse/font/Norse.otf" type="DynamicFontData" id=9]
-[ext_resource path="res://interface/norse/font/NordicaRegular.otf" type="DynamicFontData" id=10]
-[ext_resource path="res://sound/Landing-Vanaheimr.ogg" type="AudioStream" id=11]
+[ext_resource path="res://interface/norse/img/background-black.png" type="Texture" id=2]
+[ext_resource path="res://interface/norse/tile/TilesHUB.tres" type="TileSet" id=3]
+[ext_resource path="res://interface/norse/font/Norsebold.otf" type="DynamicFontData" id=4]
+[ext_resource path="res://interface/norse/img/hero/sigurd/Hero_GUI_0.png" type="Texture" id=5]
+[ext_resource path="res://interface/norse/img/hero/sigurd/Hero_GUI_1.png" type="Texture" id=6]
+[ext_resource path="res://interface/norse/img/hero/sigurd/Hero_GUI_2.png" type="Texture" id=7]
+[ext_resource path="res://interface/norse/font/Norse.otf" type="DynamicFontData" id=8]
+[ext_resource path="res://interface/norse/font/NordicaRegular.otf" type="DynamicFontData" id=9]
+[ext_resource path="res://sound/Landing-Vanaheimr.ogg" type="AudioStream" id=10]
 
 [sub_resource type="DynamicFont" id=1]
 size = 80
 outline_size = 5
 outline_color = Color( 0.156863, 0.156863, 0.156863, 1 )
-font_data = ExtResource( 5 )
+font_data = ExtResource( 4 )
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [ ExtResource( 6 ) ],
+"frames": [ ExtResource( 5 ) ],
 "loop": true,
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ) ],
+"frames": [ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ) ],
 "loop": false,
 "name": "play",
-"speed": 5.0
+"speed": 6.0
 } ]
 
 [sub_resource type="DynamicFont" id=3]
 size = 35
 outline_size = 2
 outline_color = Color( 0.352941, 0.262745, 0.0313726, 1 )
-font_data = ExtResource( 5 )
+font_data = ExtResource( 4 )
 
 [sub_resource type="DynamicFont" id=4]
 size = 32
 outline_size = 2
 outline_color = Color( 0.309804, 0.301961, 0.301961, 1 )
-font_data = ExtResource( 9 )
+font_data = ExtResource( 8 )
 
 [sub_resource type="DynamicFont" id=5]
 size = 25
 outline_size = 2
 outline_color = Color( 0.490196, 0.490196, 0.490196, 1 )
-font_data = ExtResource( 10 )
+font_data = ExtResource( 9 )
 
 [node name="SelectLevelInterface" type="Node2D"]
 script = ExtResource( 1 )
-saga0_level0 = ExtResource( 2 )
 
 [node name="Layer 0 - Background" type="CanvasLayer" parent="."]
 layer = -3
@@ -59,14 +57,14 @@ layer = -3
 [node name="TextureRect" type="TextureRect" parent="Layer 0 - Background"]
 margin_right = 40.0
 margin_bottom = 40.0
-texture = ExtResource( 3 )
+texture = ExtResource( 2 )
 
 [node name="Layer 1 - Border" type="CanvasLayer" parent="."]
 layer = -2
 
 [node name="TileMap" type="TileMap" parent="Layer 1 - Border"]
 position = Vector2( 10, 5 )
-tile_set = ExtResource( 4 )
+tile_set = ExtResource( 3 )
 cell_size = Vector2( 84, 84 )
 format = 1
 tile_data = PoolIntArray( 0, -1073741821, 0, 1, -1073741820, 0, 2, -1073741820, 0, 3, -1073741820, 0, 4, -1073741820, 0, 5, -1073741820, 0, 6, -1073741820, 0, 7, -1073741820, 0, 8, -1073741820, 0, 9, -1073741820, 0, 10, -1073741820, 0, 11, 3, 0, 65536, 1610612740, 0, 65547, 4, 0, 131072, 1610612740, 0, 131083, 4, 0, 196608, 1610612740, 0, 196609, -1610612734, 0, 196610, -2147483647, 0, 196611, -2147483646, 0, 196619, 4, 0, 262144, 1610612740, 0, 262155, 4, 0, 327680, 1610612740, 0, 327691, 4, 0, 393216, 1610612739, 0, 393217, -1610612732, 0, 393218, -1610612732, 0, 393219, -1610612732, 0, 393220, -1610612732, 0, 393221, -1610612732, 0, 393222, -1610612732, 0, 393223, -1610612732, 0, 393224, -1610612732, 0, 393225, -1610612732, 0, 393226, -1610612732, 0, 393227, -1610612733, 0 )
@@ -126,7 +124,9 @@ custom_fonts/font = SubResource( 3 )
 text = "KEY_SAGA_0"
 align = 1
 
-[node name="BLevel0" type="Button" parent="Layer 2 - GUI/VCInterface/HCSagasContainer/VCSaga0"]
+[node name="BLevel0" type="Button" parent="Layer 2 - GUI/VCInterface/HCSagasContainer/VCSaga0" groups=[
+"Btn",
+]]
 margin_top = 240.0
 margin_right = 300.0
 margin_bottom = 282.0
@@ -139,7 +139,9 @@ enabled_focus_mode = 0
 text = "KEY_SAGA_0_LEVEL_0"
 flat = true
 
-[node name="BLevel1" type="Button" parent="Layer 2 - GUI/VCInterface/HCSagasContainer/VCSaga0"]
+[node name="BLevel1" type="Button" parent="Layer 2 - GUI/VCInterface/HCSagasContainer/VCSaga0" groups=[
+"Btn",
+]]
 margin_top = 282.0
 margin_right = 300.0
 margin_bottom = 324.0
@@ -153,7 +155,9 @@ enabled_focus_mode = 0
 text = "KEY_SAGA_0_LEVEL_1"
 flat = true
 
-[node name="BLevel2" type="Button" parent="Layer 2 - GUI/VCInterface/HCSagasContainer/VCSaga0"]
+[node name="BLevel2" type="Button" parent="Layer 2 - GUI/VCInterface/HCSagasContainer/VCSaga0" groups=[
+"Btn",
+]]
 margin_top = 324.0
 margin_right = 300.0
 margin_bottom = 366.0
@@ -167,7 +171,9 @@ enabled_focus_mode = 0
 text = "KEY_SAGA_0_LEVEL_2"
 flat = true
 
-[node name="BLevel3" type="Button" parent="Layer 2 - GUI/VCInterface/HCSagasContainer/VCSaga0"]
+[node name="BLevel3" type="Button" parent="Layer 2 - GUI/VCInterface/HCSagasContainer/VCSaga0" groups=[
+"Btn",
+]]
 margin_top = 366.0
 margin_right = 300.0
 margin_bottom = 408.0
@@ -195,10 +201,13 @@ text = "X"
 flat = true
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 11 )
+stream = ExtResource( 10 )
 autoplay = true
 mix_target = 2
 
 [connection signal="animation_finished" from="Layer 2 - GUI/VCInterface/HCSagasContainer/VCSaga0/CContainer/AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]
 [connection signal="pressed" from="Layer 2 - GUI/VCInterface/HCSagasContainer/VCSaga0/BLevel0" to="." method="_on_BLevel0_pressed"]
+[connection signal="pressed" from="Layer 2 - GUI/VCInterface/HCSagasContainer/VCSaga0/BLevel1" to="." method="_on_BLevel1_pressed"]
+[connection signal="pressed" from="Layer 2 - GUI/VCInterface/HCSagasContainer/VCSaga0/BLevel2" to="." method="_on_BLevel2_pressed"]
+[connection signal="pressed" from="Layer 2 - GUI/VCInterface/HCSagasContainer/VCSaga0/BLevel3" to="." method="_on_BLevel3_pressed"]
 [connection signal="pressed" from="Layer 2 - GUI/Exit" to="." method="_on_Exit_pressed"]
