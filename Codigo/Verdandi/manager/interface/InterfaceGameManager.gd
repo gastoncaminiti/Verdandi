@@ -34,6 +34,7 @@ func set_unselected_gui():
 
 func _on_ButtonBag_pressed():
 	if(CardGame.get_player_hand_cards().size() < CardGame.HAND_LIMIT):
+		get_node("Layer 2 - GUI/Sidgrida").hide_tip()
 		var bag = get_node("Layer 2 - GUI/Bag")
 		bag.play("open")
 		bag.set_frame(0)

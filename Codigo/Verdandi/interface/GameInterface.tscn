@@ -169,7 +169,7 @@ enabled_focus_mode = 0
 flat = true
 
 [node name="Sidgrida" parent="Layer 2 - GUI" instance=ExtResource( 8 )]
-position = Vector2( -60, 99 )
+position = Vector2( -79, 89 )
 
 [node name="Papyrus" type="TextureRect" parent="Layer 2 - GUI"]
 editor/display_folded = true

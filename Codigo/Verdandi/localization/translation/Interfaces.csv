@@ -50,3 +50,7 @@ KEY_LOSE_PROSPERITY,Greed consumes the warrior's soul,La avaricia consume el alm
 KEY_LOSE_FAVOR,The gods can't fight your battles,Los dioses no pueden luchar tus batallas
 KEY_LOSE_HONOR,The ego poisons our faith,El ego envenena nuestra fe
 KEY_SCREEN,Fullscreen,Fullscreen
+KEY_TUTORIAL_00_0,Press the bag and the rune,Presiona la bolsa and la runa
+KEY_TUTORIAL_00_1,Click on units to see statistics,Clic en unidades para ver estadisticas
+KEY_TUTORIAL_00_2,Playing the rune applies an effect,Jugar la runa aplica un efecto
+KEY_TUTORIAL_00_3,Each rune has different effects,Cada runa tiene efectos diferentes
