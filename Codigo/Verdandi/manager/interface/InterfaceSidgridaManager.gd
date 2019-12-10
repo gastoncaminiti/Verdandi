@@ -3,6 +3,9 @@ extends Node2D
 export(bool) var show_tips  = false
 var tip
 
+func _ready():
+	$AnimatedSprite.set_sprite_frames(load(DataManager.user_data.skin))
+
 func _on_SelectedManager_mouse_entered():
 	tip_manager()
 

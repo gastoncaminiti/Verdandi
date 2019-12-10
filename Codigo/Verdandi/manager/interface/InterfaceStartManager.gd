@@ -3,6 +3,7 @@ extends Node2D
 export(PackedScene)  var play_scene
 export(PackedScene)  var rune_scene
 export(PackedScene)  var options_scene
+export(PackedScene)  var profile_scene
 
 func _ready():
 	$AnimationPlayer.play("idle")
@@ -26,3 +27,8 @@ func _on_LinkButtonRunes_pressed():
 
 func _on_LinkButtonQuit_pressed():
 	return get_tree().quit()
+
+
+func _on_LinkButtonProfile_pressed():
+	if(profile_scene):
+		return get_tree().change_scene_to(profile_scene)

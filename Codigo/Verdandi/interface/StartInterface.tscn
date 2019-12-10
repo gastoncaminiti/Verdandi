@@ -1,28 +1,29 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://manager/interface/InterfaceStartManager.gd" type="Script" id=1]
 [ext_resource path="res://interface/SelectLevelInterface.tscn" type="PackedScene" id=2]
 [ext_resource path="res://interface/RuneInterface.tscn" type="PackedScene" id=3]
 [ext_resource path="res://interface/OptionsInterface.tscn" type="PackedScene" id=4]
-[ext_resource path="res://interface/norse/img/background-black.png" type="Texture" id=5]
-[ext_resource path="res://interface/norse/tile/TilesHUB.tres" type="TileSet" id=6]
-[ext_resource path="res://interface/norse/font/Norsebold.otf" type="DynamicFontData" id=7]
-[ext_resource path="res://deck/norse/img/Rune_12.png" type="Texture" id=8]
-[ext_resource path="res://deck/norse/img/Rune_10.png" type="Texture" id=9]
-[ext_resource path="res://interface/norse/font/Norse.otf" type="DynamicFontData" id=10]
-[ext_resource path="res://sound/Landing-Vanaheimr.ogg" type="AudioStream" id=11]
+[ext_resource path="res://interface/ProfileInterface.tscn" type="PackedScene" id=5]
+[ext_resource path="res://interface/norse/img/background-black.png" type="Texture" id=6]
+[ext_resource path="res://interface/norse/tile/TilesHUB.tres" type="TileSet" id=7]
+[ext_resource path="res://interface/norse/font/Norsebold.otf" type="DynamicFontData" id=8]
+[ext_resource path="res://deck/norse/img/Rune_12.png" type="Texture" id=9]
+[ext_resource path="res://deck/norse/img/Rune_10.png" type="Texture" id=10]
+[ext_resource path="res://interface/norse/font/Norse.otf" type="DynamicFontData" id=11]
+[ext_resource path="res://sound/Landing-Vanaheimr.ogg" type="AudioStream" id=12]
 
 [sub_resource type="DynamicFont" id=1]
 size = 138
 outline_size = 5
 outline_color = Color( 0.156863, 0.156863, 0.156863, 1 )
-font_data = ExtResource( 7 )
+font_data = ExtResource( 8 )
 
 [sub_resource type="DynamicFont" id=2]
 size = 42
 outline_size = 1
 outline_color = Color( 0.764706, 0.384314, 0.0431373, 1 )
-font_data = ExtResource( 10 )
+font_data = ExtResource( 11 )
 
 [sub_resource type="DynamicFont" id=3]
 size = 44
@@ -30,7 +31,7 @@ outline_size = 5
 outline_color = Color( 0.156863, 0.156863, 0.156863, 1 )
 use_filter = true
 extra_spacing_char = 5
-font_data = ExtResource( 10 )
+font_data = ExtResource( 11 )
 
 [sub_resource type="DynamicFont" id=4]
 size = 44
@@ -38,7 +39,7 @@ outline_size = 5
 outline_color = Color( 0.156863, 0.156863, 0.156863, 1 )
 use_filter = true
 extra_spacing_char = 5
-font_data = ExtResource( 10 )
+font_data = ExtResource( 11 )
 
 [sub_resource type="Animation" id=5]
 length = 2.5
@@ -73,6 +74,7 @@ script = ExtResource( 1 )
 play_scene = ExtResource( 2 )
 rune_scene = ExtResource( 3 )
 options_scene = ExtResource( 4 )
+profile_scene = ExtResource( 5 )
 
 [node name="Layer 0 - Background" type="CanvasLayer" parent="."]
 layer = -3
@@ -80,7 +82,7 @@ layer = -3
 [node name="TextureRect" type="TextureRect" parent="Layer 0 - Background"]
 margin_right = 40.0
 margin_bottom = 40.0
-texture = ExtResource( 5 )
+texture = ExtResource( 6 )
 
 [node name="Layer 1 - Border" type="CanvasLayer" parent="."]
 editor/display_folded = true
@@ -88,7 +90,7 @@ layer = -2
 
 [node name="TileMap" type="TileMap" parent="Layer 1 - Border"]
 position = Vector2( 10, 5 )
-tile_set = ExtResource( 6 )
+tile_set = ExtResource( 7 )
 cell_size = Vector2( 84, 84 )
 format = 1
 tile_data = PoolIntArray( 0, -1073741821, 0, 1, -1073741820, 0, 2, -1073741820, 0, 3, -1073741820, 0, 4, -1073741820, 0, 5, -1073741820, 0, 6, -1073741820, 0, 7, -1073741820, 0, 8, -1073741820, 0, 9, -1073741820, 0, 10, -1073741820, 0, 11, 3, 0, 65536, 1610612740, 0, 65547, 4, 0, 131072, 1610612740, 0, 131083, 4, 0, 196608, 1610612740, 0, 196619, 4, 0, 262144, 1610612740, 0, 262155, 4, 0, 327680, 1610612740, 0, 327691, 4, 0, 393216, 1610612739, 0, 393217, -1610612732, 0, 393218, -1610612732, 0, 393219, -1610612732, 0, 393220, -1610612732, 0, 393221, -1610612732, 0, 393222, -1610612732, 0, 393223, -1610612732, 0, 393224, -1610612732, 0, 393225, -1610612732, 0, 393226, -1610612732, 0, 393227, -1610612733, 0 )
@@ -124,7 +126,7 @@ text = "Ve"
 margin_left = 331.0
 margin_right = 491.0
 margin_bottom = 160.0
-texture = ExtResource( 8 )
+texture = ExtResource( 9 )
 
 [node name="Label2" type="Label" parent="Layer 2 - GUI/VCTitle/HCGameTitle"]
 margin_left = 465.0
@@ -138,7 +140,7 @@ text = "DA"
 margin_left = 553.0
 margin_right = 713.0
 margin_bottom = 160.0
-texture = ExtResource( 9 )
+texture = ExtResource( 10 )
 
 [node name="Label3" type="Label" parent="Layer 2 - GUI/VCTitle/HCGameTitle"]
 margin_left = 687.0
@@ -200,7 +202,6 @@ focus_mode = 0
 custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 0.854902, 0.447059, 0.0862745, 1 )
-disabled = true
 action_mode = 0
 enabled_focus_mode = 0
 text = "KEY_PROFILE"
@@ -261,7 +262,7 @@ text = "KEY_QUIT"
 flat = true
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 11 )
+stream = ExtResource( 12 )
 autoplay = true
 mix_target = 2
 
@@ -270,6 +271,7 @@ playback_speed = 0.7
 anims/idle = SubResource( 5 )
 
 [connection signal="pressed" from="Layer 2 - GUI/VCMenu/CenterContainer/LinkButtonPlay" to="." method="_on_LinkButtonPlay_pressed"]
+[connection signal="pressed" from="Layer 2 - GUI/VCMenu/CenterContainer5/LinkButtonProfile" to="." method="_on_LinkButtonProfile_pressed"]
 [connection signal="pressed" from="Layer 2 - GUI/VCMenu/CenterContainer2/LinkButtonRunes" to="." method="_on_LinkButtonRunes_pressed"]
 [connection signal="pressed" from="Layer 2 - GUI/VCMenu/CenterContainer3/LinkButtonOptions" to="." method="_on_LinkButtonOptions_pressed"]
 [connection signal="pressed" from="Layer 2 - GUI/VCMenu/CenterContainer4/LinkButtonQuit" to="." method="_on_LinkButtonQuit_pressed"]

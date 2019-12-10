@@ -5,7 +5,7 @@ var hourglass
 
 func _ready():
 	hourglass = get_node("Layer 2 - GUI/Hourglass")
-
+	
 func animated_orden():
 	pass
 
