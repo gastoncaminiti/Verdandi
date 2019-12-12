@@ -8,7 +8,9 @@ var user_data    = {}
 # Contenidor de niveles disponibles al jugador
 var maped_levels = {
 	"00": "res://level/sigurd/Level0.tscn",
-	"01": "res://level/sigurd/Level1.tscn"
+	"01": "res://level/sigurd/Level1.tscn",
+	"02": "res://level/sigurd/Level2.tscn",
+	"03": "res://level/sigurd/Level3.tscn"
 }
 
 # Función: Determinar si existe el archivo de persistencia. Si es necesario crea una copia con el formato requerido

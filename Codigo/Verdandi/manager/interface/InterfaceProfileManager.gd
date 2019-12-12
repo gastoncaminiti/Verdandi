@@ -11,7 +11,12 @@ func _ready():
 		path_skin_1:
 			get_node("Layer 2 - GUI/AvatarContainer/AvatarSelected/AnimatedSprite").set_sprite_frames(load(path_skin_1))
 			get_node("Layer 2 - GUI/AvatarContainer/HBoxContainer/TextureButtonSkin2").grab_focus()
-
+	if DataManager.maped_levels.size() == DataManager.user_data.progression.legends.size():
+		get_node("Layer 2 - GUI/AvatarContainer/HBoxContainer/TextureButtonSkin2").disabled = false
+		get_node("Layer 2 - GUI/AvatarContainer/HBoxContainer/TextureButtonSkin2").set_focus_mode(2)
+	else:
+		get_node("Layer 2 - GUI/AvatarContainer/HBoxContainer/TextureButtonSkin2").set_focus_mode(0)
+		
 	if DataManager.user_data.progression.legends.size() > 0:
 		var legends = get_node("Layer 2 - GUI/SagaContainer/GridSigurd").get_children()
 		var c = Color(1,1,1,1)

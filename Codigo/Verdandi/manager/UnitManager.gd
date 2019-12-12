@@ -82,7 +82,10 @@ func hurted(damage):
 		life -= damage
 		if life < 1:
 			is_dead = true
-			$AnimatedSprite.play("dead_east")
+			if is_in_group("hero"):
+				$AnimatedSprite.play("dead_north")
+			else:
+				$AnimatedSprite.play("dead_east")
 
 # Función que permite conectar una señal de nodo padre con una función del nodo hijo.
 func connect_parent_child(nsignal, nfunction):
@@ -132,6 +135,7 @@ func _effect_manager(data, player):
 
 func goPahtConfig(nav):
 		if(my_path):
+			print(my_path)
 			var index_end =  my_path.size() - 1
 			if(my_index_path  < index_end):
 				my_index_path+=1 
@@ -283,7 +287,7 @@ func _physics_process(delta):
 				orientation_animation("idle")
 				return
 	
-		if flag_attack and !flag_move and !is_dead:
+		if flag_attack and !flag_move and !is_dead and is_instance_valid(targets[index_target].obj):
 				orientation_animation("attack")
 				return
 
@@ -394,11 +398,19 @@ func _on_AnimatedSprite_animation_finished():
 		get_parent().unit_check()
 		return
 	if($AnimatedSprite.get_animation().find("attack") != -1):
-		targets[index_target].obj.hurted(attack)
-		if targets[index_target].obj.is_dead and index_target < targets.size() - 1:
-			targets[index_target].obj.area_diseable_status(true)
-			index_target+=1
-			orientation = targets[index_target].orientation
+		if targets[index_target] != null and !targets[index_target].obj.is_dead:
+			targets[index_target].obj.hurted(attack)
+			print(index_target)
+			if targets[index_target].obj.is_dead and index_target < targets.size() - 1:
+				targets[index_target].obj.area_diseable_status(true)
+				targets[index_target] = null
+				index_target+=1
+				orientation = targets[index_target].orientation
+			if targets[index_target].obj.is_dead and index_target >= targets.size() - 1:
+				#orientation = targets[index_target].orientation
+				targets[index_target] = null
+				flag_attack = false
+				orientation_animation("idle")
 		if get_parent().is_in_group("Level"):
 			get_parent().unit_check()
 			return
@@ -409,9 +421,11 @@ func _on_AnimatedSprite_animation_finished():
 				get_parent().unit_check()
 				return
 			if is_in_group("player1"):
-				get_parent().my_units(self)
+				#get_parent().my_units(self)
 				get_parent().erase_all(self)
 				get_parent().unit_check()
+				$Tween.interpolate_property(self, "modulate",   Color(1, 1, 1, 1), Color(1, 1, 1, 0), 3, Tween.TRANS_LINEAR, Tween.EASE_IN)
+				$Tween.start()
 				return
 			if is_in_group("player2"):
 				get_parent().erase_enemy(self)

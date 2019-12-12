@@ -1,0 +1,57 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://manager/LevelManager.gd" type="Script" id=1]
+[ext_resource path="res://map/tile/Tiles.tres" type="TileSet" id=2]
+[ext_resource path="res://interface/GameInterface.tscn" type="PackedScene" id=3]
+[ext_resource path="res://unit/norse/hero/sigurd/Player1Sigurd.tscn" type="PackedScene" id=4]
+[ext_resource path="res://unit/norse/soldier/swordman/Player1Swordman.tscn" type="PackedScene" id=5]
+[ext_resource path="res://unit/norse/soldier/swordman/Player2Swordman.tscn" type="PackedScene" id=6]
+[ext_resource path="res://sound/Game - Morning Dew.ogg" type="AudioStream" id=7]
+
+[node name="Level2" type="Node2D" groups=[
+"Level",
+]]
+script = ExtResource( 1 )
+deck_name = "level_01"
+alignment_limit = 2
+act_index = 2
+
+[node name="Navigation2D" type="Navigation2D" parent="."]
+
+[node name="TileMap" type="TileMap" parent="Navigation2D"]
+mode = 1
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 120, 62 )
+format = 1
+tile_data = PoolIntArray( -262136, 536870917, 0, -262135, 5, 0, -196601, 3, 0, -196600, 3, 0, -196599, 3, 0, -196598, 3, 0, -196597, 3, 0, -196596, 536870917, 0, -131066, 3, 0, -131065, 5, 0, -131064, 0, 0, -131063, 0, 0, -131062, 0, 0, -131061, 5, 0, -131060, 3, 0, -131059, 5, 0, -65530, 3, 0, -65529, 0, 0, -65528, 3, 0, -65527, 3, 0, -65526, 3, 0, -65525, 0, 0, -65524, 3, 0, 5, 5, 0, 6, 3, 0, 7, 0, 0, 8, 3, 0, 9, 3, 0, 10, 3, 0, 11, 0, 0, 12, 3, 0, 65541, 536870917, 0, 65542, 3, 0, 65543, 0, 0, 65544, 3, 0, 65545, 3, 0, 65546, 3, 0, 65547, 0, 0, 65548, 3, 0, 131078, 3, 0, 131079, 5, 0, 131080, 0, 0, 131081, 0, 0, 131082, 0, 0, 131083, 0, 0, 196615, 3, 0, 196616, 3, 0, 196617, 3, 0, 196618, 3, 0 )
+
+[node name="GameInterface" parent="." instance=ExtResource( 3 )]
+position = Vector2( 3.48682, 7.36102 )
+
+[node name="Player1Sigurd" parent="." instance=ExtResource( 4 )]
+position = Vector2( 361, 276 )
+life = 80
+
+[node name="Player1Swordman" parent="." instance=ExtResource( 5 )]
+position = Vector2( 666, 369 )
+life = 40
+
+[node name="Player2Swordman" parent="." instance=ExtResource( 6 )]
+position = Vector2( 722, 271 )
+orientation = 2
+priority_orientation = 2
+life = 60
+attack = 10
+attack_speed = 1
+
+[node name="Player2Swordman2" parent="." instance=ExtResource( 6 )]
+position = Vector2( 416, 366 )
+orientation = 3
+priority_orientation = 3
+life = 40
+attack_speed = 1
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+autoplay = true
+
