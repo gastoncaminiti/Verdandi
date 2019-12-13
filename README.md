@@ -28,6 +28,15 @@ Desarrollado con Godot Engine Versión 3.1
 [Ejecutable](Prototipos/Prototipo03)  
 [Documentación de Desarrollo](Prototipos/Prototipo03/Documentos/Diario_Desarrollo_VerdandiP03.pdf)
 
-![Prototipo 02 Preview 01](Prototipos/Prototipo03/Documentos/Preview1.png)
+![Prototipo 03 Preview 01](Prototipos/Prototipo03/Documentos/Preview1.png)
 
-![Prototipo 02 Preview 02](Prototipos/Prototipo03/Documentos/Preview2.png)
+![Prototipo 03 Preview 02](Prototipos/Prototipo03/Documentos/Preview2.png)
+
+#### Prototipo 04 (Alpha Test)
+[Ejecutable](Prototipos/Prototipo04)  
+[Documentación de Desarrollo](Prototipos/Prototipo04/Documentos/Diario_Desarrollo_VerdandiP04.pdf)
+[Publicación itch.io](https://gastoncaminiti.itch.io/verdandi)
+
+![Prototipo 04 Preview 01](Prototipos/Prototipo04/Documentos/Preview2.png)
+
+![Prototipo 04 Preview 02](Prototipos/Prototipo04/Documentos/Preview3.png)

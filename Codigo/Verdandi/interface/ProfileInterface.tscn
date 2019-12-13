@@ -123,7 +123,7 @@ position = Vector2( 264, 13 )
 scale = Vector2( 0.92, 0.92 )
 frames = ExtResource( 6 )
 animation = "idle"
-frame = 2
+frame = 6
 playing = true
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Layer 2 - GUI/AvatarContainer"]
