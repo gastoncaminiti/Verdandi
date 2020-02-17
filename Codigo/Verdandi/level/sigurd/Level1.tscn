@@ -48,4 +48,3 @@ attack_speed = 1
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
 autoplay = true
-

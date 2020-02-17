@@ -122,6 +122,7 @@ func _effect_manager(data, player):
 					attack  += int(data.value)
 				"speed":
 					attack_speed += int(data.value)
+			status_gui_changed(data.value,data.atributte)
 		if(data.type == "spell"):
 			match data.cast:
 				"invulnerable":
@@ -431,9 +432,42 @@ func _on_AnimatedSprite_animation_finished():
 				get_parent().erase_enemy(self)
 				get_parent().erase_all(self)
 				get_parent().unit_check()
-				$Tween.interpolate_property(self, "modulate",   Color(1, 1, 1, 1), Color(1, 1, 1, 0), 3, Tween.TRANS_LINEAR, Tween.EASE_IN)
+				$Tween.interpolate_property(self, "modulate",   Color(1, 1, 1, 0), Color(1, 1, 1, 1), 2, Tween.TRANS_LINEAR, Tween.EASE_IN)
 				$Tween.start()
 				return
 
 func _on_Tween_tween_completed(object, key):
-	queue_free()
+	if object == self:
+		queue_free()
+	else:
+		var node = get_node("ChangeStatusInterface/HCStatus")
+		if node.modulate ==  Color(1, 1, 1, 1):
+			$Tween.interpolate_property(node, "modulate",   Color(1, 1, 1, 1), Color(1, 1, 1, 0), 2, Tween.TRANS_LINEAR, Tween.EASE_IN)
+			$Tween.start()
+
+func status_gui_changed(value, type):
+	match type:
+		"life":
+			$ChangeStatusInterface/HCStatus/TLife.show()
+			$ChangeStatusInterface/HCStatus/TAttack.hide()
+			$ChangeStatusInterface/HCStatus/TDefense.hide()
+			$ChangeStatusInterface/HCStatus/TSpeed.hide()
+		"defense":
+			$ChangeStatusInterface/HCStatus/TLife.hide()
+			$ChangeStatusInterface/HCStatus/TAttack.hide()
+			$ChangeStatusInterface/HCStatus/TDefense.show()
+			$ChangeStatusInterface/HCStatus/TSpeed.hide()
+		"attack":
+			$ChangeStatusInterface/HCStatus/TLife.hide()
+			$ChangeStatusInterface/HCStatus/TAttack.show()
+			$ChangeStatusInterface/HCStatus/TDefense.hide()
+			$ChangeStatusInterface/HCStatus/TSpeed.hide()
+		"speed":
+			$ChangeStatusInterface/HCStatus/TLife.hide()
+			$ChangeStatusInterface/HCStatus/TAttack.hide()
+			$ChangeStatusInterface/HCStatus/TDefense.hide()
+			$ChangeStatusInterface/HCStatus/TSpeed.show()
+	$ChangeStatusInterface/HCStatus/NStatus.text = String(value)
+	$Tween.interpolate_property(get_node("ChangeStatusInterface/HCStatus"), "modulate",   Color(1, 1, 1, 1), Color(1, 1, 1, 0), 3, Tween.TRANS_LINEAR, Tween.EASE_IN)
+	$Tween.start()
+	

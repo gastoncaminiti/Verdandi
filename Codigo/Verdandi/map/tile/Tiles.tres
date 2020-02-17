@@ -87,4 +87,3 @@ outlines = [ PoolVector2Array( -60, -13.9761, 0, -44.9761, 60, -13.9761, 0, 17.0
 6/navigation_offset = Vector2( 60, 39 )
 6/shapes = [  ]
 6/z_index = 0
-

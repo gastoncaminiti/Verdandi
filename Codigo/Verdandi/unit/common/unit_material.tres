@@ -20,4 +20,3 @@ void fragment() {
 [resource]
 shader = SubResource( 1 )
 shader_param/armor_value = 0
-

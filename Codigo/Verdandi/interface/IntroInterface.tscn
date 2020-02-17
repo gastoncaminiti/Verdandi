@@ -26,14 +26,14 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ) ],
-"loop": true,
-"name": "walk",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 10 ), ExtResource( 9 ) ],
 "loop": false,
 "name": "attack",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ) ],
+"loop": true,
+"name": "walk",
 "speed": 5.0
 } ]
 
@@ -165,7 +165,6 @@ align = 1
 stream = ExtResource( 23 )
 autoplay = true
 mix_target = 2
-
 [connection signal="tween_completed" from="TweenRune1" to="." method="_on_TweenRune1_tween_completed"]
 [connection signal="tween_completed" from="TweenRune2" to="." method="_on_TweenRune2_tween_completed"]
 [connection signal="tween_completed" from="TweenRune3" to="." method="_on_TweenRune3_tween_completed"]

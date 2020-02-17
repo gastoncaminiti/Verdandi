@@ -46,6 +46,8 @@
 [ext_resource path="res://unit/norse/soldier/swordman/img/walk/Norse_Sword_Walk_22.png" type="Texture" id=44]
 [ext_resource path="res://unit/norse/soldier/swordman/img/walk/Norse_Sword_Walk_23.png" type="Texture" id=45]
 
+
+
 [resource]
 animations = [ {
 "frames": [ ExtResource( 1 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ) ],

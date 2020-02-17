@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=2]
+[gd_scene load_steps=55 format=2]
 
 [ext_resource path="res://unit/common/unit_material.tres" type="Material" id=1]
 [ext_resource path="res://manager/UnitManager.gd" type="Script" id=2]
@@ -51,42 +51,18 @@
 [ext_resource path="res://unit/norse/soldier/swordman/img/walk/Norse_Sword_Walk_21.png" type="Texture" id=49]
 [ext_resource path="res://unit/norse/soldier/swordman/img/walk/Norse_Sword_Walk_22.png" type="Texture" id=50]
 [ext_resource path="res://unit/norse/soldier/swordman/img/walk/Norse_Sword_Walk_23.png" type="Texture" id=51]
+[ext_resource path="res://interface/ChangeStatusInterface.tscn" type="PackedScene" id=52]
 
-[sub_resource type="SpriteFrames" id=3]
+[sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ) ],
-"loop": true,
-"name": "walk_east",
-"speed": 10.0
-}, {
 "frames": [ ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ) ],
 "loop": false,
 "name": "dead_east",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ) ],
-"loop": false,
-"name": "attack_north_west",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ) ],
-"loop": false,
-"name": "attack_south_east",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 20 ) ],
+"frames": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ) ],
 "loop": true,
-"name": "idle_north",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ) ],
-"loop": true,
-"name": "walk_north_west",
-"speed": 10.0
-}, {
-"frames": [ ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ) ],
-"loop": true,
-"name": "walk_north_east",
+"name": "walk_east",
 "speed": 10.0
 }, {
 "frames": [ ExtResource( 4 ) ],
@@ -94,9 +70,9 @@ animations = [ {
 "name": "idle_east",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 31 ), ExtResource( 32 ), ExtResource( 33 ), ExtResource( 34 ) ],
+"frames": [ ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ) ],
 "loop": false,
-"name": "attack_north_east",
+"name": "attack_south_east",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 35 ), ExtResource( 36 ), ExtResource( 37 ), ExtResource( 38 ) ],
@@ -109,9 +85,29 @@ animations = [ {
 "name": "idle_north_east",
 "speed": 5.0
 }, {
+"frames": [ ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ) ],
+"loop": true,
+"name": "walk_north_east",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 21 ) ],
+"loop": true,
+"name": "idle_north_west",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 39 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 42 ) ],
 "loop": false,
 "name": "attack_north",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ) ],
+"loop": true,
+"name": "walk_north_west",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 20 ) ],
+"loop": true,
+"name": "idle_north",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 43 ), ExtResource( 44 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 47 ) ],
@@ -129,9 +125,14 @@ animations = [ {
 "name": "walk_north",
 "speed": 10.0
 }, {
-"frames": [ ExtResource( 21 ) ],
-"loop": true,
-"name": "idle_north_west",
+"frames": [ ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ) ],
+"loop": false,
+"name": "attack_north_west",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 31 ), ExtResource( 32 ), ExtResource( 33 ), ExtResource( 34 ) ],
+"loop": false,
+"name": "attack_north_east",
 "speed": 5.0
 } ]
 
@@ -140,8 +141,8 @@ radius = 15.8761
 height = 4.33591
 
 [node name="Player2Swordman" type="KinematicBody2D" groups=[
-"unit",
 "player2",
+"unit",
 ]]
 material = ExtResource( 1 )
 script = ExtResource( 2 )
@@ -152,54 +153,46 @@ collision_group = "player2"
 color = 1
 
 [node name="North" type="Position2D" parent="."]
-editor/display_folded = true
 modulate = Color( 0.454902, 0.0509804, 0.0509804, 1 )
 self_modulate = Color( 0.101961, 0.0156863, 0.309804, 1 )
 
 [node name="AreaCoordinateNorth" parent="North" instance=ExtResource( 3 )]
 
 [node name="South" type="Position2D" parent="."]
-editor/display_folded = true
 modulate = Color( 0.141176, 0.0235294, 0.0235294, 1 )
 
 [node name="AreaCoordinateSouth" parent="South" instance=ExtResource( 3 )]
 
 [node name="East" type="Position2D" parent="."]
-editor/display_folded = true
 modulate = Color( 0.647059, 0, 0.411765, 1 )
 
 [node name="AreaCoordinateEast" parent="East" instance=ExtResource( 3 )]
 
 [node name="West" type="Position2D" parent="."]
-editor/display_folded = true
 modulate = Color( 0.458824, 0.603922, 0, 1 )
 self_modulate = Color( 0.835294, 0.0705882, 0.0705882, 1 )
 
 [node name="AreaCoordinateWest" parent="West" instance=ExtResource( 3 )]
 
 [node name="NorthWest" type="Position2D" parent="."]
-editor/display_folded = true
 modulate = Color( 0, 0.0509804, 0.603922, 1 )
 self_modulate = Color( 0.835294, 0.0705882, 0.0705882, 1 )
 
 [node name="AreaCoordinateNorthWest" parent="NorthWest" instance=ExtResource( 3 )]
 
 [node name="NorthEast" type="Position2D" parent="."]
-editor/display_folded = true
 modulate = Color( 0.823529, 0.537255, 0.458824, 1 )
 self_modulate = Color( 0.835294, 0.0705882, 0.0705882, 1 )
 
 [node name="AreaCoordinateNorthEast" parent="NorthEast" instance=ExtResource( 3 )]
 
 [node name="SouthWest" type="Position2D" parent="."]
-editor/display_folded = true
 modulate = Color( 0.470588, 0, 0.603922, 1 )
 self_modulate = Color( 0.835294, 0.0705882, 0.0705882, 1 )
 
 [node name="AreaCoordinateSouthWest" parent="SouthWest" instance=ExtResource( 3 )]
 
 [node name="SouthEast" type="Position2D" parent="."]
-editor/display_folded = true
 modulate = Color( 0, 0.603922, 0.517647, 1 )
 self_modulate = Color( 0.835294, 0.0705882, 0.0705882, 1 )
 
@@ -208,7 +201,7 @@ self_modulate = Color( 0.835294, 0.0705882, 0.0705882, 1 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 material = ExtResource( 1 )
 position = Vector2( 0.0121155, -39.3405 )
-frames = SubResource( 3 )
+frames = SubResource( 1 )
 animation = "idle_south_east"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -221,8 +214,10 @@ margin_top = -50.4867
 margin_right = 23.4866
 margin_bottom = 11.5133
 
-[node name="Tween" type="Tween" parent="."]
+[node name="ChangeStatusInterface" parent="." instance=ExtResource( 52 )]
+position = Vector2( -41.4934, -86.6751 )
 
+[node name="Tween" type="Tween" parent="."]
 [connection signal="body_entered" from="North/AreaCoordinateNorth" to="." method="_on_AreaCoordinateNorth_body_entered"]
 [connection signal="body_entered" from="South/AreaCoordinateSouth" to="." method="_on_AreaCoordinateSouth_body_entered"]
 [connection signal="body_entered" from="East/AreaCoordinateEast" to="." method="_on_AreaCoordinateEast_body_entered"]

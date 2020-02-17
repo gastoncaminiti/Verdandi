@@ -7,6 +7,8 @@
 [ext_resource path="res://unit/norse/soldier/swordman/Player2Swordman.tscn" type="PackedScene" id=5]
 [ext_resource path="res://sound/Game - Morning Dew.ogg" type="AudioStream" id=6]
 
+
+
 [node name="Level3" type="Node2D" groups=[
 "Level",
 ]]

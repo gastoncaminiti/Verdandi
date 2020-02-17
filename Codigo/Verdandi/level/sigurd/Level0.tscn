@@ -15,7 +15,6 @@ deck_name = "level_00"
 alignment_limit = 2
 
 [node name="Navigation2D" type="Navigation2D" parent="."]
-editor/display_folded = true
 
 [node name="TileMap" type="TileMap" parent="Navigation2D"]
 mode = 1
@@ -40,4 +39,3 @@ attack_speed = 1
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
 autoplay = true
-
