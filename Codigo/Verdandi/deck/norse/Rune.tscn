@@ -112,7 +112,6 @@ anims/played = SubResource( 2 )
 anims/selected = SubResource( 3 )
 anims/uninvert = SubResource( 4 )
 anims/unselected = SubResource( 5 )
-
 [connection signal="gui_input" from="SelectedManager" to="." method="_on_SelectedManager_gui_input"]
 [connection signal="mouse_entered" from="SelectedManager" to="." method="_on_SelectedManager_mouse_entered"]
 [connection signal="mouse_exited" from="SelectedManager" to="." method="_on_SelectedManager_mouse_exited"]
