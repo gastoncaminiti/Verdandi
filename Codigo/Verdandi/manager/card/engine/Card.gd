@@ -4,6 +4,7 @@ extends Node2D
 var _card_data = null
 var _is_ready  = false
 var _is_invert = false
+var _is_rotate = false
 
 func _ready():
 	_is_ready = true
@@ -18,6 +19,10 @@ func set_card_data(card_data):
 # Returns the date used by this widget
 func get_card_data():
 	return _card_data
+
+func _process(_delta):
+	if _is_rotate: 
+		$AnimationPlayer.play("uninvert" if _is_invert else "invert")
 
 func _update_card():
 	if _card_data == null || !_is_ready: return
@@ -42,15 +47,18 @@ func _update_card():
 	#		else:
 	#			node.text = CardEngine.final_text(_card_data, text)
 
+
 func _on_SelectedManager_mouse_entered():
-	$AnimationPlayer.play("selected")
+	if !_is_rotate: 
+		$AnimationPlayer.play("selected")
 	if get_node("../../../../../").is_in_group("interface_runes"):
 		get_node("../../../../../").set_rune_view(_card_data)
 	if get_node("../../../../").is_in_group("interface_game"):
 		get_node("../../../../").set_rune_view(_card_data, global_position)
 
 func _on_SelectedManager_mouse_exited():
-	$AnimationPlayer.play("unselected")
+	if !_is_rotate: 
+		$AnimationPlayer.play("unselected")
 	if get_node("../../../../../").is_in_group("interface_runes"):
 		get_node("../../../../../").hide_rune_view()
 	if get_node("../../../../").is_in_group("interface_game"):
@@ -65,11 +73,9 @@ func _on_SelectedManager_gui_input(event):
 				$AnimationPlayer.play("played")
 				$SelectedManager.queue_free()
 		if event.button_index  == BUTTON_RIGHT and _card_data.invertible:
-				if(_is_invert):
-					$AnimationPlayer.play("uninvert")
-				else:
-					$AnimationPlayer.play("invert")
-
+				_is_rotate = true
+				return
+				
 func _on_AnimationPlayer_animation_finished(anim_name):
 	if anim_name == "played":
 		CardGame.remove_card(_card_data)
@@ -81,6 +87,10 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 			CardGame.index_effect+=1
 
 	if anim_name == "uninvert":
+		_is_rotate = false
 		_is_invert = false
+		$AnimationPlayer.play("unselected")
 	if anim_name == "invert":
+		_is_rotate = false
 		_is_invert = true
+		$AnimationPlayer.play("unselected")

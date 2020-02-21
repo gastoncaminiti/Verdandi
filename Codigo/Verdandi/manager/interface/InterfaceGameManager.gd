@@ -212,7 +212,6 @@ func decrement_my_turn_gui():
 
 func _on_BattleButton_pressed():
 	get_parent().battle_turn()
-	disable_battlebutton()
 	
 func disable_battlebutton():
 	var button = get_node("Layer 2 - GUI/BattleButton")

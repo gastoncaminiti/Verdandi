@@ -106,7 +106,7 @@ margin_right = 28.0
 margin_bottom = 44.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-playback_speed = 1.4
+playback_speed = 2.0
 anims/invert = SubResource( 1 )
 anims/played = SubResource( 2 )
 anims/selected = SubResource( 3 )

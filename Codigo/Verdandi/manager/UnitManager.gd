@@ -132,11 +132,13 @@ func _effect_manager(data, player):
 				"luck":
 					attack = attack * 2 if data.value else attack/2
 				"provisions":
-					life = life + 10 if data.value else life - 10
+					var aux = 10 if data.value else life - 10
+					life = life + aux
+					status_gui_changed( aux,"life")
 
 func goPahtConfig(nav):
 		if(my_path):
-			print(my_path)
+			#print(my_path)
 			var index_end =  my_path.size() - 1
 			if(my_index_path  < index_end):
 				my_index_path+=1 
@@ -331,56 +333,56 @@ func _on_SelectedManager_gui_input(event):
 func _on_AreaCoordinateNorth_body_entered(body):
 	if !body.is_in_group(collision_group):
 		targets.append({"obj":body, "orientation": 0})
-		print("ENEMY IN NORTH")
+		#print("ENEMY IN NORTH")
 		flag_attack = true
 		orientation = targets[index_target].orientation
 
 func _on_AreaCoordinateSouth_body_entered(body):
 	if !body.is_in_group(collision_group):
 		targets.append({"obj":body, "orientation": 1})
-		print("ENEMY IN SOUTH")
+		#print("ENEMY IN SOUTH")
 		flag_attack = true
 		orientation = targets[index_target].orientation
 
 func _on_AreaCoordinateEast_body_entered(body):
 	if !body.is_in_group(collision_group):
 		targets.append({"obj":body, "orientation": 3})
-		print("ENEMY IN EAST")
+		#print("ENEMY IN EAST")
 		flag_attack = true
 		orientation = targets[index_target].orientation
 
 func _on_AreaCoordinateWest_body_entered(body):
 	if !body.is_in_group(collision_group):
 		targets.append({"obj":body, "orientation": 2})
-		print("ENEMY IN WEST")
+		#print("ENEMY IN WEST")
 		flag_attack = true
 		orientation = targets[index_target].orientation
 
 func _on_AreaCoordinateNorthWest_body_entered(body):
 	if !body.is_in_group(collision_group):
 		targets.append({"obj":body, "orientation": 4})
-		print("ENEMY IN NorthWest")
+		#print("ENEMY IN NorthWest")
 		flag_attack = true
 		orientation = targets[index_target].orientation
 
 func _on_AreaCoordinateNorthEast_body_entered(body):
 	if !body.is_in_group(collision_group):
 		targets.append({"obj":body, "orientation": 5})
-		print("ENEMY IN NorthEast")
+		#print("ENEMY IN NorthEast")
 		flag_attack = true
 		orientation = targets[index_target].orientation
 
 func _on_AreaCoordinateSouthWest_body_entered(body):
 	if !body.is_in_group(collision_group):
 		targets.append({"obj":body, "orientation": 6})
-		print("ENEMY IN SouthWest")
+		#print("ENEMY IN SouthWest")
 		flag_attack = true
 		orientation = targets[index_target].orientation
 
 func _on_AreaCoordinateSouthEast_body_entered(body):
 	if !body.is_in_group(collision_group):
 		targets.append({"obj":body, "orientation": 7})
-		print("ENEMY IN SouthEast")
+		#print("ENEMY IN SouthEast")
 		flag_attack = true
 		orientation = targets[index_target].orientation
 
@@ -401,7 +403,7 @@ func _on_AnimatedSprite_animation_finished():
 	if($AnimatedSprite.get_animation().find("attack") != -1):
 		if targets[index_target] != null and !targets[index_target].obj.is_dead:
 			targets[index_target].obj.hurted(attack)
-			print(index_target)
+			#print(index_target)
 			if targets[index_target].obj.is_dead and index_target < targets.size() - 1:
 				targets[index_target].obj.area_diseable_status(true)
 				targets[index_target] = null
@@ -432,11 +434,12 @@ func _on_AnimatedSprite_animation_finished():
 				get_parent().erase_enemy(self)
 				get_parent().erase_all(self)
 				get_parent().unit_check()
-				$Tween.interpolate_property(self, "modulate",   Color(1, 1, 1, 0), Color(1, 1, 1, 1), 2, Tween.TRANS_LINEAR, Tween.EASE_IN)
+				$Tween.interpolate_property(self, "modulate",   Color(1, 1, 1, 1), Color(1, 1, 1, 0), 2, Tween.TRANS_LINEAR, Tween.EASE_IN)
 				$Tween.start()
 				return
 
 func _on_Tween_tween_completed(object, key):
+	#print(object)
 	if object == self:
 		queue_free()
 	else:

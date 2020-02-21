@@ -55,7 +55,7 @@ func _ready():
 # Función: Definición de eventos durante el combate.
 func battle_turn():
 	unit_checks = 0
-	update_effects_status()
+	#aca antes llamaba a update_effects_status() (VER BIEN DONDE SE CALCULAN LOS EFECTOS DE TURNOS)
 	# Desactivar input y ocultar cursor.
 	get_tree().get_root().set_disable_input(true)
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
@@ -136,6 +136,8 @@ func apply_effect(data , key):
 			if effects[0]:
 				effects[0].turns -= 1
 				$GameInterface.update_turn_gui_one_effect(0,String(effects[0].turns))
+		"provisions":
+			emit_signal("units_affected", data, player_name)
 		_:
 			# Efecto de Estadisticas de unidades.
 			emit_signal("units_affected", data, player_name)
@@ -164,7 +166,9 @@ func _on_cooldown_timeout():
 		get_tree().get_root().set_disable_input(false)
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		pass_turn_effects()
+		update_effects_status()
 		$GameInterface.decrement_my_turn_gui()
+		$GameInterface.disable_battlebutton()
 		if my_hero_dead:
 			next_level(false, "KEY_LOSE_ENEMY")
 			return
@@ -190,6 +194,11 @@ func update_effects_status():
 			$GameInterface.erase_effect_gui(e.key)
 			reverse_card_effect(e)
 			effects.erase(e)
+		else:
+			if e.effect.has("cast"):
+				match e.effect.cast:
+					"provisions":
+						emit_signal("units_affected", e.effect, player_name)
 
 func reverse_card_effect(data):
 	if(data.effect.type == "statistics"):
