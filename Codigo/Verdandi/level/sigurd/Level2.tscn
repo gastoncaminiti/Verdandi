@@ -8,8 +8,6 @@
 [ext_resource path="res://unit/norse/soldier/swordman/Player2Swordman.tscn" type="PackedScene" id=6]
 [ext_resource path="res://sound/Game - Morning Dew.ogg" type="AudioStream" id=7]
 
-
-
 [node name="Level2" type="Node2D" groups=[
 "Level",
 ]]
@@ -25,20 +23,22 @@ mode = 1
 tile_set = ExtResource( 2 )
 cell_size = Vector2( 120, 62 )
 format = 1
-tile_data = PoolIntArray( -262136, 536870917, 0, -262135, 5, 0, -262134, 5, 0, -262133, 5, 0, -196602, 5, 0, -196601, 3, 0, -196600, 3, 0, -196599, 3, 0, -196598, 3, 0, -196597, 0, 0, -196596, 536870917, 0, -131066, 3, 0, -131065, 5, 0, -131064, 0, 0, -131063, 0, 0, -131062, 0, 0, -131061, 0, 0, -131060, 3, 0, -131059, 5, 0, -65531, 5, 0, -65530, 3, 0, -65529, 0, 0, -65528, 3, 0, -65527, 3, 0, -65526, 3, 0, -65525, 0, 0, -65524, 3, 0, 5, 5, 0, 6, 3, 0, 7, 0, 0, 8, 3, 0, 9, 3, 0, 10, 3, 0, 11, 0, 0, 12, 3, 0, 65541, 536870917, 0, 65542, 3, 0, 65543, 0, 0, 65544, 3, 0, 65545, 3, 0, 65546, 3, 0, 65547, 0, 0, 65548, 3, 0, 131077, 5, 0, 131078, 0, 0, 131079, 0, 0, 131080, 0, 0, 131081, 0, 0, 131082, 0, 0, 131083, 0, 0, 196614, 5, 0, 196615, 3, 0, 196616, 3, 0, 196617, 3, 0, 196618, 3, 0 )
+tile_data = PoolIntArray( -262136, 536870917, 0, -262135, 5, 0, -262134, 5, 0, -262133, 5, 0, -196602, 5, 0, -196601, 3, 0, -196600, 3, 0, -196599, 3, 0, -196598, 3, 0, -196597, 1, 0, -196596, 536870917, 0, -131066, 3, 0, -131065, 5, 0, -131064, 1, 0, -131063, 1, 0, -131062, 1, 0, -131061, 1, 0, -131060, 3, 0, -131059, 5, 0, -65531, 5, 0, -65530, 3, 0, -65529, 1, 0, -65528, 3, 0, -65527, 3, 0, -65526, 3, 0, -65525, 1, 0, -65524, 3, 0, 5, 5, 0, 6, 3, 0, 7, 1, 0, 8, 3, 0, 9, 3, 0, 10, 3, 0, 11, 1, 0, 12, 3, 0, 65541, 536870917, 0, 65542, 3, 0, 65543, 1, 0, 65544, 3, 0, 65545, 3, 0, 65546, 3, 0, 65547, 1, 0, 65548, 3, 0, 131077, 5, 0, 131078, 1, 0, 131079, 1, 0, 131080, 1, 0, 131081, 1, 0, 131082, 1, 0, 131083, 1, 0, 196614, 5, 0, 196615, 3, 0, 196616, 3, 0, 196617, 3, 0, 196618, 3, 0 )
 
 [node name="GameInterface" parent="." instance=ExtResource( 3 )]
 position = Vector2( 3.48682, 7.36102 )
 
 [node name="Player1Sigurd" parent="." instance=ExtResource( 4 )]
-position = Vector2( 361, 276 )
+position = Vector2( 360, 280 )
 life = 80
 
 [node name="Player1Swordman" parent="." instance=ExtResource( 5 )]
+visible = false
 position = Vector2( 666, 369 )
 life = 40
 
 [node name="Player2Swordman" parent="." instance=ExtResource( 6 )]
+visible = false
 position = Vector2( 722, 271 )
 orientation = 2
 priority_orientation = 2
@@ -47,6 +47,7 @@ attack = 10
 attack_speed = 1
 
 [node name="Player2Swordman2" parent="." instance=ExtResource( 6 )]
+visible = false
 position = Vector2( 416, 366 )
 orientation = 3
 priority_orientation = 3
@@ -56,4 +57,3 @@ attack_speed = 1
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 7 )
 autoplay = true
-

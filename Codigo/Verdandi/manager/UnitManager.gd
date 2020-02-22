@@ -27,6 +27,7 @@ var targets = []
 var index_target = 0
 var is_invulnerable = false
 var is_dead = false
+var n_attacks = 1
 
 func _ready():
 	connect_parent_child("map_initiated","_goMapConfig")
@@ -128,13 +129,17 @@ func _effect_manager(data, player):
 				"invulnerable":
 					is_invulnerable = data.value
 				"fury":
-					attack_speed = attack_speed + 1 if data.value else attack_speed - 1
+					var aux = 1 if data.value else - 1
+					attack_speed = attack_speed + aux
+					status_gui_changed(aux,"speed")
 				"luck":
-					attack = attack * 2 if data.value else attack/2
+					var aux = attack if data.value else -attack/2
+					attack = attack + aux
+					status_gui_changed(aux,"attack")
 				"provisions":
-					var aux = 10 if data.value else life - 10
+					var aux = 10 if data.value else -10
 					life = life + aux
-					status_gui_changed( aux,"life")
+					status_gui_changed(aux,"life")
 
 func goPahtConfig(nav):
 		if(my_path):
@@ -403,20 +408,24 @@ func _on_AnimatedSprite_animation_finished():
 	if($AnimatedSprite.get_animation().find("attack") != -1):
 		if targets[index_target] != null and !targets[index_target].obj.is_dead:
 			targets[index_target].obj.hurted(attack)
-			#print(index_target)
 			if targets[index_target].obj.is_dead and index_target < targets.size() - 1:
 				targets[index_target].obj.area_diseable_status(true)
 				targets[index_target] = null
 				index_target+=1
 				orientation = targets[index_target].orientation
 			if targets[index_target].obj.is_dead and index_target >= targets.size() - 1:
-				#orientation = targets[index_target].orientation
 				targets[index_target] = null
 				flag_attack = false
 				orientation_animation("idle")
 		if get_parent().is_in_group("Level"):
-			get_parent().unit_check()
-			return
+				get_parent().unit_check()
+			#if n_attacks == attack_speed:
+			#	n_attacks = 1
+			
+			#	return
+			#else:
+			#	orientation_animation("attack")
+			#	return
 	if($AnimatedSprite.get_animation().find("dead") != -1):
 		if get_parent().is_in_group("Level"):
 			if is_in_group("hero"):

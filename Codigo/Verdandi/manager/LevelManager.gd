@@ -168,7 +168,7 @@ func _on_cooldown_timeout():
 		pass_turn_effects()
 		update_effects_status()
 		$GameInterface.decrement_my_turn_gui()
-		$GameInterface.disable_battlebutton()
+		$GameInterface.disable_battlebutton(true)
 		if my_hero_dead:
 			next_level(false, "KEY_LOSE_ENEMY")
 			return

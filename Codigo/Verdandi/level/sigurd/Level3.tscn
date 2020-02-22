@@ -7,8 +7,6 @@
 [ext_resource path="res://unit/norse/soldier/swordman/Player2Swordman.tscn" type="PackedScene" id=5]
 [ext_resource path="res://sound/Game - Morning Dew.ogg" type="AudioStream" id=6]
 
-
-
 [node name="Level3" type="Node2D" groups=[
 "Level",
 ]]
@@ -57,16 +55,11 @@ life = 60
 attack_speed = 1
 
 [node name="Player2Swordman4" parent="." instance=ExtResource( 5 )]
-editor/display_folded = true
 position = Vector2( 179, 307 )
 orientation = 5
 priority_orientation = 5
 life = 60
 attack_speed = 1
-
-[node name="Music" type="AudioStreamPlayer" parent="Player2Swordman4"]
-stream = ExtResource( 6 )
-autoplay = true
 
 [node name="Player2Swordman5" parent="." instance=ExtResource( 5 )]
 position = Vector2( 778, 183 )
@@ -74,7 +67,6 @@ priority_orientation = 1
 life = 60
 attack_speed = 1
 
-[node name="Music" type="AudioStreamPlayer" parent="Player2Swordman5"]
+[node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
 autoplay = true
-

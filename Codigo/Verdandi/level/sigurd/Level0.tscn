@@ -29,6 +29,7 @@ position = Vector2( 3.48682, 7.36102 )
 [node name="Player1Sigurd" parent="." instance=ExtResource( 4 )]
 position = Vector2( 357, 336 )
 life = 60
+attack_speed = 1
 
 [node name="Player2Swordman" parent="." instance=ExtResource( 5 )]
 position = Vector2( 656, 181 )

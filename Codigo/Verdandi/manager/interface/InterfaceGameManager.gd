@@ -5,7 +5,7 @@ var hourglass
 
 func _ready():
 	hourglass = get_node("Layer 2 - GUI/Hourglass")
-	disable_battlebutton()
+	disable_battlebutton(true)
 	
 func animated_orden():
 	pass
@@ -178,7 +178,7 @@ func update_alignament(alignament, invert, card_data):
 						node.get_children()[0].modulate = c2
 			var effect = card_data.inverse  if invert else  card_data.effect
 			node_level.apply_effect(effect, card_data.guifont if invert else card_data.guifont.to_upper())
-			disable_battlebutton()
+			disable_battlebutton(false)
 
 func set_bag_num_runes(value):
  get_node("Layer 2 - GUI/Bag/LabelBag").text = value
@@ -213,6 +213,7 @@ func decrement_my_turn_gui():
 func _on_BattleButton_pressed():
 	get_parent().battle_turn()
 	
-func disable_battlebutton():
+func disable_battlebutton(flag):
 	var button = get_node("Layer 2 - GUI/BattleButton")
-	button.set_disabled(!button.is_disabled())
+	button.set_disabled(flag)
+	button.set_pressed(false)

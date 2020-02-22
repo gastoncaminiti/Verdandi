@@ -60,14 +60,39 @@ animations = [ {
 "name": "walk_east",
 "speed": 10.0
 }, {
-"frames": [ ExtResource( 3 ) ],
+"frames": [ ExtResource( 28 ) ],
 "loop": true,
-"name": "idle_east",
+"name": "idle_north_east",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ) ],
+"loop": true,
+"name": "walk_north",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 48 ), ExtResource( 49 ), ExtResource( 50 ), ExtResource( 51 ) ],
+"loop": false,
+"name": "attack_north_west",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 40 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 43 ) ],
 "loop": false,
 "name": "attack_south_east",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ) ],
+"loop": true,
+"name": "walk_north_west",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 27 ) ],
+"loop": true,
+"name": "idle_south_east",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "idle_east",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ) ],
@@ -80,9 +105,9 @@ animations = [ {
 "name": "attack_east",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 28 ) ],
+"frames": [ ExtResource( 8 ) ],
 "loop": true,
-"name": "idle_north_east",
+"name": "idle_north_west",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 31 ), ExtResource( 32 ) ],
@@ -90,19 +115,9 @@ animations = [ {
 "name": "walk_north_east",
 "speed": 10.0
 }, {
-"frames": [ ExtResource( 8 ) ],
+"frames": [ ExtResource( 27 ), ExtResource( 33 ), ExtResource( 34 ), ExtResource( 35 ), ExtResource( 36 ) ],
 "loop": true,
-"name": "idle_north_west",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 37 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 37 ) ],
-"loop": false,
-"name": "attack_north",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ) ],
-"loop": true,
-"name": "walk_north_west",
+"name": "walk_south_east",
 "speed": 10.0
 }, {
 "frames": [ ExtResource( 22 ) ],
@@ -110,24 +125,9 @@ animations = [ {
 "name": "idle_north",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 27 ), ExtResource( 33 ), ExtResource( 34 ), ExtResource( 35 ), ExtResource( 36 ) ],
-"loop": true,
-"name": "walk_south_east",
-"speed": 10.0
-}, {
-"frames": [ ExtResource( 27 ) ],
-"loop": true,
-"name": "idle_south_east",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ) ],
-"loop": true,
-"name": "walk_north",
-"speed": 10.0
-}, {
-"frames": [ ExtResource( 48 ), ExtResource( 49 ), ExtResource( 50 ), ExtResource( 51 ) ],
+"frames": [ ExtResource( 37 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 37 ) ],
 "loop": false,
-"name": "attack_north_west",
+"name": "attack_north",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 44 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 47 ) ],
@@ -206,7 +206,7 @@ position = Vector2( 0, -18.3265 )
 shape = SubResource( 2 )
 
 [node name="ChangeStatusInterface" parent="." instance=ExtResource( 52 )]
-position = Vector2( -27, -96 )
+position = Vector2( -28, -94 )
 
 [node name="SelectedManager" type="Control" parent="."]
 margin_left = -26.5134
