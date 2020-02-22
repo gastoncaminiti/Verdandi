@@ -338,56 +338,56 @@ func _on_SelectedManager_gui_input(event):
 func _on_AreaCoordinateNorth_body_entered(body):
 	if !body.is_in_group(collision_group):
 		targets.append({"obj":body, "orientation": 0})
-		#print("ENEMY IN NORTH")
+		print("ENEMY IN NORTH")
 		flag_attack = true
 		orientation = targets[index_target].orientation
 
 func _on_AreaCoordinateSouth_body_entered(body):
 	if !body.is_in_group(collision_group):
 		targets.append({"obj":body, "orientation": 1})
-		#print("ENEMY IN SOUTH")
+		print("ENEMY IN SOUTH")
 		flag_attack = true
 		orientation = targets[index_target].orientation
 
 func _on_AreaCoordinateEast_body_entered(body):
 	if !body.is_in_group(collision_group):
 		targets.append({"obj":body, "orientation": 3})
-		#print("ENEMY IN EAST")
+		print("ENEMY IN EAST")
 		flag_attack = true
 		orientation = targets[index_target].orientation
 
 func _on_AreaCoordinateWest_body_entered(body):
 	if !body.is_in_group(collision_group):
 		targets.append({"obj":body, "orientation": 2})
-		#print("ENEMY IN WEST")
+		print("ENEMY IN WEST")
 		flag_attack = true
 		orientation = targets[index_target].orientation
 
 func _on_AreaCoordinateNorthWest_body_entered(body):
 	if !body.is_in_group(collision_group):
 		targets.append({"obj":body, "orientation": 4})
-		#print("ENEMY IN NorthWest")
+		print("ENEMY IN NorthWest")
 		flag_attack = true
 		orientation = targets[index_target].orientation
 
 func _on_AreaCoordinateNorthEast_body_entered(body):
 	if !body.is_in_group(collision_group):
 		targets.append({"obj":body, "orientation": 5})
-		#print("ENEMY IN NorthEast")
+		print("ENEMY IN NorthEast")
 		flag_attack = true
 		orientation = targets[index_target].orientation
 
 func _on_AreaCoordinateSouthWest_body_entered(body):
 	if !body.is_in_group(collision_group):
 		targets.append({"obj":body, "orientation": 6})
-		#print("ENEMY IN SouthWest")
+		print("ENEMY IN SouthWest")
 		flag_attack = true
 		orientation = targets[index_target].orientation
 
 func _on_AreaCoordinateSouthEast_body_entered(body):
 	if !body.is_in_group(collision_group):
 		targets.append({"obj":body, "orientation": 7})
-		#print("ENEMY IN SouthEast")
+		print("ENEMY IN SouthEast")
 		flag_attack = true
 		orientation = targets[index_target].orientation
 

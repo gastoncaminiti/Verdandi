@@ -1,7 +1,6 @@
 extends Node2D
 # ------------------ LEVELMANAGER SCRIPT ------------------
 # Script manejador de los eventos del nivel.
-
 # Configrable VAR.
 export(String) var deck_name   = "level_starter"
 export(String) var player_name = "player1"
@@ -51,6 +50,13 @@ func _ready():
 	_cooldown.wait_time = cooldown_time
 	add_child(_cooldown)
 	_cooldown.connect("timeout", self, "_on_cooldown_timeout")
+
+func _input(event):
+	pass
+	# TEST MOVOMIMIENTO DE UNIDADES
+	#if Input.is_key_pressed(KEY_SPACE):
+	#	print("MOVER")
+	#	emit_signal("units_moved", $Navigation2D)
 
 # Función: Definición de eventos durante el combate.
 func battle_turn():

@@ -12,6 +12,7 @@
 ]]
 script = ExtResource( 1 )
 deck_name = "level_01"
+alignment_limit = 1
 act_index = 3
 
 [node name="Navigation2D" type="Navigation2D" parent="."]
@@ -27,42 +28,26 @@ tile_data = PoolIntArray( -393207, 3, 0, -327672, 3, 0, -327671, 1, 0, -327670, 
 position = Vector2( 3.48682, 7.36102 )
 
 [node name="Player1Sigurd" parent="." instance=ExtResource( 4 )]
-position = Vector2( 540, 244 )
-orientation = 7
-priority_orientation = 7
+position = Vector2( 365, 400 )
 life = 3000
 attack = 40
 
-[node name="Player2Swordman" parent="." instance=ExtResource( 5 )]
-position = Vector2( 776, 427 )
+[node name="Player2Swordman2" parent="." instance=ExtResource( 5 )]
+position = Vector2( 599, 398 )
 orientation = 2
 priority_orientation = 2
-life = 60
-attack = 10
-attack_speed = 1
-
-[node name="Player2Swordman2" parent="." instance=ExtResource( 5 )]
-position = Vector2( 540, 431 )
-orientation = 4
-priority_orientation = 4
 life = 60
 attack_speed = 1
 
 [node name="Player2Swordman3" parent="." instance=ExtResource( 5 )]
-position = Vector2( 303, 427 )
-orientation = 0
+position = Vector2( 363, 275 )
+orientation = 3
+priority_orientation = 3
 life = 60
 attack_speed = 1
 
 [node name="Player2Swordman4" parent="." instance=ExtResource( 5 )]
-position = Vector2( 179, 307 )
-orientation = 5
-priority_orientation = 5
-life = 60
-attack_speed = 1
-
-[node name="Player2Swordman5" parent="." instance=ExtResource( 5 )]
-position = Vector2( 778, 183 )
+position = Vector2( 654, 244 )
 priority_orientation = 1
 life = 60
 attack_speed = 1
