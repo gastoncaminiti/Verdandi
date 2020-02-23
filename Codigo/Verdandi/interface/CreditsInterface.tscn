@@ -35,7 +35,7 @@ outline_color = Color( 0.368627, 0.298039, 0.0235294, 1 )
 font_data = ExtResource( 5 )
 
 [sub_resource type="DynamicFont" id=4]
-size = 25
+size = 24
 outline_size = 1
 outline_color = Color( 0.109804, 0.109804, 0.105882, 1 )
 font_data = ExtResource( 4 )
@@ -201,7 +201,6 @@ margin_right = 208.0
 margin_bottom = 123.0
 custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0.862745, 0.862745, 0.862745, 1 )
-text = "Gaston Caminiti"
 align = 1
 
 [node name="CenterContainer2" type="CenterContainer" parent="Layer 2 - GUI/VAllContainer/HContainerCredit/VContainerA2"]
@@ -262,7 +261,7 @@ margin_right = 938.0
 margin_bottom = 28.0
 custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0.862745, 0.862745, 0.862745, 1 )
-text = "KEY_PROJECT"
+text = "KEY_VERSION"
 align = 1
 
 [node name="Text_Title3" type="Label" parent="Layer 2 - GUI/VAllContainer/VBoxContainer"]
@@ -272,7 +271,7 @@ margin_right = 938.0
 margin_bottom = 58.0
 custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0.862745, 0.862745, 0.862745, 1 )
-text = "KEY_UNIVERSITY"
+text = "KEY_PROJECT"
 align = 1
 
 [node name="Text_Title4" type="Label" parent="Layer 2 - GUI/VAllContainer/VBoxContainer"]
@@ -282,7 +281,7 @@ margin_right = 938.0
 margin_bottom = 88.0
 custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0.862745, 0.862745, 0.862745, 1 )
-text = "KEY_PROFESSOR"
+text = "KEY_AUTHOR"
 align = 1
 
 [node name="Button" type="Button" parent="Layer 2 - GUI"]
@@ -296,6 +295,9 @@ custom_colors/font_color_hover = Color( 0.764706, 0.384314, 0.0431373, 1 )
 enabled_focus_mode = 0
 text = "X"
 flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Tween" type="Tween" parent="."]
 
@@ -307,7 +309,7 @@ mix_target = 2
 [node name="Logo" type="AnimatedSprite" parent="."]
 position = Vector2( 829, 307 )
 frames = SubResource( 6 )
+frame = 7
 playing = true
-
 [connection signal="pressed" from="Layer 2 - GUI/Button" to="." method="_on_Button_pressed"]
 [connection signal="finished" from="Music" to="." method="_on_Music_finished"]

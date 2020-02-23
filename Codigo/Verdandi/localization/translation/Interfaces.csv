@@ -31,7 +31,7 @@ KEY_DESING,Desing,Concepto
 KEY_PROGRAMING,Programing,Programacion
 KEY_ART,Art,Arte
 KEY_OTHER_ASSET,Other Asset,Otros Recursos
-KEY_PROJECT,Verdandi is a final project of the technical career in Design and Programming Videogames.,Verdandi es un proyecto final de la carrera TDyPVJ.
+KEY_PROJECT,Verdandi is a 2D strategy video game. Work in process. Any feedback would be appreciated,Verdandi es un videojuego de estrategia en 2D. Trabajo en proceso. Cualquier comentario sera apreciado
 KEY_UNIVERSITY,National University of the Littoral - UNLVirtual.,Universidad Nacional del Litoral - UNLVirtual.
 KEY_PROFESSOR,Professor:  Pablo Andres Abratte - Student: Gaston Alberto Caminiti - 2018/2019.,Profesor:  Pablo Andres Abratte - Estudiante: Gaston Alberto Caminiti - 2018/2019.
 KEY_CREDITS,Credits,Creditos
@@ -55,3 +55,9 @@ KEY_TUTORIAL_00_1,Click on units to see statistics,Clic en unidades para ver est
 KEY_TUTORIAL_00_2,Playing the rune applies an effect,Jugar la runa aplica un efecto
 KEY_TUTORIAL_00_3,Each rune has different effects,Cada runa tiene efectos diferentes
 KEY_SKIN_REQUESITE_0,Complete The saga of Sigurd,Completar la saga de Sigurd
+KEY_VERSION,Verdandi Alpha Demo  0.2 ,Verdandi Alpha Demo 0.2 
+KEY_AUTHOR,Chatora Games - 2019/2020,Chatora Games - 2019/2020
+KEY_TUTORIAL_01_0,Use a rune adds one point,Usar una runa suma un punto
+KEY_TUTORIAL_01_1,Every alignment has a limit,Cada alineación tiene un limite
+KEY_TUTORIAL_01_2,Right click invert a rune,Right click invertir una runa
+KEY_TUTORIAL_01_3,You need to balance the battle,Necesitas balancear la batalla
