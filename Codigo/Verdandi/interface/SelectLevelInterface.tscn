@@ -80,6 +80,9 @@ margin_right = 473.0
 margin_bottom = 172.0
 custom_constants/separation = 0
 alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="HCGameTitle" type="HBoxContainer" parent="Layer 2 - GUI/VCInterface"]
 margin_right = 912.0
@@ -106,7 +109,7 @@ custom_constants/separation = 0
 
 [node name="CContainer" type="MarginContainer" parent="Layer 2 - GUI/VCInterface/HCSagasContainer/VCSaga0"]
 margin_right = 300.0
-margin_bottom = 200.0
+margin_bottom = 220.0
 grow_vertical = 2
 rect_min_size = Vector2( 300, 200 )
 
@@ -117,7 +120,7 @@ frames = SubResource( 2 )
 animation = "idle"
 
 [node name="SagaTitle" type="Label" parent="Layer 2 - GUI/VCInterface/HCSagasContainer/VCSaga0"]
-margin_top = 200.0
+margin_top = 220.0
 margin_right = 300.0
 margin_bottom = 240.0
 custom_fonts/font = SubResource( 3 )
@@ -204,7 +207,6 @@ flat = true
 stream = ExtResource( 10 )
 autoplay = true
 mix_target = 2
-
 [connection signal="animation_finished" from="Layer 2 - GUI/VCInterface/HCSagasContainer/VCSaga0/CContainer/AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]
 [connection signal="pressed" from="Layer 2 - GUI/VCInterface/HCSagasContainer/VCSaga0/BLevel0" to="." method="_on_BLevel0_pressed"]
 [connection signal="pressed" from="Layer 2 - GUI/VCInterface/HCSagasContainer/VCSaga0/BLevel1" to="." method="_on_BLevel1_pressed"]

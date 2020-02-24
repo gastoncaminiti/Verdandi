@@ -48,7 +48,6 @@ custom_constants/line_spacing = 0
 text = "KEY_TUTORIAL_00_1 KEY_TUTORIAL_00_1"
 align = 1
 autowrap = true
-
 [connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]
 [connection signal="mouse_entered" from="SelectedManager" to="." method="_on_SelectedManager_mouse_entered"]
 [connection signal="mouse_exited" from="SelectedManager" to="." method="_on_SelectedManager_mouse_exited"]

@@ -217,3 +217,6 @@ func disable_battlebutton(flag):
 	var button = get_node("Layer 2 - GUI/BattleButton")
 	button.set_disabled(flag)
 	button.set_pressed(false)
+	
+func show_tip():
+	get_node("Layer 2 - GUI/Sidgrida").tip_manager()
