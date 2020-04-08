@@ -142,9 +142,10 @@ func _effect_manager(data, player):
 					life = life + aux
 					status_gui_changed(aux,"life")
 
+#ACA SE MANEJA EL MOVIMIENTO EN LA NAVEGACION
 func goPahtConfig(nav):
 		if(my_path):
-			#print(my_path)
+			print("----------------------------")
 			var index_end =  my_path.size() - 1
 			if(my_index_path  < index_end):
 				my_index_path+=1 
@@ -152,7 +153,7 @@ func goPahtConfig(nav):
 				flag_move = true
 			else:
 				if(my_index_path == index_end):
-					orientation_reorientation()
+					#orientation_reorientation()
 					search_path(nav)
 					orientation_animation("idle")
 					#set_center_path()
@@ -161,6 +162,8 @@ func goPahtConfig(nav):
 					flag_move = true
 			
 		else:
+			# PRIMERA SELECCION DE PATH
+			print("----------------------------")
 			search_path(nav)
 			orientation_animation("idle")
 			set_center_path()
@@ -168,8 +171,11 @@ func goPahtConfig(nav):
 			my_goal_position = set_center_position_by_cell(get_position_by_cell_index(get_cell_index(my_path[my_index_path]))) 
 			flag_move = true
 	
+# VALIDAR PATH
 func valid_path(my_path, my_nav):
-	if( get_cell_index(my_path[0]) == get_cell_index(my_path[1])):
+	print(my_nav.get_closest_point_owner(my_path[1]))
+	print(my_path[1])
+	if(get_cell_index(my_path[0]) == get_cell_index(my_path[1])):
 		return false
 	if(my_path.size() < path_dimension):
 		return false
@@ -178,8 +184,11 @@ func valid_path(my_path, my_nav):
 		return false
 	return true
 	
+# Buscar MI RUTA
 func search_path(my_nav):
 	set_new_path(my_nav)
+	print("SEARCH CALL")
+	#print(valid_path(my_path, my_nav))
 	while !valid_path(my_path, my_nav):
 		orientation_reorientation()
 		set_new_path(my_nav)
@@ -266,21 +275,21 @@ func orientation_global_position():
 func orientation_reorientation():
 	match orientation:
 		0:
-			orientation = priority_orientation
+			orientation = 5
 		1:
-			orientation = priority_orientation
+			orientation = 6
 		2:
-			orientation = priority_orientation
+			orientation = 4
 		3:
-			orientation = priority_orientation
+			orientation = 7
 		4:
-			orientation = priority_orientation
+			orientation = 0
 		5:
-			orientation = priority_orientation
+			orientation = 3
 		6:
-			orientation = priority_orientation
+			orientation = 2
 		7:
-			orientation = priority_orientation
+			orientation = 1
 
 func _physics_process(delta):
 	

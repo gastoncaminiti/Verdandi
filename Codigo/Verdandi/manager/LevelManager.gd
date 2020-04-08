@@ -55,10 +55,9 @@ func _ready():
 
 func _input(event):
 	pass
-	# TEST MOVOMIMIENTO DE UNIDADES
-	#if Input.is_key_pressed(KEY_SPACE):
-	#	print("MOVER")
-	#	emit_signal("units_moved", $Navigation2D)
+	#TEST MOVOMIMIENTO DE UNIDADES
+	if Input.is_key_pressed(KEY_SPACE):
+		emit_signal("units_moved", $Navigation2D)
 
 # Función: Definición de eventos durante el combate.
 func battle_turn():
