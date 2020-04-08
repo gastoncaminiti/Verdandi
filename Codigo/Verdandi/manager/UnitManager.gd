@@ -37,6 +37,7 @@ func _ready():
 	area_diseable_status(true)
 	if($AnimatedSprite.material):
 		$AnimatedSprite.material.set("shader_param/armor_value",color)
+	$UnitLight.enabled = false
 
 func get_unit_position():
 	return global_position
@@ -303,6 +304,7 @@ func _on_SelectedManager_mouse_entered():
 	show_areas()
 
 func _on_SelectedManager_mouse_exited():
+	$UnitLight.enabled = false
 	hide_areas()
 	if get_parent().is_in_group("Level"):
 		get_parent().unselected_unit()
@@ -332,6 +334,7 @@ func _on_SelectedManager_gui_input(event):
 	if event is InputEventMouseButton:
 		if event.button_index  == BUTTON_LEFT and event.pressed:
 			if get_parent().is_in_group("Level"):
+				$UnitLight.enabled = true
 				get_parent().selected_unit(life,attack,defense,attack_speed,global_position)
 
 # AREA ENTERED SECCTION

@@ -119,6 +119,5 @@ tile_set = ExtResource( 4 )
 cell_size = Vector2( 84, 84 )
 format = 1
 tile_data = PoolIntArray( 0, 1073741826, 0, 4, 1610612738, 0, 65536, 1073741825, 0, 65540, 1610612737, 0, 131072, 2, 0, 131076, 536870914, 0 )
-
 [connection signal="pressed" from="BackRect/VContainer/HCAlignment/CContainerRetry/ButtonRetry" to="." method="_on_ButtonRetry_pressed"]
 [connection signal="pressed" from="BackRect/VContainer/HCAlignment/CContainer/Button" to="." method="_on_Button_pressed"]

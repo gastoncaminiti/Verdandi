@@ -50,6 +50,8 @@ func _ready():
 	_cooldown.wait_time = cooldown_time
 	add_child(_cooldown)
 	_cooldown.connect("timeout", self, "_on_cooldown_timeout")
+	# Light Config
+	$BlackLight.enabled = false
 
 func _input(event):
 	pass
@@ -73,10 +75,12 @@ func battle_turn():
 
 # Función: Actualizar interfaz de unidad seleccionada.
 func selected_unit(l,a,d,s,p):
+	$BlackLight.enabled = true
 	$GameInterface.set_selected_gui(l,a,d,s,p)
 
 # Función: Ocultar interfaz de unidad seleccionada.
 func unselected_unit():
+	$BlackLight.enabled = false
 	$GameInterface.set_unselected_gui()
 
 # Función: Agregar una runa a la mesa de destino y actulizar el indicador de interfaz.
