@@ -313,10 +313,12 @@ func _on_SelectedManager_mouse_entered():
 	show_areas()
 
 func _on_SelectedManager_mouse_exited():
-	$UnitLight.enabled = false
 	hide_areas()
 	if get_parent().is_in_group("Level"):
 		get_parent().unselected_unit()
+		if $UnitLight.enabled:
+			$UnitLight.enabled = false
+			get_parent().set_global_light_status(false)
 
 func hide_areas():
 	$North/AreaCoordinateNorth/Sprite.visible = false
@@ -343,8 +345,15 @@ func _on_SelectedManager_gui_input(event):
 	if event is InputEventMouseButton:
 		if event.button_index  == BUTTON_LEFT and event.pressed:
 			if get_parent().is_in_group("Level"):
-				$UnitLight.enabled = true
+				get_parent().set_global_light_status(false)
+				$UnitLight.enabled = false
 				get_parent().selected_unit(life,attack,defense,attack_speed,global_position)
+		if event.button_index  == BUTTON_RIGHT and event.pressed:
+			if get_parent().is_in_group("Level"):
+				get_parent().unselected_unit()
+				get_parent().set_global_light_status(true)
+				$UnitLight.enabled = true
+			
 
 # AREA ENTERED SECCTION
 func _on_AreaCoordinateNorth_body_entered(body):
@@ -494,4 +503,6 @@ func status_gui_changed(value, type):
 	$ChangeStatusInterface/HCStatus/NStatus.text = String(value)
 	$Tween.interpolate_property(get_node("ChangeStatusInterface/HCStatus"), "modulate",   Color(1, 1, 1, 1), Color(1, 1, 1, 0), 3, Tween.TRANS_LINEAR, Tween.EASE_IN)
 	$Tween.start()
-	
+
+func _on_ViewArea_body_entered(body):
+	print(body)

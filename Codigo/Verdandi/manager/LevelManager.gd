@@ -51,7 +51,7 @@ func _ready():
 	add_child(_cooldown)
 	_cooldown.connect("timeout", self, "_on_cooldown_timeout")
 	# Light Config
-	$BlackLight.enabled = false
+	set_global_light_status(false)
 
 func _input(event):
 	pass
@@ -74,12 +74,10 @@ func battle_turn():
 
 # Función: Actualizar interfaz de unidad seleccionada.
 func selected_unit(l,a,d,s,p):
-	$BlackLight.enabled = true
 	$GameInterface.set_selected_gui(l,a,d,s,p)
 
 # Función: Ocultar interfaz de unidad seleccionada.
 func unselected_unit():
-	$BlackLight.enabled = false
 	$GameInterface.set_unselected_gui()
 
 # Función: Agregar una runa a la mesa de destino y actulizar el indicador de interfaz.
@@ -219,3 +217,7 @@ func reverse_card_effect(data):
 		data.effect.value = !data.effect.value
 		emit_signal("units_affected", data.effect, player_name)
 		return
+
+func set_global_light_status(status):
+	$BlackLight.enabled = status
+	

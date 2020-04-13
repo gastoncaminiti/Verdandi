@@ -24,7 +24,6 @@ format = 1
 tile_data = PoolIntArray( -131064, 3, 0, -65529, 3, 0, -65528, 1, 0, -65527, 3, 0, 6, 3, 0, 7, 1, 0, 8, 1, 0, 9, 1, 0, 10, 3, 0, 65541, 3, 0, 65542, 3, 0, 65543, 1, 0, 65544, 1, 0, 65545, 1, 0, 65546, 3, 0, 65547, 3, 0, 131078, 3, 0, 131079, 1, 0, 131080, 1, 0, 131081, 1, 0, 131082, 3, 0, 196615, 3, 0, 196616, 1, 0, 196617, 3, 0, 262152, 3, 0 )
 
 [node name="BlackLight" parent="." instance=ExtResource( 7 )]
-visible = false
 
 [node name="GameInterface" parent="." instance=ExtResource( 3 )]
 position = Vector2( 3.48682, 7.36102 )

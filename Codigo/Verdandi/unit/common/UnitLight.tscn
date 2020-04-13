@@ -5,8 +5,6 @@
 [node name="UnitLight" type="Light2D"]
 scale = Vector2( 1.025, 1.09712 )
 texture = ExtResource( 1 )
-texture_scale = 0.84
-color = Color( 0.937255, 0.898039, 0.317647, 1 )
-energy = 1.2
+color = Color( 0.992157, 0.992157, 0.992157, 1 )
 mode = 2
 shadow_enabled = true

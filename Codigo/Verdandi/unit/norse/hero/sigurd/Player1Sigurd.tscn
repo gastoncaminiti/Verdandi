@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=2]
+[gd_scene load_steps=57 format=2]
 
 [ext_resource path="res://manager/UnitManager.gd" type="Script" id=1]
 [ext_resource path="res://unit/common/AreaCoordinate.tscn" type="PackedScene" id=2]
@@ -53,27 +53,13 @@
 [ext_resource path="res://unit/norse/hero/sigurd/img/attack/Hero_Sword_Attack_03.png" type="Texture" id=51]
 [ext_resource path="res://interface/ChangeStatusInterface.tscn" type="PackedScene" id=52]
 [ext_resource path="res://unit/common/UnitLight.tscn" type="PackedScene" id=53]
+[ext_resource path="res://unit/common/ViewArea.tscn" type="PackedScene" id=54]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 37 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 37 ) ],
-"loop": false,
-"name": "attack_north",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 8 ) ],
+"frames": [ ExtResource( 28 ) ],
 "loop": true,
-"name": "idle_north_west",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ) ],
-"loop": true,
-"name": "walk_east",
-"speed": 10.0
-}, {
-"frames": [ ExtResource( 27 ) ],
-"loop": true,
-"name": "idle_south_east",
+"name": "idle_north_east",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ) ],
@@ -81,44 +67,9 @@ animations = [ {
 "name": "attack_east",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 28 ) ],
-"loop": true,
-"name": "idle_north_east",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ) ],
-"loop": true,
-"name": "walk_north",
-"speed": 10.0
-}, {
-"frames": [ ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ) ],
-"loop": true,
-"name": "walk_north_west",
-"speed": 10.0
-}, {
-"frames": [ ExtResource( 40 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 43 ) ],
-"loop": false,
-"name": "attack_south_east",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 22 ) ],
 "loop": true,
 "name": "idle_north",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 3 ) ],
-"loop": true,
-"name": "idle_east",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 48 ), ExtResource( 49 ), ExtResource( 50 ), ExtResource( 51 ) ],
-"loop": false,
-"name": "attack_north_west",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 44 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 47 ) ],
-"loop": false,
-"name": "attack_north_east",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ) ],
@@ -131,10 +82,60 @@ animations = [ {
 "name": "walk_south_east",
 "speed": 10.0
 }, {
+"frames": [ ExtResource( 27 ) ],
+"loop": true,
+"name": "idle_south_east",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ) ],
+"loop": true,
+"name": "walk_north",
+"speed": 10.0
+}, {
 "frames": [ ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 31 ), ExtResource( 32 ) ],
 "loop": true,
 "name": "walk_north_east",
 "speed": 10.0
+}, {
+"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "walk_east",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "idle_east",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 40 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 43 ) ],
+"loop": false,
+"name": "attack_south_east",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 37 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 37 ) ],
+"loop": false,
+"name": "attack_north",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ) ],
+"loop": true,
+"name": "idle_north_west",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ) ],
+"loop": true,
+"name": "walk_north_west",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 48 ), ExtResource( 49 ), ExtResource( 50 ), ExtResource( 51 ) ],
+"loop": false,
+"name": "attack_north_west",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 44 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 47 ) ],
+"loop": false,
+"name": "attack_north_east",
+"speed": 5.0
 } ]
 
 [sub_resource type="CapsuleShape2D" id=2]
@@ -206,8 +207,15 @@ animation = "idle_north"
 position = Vector2( 0, -18.3265 )
 shape = SubResource( 2 )
 
+[node name="UnitLight" parent="." instance=ExtResource( 53 )]
+texture_scale = 1.0
+color = Color( 0.992157, 0.992157, 0.992157, 1 )
+energy = 1.0
+
 [node name="ChangeStatusInterface" parent="." instance=ExtResource( 52 )]
 position = Vector2( -28, -94 )
+
+[node name="ViewArea" parent="." instance=ExtResource( 54 )]
 
 [node name="SelectedManager" type="Control" parent="."]
 margin_left = -26.5134
@@ -219,8 +227,6 @@ __meta__ = {
 }
 
 [node name="Tween" type="Tween" parent="."]
-
-[node name="UnitLight" parent="." instance=ExtResource( 53 )]
 [connection signal="body_entered" from="North/AreaCoordinateNorth" to="." method="_on_AreaCoordinateNorth_body_entered"]
 [connection signal="body_entered" from="South/AreaCoordinateSouth" to="." method="_on_AreaCoordinateSouth_body_entered"]
 [connection signal="body_entered" from="East/AreaCoordinateEast" to="." method="_on_AreaCoordinateEast_body_entered"]
@@ -230,6 +236,7 @@ __meta__ = {
 [connection signal="body_entered" from="SouthWest/AreaCoordinateSouthWest" to="." method="_on_AreaCoordinateSouthWest_body_entered"]
 [connection signal="body_entered" from="SouthEast/AreaCoordinateSouthEast" to="." method="_on_AreaCoordinateSouthEast_body_entered"]
 [connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]
+[connection signal="body_entered" from="ViewArea" to="." method="_on_ViewArea_body_entered"]
 [connection signal="gui_input" from="SelectedManager" to="." method="_on_SelectedManager_gui_input"]
 [connection signal="mouse_entered" from="SelectedManager" to="." method="_on_SelectedManager_mouse_entered"]
 [connection signal="mouse_exited" from="SelectedManager" to="." method="_on_SelectedManager_mouse_exited"]
