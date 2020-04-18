@@ -1,0 +1,42 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://manager/LevelManager.gd" type="Script" id=1]
+[ext_resource path="res://map/tile/Tiles.tres" type="TileSet" id=2]
+[ext_resource path="res://interface/GameInterface.tscn" type="PackedScene" id=3]
+[ext_resource path="res://unit/norse/hero/sigurd/Player1SigurdFix.tscn" type="PackedScene" id=4]
+[ext_resource path="res://sound/Game - Morning Dew.ogg" type="AudioStream" id=6]
+[ext_resource path="res://map/resources/BlackLight.tscn" type="PackedScene" id=7]
+
+[node name="Level0T2" type="Node2D" groups=[
+"Level",
+]]
+position = Vector2( 9, -50 )
+script = ExtResource( 1 )
+deck_name = "level_00"
+alignment_limit = 2
+
+[node name="Map" type="TileMap" parent="." groups=[
+"maps",
+]]
+show_behind_parent = true
+mode = 1
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 120, 60 )
+format = 1
+tile_data = PoolIntArray( -131064, 0, 0, -131063, 0, 0, -65528, 0, 0, -65527, 0, 0, 7, 0, 0, 8, 0, 0, 9, 0, 0, 65543, 0, 0, 65544, 0, 0, 65545, 1, 0, 131079, 0, 0, 131080, 0, 0 )
+
+[node name="Player1Sigurd" parent="." instance=ExtResource( 4 )]
+position = Vector2( 360, 320 )
+cell_range = 1
+path_dimension = 1
+
+[node name="BlackLight" parent="." instance=ExtResource( 7 )]
+visible = false
+
+[node name="GameInterface" parent="." instance=ExtResource( 3 )]
+visible = false
+position = Vector2( 45, -60 )
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+autoplay = true

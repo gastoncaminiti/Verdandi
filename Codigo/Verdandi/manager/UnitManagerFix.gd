@@ -29,8 +29,15 @@ var is_invulnerable = false
 var is_dead = false
 var n_attacks = 1
 
+var test_i = 0
+
 func _ready():
-	connect_parent_child("map_initiated","_goMapConfig")
+	#var map = get_tree().get_nodes_in_group("maps").front()
+	#print(map)
+	#connect_parent_child("map_initiated","_goMapConfig")
+	var map_aux = get_tree().get_nodes_in_group("maps").front()
+	print(map_aux.world_to_map(global_position))
+	print(map_aux.get_tile_origin())
 	connect_parent_child("units_moved","_actions_manager")
 	connect_parent_child("units_affected","_effect_manager")
 	hide_areas()
@@ -105,13 +112,25 @@ func _goMapConfig(map):
 	orientation_animation("idle")
 
 func _actions_manager(nav):
-	if(flag_attack):
-		reset_noloop_animation()
-		area_diseable_status(false)
-	else:
-		area_diseable_status(false)
-		if(!flag_attack):
-			goPahtConfig(nav)
+	var map_aux = get_tree().get_nodes_in_group("maps").front()
+	#print(position)
+	#print(global_position)
+	#print(map_aux.world_to_map(global_position))
+	#print(map_aux.get_cell(8,-1))
+	var g = map_aux.map_to_world(Vector2(7,test_i),true)
+	print("Origen Celda" + String(g))
+	global_position = g + Vector2(10,35)
+	print("Posicion Local" + String(position))
+	print("Posicion Global" + String(global_position))
+	print(map_aux.world_to_map(global_position))
+	test_i -= 1 
+	#if(flag_attack):
+	#	reset_noloop_animation()
+	#	area_diseable_status(false)
+	#else:
+	#	area_diseable_status(false)
+	#	if(!flag_attack):
+	#		goPahtConfig(nav)
 
 func _effect_manager(data, player):
 	if is_in_group(player):
