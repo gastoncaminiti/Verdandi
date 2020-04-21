@@ -215,7 +215,6 @@ func set_new_path(my_nav):
 	my_path = my_nav.get_simple_path(global_position, orientation_global_position(), true)
 	my_index_path = 0
 	
-
 func coordinates_reposition():
 	var index_unit_pos = get_cell_index(global_position)
 	$North.global_position = set_center_position_by_cell(get_position_by_cell_index(Vector2(index_unit_pos.x,index_unit_pos.y -  cell_range)))

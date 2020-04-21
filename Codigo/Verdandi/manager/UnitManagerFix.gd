@@ -36,8 +36,8 @@ func _ready():
 	#print(map)
 	#connect_parent_child("map_initiated","_goMapConfig")
 	var map_aux = get_tree().get_nodes_in_group("maps").front()
-	print(map_aux.world_to_map(global_position))
-	print(map_aux.get_tile_origin())
+	#print(map_aux.world_to_map(global_position))
+	#print(map_aux.get_tile_origin())
 	connect_parent_child("units_moved","_actions_manager")
 	connect_parent_child("units_affected","_effect_manager")
 	hide_areas()
@@ -112,18 +112,21 @@ func _goMapConfig(map):
 	orientation_animation("idle")
 
 func _actions_manager(nav):
-	var map_aux = get_tree().get_nodes_in_group("maps").front()
+	#var map_aux = get_tree().get_nodes_in_group("maps").front()
 	#print(position)
 	#print(global_position)
 	#print(map_aux.world_to_map(global_position))
 	#print(map_aux.get_cell(8,-1))
-	var g = map_aux.map_to_world(Vector2(7,test_i),true)
-	print("Origen Celda" + String(g))
-	global_position = g + Vector2(10,35)
-	print("Posicion Local" + String(position))
-	print("Posicion Global" + String(global_position))
-	print(map_aux.world_to_map(global_position))
-	test_i -= 1 
+	#var g = map_aux.map_to_world(Vector2(7,test_i),true)
+	#print("Origen Celda" + String(g))
+	global_position = get_parent().map_ref.get_next_point(global_position,test_i)
+	#print("Posicion Local" + String(position))
+	#print("Posicion Global" + String(global_position))
+	#print(map_aux.world_to_map(global_position))
+	if test_i < 7:
+		test_i += 1 
+	else:
+		test_i  = 0
 	#if(flag_attack):
 	#	reset_noloop_animation()
 	#	area_diseable_status(false)

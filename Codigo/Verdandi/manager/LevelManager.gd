@@ -27,6 +27,9 @@ var papyrus = []
 var all_units = []
 var my_units = []
 var my_enemies = []
+
+#MAPA REFERENCIA
+#var map_ref
 # Timer VAR
 var _cooldown = Timer.new()
 
@@ -52,9 +55,9 @@ func _ready():
 	_cooldown.connect("timeout", self, "_on_cooldown_timeout")
 	# Light Config
 	set_global_light_status(false)
+	#map_ref = $Map
 
 func _input(event):
-	pass
 	#TEST MOVOMIMIENTO DE UNIDADES
 	if Input.is_key_pressed(KEY_SPACE):
 		emit_signal("units_moved", $Navigation2D)
