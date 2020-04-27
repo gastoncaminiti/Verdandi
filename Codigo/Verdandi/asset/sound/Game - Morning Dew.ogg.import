@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Game - Morning Dew.ogg-f26da415cebcbc7ade2397d23210575d.oggstr"
+
+[deps]
+
+source_file="res://asset/sound/Game - Morning Dew.ogg"
+dest_files=[ "res://.import/Game - Morning Dew.ogg-f26da415cebcbc7ade2397d23210575d.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

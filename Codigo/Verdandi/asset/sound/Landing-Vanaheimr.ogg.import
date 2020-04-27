@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Landing-Vanaheimr.ogg-f90f139433d962f015ed8f78e641e221.oggstr"
+
+[deps]
+
+source_file="res://asset/sound/Landing-Vanaheimr.ogg"
+dest_files=[ "res://.import/Landing-Vanaheimr.ogg-f90f139433d962f015ed8f78e641e221.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

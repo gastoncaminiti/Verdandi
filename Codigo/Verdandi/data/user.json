@@ -2,7 +2,7 @@
     "username": "none",
     "menu":"res://interface/StartInterface.tscn",
     "avatar": "Sidgrida",
-    "skin":"res://avatar/norse/sigrdrifa/skin/Common.tres",
+    "skin":"res://game/player/avatar/norse/sigrdrifa/skin/Common.tres",
     "points": 0,
     "configuration":{
         "language": "en",

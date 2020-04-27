@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://game/maps/norse/img/BlackLight.png" type="Texture" id=1]
+
+
+
+
+
+[node name="BlackLight" type="Light2D"]
+position = Vector2( 514, 298 )
+scale = Vector2( 3.98437, 2.32813 )
+texture = ExtResource( 1 )
+color = Color( 0, 0, 0, 1 )
+mode = 2
+shadow_enabled = true
+shadow_color = Color( 0.623529, 0.184314, 0.184314, 0 )

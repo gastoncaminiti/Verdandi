@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://game/units/common/img/UnitLight.png" type="Texture" id=1]
+
+
+
+[node name="UnitLight" type="Light2D"]
+texture = ExtResource( 1 )
+color = Color( 0.992157, 0.992157, 0.992157, 1 )
+mode = 2
+shadow_enabled = true

@@ -1,0 +1,52 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://code/manager/interface/InterfaceSidgridaManager.gd" type="Script" id=1]
+[ext_resource path="res://game/player/avatar/norse/sigrdrifa/skin/Common.tres" type="SpriteFrames" id=2]
+[ext_resource path="res://interfaces/norse/img/dialogbox.png" type="Texture" id=3]
+[ext_resource path="res://interfaces/norse/font/Norse.otf" type="DynamicFontData" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 23
+outline_size = 1
+outline_color = Color( 0.223529, 0.211765, 0.027451, 1 )
+use_filter = true
+extra_spacing_char = 1
+font_data = ExtResource( 4 )
+
+[node name="Sidgrida" type="Node2D"]
+script = ExtResource( 1 )
+show_tips = true
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 1.10956, 0 )
+frames = ExtResource( 2 )
+speed_scale = 2.0
+centered = false
+
+[node name="SelectedManager" type="Control" parent="."]
+margin_left = 101.0
+margin_top = 158.0
+margin_right = 197.0
+margin_bottom = 504.0
+
+[node name="TextureRect" type="NinePatchRect" parent="."]
+margin_left = 181.051
+margin_top = 79.0232
+margin_right = 406.051
+margin_bottom = 179.023
+texture = ExtResource( 3 )
+
+[node name="Label" type="Label" parent="TextureRect"]
+margin_left = 6.4319
+margin_top = 6.90583
+margin_right = 216.432
+margin_bottom = 62.9058
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_constants/line_spacing = 0
+text = "KEY_TUTORIAL_00_1 KEY_TUTORIAL_00_1"
+align = 1
+autowrap = true
+[connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]
+[connection signal="mouse_entered" from="SelectedManager" to="." method="_on_SelectedManager_mouse_entered"]
+[connection signal="mouse_exited" from="SelectedManager" to="." method="_on_SelectedManager_mouse_exited"]

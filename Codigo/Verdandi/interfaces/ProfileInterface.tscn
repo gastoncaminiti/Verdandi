@@ -1,0 +1,324 @@
+[gd_scene load_steps=20 format=2]
+
+[ext_resource path="res://code/manager/interface/InterfaceProfileManager.gd" type="Script" id=1]
+[ext_resource path="res://interfaces/norse/img/background-black.png" type="Texture" id=2]
+[ext_resource path="res://interfaces/norse/tile/TilesHUB.tres" type="TileSet" id=3]
+[ext_resource path="res://interfaces/norse/font/Norsebold.otf" type="DynamicFontData" id=4]
+[ext_resource path="res://interfaces/norse/font/NordicaRegular.otf" type="DynamicFontData" id=5]
+[ext_resource path="res://game/player/avatar/norse/sigrdrifa/skin/Common.tres" type="SpriteFrames" id=6]
+[ext_resource path="res://game/player/avatar/norse/sigrdrifa/img/miniature/Avatar_Min_01.png" type="Texture" id=7]
+[ext_resource path="res://game/player/avatar/norse/sigrdrifa/img/miniature/Avatar_Min_01_None.png" type="Texture" id=8]
+[ext_resource path="res://game/player/avatar/norse/sigrdrifa/img/miniature/Avatar_Min_01_Press.png" type="Texture" id=9]
+[ext_resource path="res://game/player/avatar/norse/sigrdrifa/img/miniature/Avatar_Min_02.png" type="Texture" id=10]
+[ext_resource path="res://game/player/avatar/norse/sigrdrifa/img/miniature/Avatar_Min_02_None.png" type="Texture" id=11]
+[ext_resource path="res://game/player/avatar/norse/sigrdrifa/img/miniature/Avatar_Min_02_Press.png" type="Texture" id=12]
+[ext_resource path="res://interfaces/norse/img/ClosePapyrus.png" type="Texture" id=13]
+[ext_resource path="res://interfaces/norse/font/Norse.otf" type="DynamicFontData" id=14]
+[ext_resource path="res://asset/sound/Landing-Vanaheimr.ogg" type="AudioStream" id=15]
+
+
+
+
+
+
+
+
+[sub_resource type="DynamicFont" id=1]
+size = 80
+outline_size = 5
+outline_color = Color( 0.156863, 0.156863, 0.156863, 1 )
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 25
+outline_size = 2
+outline_color = Color( 0.490196, 0.490196, 0.490196, 1 )
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 38
+outline_size = 1
+outline_color = Color( 0.341176, 0.360784, 0.00784314, 1 )
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 30
+outline_size = 3
+outline_color = Color( 0.156863, 0.156863, 0.156863, 1 )
+use_filter = true
+extra_spacing_char = 5
+font_data = ExtResource( 14 )
+
+[node name="ProfileInterface" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Layer 0 - Background" type="CanvasLayer" parent="."]
+layer = -3
+
+[node name="TextureRect" type="TextureRect" parent="Layer 0 - Background"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 2 )
+
+[node name="Layer 1 - Border" type="CanvasLayer" parent="."]
+editor/display_folded = true
+layer = -2
+
+[node name="TileMap" type="TileMap" parent="Layer 1 - Border"]
+position = Vector2( 10, 5 )
+tile_set = ExtResource( 3 )
+cell_size = Vector2( 84, 84 )
+format = 1
+tile_data = PoolIntArray( 0, -1073741821, 0, 1, -1073741820, 0, 2, -1073741820, 0, 3, -1073741820, 0, 4, -1073741820, 0, 5, -1073741820, 0, 6, -1073741820, 0, 7, -1073741820, 0, 8, -1073741820, 0, 9, -1073741820, 0, 10, -1073741820, 0, 11, 3, 0, 65536, 1610612740, 0, 65547, 4, 0, 131072, 1610612740, 0, 131083, 4, 0, 196608, 1610612740, 0, 196619, 4, 0, 262144, 1610612740, 0, 262155, 4, 0, 327680, 1610612740, 0, 327691, 4, 0, 393216, 1610612739, 0, 393217, -1610612732, 0, 393218, -1610612732, 0, 393219, -1610612732, 0, 393220, -1610612732, 0, 393221, -1610612732, 0, 393222, -1610612732, 0, 393223, -1610612732, 0, 393224, -1610612732, 0, 393225, -1610612732, 0, 393226, -1610612732, 0, 393227, -1610612733, 0 )
+
+[node name="Layer 2 - GUI" type="CanvasLayer" parent="."]
+
+[node name="VCTitle" type="VBoxContainer" parent="Layer 2 - GUI"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -470.0
+margin_top = 30.0
+margin_right = 473.0
+margin_bottom = 152.0
+custom_constants/separation = 10
+alignment = 1
+
+[node name="HCGameTitle" type="HBoxContainer" parent="Layer 2 - GUI/VCTitle"]
+editor/display_folded = true
+margin_top = 16.0
+margin_right = 943.0
+margin_bottom = 105.0
+custom_constants/separation = -26
+alignment = 1
+
+[node name="Label" type="Label" parent="Layer 2 - GUI/VCTitle/HCGameTitle"]
+margin_left = 305.0
+margin_right = 638.0
+margin_bottom = 89.0
+custom_fonts/font = SubResource( 1 )
+text = "KEY_PROFILE"
+align = 1
+
+[node name="Exit" type="Button" parent="Layer 2 - GUI"]
+margin_left = 896.0
+margin_top = 57.0
+margin_right = 924.0
+margin_bottom = 93.0
+focus_mode = 0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color_hover = Color( 0.764706, 0.384314, 0.0431373, 1 )
+action_mode = 0
+enabled_focus_mode = 0
+text = "X"
+flat = true
+
+[node name="AvatarContainer" type="VBoxContainer" parent="Layer 2 - GUI"]
+margin_left = 72.0
+margin_top = 184.0
+margin_right = 452.0
+margin_bottom = 524.0
+rect_min_size = Vector2( 380, 340 )
+custom_constants/separation = -20
+
+[node name="AvatarSelected" type="CenterContainer" parent="Layer 2 - GUI/AvatarContainer"]
+margin_right = 380.0
+margin_bottom = 280.0
+rect_min_size = Vector2( 300, 280 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Layer 2 - GUI/AvatarContainer/AvatarSelected"]
+position = Vector2( 264, 13 )
+scale = Vector2( 0.92, 0.92 )
+frames = ExtResource( 6 )
+animation = "idle"
+frame = 6
+playing = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Layer 2 - GUI/AvatarContainer"]
+margin_top = 260.0
+margin_right = 380.0
+margin_bottom = 360.0
+alignment = 1
+
+[node name="TextureButtonSkin1" type="TextureButton" parent="Layer 2 - GUI/AvatarContainer/HBoxContainer"]
+margin_left = 88.0
+margin_right = 188.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 100, 100 )
+action_mode = 0
+texture_normal = ExtResource( 7 )
+texture_disabled = ExtResource( 8 )
+texture_focused = ExtResource( 9 )
+expand = true
+
+[node name="TextureButtonSkin2" type="TextureButton" parent="Layer 2 - GUI/AvatarContainer/HBoxContainer"]
+margin_left = 192.0
+margin_right = 292.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 100, 100 )
+hint_tooltip = "KEY_SKIN_REQUESITE_0"
+disabled = true
+action_mode = 0
+texture_normal = ExtResource( 10 )
+texture_disabled = ExtResource( 11 )
+texture_focused = ExtResource( 12 )
+expand = true
+
+[node name="SagaContainer" type="VBoxContainer" parent="Layer 2 - GUI"]
+margin_left = 503.0
+margin_top = 156.0
+margin_right = 1149.0
+margin_bottom = 548.0
+rect_min_size = Vector2( 520, 0 )
+custom_constants/separation = 20
+
+[node name="CTitle" type="MarginContainer" parent="Layer 2 - GUI/SagaContainer"]
+margin_right = 646.0
+margin_bottom = 42.0
+
+[node name="Label" type="Label" parent="Layer 2 - GUI/SagaContainer/CTitle"]
+margin_right = 646.0
+margin_bottom = 42.0
+custom_fonts/font = SubResource( 3 )
+text = "KEY_SAGA_0"
+
+[node name="GridSigurd" type="GridContainer" parent="Layer 2 - GUI/SagaContainer"]
+margin_top = 62.0
+margin_right = 646.0
+margin_bottom = 374.0
+rect_min_size = Vector2( 520, 300 )
+custom_constants/vseparation = 16
+custom_constants/hseparation = 16
+columns = 2
+
+[node name="VContainer" type="VBoxContainer" parent="Layer 2 - GUI/SagaContainer/GridSigurd"]
+margin_right = 315.0
+margin_bottom = 148.0
+rect_min_size = Vector2( 200, 100 )
+custom_constants/separation = 8
+
+[node name="TextureRect" type="TextureRect" parent="Layer 2 - GUI/SagaContainer/GridSigurd/VContainer"]
+modulate = Color( 0.0784314, 0.196078, 0.392157, 0.784314 )
+margin_right = 315.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 150, 100 )
+texture = ExtResource( 13 )
+expand = true
+stretch_mode = 6
+
+[node name="LinkButtonL1" type="Button" parent="Layer 2 - GUI/SagaContainer/GridSigurd/VContainer"]
+margin_top = 108.0
+margin_right = 315.0
+margin_bottom = 148.0
+focus_mode = 0
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 1, 1, 1, 0.882353 )
+custom_colors/font_color_hover = Color( 0.764706, 0.384314, 0.0431373, 1 )
+disabled = true
+action_mode = 0
+enabled_focus_mode = 0
+text = "KEY_SAGA_0_LEVEL_0"
+flat = true
+
+[node name="VContainer2" type="VBoxContainer" parent="Layer 2 - GUI/SagaContainer/GridSigurd"]
+margin_left = 331.0
+margin_right = 644.0
+margin_bottom = 148.0
+rect_min_size = Vector2( 200, 100 )
+custom_constants/separation = 8
+
+[node name="TextureRect" type="TextureRect" parent="Layer 2 - GUI/SagaContainer/GridSigurd/VContainer2"]
+modulate = Color( 0.0784314, 0.196078, 0.392157, 0.784314 )
+margin_right = 313.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 150, 100 )
+texture = ExtResource( 13 )
+expand = true
+stretch_mode = 6
+
+[node name="LinkButtonL2" type="Button" parent="Layer 2 - GUI/SagaContainer/GridSigurd/VContainer2"]
+margin_top = 108.0
+margin_right = 313.0
+margin_bottom = 148.0
+focus_mode = 0
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 0.764706, 0.384314, 0.0431373, 1 )
+disabled = true
+action_mode = 0
+enabled_focus_mode = 0
+text = "KEY_SAGA_0_LEVEL_1"
+flat = true
+
+[node name="VContainer3" type="VBoxContainer" parent="Layer 2 - GUI/SagaContainer/GridSigurd"]
+margin_top = 164.0
+margin_right = 315.0
+margin_bottom = 312.0
+rect_min_size = Vector2( 200, 100 )
+custom_constants/separation = 8
+
+[node name="TextureRect" type="TextureRect" parent="Layer 2 - GUI/SagaContainer/GridSigurd/VContainer3"]
+modulate = Color( 0.0784314, 0.196078, 0.392157, 0.784314 )
+margin_right = 315.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 150, 100 )
+texture = ExtResource( 13 )
+expand = true
+stretch_mode = 6
+
+[node name="LinkButtonL3" type="Button" parent="Layer 2 - GUI/SagaContainer/GridSigurd/VContainer3"]
+margin_top = 108.0
+margin_right = 315.0
+margin_bottom = 148.0
+focus_mode = 0
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 0.764706, 0.384314, 0.0431373, 1 )
+disabled = true
+action_mode = 0
+enabled_focus_mode = 0
+text = "KEY_SAGA_0_LEVEL_2"
+flat = true
+
+[node name="VContainer4" type="VBoxContainer" parent="Layer 2 - GUI/SagaContainer/GridSigurd"]
+margin_left = 331.0
+margin_top = 164.0
+margin_right = 644.0
+margin_bottom = 312.0
+rect_min_size = Vector2( 200, 100 )
+custom_constants/separation = 8
+
+[node name="TextureRect" type="TextureRect" parent="Layer 2 - GUI/SagaContainer/GridSigurd/VContainer4"]
+modulate = Color( 0.0784314, 0.196078, 0.392157, 0.784314 )
+margin_right = 313.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 150, 100 )
+texture = ExtResource( 13 )
+expand = true
+stretch_mode = 6
+
+[node name="LinkButtonL4" type="Button" parent="Layer 2 - GUI/SagaContainer/GridSigurd/VContainer4"]
+margin_top = 108.0
+margin_right = 313.0
+margin_bottom = 148.0
+focus_mode = 0
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 0.764706, 0.384314, 0.0431373, 1 )
+disabled = true
+action_mode = 0
+enabled_focus_mode = 0
+text = "KEY_SAGA_0_LEVEL_3"
+flat = true
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 15 )
+autoplay = true
+mix_target = 2
+
+[connection signal="pressed" from="Layer 2 - GUI/Exit" to="." method="_on_Exit_pressed"]
+[connection signal="pressed" from="Layer 2 - GUI/AvatarContainer/HBoxContainer/TextureButtonSkin1" to="." method="_on_TextureButtonSkin1_pressed"]
+[connection signal="pressed" from="Layer 2 - GUI/AvatarContainer/HBoxContainer/TextureButtonSkin2" to="." method="_on_TextureButtonSkin2_pressed"]
+[connection signal="pressed" from="Layer 2 - GUI/SagaContainer/GridSigurd/VContainer/LinkButtonL1" to="." method="_on_LinkButtonL1_pressed"]
+[connection signal="pressed" from="Layer 2 - GUI/SagaContainer/GridSigurd/VContainer2/LinkButtonL2" to="." method="_on_LinkButtonL2_pressed"]
+[connection signal="pressed" from="Layer 2 - GUI/SagaContainer/GridSigurd/VContainer3/LinkButtonL3" to="." method="_on_LinkButtonL3_pressed"]
+[connection signal="pressed" from="Layer 2 - GUI/SagaContainer/GridSigurd/VContainer4/LinkButtonL4" to="." method="_on_LinkButtonL4_pressed"]
