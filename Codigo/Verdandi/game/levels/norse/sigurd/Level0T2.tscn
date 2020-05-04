@@ -11,7 +11,7 @@
 [node name="Level0T2" type="Node2D" groups=[
 "Level",
 ]]
-position = Vector2( 9, -50 )
+scale = Vector2( 0.993553, 1.00416 )
 script = ExtResource( 1 )
 deck_name = "level_01"
 alignment_limit = 2
@@ -22,20 +22,22 @@ alignment_limit = 2
 show_behind_parent = true
 mode = 1
 tile_set = ExtResource( 2 )
-cell_size = Vector2( 120, 60 )
+cell_size = Vector2( 32, 16 )
+cell_custom_transform = Transform2D( 0, 0, 0, 0, 0, 0 )
 format = 1
-tile_data = PoolIntArray( -131065, 2, 0, -131064, 2, 0, -131063, 2, 0, -131062, 2, 0, -65529, 2, 0, -65528, 2, 0, -65527, 2, 0, -65526, 2, 0, -65525, 2, 0, 7, 2, 0, 8, 2, 0, 9, 2, 0, 10, 2, 0, 11, 2, 0, 65543, 2, 0, 65544, 2, 0, 65545, 2, 0, 65546, 2, 0, 65547, 2, 0, 131079, 2, 0, 131080, 2, 0, 131081, 2, 0, 131082, 2, 0, 196615, 2, 0, 196616, 2, 0, 196617, 2, 0, 196618, 2, 0 )
+tile_data = PoolIntArray( -65536, 8, 0, 0, 8, 0, 327701, 8, 0, 327702, 8, 0, 327703, 8, 0, 393237, 8, 0, 393238, 8, 0, 393239, 8, 0, 458773, 8, 0, 458774, 8, 0, 458775, 8, 0, 524309, 8, 0, 524310, 8, 0, 524311, 8, 0, 589845, 8, 0, 589846, 8, 0, 589847, 8, 0, 655381, 8, 0, 655382, 8, 0, 655383, 8, 0, 1638445, 8, 0, 1638446, 8, 0, 1703980, 8, 0, 1703981, 8, 0, 1703982, 8, 0, 1769516, 8, 0, 1769517, 8, 0, 4194385, 7, 0 )
 script = ExtResource( 5 )
 
 [node name="Player1Sigurd" parent="." instance=ExtResource( 4 )]
-position = Vector2( 359, 333 )
+position = Vector2( 227.466, 262.906 )
 
 [node name="BlackLight" parent="." instance=ExtResource( 7 )]
 visible = false
 
 [node name="GameInterface" parent="." instance=ExtResource( 3 )]
-position = Vector2( 45, -60 )
+position = Vector2( -60, 30 )
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
 autoplay = true
+[connection signal="ready" from="." to="Player1Sigurd" method="_on_Level0T2_ready"]

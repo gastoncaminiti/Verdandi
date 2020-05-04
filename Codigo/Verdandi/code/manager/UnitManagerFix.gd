@@ -1,19 +1,17 @@
 extends KinematicBody2D
-
-var test_i = 0
-
+#DECLARACION DE VARIABLES
+export(int,"N","NE","E","SE","S","SW","W","NW") var orientation = 0
+#FUNCION DE PREPARACION DEL NODO
 func _ready():
 	connect_parent_child("units_moved","_actions_manager")
-	
-func _actions_manager(nav):
-	global_position = get_parent().map_ref.get_next_point(global_position,test_i)
-	if test_i < 7:
-		test_i += 1 
-	else:
-		test_i  = 0
-
-# Función que permite conectar una señal de nodo padre con una función del nodo hijo.
+#FUNCION QUE CONECTA UNA SEÑAL DEL NODO PADRE A UNA FUNCION DEL NODO HIJO
+func _actions_manager():
+	global_position = get_parent().map_ref.get_next_point(global_position,orientation)
+#FUNCION QUE CONECTA UNA SEÑAL DEL NODO PADRE A UNA FUNCION DEL NODO HIJO
 func connect_parent_child(nsignal, nfunction):
-	if get_parent().is_in_group("Level"):
-		if get_parent().connect(nsignal,self,nfunction) != OK:
+	if owner.is_in_group("Level"):
+		if owner.connect(nsignal,self,nfunction) != OK:
 			print("Error al conectar "+ name +" con el padre - Señal "+nsignal+" Función "+nfunction)
+
+func _on_Level0T2_ready():
+	global_position = get_parent().map_ref.get_center_point(global_position)

@@ -60,8 +60,14 @@ func _ready():
 func _input(event):
 	#TEST MOVOMIMIENTO DE UNIDADES
 	if Input.is_key_pressed(KEY_SPACE):
-		emit_signal("units_moved", $Navigation2D)
-		
+		emit_signal("units_moved")
+	if event is InputEventMouseButton:
+		if event.button_index  == BUTTON_LEFT and event.pressed:
+			$Map.switch_in_compass(event.position)
+		if event.button_index  == BUTTON_MIDDLE and event.pressed:
+			$Map.switch_in_compass_color(event.position,Color.red)
+		if event.button_index  == BUTTON_RIGHT and event.pressed:
+			$Map.switch_in_compass_color(event.position,Color.gray)
 
 # Función: Definición de eventos durante el combate.
 func battle_turn():
@@ -74,7 +80,8 @@ func battle_turn():
 	# Iniciar reloj y señal de movimiento a unidades.
 	turn_index +=1
 	_cooldown.start()
-	emit_signal("units_moved", $Navigation2D)
+	#emit_signal("units_moved", $Navigation2D)
+	emit_signal("units_moved")
 
 # Función: Actualizar interfaz de unidad seleccionada.
 func selected_unit(l,a,d,s,p):

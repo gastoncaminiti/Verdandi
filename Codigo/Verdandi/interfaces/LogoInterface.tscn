@@ -32,8 +32,7 @@ animations = [ {
 } ]
 
 [sub_resource type="DynamicFont" id=2]
-size = 26
-outline_size = 2
+outline_size = 1
 outline_color = Color( 0.6, 0.580392, 0.580392, 1 )
 font_data = ExtResource( 16 )
 
@@ -45,10 +44,13 @@ layer = -3
 
 [node name="TextureRect" type="TextureRect" parent="Layer 0 - Background"]
 modulate = Color( 1, 1, 1, 0 )
-margin_top = -3.0
-margin_right = 1024.0
-margin_bottom = 597.0
+margin_right = 640.0
+margin_bottom = 360.0
 texture = ExtResource( 2 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Layer 1 - Border" type="CanvasLayer" parent="."]
 layer = -2
@@ -64,7 +66,8 @@ tile_data = PoolIntArray( 0, -1073741821, 0, 1, -1073741820, 0, 2, -1073741820, 
 [node name="Layer 2 - GUI" type="CanvasLayer" parent="."]
 
 [node name="Logo" type="AnimatedSprite" parent="Layer 2 - GUI"]
-position = Vector2( 507, 224 )
+position = Vector2( 320, 128 )
+scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 1 )
 animation = "idle"
 
@@ -79,6 +82,9 @@ custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Chatora Games"
 align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Tween" type="Tween" parent="."]
 
