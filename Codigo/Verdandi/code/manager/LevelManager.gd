@@ -61,13 +61,6 @@ func _input(event):
 	#TEST MOVOMIMIENTO DE UNIDADES
 	if Input.is_key_pressed(KEY_SPACE):
 		emit_signal("units_moved")
-	if event is InputEventMouseButton:
-		if event.button_index  == BUTTON_LEFT and event.pressed:
-			$Map.switch_in_compass(event.position)
-		if event.button_index  == BUTTON_MIDDLE and event.pressed:
-			$Map.switch_in_compass_color(event.position,Color.red)
-		if event.button_index  == BUTTON_RIGHT and event.pressed:
-			$Map.switch_in_compass_color(event.position,Color.gray)
 
 # Función: Definición de eventos durante el combate.
 func battle_turn():

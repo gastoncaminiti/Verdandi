@@ -1,6 +1,6 @@
 extends TileMap
 #DECLARACION DE VARIABLES
-var FIX_POINT  = Vector2(2,2)
+var FIX_POINT  = Vector2(0,6)
 var POLY_COLOR = Color(1.0, 0.0, 0.0)
 var COMPASS = PoolVector2Array ([
 	Vector2(0,-1),  #N 

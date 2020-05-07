@@ -41,6 +41,7 @@ window/size/test_height=720
 window/per_pixel_transparency/enabled=true
 window/handheld/orientation="reverse_portrait"
 mouse_cursor/custom_image="res://interfaces/norse/img/cursor1.5x.png"
+mouse_cursor/tooltip_position_offset=Vector2( 0, 0 )
 window/stretch/mode="2d"
 window/stretch/aspect="keep"
 
