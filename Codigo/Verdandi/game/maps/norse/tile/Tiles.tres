@@ -134,7 +134,7 @@ points = PoolVector2Array( 3.65445, 19.7859, 34.1971, 6.12204, 63.5342, 20.9915,
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 7/z_index = 0
-8/name = "test2.png 8"
+8/name = "SNOW_T1"
 8/texture = ExtResource( 10 )
 8/tex_offset = Vector2( 0, 0 )
 8/modulate = Color( 1, 1, 1, 1 )

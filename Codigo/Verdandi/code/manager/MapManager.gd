@@ -14,7 +14,8 @@ var COMPASS = PoolVector2Array ([
 ])
 # FUNCION QUE OBTIENE EL INDICE DE LA CELDA QUE CONTIENE UN PUNTO.
 func _ready():
-	get_tileset().create_tile_switch_for(8)
+	get_tileset().create_clones_for_tile(8)
+	pass
 # FUNCION QUE OBTIENE EL INDICE DE LA CELDA QUE CONTIENE UN PUNTO.
 func get_cell_for_point(point):
 	return world_to_map(point)
@@ -47,7 +48,40 @@ func valid_cell_selected(posicion):
 # FUNCION QUE CAMBIA EL TILE A SU PAR EDITABLE EN LA POSICION
 func switch_tile(cell):
 	 set_cellv(cell, get_tileset().get_switch_index(get_index_tileset(cell)))
+	
+# FUNCION QUE CAMBIA EL TILE A SU PAR EDITABLE EN LA POSICION
+func switch_origin_cell(cell):
+	 set_cellv(cell, get_tileset().get_tile_o_index(get_index_tileset(cell)))
+func switch_move_cell(cell):
+	 set_cellv(cell, get_tileset().get_tile_m_index(get_index_tileset(cell)))
+func switch_battle_cell(cell):
+	 set_cellv(cell, get_tileset().get_tile_b_index(get_index_tileset(cell)))
 
+func switch_in_compass_origin(posicion):
+	if valid_cell_selected(posicion):
+		var cell_index =  get_cell_for_point(posicion)
+		for i in COMPASS.size():
+			var next_cell = cell_index + COMPASS[i]
+			if  is_cell_tile(next_cell):
+				switch_origin_cell(next_cell)
+
+func switch_in_compass_move(posicion):
+	if valid_cell_selected(posicion):
+		var cell_index =  get_cell_for_point(posicion)
+		for i in COMPASS.size():
+			var next_cell = cell_index + COMPASS[i]
+			if  is_cell_tile(next_cell):
+				switch_move_cell(next_cell)
+
+func switch_in_compass_battle(posicion):
+	if valid_cell_selected(posicion):
+		var cell_index =  get_cell_for_point(posicion)
+		for i in COMPASS.size():
+			var next_cell = cell_index + COMPASS[i]
+			if  is_cell_tile(next_cell):
+				switch_battle_cell(next_cell)
+
+# TESTEO DE CAMBIO DE TILE
 func switch_in_compass(posicion):
 	if valid_cell_selected(posicion):
 		var cell_index =  get_cell_for_point(posicion)
@@ -56,16 +90,6 @@ func switch_in_compass(posicion):
 			if  is_cell_tile(next_cell):
 				switch_tile(next_cell)
 
-func switch_in_compass_color(posicion,color):
-	if valid_cell_selected(posicion):
-		var cell_index =  get_cell_for_point(posicion)
-		for i in COMPASS.size():
-			var next_cell = cell_index + COMPASS[i]
-			if  is_cell_tile(next_cell):
-				set_switch_tile_color(get_index_tileset(next_cell),color)
-				switch_tile(next_cell)
-
-# TESTEO DE CAMBIO DE TILE
 func switch_valid_tileA(posicion):
 	if valid_cell_selected(posicion):
 		 var cell = get_cell_for_point(posicion)

@@ -14,18 +14,17 @@ func _status_ready():
 	global_position = owner.map_ref.get_center_point(global_position)
 #FUNCION EN RESPUESTA A LA SEÑAL DE ENTRADA DEL MOUSE SOBRE LA UNIDAD.
 func _on_Control_mouse_entered():
-	owner.map_ref.switch_in_compass_color(global_position,Color.gray)
+	owner.map_ref.switch_in_compass_move(global_position)
 #FUNCION EN RESPUESTA A LA SEÑAL DE SALIDA DEL MOUSE SOBRE LA UNIDAD.
 func _on_Control_mouse_exited():
-	owner.map_ref.switch_in_compass(global_position)
+	owner.map_ref.switch_in_compass_origin(global_position)
 func _on_Control_gui_input(event):
 	if event is InputEventMouseButton:
 		if owner.is_in_group("Level"):
 			if event.button_index  == BUTTON_LEFT and event.pressed:
-				owner.map_ref.switch_in_compass(global_position)
-				owner.map_ref.switch_in_compass_color(global_position,Color.darkred)
+				owner.map_ref.switch_in_compass_battle(global_position)
 			if event.button_index  == BUTTON_RIGHT and event.pressed:
-				owner.map_ref.switch_in_compass(global_position)
+				pass
 #FUNCION QUE CONECTA UNA SEÑAL DEL NODO PADRE A UNA FUNCION DEL NODO HIJO
 func connect_parent_child(nsignal, nfunction):
 	if owner != null and owner.is_in_group("Level"):
