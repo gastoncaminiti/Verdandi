@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/test2.png-096a4d34fef762955dff7605aca65492.stex"
+path="res://.import/test1_x.png-86fdead52ee238757a60109d780bbeaa.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://game/maps/norse/img/test2.png"
-dest_files=[ "res://.import/test2.png-096a4d34fef762955dff7605aca65492.stex" ]
+source_file="res://game/maps/norse/img/test1_x.png"
+dest_files=[ "res://.import/test1_x.png-86fdead52ee238757a60109d780bbeaa.stex" ]
 
 [params]
 

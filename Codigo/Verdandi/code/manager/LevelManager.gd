@@ -55,7 +55,7 @@ func _ready():
 	_cooldown.connect("timeout", self, "_on_cooldown_timeout")
 	# Light Config
 	set_global_light_status(false)
-	map_ref = $Map
+	map_ref = $Navigation2D/Map
 
 func _input(event):
 	#TEST MOVOMIMIENTO DE UNIDADES
