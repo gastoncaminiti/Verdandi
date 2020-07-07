@@ -8,7 +8,7 @@ func database_path():
 
 # Returns the path to the image with the given type and id
 func card_image(img_id):
-	return "res://deck/norse/img/Rune_"+img_id+".png"
+	return "res://game/decks/norse/img/Rune_"+img_id+".png"
 
 # Returns an instance of the custom card design
 func card_instance():

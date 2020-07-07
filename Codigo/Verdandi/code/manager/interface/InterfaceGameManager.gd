@@ -26,7 +26,7 @@ func set_selected_gui(l,a,d,s,p):
 	get_node("Layer 2 - GUI/StatusInterface/BackRect/VContainer/HCSpeed/NSpeed").set_text(String(s))
 	var aux_node = get_node("Layer 2 - GUI/StatusInterface")
 	aux_node.global_position = p
-	aux_node.global_position.y -=190
+	aux_node.global_position.y -=100
 	aux_node.global_position.x -=50
 	aux_node.visible = true
 

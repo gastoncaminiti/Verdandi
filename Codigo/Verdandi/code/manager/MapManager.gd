@@ -54,7 +54,6 @@ func switch_in_compass_order(posicion, order_id, rango):
 	if valid_cell_selected(posicion):
 		var cell_index =  get_cell_for_point(posicion)
 		for a in range(rango):
-			print(a)
 			for i in COMPASS.size():
 				var next_cell = (COMPASS[i] * (a+1)) + cell_index 
 				if  is_cell_tile(next_cell):

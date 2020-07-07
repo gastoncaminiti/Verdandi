@@ -1,0 +1,40 @@
+[gd_resource type="TileSet" load_steps=5 format=2]
+
+[ext_resource path="res://code/manager/TileManager.gd" type="Script" id=1]
+[ext_resource path="res://game/maps/norse/img/test1_x.png" type="Texture" id=2]
+[ext_resource path="res://game/maps/norse/img/test1_0.png" type="Texture" id=3]
+[ext_resource path="res://game/maps/norse/img/test2.png" type="Texture" id=4]
+
+[resource]
+8/name = "SNOW_T1"
+8/texture = ExtResource( 4 )
+8/tex_offset = Vector2( 0, 0 )
+8/modulate = Color( 1, 1, 1, 1 )
+8/region = Rect2( 0, 8, 32, 24 )
+8/tile_mode = 0
+8/occluder_offset = Vector2( 0, 0 )
+8/navigation_offset = Vector2( 0, 0 )
+8/shapes = [  ]
+8/z_index = 0
+10/name = "GRASS_T1"
+10/texture = ExtResource( 3 )
+10/tex_offset = Vector2( 0, 0 )
+10/modulate = Color( 1, 1, 1, 1 )
+10/region = Rect2( 0, 10, 32, 22 )
+10/tile_mode = 0
+10/occluder_offset = Vector2( 0, 0 )
+10/navigation_offset = Vector2( 0, 0 )
+10/shapes = [  ]
+10/z_index = 0
+11/name = "test1_x.png 11"
+11/texture = ExtResource( 2 )
+11/tex_offset = Vector2( 0, 0 )
+11/modulate = Color( 1, 1, 1, 1 )
+11/region = Rect2( 0, 10, 32, 22 )
+11/tile_mode = 0
+11/occluder_offset = Vector2( 0, 0 )
+11/navigation_offset = Vector2( 0, 0 )
+11/shapes = [  ]
+11/z_index = 0
+script = ExtResource( 1 )
+navigation_tiles_key = [ "SNOW_T1", "GRASS_T1" ]

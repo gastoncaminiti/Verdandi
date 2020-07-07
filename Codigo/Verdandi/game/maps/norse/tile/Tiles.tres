@@ -167,3 +167,4 @@ points = PoolVector2Array( 3.65445, 19.7859, 34.1971, 6.12204, 63.5342, 20.9915,
 10/shapes = [  ]
 10/z_index = 0
 script = ExtResource( 8 )
+navigation_tiles_key = [  ]

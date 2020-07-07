@@ -6,7 +6,6 @@
 [ext_resource path="res://interfaces/norse/img/interface_07_white.png" type="Texture" id=4]
 [ext_resource path="res://interfaces/norse/img/interface_08_white.png" type="Texture" id=5]
 
-
 [resource]
 0/name = "Esquina"
 0/texture = ExtResource( 1 )
@@ -58,4 +57,3 @@
 4/navigation_offset = Vector2( 42, 42 )
 4/shapes = [  ]
 4/z_index = 0
-

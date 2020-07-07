@@ -8,7 +8,6 @@
 [ext_resource path="res://interfaces/norse/element/Coin.tscn" type="PackedScene" id=6]
 [ext_resource path="res://interfaces/norse/element/Eye.tscn" type="PackedScene" id=7]
 
-
 [sub_resource type="DynamicFont" id=1]
 size = 40
 outline_size = 1
@@ -65,6 +64,9 @@ margin_right = 240.0
 margin_bottom = 275.0
 rect_min_size = Vector2( 240, 275 )
 texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="VContainer" type="VBoxContainer" parent="BackRect"]
 margin_left = 10.0
@@ -73,6 +75,9 @@ margin_right = 235.0
 margin_bottom = 262.0
 rect_min_size = Vector2( 200, 60 )
 custom_constants/separation = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="CCRuneName" type="MarginContainer" parent="BackRect/VContainer"]
 margin_right = 228.0
@@ -89,7 +94,6 @@ text = "KEY_RUNE"
 align = 1
 
 [node name="CCRuneStatus" type="MarginContainer" parent="BackRect/VContainer"]
-editor/display_folded = true
 margin_top = 50.0
 margin_right = 228.0
 margin_bottom = 73.0
@@ -173,7 +177,6 @@ autowrap = true
 clip_text = true
 
 [node name="HCAlignment" type="HBoxContainer" parent="BackRect/VContainer"]
-editor/display_folded = true
 margin_top = 239.0
 margin_right = 228.0
 margin_bottom = 273.0
@@ -205,4 +208,3 @@ margin_bottom = 34.0
 rect_min_size = Vector2( 170, 0 )
 custom_fonts/font = SubResource( 7 )
 text = "KEY_ALING"
-

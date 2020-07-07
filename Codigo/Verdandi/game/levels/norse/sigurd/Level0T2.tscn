@@ -1,58 +1,12 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://code/manager/LevelManager.gd" type="Script" id=1]
-[ext_resource path="res://game/maps/norse/img/test2.png" type="Texture" id=2]
+[ext_resource path="res://game/maps/norse/tile/Tiles0.tres" type="TileSet" id=2]
 [ext_resource path="res://interfaces/GameInterface.tscn" type="PackedScene" id=3]
 [ext_resource path="res://game/units/norse/hero/sigurd/Player1SigurdFix.tscn" type="PackedScene" id=4]
 [ext_resource path="res://code/manager/MapManager.gd" type="Script" id=5]
 [ext_resource path="res://asset/sound/Game - Morning Dew.ogg" type="AudioStream" id=6]
 [ext_resource path="res://game/maps/norse/resources/BlackLight.tscn" type="PackedScene" id=7]
-[ext_resource path="res://game/maps/norse/img/test1_0.png" type="Texture" id=8]
-[ext_resource path="res://code/manager/TileManager.gd" type="Script" id=9]
-[ext_resource path="res://game/maps/norse/img/test1_x.png" type="Texture" id=10]
-
-[sub_resource type="NavigationPolygon" id=1]
-vertices = PoolVector2Array( 1.03392, 7.47663, 16.0703, 15.9684, 30.9445, 7.58481, 16.5571, 0 )
-polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
-
-[sub_resource type="NavigationPolygon" id=2]
-vertices = PoolVector2Array( 0.168516, 9.51044, 15.6917, 1.39726, 30.9986, 9.29409, 15.9081, 16.65 )
-polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
-
-[sub_resource type="TileSet" id=3]
-8/name = "SNOW_T1"
-8/texture = ExtResource( 2 )
-8/tex_offset = Vector2( 0, 0 )
-8/modulate = Color( 1, 1, 1, 1 )
-8/region = Rect2( 0, 8, 32, 24 )
-8/tile_mode = 0
-8/occluder_offset = Vector2( 0, 0 )
-8/navigation_offset = Vector2( 0, 0 )
-8/navigation = SubResource( 2 )
-8/shapes = [  ]
-8/z_index = 0
-10/name = "GRASS_T1"
-10/texture = ExtResource( 8 )
-10/tex_offset = Vector2( 0, 0 )
-10/modulate = Color( 1, 1, 1, 1 )
-10/region = Rect2( 0, 10, 32, 22 )
-10/tile_mode = 0
-10/occluder_offset = Vector2( 0, 0 )
-10/navigation_offset = Vector2( 0, 0 )
-10/navigation = SubResource( 1 )
-10/shapes = [  ]
-10/z_index = 0
-11/name = "test1_x.png 11"
-11/texture = ExtResource( 10 )
-11/tex_offset = Vector2( 0, 0 )
-11/modulate = Color( 1, 1, 1, 1 )
-11/region = Rect2( 0, 10, 32, 22 )
-11/tile_mode = 0
-11/occluder_offset = Vector2( 0, 0 )
-11/navigation_offset = Vector2( 0, 0 )
-11/shapes = [  ]
-11/z_index = 0
-script = ExtResource( 9 )
 
 [node name="Level0T2" type="Node2D" groups=[
 "Level",
@@ -61,34 +15,25 @@ script = ExtResource( 1 )
 deck_name = "level_01"
 alignment_limit = 2
 
-[node name="Navigation2D" type="Navigation2D" parent="."]
-
-[node name="Map" type="TileMap" parent="Navigation2D" groups=[
+[node name="Map" type="TileMap" parent="." groups=[
 "maps",
 ]]
 mode = 1
-tile_set = SubResource( 3 )
+tile_set = ExtResource( 2 )
 cell_size = Vector2( 32, 16 )
 cell_custom_transform = Transform2D( 0, 0, 0, 0, 0, 0 )
 format = 1
-tile_data = PoolIntArray( -393194, 8, 0, -327659, 8, 0, -327658, 10, 0, -327657, 8, 0, -262124, 8, 0, -262123, 10, 0, -262122, 10, 0, -262121, 10, 0, -262120, 8, 0, -196589, 8, 0, -196588, 10, 0, -196587, 10, 0, -196586, 10, 0, -196585, 10, 0, -196584, 10, 0, -196583, 8, 0, -131054, 8, 0, -131053, 10, 0, -131052, 10, 0, -131051, 10, 0, -131050, 10, 0, -131049, 10, 0, -131048, 10, 0, -131047, 10, 0, -131046, 8, 0, -65518, 8, 0, -65517, 10, 0, -65516, 10, 0, -65515, 10, 0, -65514, 10, 0, -65513, 10, 0, -65512, 10, 0, -65511, 10, 0, -65510, 8, 0, 18, 8, 0, 19, 10, 0, 20, 10, 0, 21, 10, 0, 22, 10, 0, 23, 10, 0, 24, 10, 0, 25, 10, 0, 26, 8, 0, 65554, 8, 0, 65555, 10, 0, 65556, 10, 0, 65557, 10, 0, 65558, 10, 0, 65559, 10, 0, 65560, 10, 0, 65561, 10, 0, 65562, 8, 0, 131090, 8, 0, 131091, 10, 0, 131092, 10, 0, 131093, 10, 0, 131094, 10, 0, 131095, 10, 0, 131096, 10, 0, 131097, 10, 0, 131098, 8, 0, 196626, 8, 0, 196627, 10, 0, 196628, 10, 0, 196629, 10, 0, 196630, 10, 0, 196631, 10, 0, 196632, 10, 0, 196633, 10, 0, 196634, 8, 0, 262162, 8, 0, 262163, 10, 0, 262164, 10, 0, 262165, 10, 0, 262166, 10, 0, 262167, 10, 0, 262168, 10, 0, 262169, 10, 0, 262170, 8, 0, 327698, 8, 0, 327699, 10, 0, 327700, 10, 0, 327701, 10, 0, 327702, 10, 0, 327703, 10, 0, 327704, 10, 0, 327705, 10, 0, 327706, 8, 0, 393235, 8, 0, 393236, 10, 0, 393237, 10, 0, 393238, 11, 0, 393239, 10, 0, 393240, 11, 0, 393241, 8, 0, 458772, 8, 0, 458773, 10, 0, 458774, 10, 0, 458775, 10, 0, 458776, 11, 0, 524309, 8, 0, 524310, 10, 0, 524311, 8, 0, 589846, 8, 0, 1638445, 8, 0, 1638446, 8, 0, 1703980, 8, 0, 1703981, 8, 0, 1703982, 8, 0, 1769516, 8, 0, 1769517, 8, 0, 4194385, 7, 0 )
+tile_data = PoolIntArray( -393194, 8, 0, -327659, 8, 0, -327658, 10, 0, -327657, 8, 0, -262124, 8, 0, -262123, 10, 0, -262122, 10, 0, -262121, 10, 0, -262120, 8, 0, -196589, 8, 0, -196588, 10, 0, -196587, 10, 0, -196586, 10, 0, -196585, 10, 0, -196584, 10, 0, -196583, 8, 0, -131054, 8, 0, -131053, 10, 0, -131052, 10, 0, -131051, 10, 0, -131050, 10, 0, -131049, 10, 0, -131048, 10, 0, -131047, 10, 0, -131046, 8, 0, -65518, 8, 0, -65517, 10, 0, -65516, 10, 0, -65515, 10, 0, -65514, 10, 0, -65513, 10, 0, -65512, 10, 0, -65511, 10, 0, -65510, 8, 0, 18, 8, 0, 19, 10, 0, 20, 10, 0, 21, 10, 0, 22, 10, 0, 23, 10, 0, 24, 10, 0, 25, 10, 0, 26, 8, 0, 65554, 8, 0, 65555, 10, 0, 65556, 10, 0, 65557, 10, 0, 65558, 10, 0, 65559, 10, 0, 65560, 10, 0, 65561, 10, 0, 65562, 8, 0, 131090, 8, 0, 131091, 10, 0, 131092, 10, 0, 131093, 10, 0, 131094, 10, 0, 131095, 10, 0, 131096, 10, 0, 131097, 10, 0, 131098, 8, 0, 196626, 8, 0, 196627, 10, 0, 196628, 10, 0, 196629, 10, 0, 196630, 10, 0, 196631, 10, 0, 196632, 10, 0, 196633, 10, 0, 196634, 8, 0, 262162, 8, 0, 262163, 10, 0, 262164, 10, 0, 262165, 10, 0, 262166, 10, 0, 262167, 10, 0, 262168, 10, 0, 262169, 10, 0, 262170, 8, 0, 327698, 8, 0, 327699, 10, 0, 327700, 10, 0, 327701, 10, 0, 327702, 10, 0, 327703, 10, 0, 327704, 10, 0, 327705, 10, 0, 327706, 8, 0, 393235, 8, 0, 393236, 10, 0, 393237, 10, 0, 393238, 10, 0, 393239, 10, 0, 393240, 10, 0, 393241, 8, 0, 458772, 8, 0, 458773, 10, 0, 458774, 10, 0, 458775, 10, 0, 458776, 8, 0, 524309, 8, 0, 524310, 10, 0, 524311, 8, 0, 589846, 8, 0, 4194385, 7, 0 )
 script = ExtResource( 5 )
 
 [node name="Player1Sigurd" parent="." instance=ExtResource( 4 )]
 position = Vector2( 240, 255 )
-unit_stats = {
-"atack": 25,
-"attack_range": 2,
-"attack_speed": 1,
-"cell_range": 1,
-"defense": 20,
-"life": 100
-}
 
 [node name="BlackLight" parent="." instance=ExtResource( 7 )]
 visible = false
 
 [node name="GameInterface" parent="." instance=ExtResource( 3 )]
+visible = true
 position = Vector2( -60, 30 )
 
 [node name="Music" type="AudioStreamPlayer" parent="."]

@@ -725,6 +725,7 @@ anims/WALK_W = SubResource( 18 )
 tree_root = SubResource( 71 )
 anim_player = NodePath("../AnimationPlayer")
 active = true
+process_mode = 0
 parameters/playback = SubResource( 72 )
 parameters/DECISION_STATE/playback = SubResource( 73 )
 

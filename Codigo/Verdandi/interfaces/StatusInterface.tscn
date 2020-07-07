@@ -8,7 +8,6 @@
 [ext_resource path="res://interfaces/norse/img/interface_02.png" type="Texture" id=6]
 [ext_resource path="res://interfaces/norse/img/interface_03.png" type="Texture" id=7]
 
-
 [sub_resource type="DynamicFont" id=1]
 size = 30
 outline_size = 2
@@ -27,15 +26,21 @@ margin_right = 220.0
 margin_bottom = 270.0
 rect_min_size = Vector2( 210, 270 )
 texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="VContainer" type="VBoxContainer" parent="BackRect"]
 margin_left = 10.0
 margin_top = 10.0
-margin_right = 200.0
-margin_bottom = 54.0
+margin_right = 238.0
+margin_bottom = 256.0
 rect_min_size = Vector2( 200, 60 )
 custom_constants/separation = 10
 alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="HCLife" type="HBoxContainer" parent="BackRect/VContainer"]
 margin_right = 228.0
