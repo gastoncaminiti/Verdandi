@@ -28,6 +28,15 @@ script = ExtResource( 5 )
 
 [node name="Player1Sigurd" parent="." instance=ExtResource( 4 )]
 position = Vector2( 240, 255 )
+unit_stats = {
+"attack": 25,
+"attack_range": 1,
+"attack_speed": 1,
+"defense": 20,
+"life": 100,
+"move_range": 1,
+"my_orientation": 5
+}
 
 [node name="BlackLight" parent="." instance=ExtResource( 7 )]
 visible = false
@@ -38,4 +47,3 @@ position = Vector2( -60, 30 )
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
-autoplay = true
