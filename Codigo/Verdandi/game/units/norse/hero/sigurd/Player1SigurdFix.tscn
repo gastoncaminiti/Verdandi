@@ -47,6 +47,20 @@ tracks/2/keys = {
 "update": 0,
 "values": [ Vector2( -1, -6 ) ]
 }
+tracks/3/type = "method"
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0.4 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "_attack_finished"
+} ]
+}
 
 [sub_resource type="Animation" id=3]
 resource_name = "ATTACK_N"
@@ -87,6 +101,20 @@ tracks/2/keys = {
 "update": 0,
 "values": [ Vector2( 6, -6 ) ]
 }
+tracks/3/type = "method"
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0.4 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "_attack_finished"
+} ]
+}
 
 [sub_resource type="Animation" id=4]
 length = 0.4
@@ -125,6 +153,20 @@ tracks/2/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 4, -6 ) ]
+}
+tracks/3/type = "method"
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0.4 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "_attack_finished"
+} ]
 }
 
 [sub_resource type="Animation" id=5]
@@ -166,6 +208,20 @@ tracks/2/keys = {
 "update": 0,
 "values": [ Vector2( 0, -6 ) ]
 }
+tracks/3/type = "method"
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0.4 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "_attack_finished"
+} ]
+}
 
 [sub_resource type="Animation" id=6]
 resource_name = "ATTACK_S"
@@ -205,6 +261,20 @@ tracks/2/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 1, -6 ) ]
+}
+tracks/3/type = "method"
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0.4 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "_attack_finished"
+} ]
 }
 
 [sub_resource type="Animation" id=7]
@@ -246,6 +316,20 @@ tracks/2/keys = {
 "update": 0,
 "values": [ Vector2( -2, -6 ) ]
 }
+tracks/3/type = "method"
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0.4 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "_attack_finished"
+} ]
+}
 
 [sub_resource type="Animation" id=8]
 length = 0.4
@@ -285,6 +369,20 @@ tracks/2/keys = {
 "update": 0,
 "values": [ Vector2( -4, -6 ) ]
 }
+tracks/3/type = "method"
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0.4 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "_attack_finished"
+} ]
+}
 
 [sub_resource type="Animation" id=9]
 length = 0.4
@@ -323,6 +421,20 @@ tracks/2/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( -6, -6 ) ]
+}
+tracks/3/type = "method"
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0.4 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "_attack_finished"
+} ]
 }
 
 [sub_resource type="Animation" id=10]
@@ -1020,18 +1132,22 @@ animation = "WALK_SW"
 animation = "WALK_W"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=54]
-advance_condition = "LOOK_N"
+advance_condition = "LookN"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=55]
+switch_mode = 2
+advance_condition = "NotLookN"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=56]
 advance_condition = "LookW"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=57]
 switch_mode = 2
+advance_condition = "NotLookW"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=58]
 switch_mode = 2
+advance_condition = "NotLookE"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=59]
 advance_condition = "LookE"
@@ -1041,21 +1157,25 @@ advance_condition = "LookS"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=61]
 switch_mode = 2
+advance_condition = "NotLookS"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=62]
 advance_condition = "LookNW"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=63]
-advance_condition = "!LookNW"
+switch_mode = 2
+advance_condition = "NotLookNW"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=64]
 advance_condition = "LookSW"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=65]
 switch_mode = 2
+advance_condition = "NotLookSW"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=66]
 switch_mode = 2
+advance_condition = "NotLookNE"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=67]
 advance_condition = "LookNE"
@@ -1065,88 +1185,111 @@ advance_condition = "LookSE"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=69]
 switch_mode = 2
+advance_condition = "NotLookSE"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=70]
-switch_mode = 2
+advance_condition = "Walk"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=71]
-switch_mode = 2
+advance_condition = "NotWalk"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=72]
-switch_mode = 2
+advance_condition = "Walk"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=73]
-switch_mode = 2
+advance_condition = "NotWalk"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=74]
-switch_mode = 2
+advance_condition = "Walk"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=75]
-switch_mode = 2
+advance_condition = "NotWalk"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=76]
-switch_mode = 2
+advance_condition = "Walk"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=77]
-switch_mode = 2
+advance_condition = "NotWalk"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=78]
-switch_mode = 2
+advance_condition = "NotWalk"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=79]
-switch_mode = 2
+advance_condition = "Walk"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=80]
-switch_mode = 2
+advance_condition = "Walk"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=81]
-switch_mode = 2
+advance_condition = "NotWalk"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=82]
-switch_mode = 2
+advance_condition = "Walk"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=83]
-switch_mode = 2
+advance_condition = "NotWalk"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=84]
-switch_mode = 2
+advance_condition = "Walk"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=85]
-switch_mode = 2
+advance_condition = "NotWalk"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=86]
-switch_mode = 2
+advance_condition = "Attack"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=87]
 switch_mode = 2
+advance_condition = "NotAttack"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=88]
+switch_mode = 2
+advance_condition = "NotAttack"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=89]
+advance_condition = "Attack"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=90]
+switch_mode = 2
+advance_condition = "NotAttack"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=91]
+advance_condition = "Attack"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=92]
+switch_mode = 2
+advance_condition = "NotAttack"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=93]
+advance_condition = "Attack"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=94]
+advance_condition = "Attack"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=95]
+switch_mode = 2
+advance_condition = "NotAttack"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=96]
+advance_condition = "Attack"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=97]
+switch_mode = 2
+advance_condition = "NotAttack"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=98]
+advance_condition = "Attack"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=99]
+switch_mode = 2
+advance_condition = "NotAttack"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=100]
+advance_condition = "Attack"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=101]
+switch_mode = 2
+advance_condition = "NotAttack"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=102]
 
@@ -1186,7 +1329,7 @@ states/IDLE_SE/position = Vector2( -886, -145 )
 states/IDLE_SW/node = SubResource( 44 )
 states/IDLE_SW/position = Vector2( -886, -467 )
 states/IDLE_W/node = SubResource( 45 )
-states/IDLE_W/position = Vector2( -603, -473 )
+states/IDLE_W/position = Vector2( -600, -467 )
 states/WALK_E/node = SubResource( 46 )
 states/WALK_E/position = Vector2( -747, -29 )
 states/WALK_N/node = SubResource( 47 )
@@ -1204,7 +1347,7 @@ states/WALK_SW/position = Vector2( -1058.32, -507 )
 states/WALK_W/node = SubResource( 53 )
 states/WALK_W/position = Vector2( -699, -558 )
 transitions = [ "BRAIN", "IDLE_N", SubResource( 54 ), "IDLE_N", "BRAIN", SubResource( 55 ), "BRAIN", "IDLE_W", SubResource( 56 ), "IDLE_W", "BRAIN", SubResource( 57 ), "IDLE_E", "BRAIN", SubResource( 58 ), "BRAIN", "IDLE_E", SubResource( 59 ), "BRAIN", "IDLE_S", SubResource( 60 ), "IDLE_S", "BRAIN", SubResource( 61 ), "BRAIN", "IDLE_NW", SubResource( 62 ), "IDLE_NW", "BRAIN", SubResource( 63 ), "BRAIN", "IDLE_SW", SubResource( 64 ), "IDLE_SW", "BRAIN", SubResource( 65 ), "IDLE_NE", "BRAIN", SubResource( 66 ), "BRAIN", "IDLE_NE", SubResource( 67 ), "BRAIN", "IDLE_SE", SubResource( 68 ), "IDLE_SE", "BRAIN", SubResource( 69 ), "IDLE_N", "WALK_N", SubResource( 70 ), "WALK_N", "IDLE_N", SubResource( 71 ), "IDLE_NE", "WALK_NE", SubResource( 72 ), "WALK_NE", "IDLE_NE", SubResource( 73 ), "IDLE_E", "WALK_E", SubResource( 74 ), "WALK_E", "IDLE_E", SubResource( 75 ), "IDLE_SE", "WALK_SE", SubResource( 76 ), "WALK_SE", "IDLE_SE", SubResource( 77 ), "WALK_S", "IDLE_S", SubResource( 78 ), "IDLE_S", "WALK_S", SubResource( 79 ), "IDLE_NW", "WALK_NW", SubResource( 80 ), "WALK_NW", "IDLE_NW", SubResource( 81 ), "IDLE_W", "WALK_W", SubResource( 82 ), "WALK_W", "IDLE_W", SubResource( 83 ), "IDLE_SW", "WALK_SW", SubResource( 84 ), "WALK_SW", "IDLE_SW", SubResource( 85 ), "IDLE_N", "ATTACK_N", SubResource( 86 ), "ATTACK_N", "IDLE_N", SubResource( 87 ), "ATTACK_SW", "IDLE_SW", SubResource( 88 ), "IDLE_SW", "ATTACK_SW", SubResource( 89 ), "ATTACK_S", "IDLE_S", SubResource( 90 ), "IDLE_S", "ATTACK_S", SubResource( 91 ), "ATTACK_SE", "IDLE_SE", SubResource( 92 ), "IDLE_SE", "ATTACK_SE", SubResource( 93 ), "IDLE_W", "ATTACK_W", SubResource( 94 ), "ATTACK_W", "IDLE_W", SubResource( 95 ), "IDLE_NW", "ATTACK_NW", SubResource( 96 ), "ATTACK_NW", "IDLE_NW", SubResource( 97 ), "IDLE_NE", "ATTACK_NE", SubResource( 98 ), "ATTACK_NE", "IDLE_NE", SubResource( 99 ), "IDLE_E", "ATTACK_E", SubResource( 100 ), "ATTACK_E", "IDLE_E", SubResource( 101 ), "BRAIN", "DEAD", SubResource( 102 ) ]
-graph_offset = Vector2( -1160.05, -373.329 )
+graph_offset = Vector2( -1160.05, -652.74 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=104]
 
@@ -1216,24 +1359,15 @@ graph_offset = Vector2( -1160.05, -373.329 )
 "unit",
 ]]
 script = ExtResource( 1 )
-orientation_config = 6
-unit_stats = {
-"attack": 25,
-"attack_range": 1,
-"attack_speed": 1,
-"defense": 20,
-"life": 100,
-"move_range": 1,
-"my_orientation": 6
-}
 
 [node name="Area2D" type="Area2D" parent="."]
+visible = false
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
 polygon = PoolVector2Array( 48, 0, 0, -24, -48, 0, 0, 24 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 0, -6 )
+position = Vector2( -1, -6 )
 scale = Vector2( 0.8, 0.8 )
 texture = ExtResource( 2 )
 vframes = 10
@@ -1272,21 +1406,32 @@ anims/WALK_SE = SubResource( 25 )
 anims/WALK_SW = SubResource( 26 )
 anims/WALK_W = SubResource( 27 )
 
-[node name="AnimationTree" type="AnimationTree" parent="."]
+[node name="FSM" type="AnimationTree" parent="."]
 tree_root = SubResource( 103 )
 anim_player = NodePath("../AnimationPlayer")
 active = true
 process_mode = 0
 parameters/playback = SubResource( 104 )
-parameters/conditions/!LookNW = false
-parameters/conditions/LOOK_N = true
-parameters/conditions/LookE = true
-parameters/conditions/LookNE = true
-parameters/conditions/LookNW = true
-parameters/conditions/LookS = true
-parameters/conditions/LookSE = true
-parameters/conditions/LookSW = true
-parameters/conditions/LookW = true
+parameters/conditions/Attack = false
+parameters/conditions/LookE = false
+parameters/conditions/LookN = false
+parameters/conditions/LookNE = false
+parameters/conditions/LookNW = false
+parameters/conditions/LookS = false
+parameters/conditions/LookSE = false
+parameters/conditions/LookSW = false
+parameters/conditions/LookW = false
+parameters/conditions/NotAttack = false
+parameters/conditions/NotLookE = false
+parameters/conditions/NotLookN = false
+parameters/conditions/NotLookNE = false
+parameters/conditions/NotLookNW = false
+parameters/conditions/NotLookS = false
+parameters/conditions/NotLookSE = false
+parameters/conditions/NotLookSW = false
+parameters/conditions/NotLookW = false
+parameters/conditions/NotWalk = false
+parameters/conditions/Walk = false
 parameters/BRAIN/playback = SubResource( 105 )
 script = ExtResource( 3 )
 

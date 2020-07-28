@@ -13,6 +13,7 @@ export(int)    var act_index = 0
 signal map_initiated
 signal units_moved
 signal units_affected
+signal turn_started
 # Control VAR
 var prosperity = 0
 var favor      = 0
@@ -60,7 +61,7 @@ func _ready():
 func _input(event):
 	#TEST MOVOMIMIENTO DE UNIDADES
 	if Input.is_key_pressed(KEY_SPACE):
-		emit_signal("units_moved")
+		emit_signal("turn_started")
 
 # Función: Definición de eventos durante el combate.
 func battle_turn():
