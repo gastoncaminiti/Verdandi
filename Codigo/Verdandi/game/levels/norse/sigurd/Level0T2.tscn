@@ -28,16 +28,6 @@ script = ExtResource( 5 )
 
 [node name="Player1Sigurd" parent="." instance=ExtResource( 4 )]
 position = Vector2( 353, 181 )
-unit_stats = {
-"attack": 25,
-"attack_range": 1,
-"attack_speed": 1,
-"defense": 20,
-"life": 100,
-"move_range": 1,
-"orientation": 0,
-"state": "IDLE"
-}
 
 [node name="Player1Sigurd2" parent="." instance=ExtResource( 4 )]
 position = Vector2( 367, 189 )
@@ -49,7 +39,7 @@ unit_stats = {
 "life": 100,
 "move_range": 1,
 "orientation": 1,
-"state": "IDLE"
+"status": "IDLE"
 }
 
 [node name="Player1Sigurd3" parent="." instance=ExtResource( 4 )]
@@ -62,7 +52,7 @@ unit_stats = {
 "life": 100,
 "move_range": 1,
 "orientation": 2,
-"state": "IDLE"
+"status": "IDLE"
 }
 
 [node name="Player1Sigurd4" parent="." instance=ExtResource( 4 )]
@@ -75,7 +65,7 @@ unit_stats = {
 "life": 100,
 "move_range": 1,
 "orientation": 3,
-"state": "IDLE"
+"status": "IDLE"
 }
 
 [node name="Player1Sigurd6" parent="." instance=ExtResource( 4 )]
@@ -88,7 +78,7 @@ unit_stats = {
 "life": 100,
 "move_range": 1,
 "orientation": 5,
-"state": "IDLE"
+"status": "IDLE"
 }
 
 [node name="Player1Sigurd7" parent="." instance=ExtResource( 4 )]
@@ -101,7 +91,7 @@ unit_stats = {
 "life": 100,
 "move_range": 1,
 "orientation": 6,
-"state": "IDLE"
+"status": "IDLE"
 }
 
 [node name="Player1Sigurd8" parent="." instance=ExtResource( 4 )]
@@ -114,7 +104,7 @@ unit_stats = {
 "life": 100,
 "move_range": 1,
 "orientation": 7,
-"state": "IDLE"
+"status": "IDLE"
 }
 
 [node name="Player1Sigurd5" parent="." instance=ExtResource( 4 )]
@@ -127,7 +117,7 @@ unit_stats = {
 "life": 100,
 "move_range": 1,
 "orientation": 4,
-"state": "IDLE"
+"status": "IDLE"
 }
 
 [node name="BlackLight" parent="." instance=ExtResource( 7 )]

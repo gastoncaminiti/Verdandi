@@ -68,7 +68,7 @@ func reset_idle_choises():
 	self["parameters/conditions/NotLookNW"] = false
 
 func update_walk_choise():
-	if get_parent().unit_stats.state == "WALK":
+	if get_parent().is_status("WALK"):
 		self["parameters/conditions/Walk"]    = true
 		self["parameters/conditions/NotWalk"] = false
 	else:
@@ -76,7 +76,7 @@ func update_walk_choise():
 		self["parameters/conditions/Walk"]    = false
 
 func update_attack_choise():
-	if get_parent().unit_stats.state == "ATTACK":
+	if get_parent().is_status("ATTACK"):
 		self["parameters/conditions/Attack"]    = true
 		self["parameters/conditions/NotAttack"] = false
 	else:
