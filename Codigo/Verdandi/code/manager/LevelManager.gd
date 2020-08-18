@@ -78,8 +78,8 @@ func battle_turn():
 	emit_signal("units_moved")
 
 # Función: Actualizar interfaz de unidad seleccionada.
-func selected_unit(l,a,d,s,p):
-	$GameInterface.set_selected_gui(l,a,d,s,p)
+func selected_unit(unit_data):
+	$GameInterface.set_selected_gui(unit_data)
 
 # Función: Ocultar interfaz de unidad seleccionada.
 func unselected_unit():

@@ -19,23 +19,19 @@ func disiable_hourglass():
 	flag_hourglass = false
 	hourglass.global_position = Vector2(1200,400)
 
-func set_selected_gui(l,a,d,s,p):
-	get_node("Layer 2 - GUI/StatusInterface/BackRect/VContainer/HCLife/NLife").set_text(String(l))
-	get_node("Layer 2 - GUI/StatusInterface/BackRect/VContainer/HCAttack/NAttack").set_text(String(a))
-	get_node("Layer 2 - GUI/StatusInterface/BackRect/VContainer/HCDefense/NDefense").set_text(String(d))
-	get_node("Layer 2 - GUI/StatusInterface/BackRect/VContainer/HCSpeed/NSpeed").set_text(String(s))
-	var aux_node = get_node("Layer 2 - GUI/StatusInterface")
-	aux_node.global_position = p
-	aux_node.global_position.y -=100
-	aux_node.global_position.x -=50
-	aux_node.visible = true
+func set_selected_gui(unit_data):
+	get_node("Layer 2 - GUI/StatusInterface/VCStatus/HCHeader/CCName/NName").set_text(String(unit_data.name))
+	get_node("Layer 2 - GUI/StatusInterface/VCStatus/GCStats/HCLife/NLife").set_text(String(unit_data.life))
+	get_node("Layer 2 - GUI/StatusInterface/VCStatus/GCStats/HCAttack/NAttack").set_text(String(unit_data.attack))
+	get_node("Layer 2 - GUI/StatusInterface/VCStatus/GCStats/HCDefense/NDefense").set_text(String(unit_data.defense))
+	get_node("Layer 2 - GUI/StatusInterface/VCStatus/GCStats/HCSpeed/NSpeed").set_text(String(unit_data.attack_speed))
+	$AnimationPlayer.queue("SHOW_UNIT_STATUS")
 
 func set_unselected_gui():
-	get_node("Layer 2 - GUI/StatusInterface").visible = false
+	$AnimationPlayer.queue("HIDE_UNIT_STATUS")
 
 func _on_ButtonBag_pressed():
 	if(CardGame.get_player_hand_cards().size() < CardGame.HAND_LIMIT):
-		get_node("Layer 2 - GUI/Sidgrida").hide_tip()
 		var bag = get_node("Layer 2 - GUI/Bag")
 		bag.play("open")
 		bag.set_frame(0)
@@ -52,46 +48,39 @@ func draw_card(card):
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func set_rune_view(data, pos):
-	get_node("Layer 2 - GUI/RuneDetailInterface").visible = true
-	get_node("Layer 2 - GUI/RuneDetailInterface/BackRect/VContainer/CCRuneName/LRuneName").text = data.id
+	get_node("Layer 2 - GUI/RuneDetailInterface/VContainerRunes/VCEFFECT/HCHeader/CCRuneName/LRuneName").text = data.id
 	if(data.invertible):
-		get_node("Layer 2 - GUI/RuneDetailInterface/BackRect/VContainer/CCRuneStatus/LRuneStatus").text = "KEY_INVERTIBLE"
-		get_node("Layer 2 - GUI/RuneDetailInterface/BackRect/VContainer/HCEffect/VLEContainer/LEffect").text = data.effect.text
-		get_node("Layer 2 - GUI/RuneDetailInterface/BackRect/VContainer/HCEffect/VLEContainer/Label").text = String(data.effect.duration) +" turns"
-		get_node("Layer 2 - GUI/RuneDetailInterface/BackRect/VContainer/HCEffect/VLIEContainer/LIEffect").text = data.inverse.text
-		get_node("Layer 2 - GUI/RuneDetailInterface/BackRect/VContainer/HCEffect/VLIEContainer/LIEffect").visible = true
-		get_node("Layer 2 - GUI/RuneDetailInterface/BackRect/VContainer/HCEffect/VLIEContainer/Label").visible = true
-		get_node("Layer 2 - GUI/RuneDetailInterface/BackRect/VContainer/CCEffectDescription/LEffectDescription").text = TranslationServer.translate(data.effect.description)+" "+TranslationServer.translate("KEY_OR")+" "+TranslationServer.translate(data.inverse.description)
-		get_node("Layer 2 - GUI/RuneDetailInterface/BackRect/VContainer/HCEffect/VLIEContainer/Label").text = String(data.inverse.duration) +" turns"
+		get_node("Layer 2 - GUI/RuneDetailInterface/VContainerRunes/VCEFFECT/HCHeader/CCRuneStatus/LRuneStatus").text = "KEY_INVERTIBLE"
+		get_node("Layer 2 - GUI/RuneDetailInterface/VContainerRunes/VCEFFECT/HCEffect/CCEffect/LEffect").text = data.effect.text
+		get_node("Layer 2 - GUI/RuneDetailInterface/VContainerRunes/VCEFFECT/CCEffectDescription/LEffectDescription").text = data.effect.description
+		#TranslationServer.translate(data.effect.description)+" "+TranslationServer.translate("KEY_OR")+" "+TranslationServer.translate(data.inverse.description)
 	else:
-		get_node("Layer 2 - GUI/RuneDetailInterface/BackRect/VContainer/CCRuneStatus/LRuneStatus").text = "KEY_NOINVERTIBLE"
-		get_node("Layer 2 - GUI/RuneDetailInterface/BackRect/VContainer/HCEffect/VLEContainer/LEffect").text = data.effect.text
-		get_node("Layer 2 - GUI/RuneDetailInterface/BackRect/VContainer/HCEffect/VLEContainer/Label").text = String(data.effect.duration) +" turns"
-		get_node("Layer 2 - GUI/RuneDetailInterface/BackRect/VContainer/HCEffect/VLIEContainer/LIEffect").visible = false
-		get_node("Layer 2 - GUI/RuneDetailInterface/BackRect/VContainer/HCEffect/VLIEContainer/Label").visible = false
-		get_node("Layer 2 - GUI/RuneDetailInterface/BackRect/VContainer/CCEffectDescription/LEffectDescription").text = data.effect.description
+		get_node("Layer 2 - GUI/RuneDetailInterface/VContainerRunes/VCEFFECT/HCHeader/CCRuneStatus/LRuneStatus").text = "KEY_NOINVERTIBLE"
+		get_node("Layer 2 - GUI/RuneDetailInterface/VContainerRunes/VCEFFECT/HCEffect/CCEffect/LEffect").text = data.effect.text
+		get_node("Layer 2 - GUI/RuneDetailInterface/VContainerRunes/VCEFFECT/CCEffectDescription/LEffectDescription").text = data.effect.description
 	
 	match data.alignment:
 		"prosperity":
-			get_node("Layer 2 - GUI/RuneDetailInterface/BackRect/VContainer/HCAlignment/MCAlignment/Axe").visible = false
-			get_node("Layer 2 - GUI/RuneDetailInterface/BackRect/VContainer/HCAlignment/MCAlignment/Eye").visible = false
-			get_node("Layer 2 - GUI/RuneDetailInterface/BackRect/VContainer/HCAlignment/MCAlignment/Coin").visible = true
-			get_node("Layer 2 - GUI/RuneDetailInterface/BackRect/VContainer/HCAlignment/LAlignment").text = "KEY_PROSPERITY"
+			get_node("Layer 2 - GUI/RuneDetailInterface/VContainerRunes/VCEFFECT/HCAlignment/MCAlignment/Axe").visible = false
+			get_node("Layer 2 - GUI/RuneDetailInterface/VContainerRunes/VCEFFECT/HCAlignment/MCAlignment/Eye").visible = false
+			get_node("Layer 2 - GUI/RuneDetailInterface/VContainerRunes/VCEFFECT/HCAlignment/MCAlignment/Coin").visible = true
+			get_node("Layer 2 - GUI/RuneDetailInterface/VContainerRunes/VCEFFECT/HCAlignment/LAlignment").text = "KEY_PROSPERITY"
 		"favor":
-			get_node("Layer 2 - GUI/RuneDetailInterface/BackRect/VContainer/HCAlignment/MCAlignment/Axe").visible = false
-			get_node("Layer 2 - GUI/RuneDetailInterface/BackRect/VContainer/HCAlignment/MCAlignment/Eye").visible = true
-			get_node("Layer 2 - GUI/RuneDetailInterface/BackRect/VContainer/HCAlignment/MCAlignment/Coin").visible = false
-			get_node("Layer 2 - GUI/RuneDetailInterface/BackRect/VContainer/HCAlignment/LAlignment").text = "KEY_FAVOR"
+			get_node("Layer 2 - GUI/RuneDetailInterface/VContainerRunes/VCEFFECT/HCAlignment/MCAlignment/Axe").visible = false
+			get_node("Layer 2 - GUI/RuneDetailInterface/VContainerRunes/VCEFFECT/HCAlignment/MCAlignment/Eye").visible = true
+			get_node("Layer 2 - GUI/RuneDetailInterface/VContainerRunes/VCEFFECT/HCAlignment/MCAlignment/Coin").visible = false
+			get_node("Layer 2 - GUI/RuneDetailInterface/VContainerRunes/VCEFFECT/HCAlignment/LAlignment").text = "KEY_FAVOR"
 		"honor":
-			get_node("Layer 2 - GUI/RuneDetailInterface/BackRect/VContainer/HCAlignment/MCAlignment/Axe").visible = true
-			get_node("Layer 2 - GUI/RuneDetailInterface/BackRect/VContainer/HCAlignment/MCAlignment/Eye").visible = false
-			get_node("Layer 2 - GUI/RuneDetailInterface/BackRect/VContainer/HCAlignment/MCAlignment/Coin").visible = false
-			get_node("Layer 2 - GUI/RuneDetailInterface/BackRect/VContainer/HCAlignment/LAlignment").text = "KEY_HONOR"
-	get_node("Layer 2 - GUI/RuneDetailInterface").global_position.x = pos.x - 75 
-	get_node("Layer 2 - GUI/RuneDetailInterface").global_position.y = pos.y - 235 
-	
+			get_node("Layer 2 - GUI/RuneDetailInterface/VContainerRunes/VCEFFECT/HCAlignment/MCAlignment/Axe").visible = true
+			get_node("Layer 2 - GUI/RuneDetailInterface/VContainerRunes/VCEFFECT/HCAlignment/MCAlignment/Eye").visible = false
+			get_node("Layer 2 - GUI/RuneDetailInterface/VContainerRunes/VCEFFECT/HCAlignment/MCAlignment/Coin").visible = false
+			get_node("Layer 2 - GUI/RuneDetailInterface/VContainerRunes/VCEFFECT/HCAlignment/LAlignment").text = "KEY_HONOR"
+	get_node("Layer 2 - GUI/RuneDetailInterface").global_position.x = pos.x - 40
+	get_node("Layer 2 - GUI/RuneDetailInterface").global_position.y = pos.y - 108
+	$AnimationPlayer.queue("SHOW_RUNE_DETAIL")
+
 func hide_rune_view():
-	get_node("Layer 2 - GUI/RuneDetailInterface").visible = false
+	$AnimationPlayer.queue("HIDE_RUNE_DETAIL")
 
 func update_turn_gui_one_effect(i,t):
 	get_node("Layer 2 - GUI/GridEffectMy").get_child(i).get_child(1).text = t
@@ -217,6 +206,14 @@ func disable_battlebutton(flag):
 	var button = get_node("Layer 2 - GUI/BattleButton")
 	button.set_disabled(flag)
 	button.set_pressed(false)
-	
-func show_tip():
-	get_node("Layer 2 - GUI/Sidgrida").tip_manager()
+
+# -------------------------------  SUBTITLE FUNCTIONS SECTION  ------------------------------- 
+#FUNCTION SET SUBTITLE
+func set_subtitle(new_subtitle):
+	get_node("Layer 2 - GUI/Subtitle/CCSubtitle/LSubtitle").set_text(String(new_subtitle))
+#FUNCTION SHOW SUBTITLE
+func show_subtitle():
+	$AnimationPlayer.queue("SHOW_SUBTITLE")
+#FUCTION  HIDE SUBTITLE
+func hide_subtitle():
+	$AnimationPlayer.queue("HIDE_SUBTITLE")

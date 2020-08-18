@@ -1,7 +1,7 @@
 # Verdandi - Leyendas Nórdicas
 Proyecto de Videojuego en Godot Engine. Desarrollado por Chatora Games.
 
-Alumno: Gastón Alberto Caminiti  
+Caminiti Gastón - Martinez Alejandra
 Desarrollado con Godot Engine Versión 3.2
 
 ### Prototipos 

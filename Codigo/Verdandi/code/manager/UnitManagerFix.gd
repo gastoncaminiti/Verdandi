@@ -5,6 +5,7 @@ var SPEED_UNIT   = 20
 var MIN_DISTANCE = 0.5
 # UNIT STATISTICS VARIABLES 
 export var unit_stats = {
+	"name": "Sigurd",
 	"life": 100,
 	"attack": 25,
 	"defense": 20,
@@ -14,15 +15,18 @@ export var unit_stats = {
 	"orientation": 0,
 	"status": "IDLE"
 }
-# VARIABLES  
+#VARIABLES  
 var next_point
+var flag_turn setget set_turn_status, get_turn_status
 #FUNCION DE PREPARACION DEL NODO
 func _ready():
 	connect_parent_child("ready","_status_ready")
 	connect_parent_child("turn_started","_start_actions")
+	set_turn_status(false)
 #FUNCION EN RESPUESTA A LA SEÑAL DE CAMBIO DE ESTADO
 func _start_actions():
 	set_next_point()
+	set_turn_status(true)
 	_unit_walk_state()
 #FUNCION EN RESPUESTA A LA SEÑAL DE ESTADO INICIAL EN RELACION AL PADRE
 func _status_ready():
@@ -43,6 +47,12 @@ func set_next_point():
 #FUNCTION GET NEXT POINT
 func get_next_point():
 	return next_point
+#FUNCTION SET FLAG TURN
+func set_turn_status(new_status):
+	flag_turn = new_status
+#FUNCTION GET FLAG TURN
+func get_turn_status():
+	return flag_turn
 #FUNCTION GET POSITION CENTER
 func set_position_center_to_cell():
 	global_position = owner.map_ref.get_center_point(global_position)
@@ -71,6 +81,7 @@ func _unit_walk_state():
 func _unit_stop_state():
 	set_unit_stat("status","IDLE")
 	$FSM.update_walk_choise()
+	set_turn_status(false)
 #FUNCTION CALL WHEN ATTACK STATUS IS NEED.
 func _unit_attack_state():
 	set_unit_stat("status","ATTACK")
@@ -81,7 +92,9 @@ func _unit_guard_state():
 	$FSM.update_attack_choise()
 #FUNCION EN RESPUESTA A LA SEÑAL DE ENTRADA DEL MOUSE SOBRE LA UNIDAD.
 func _on_Control_mouse_entered():
-	owner.map_ref.switch_in_compass_order(global_position,1,get_unit_stat("move_range"))
+	if !get_turn_status():
+		owner.map_ref.switch_in_compass_order(global_position,1,get_unit_stat("move_range"))
+		get_parent().selected_unit(unit_stats)
 #FUNCION EN RESPUESTA A LA SEÑAL DE SALIDA DEL MOUSE SOBRE LA UNIDAD.
 func _on_Control_mouse_exited():
 	owner.map_ref.switch_in_compass_order(global_position,0,get_unit_stat("move_range"))
@@ -90,11 +103,10 @@ func _on_Control_mouse_exited():
 func _on_Control_gui_input(event):
 	if event is InputEventMouseButton:
 		if owner.is_in_group("Level"):
-			if event.button_index  == BUTTON_LEFT and event.pressed:
+			if event.button_index  == BUTTON_LEFT and event.pressed  and !get_turn_status():
 				owner.map_ref.switch_in_compass_order(global_position,2,get_unit_stat("attack_range"))
-			if event.button_index  == BUTTON_RIGHT and event.pressed:
+			if event.button_index  == BUTTON_RIGHT and event.pressed and !get_turn_status():
 				_attack_started()
-				#get_parent().selected_unit(unit_stats.life,unit_stats.attack,unit_stats.defense,unit_stats.attack_speed,global_position)
 #FUNCTION CALL FOR CONECT A SIGNAL FROM PARENT TO CHILD.
 func connect_parent_child(nsignal, nfunction):
 	if owner != null and owner.is_in_group("Level"):

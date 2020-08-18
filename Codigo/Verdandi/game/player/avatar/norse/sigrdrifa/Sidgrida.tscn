@@ -26,17 +26,25 @@ speed_scale = 2.0
 centered = false
 
 [node name="SelectedManager" type="Control" parent="."]
-margin_left = 101.0
-margin_top = 158.0
-margin_right = 197.0
-margin_bottom = 504.0
+margin_left = 113.333
+margin_top = 126.667
+margin_right = 209.333
+margin_bottom = 401.667
+rect_scale = Vector2( 1.31146, 1.4263 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="TextureRect" type="NinePatchRect" parent="."]
+visible = false
 margin_left = 181.051
 margin_top = 79.0232
 margin_right = 406.051
 margin_bottom = 179.023
 texture = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Label" type="Label" parent="TextureRect"]
 margin_left = 6.4319
@@ -49,6 +57,9 @@ custom_constants/line_spacing = 0
 text = "KEY_TUTORIAL_00_1 KEY_TUTORIAL_00_1"
 align = 1
 autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]
 [connection signal="mouse_entered" from="SelectedManager" to="." method="_on_SelectedManager_mouse_entered"]
 [connection signal="mouse_exited" from="SelectedManager" to="." method="_on_SelectedManager_mouse_exited"]

@@ -1098,225 +1098,225 @@ graph_offset = Vector2( 0, -262 )
 [sub_resource type="AnimationNodeAnimation" id=38]
 animation = "DEAD"
 
-[sub_resource type="AnimationNodeAnimation" id=107]
+[sub_resource type="AnimationNodeAnimation" id=39]
 animation = "HURT"
 
-[sub_resource type="AnimationNodeAnimation" id=39]
+[sub_resource type="AnimationNodeAnimation" id=40]
 animation = "IDLE_E"
 
-[sub_resource type="AnimationNodeAnimation" id=40]
+[sub_resource type="AnimationNodeAnimation" id=41]
 animation = "IDLE_N"
 
-[sub_resource type="AnimationNodeAnimation" id=41]
+[sub_resource type="AnimationNodeAnimation" id=42]
 animation = "IDLE_NE"
 
-[sub_resource type="AnimationNodeAnimation" id=42]
+[sub_resource type="AnimationNodeAnimation" id=43]
 animation = "IDLE_NW"
 
-[sub_resource type="AnimationNodeAnimation" id=43]
+[sub_resource type="AnimationNodeAnimation" id=44]
 animation = "IDLE_S"
 
-[sub_resource type="AnimationNodeAnimation" id=44]
+[sub_resource type="AnimationNodeAnimation" id=45]
 animation = "IDLE_SE"
 
-[sub_resource type="AnimationNodeAnimation" id=45]
+[sub_resource type="AnimationNodeAnimation" id=46]
 animation = "IDLE_SW"
 
-[sub_resource type="AnimationNodeAnimation" id=46]
+[sub_resource type="AnimationNodeAnimation" id=47]
 animation = "IDLE_W"
 
-[sub_resource type="AnimationNodeAnimation" id=47]
+[sub_resource type="AnimationNodeAnimation" id=48]
 animation = "WALK_E"
 
-[sub_resource type="AnimationNodeAnimation" id=48]
+[sub_resource type="AnimationNodeAnimation" id=49]
 animation = "WALK_N"
 
-[sub_resource type="AnimationNodeAnimation" id=49]
+[sub_resource type="AnimationNodeAnimation" id=50]
 animation = "WALK_NE"
 
-[sub_resource type="AnimationNodeAnimation" id=50]
+[sub_resource type="AnimationNodeAnimation" id=51]
 animation = "WALK_NW"
 
-[sub_resource type="AnimationNodeAnimation" id=51]
+[sub_resource type="AnimationNodeAnimation" id=52]
 animation = "WALK_S"
 
-[sub_resource type="AnimationNodeAnimation" id=52]
+[sub_resource type="AnimationNodeAnimation" id=53]
 animation = "WALK_SE"
 
-[sub_resource type="AnimationNodeAnimation" id=53]
+[sub_resource type="AnimationNodeAnimation" id=54]
 animation = "WALK_SW"
 
-[sub_resource type="AnimationNodeAnimation" id=54]
+[sub_resource type="AnimationNodeAnimation" id=55]
 animation = "WALK_W"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=55]
+[sub_resource type="AnimationNodeStateMachineTransition" id=56]
 advance_condition = "LookN"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=56]
+[sub_resource type="AnimationNodeStateMachineTransition" id=57]
 switch_mode = 2
 advance_condition = "NotLookN"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=57]
-advance_condition = "LookW"
-
 [sub_resource type="AnimationNodeStateMachineTransition" id=58]
-switch_mode = 2
-advance_condition = "NotLookW"
+advance_condition = "LookW"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=59]
 switch_mode = 2
-advance_condition = "NotLookE"
+advance_condition = "NotLookW"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=60]
-advance_condition = "LookE"
+switch_mode = 2
+advance_condition = "NotLookE"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=61]
-advance_condition = "LookS"
+advance_condition = "LookE"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=62]
+advance_condition = "LookS"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=63]
 switch_mode = 2
 advance_condition = "NotLookS"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=63]
+[sub_resource type="AnimationNodeStateMachineTransition" id=64]
 advance_condition = "LookNW"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=64]
+[sub_resource type="AnimationNodeStateMachineTransition" id=65]
 switch_mode = 2
 advance_condition = "NotLookNW"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=65]
-advance_condition = "LookSW"
-
 [sub_resource type="AnimationNodeStateMachineTransition" id=66]
-switch_mode = 2
-advance_condition = "NotLookSW"
+advance_condition = "LookSW"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=67]
 switch_mode = 2
-advance_condition = "NotLookNE"
+advance_condition = "NotLookSW"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=68]
-advance_condition = "LookNE"
+switch_mode = 2
+advance_condition = "NotLookNE"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=69]
-advance_condition = "LookSE"
+advance_condition = "LookNE"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=70]
+advance_condition = "LookSE"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=71]
 switch_mode = 2
 advance_condition = "NotLookSE"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=71]
-advance_condition = "Walk"
-
 [sub_resource type="AnimationNodeStateMachineTransition" id=72]
-advance_condition = "NotWalk"
+advance_condition = "Walk"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=73]
-advance_condition = "Walk"
+advance_condition = "NotWalk"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=74]
-advance_condition = "NotWalk"
+advance_condition = "Walk"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=75]
-advance_condition = "Walk"
+advance_condition = "NotWalk"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=76]
-advance_condition = "NotWalk"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=77]
 advance_condition = "Walk"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=78]
+[sub_resource type="AnimationNodeStateMachineTransition" id=77]
 advance_condition = "NotWalk"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=78]
+advance_condition = "Walk"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=79]
 advance_condition = "NotWalk"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=80]
-advance_condition = "Walk"
+advance_condition = "NotWalk"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=81]
 advance_condition = "Walk"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=82]
-advance_condition = "NotWalk"
+advance_condition = "Walk"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=83]
-advance_condition = "Walk"
+advance_condition = "NotWalk"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=84]
-advance_condition = "NotWalk"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=85]
 advance_condition = "Walk"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=86]
+[sub_resource type="AnimationNodeStateMachineTransition" id=85]
 advance_condition = "NotWalk"
 
+[sub_resource type="AnimationNodeStateMachineTransition" id=86]
+advance_condition = "Walk"
+
 [sub_resource type="AnimationNodeStateMachineTransition" id=87]
-advance_condition = "Attack"
+advance_condition = "NotWalk"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=88]
-switch_mode = 2
-advance_condition = "NotAttack"
+advance_condition = "Attack"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=89]
 switch_mode = 2
 advance_condition = "NotAttack"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=90]
-advance_condition = "Attack"
+switch_mode = 2
+advance_condition = "NotAttack"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=91]
-switch_mode = 2
-advance_condition = "NotAttack"
+advance_condition = "Attack"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=92]
-advance_condition = "Attack"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=93]
 switch_mode = 2
 advance_condition = "NotAttack"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=94]
+[sub_resource type="AnimationNodeStateMachineTransition" id=93]
 advance_condition = "Attack"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=94]
+switch_mode = 2
+advance_condition = "NotAttack"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=95]
 advance_condition = "Attack"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=96]
-switch_mode = 2
-advance_condition = "NotAttack"
+advance_condition = "Attack"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=97]
-advance_condition = "Attack"
+switch_mode = 2
+advance_condition = "NotAttack"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=98]
-switch_mode = 2
-advance_condition = "NotAttack"
+advance_condition = "Attack"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=99]
-advance_condition = "Attack"
+switch_mode = 2
+advance_condition = "NotAttack"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=100]
-switch_mode = 2
-advance_condition = "NotAttack"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=101]
 advance_condition = "Attack"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=102]
+[sub_resource type="AnimationNodeStateMachineTransition" id=101]
 switch_mode = 2
 advance_condition = "NotAttack"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=108]
+[sub_resource type="AnimationNodeStateMachineTransition" id=102]
+advance_condition = "Attack"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=109]
+[sub_resource type="AnimationNodeStateMachineTransition" id=103]
+switch_mode = 2
+advance_condition = "NotAttack"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=104]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=105]
 switch_mode = 2
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=110]
+[sub_resource type="AnimationNodeStateMachineTransition" id=106]
 
-[sub_resource type="AnimationNodeStateMachine" id=104]
+[sub_resource type="AnimationNodeStateMachine" id=107]
 states/ATTACK_E/node = SubResource( 29 )
 states/ATTACK_E/position = Vector2( -581.046, -29 )
 states/ATTACK_N/node = SubResource( 30 )
@@ -1337,46 +1337,46 @@ states/BRAIN/node = SubResource( 37 )
 states/BRAIN/position = Vector2( -600, -293 )
 states/DEAD/node = SubResource( 38 )
 states/DEAD/position = Vector2( -254, 81.26 )
-states/HURT/node = SubResource( 107 )
+states/HURT/node = SubResource( 39 )
 states/HURT/position = Vector2( -379.05, -29 )
-states/IDLE_E/node = SubResource( 39 )
+states/IDLE_E/node = SubResource( 40 )
 states/IDLE_E/position = Vector2( -607, -145 )
-states/IDLE_N/node = SubResource( 40 )
+states/IDLE_N/node = SubResource( 41 )
 states/IDLE_N/position = Vector2( -322, -293 )
-states/IDLE_NE/node = SubResource( 41 )
+states/IDLE_NE/node = SubResource( 42 )
 states/IDLE_NE/position = Vector2( -322, -145 )
-states/IDLE_NW/node = SubResource( 42 )
+states/IDLE_NW/node = SubResource( 43 )
 states/IDLE_NW/position = Vector2( -322, -467 )
-states/IDLE_S/node = SubResource( 43 )
+states/IDLE_S/node = SubResource( 44 )
 states/IDLE_S/position = Vector2( -886, -298 )
-states/IDLE_SE/node = SubResource( 44 )
+states/IDLE_SE/node = SubResource( 45 )
 states/IDLE_SE/position = Vector2( -886, -145 )
-states/IDLE_SW/node = SubResource( 45 )
+states/IDLE_SW/node = SubResource( 46 )
 states/IDLE_SW/position = Vector2( -886, -467 )
-states/IDLE_W/node = SubResource( 46 )
+states/IDLE_W/node = SubResource( 47 )
 states/IDLE_W/position = Vector2( -600, -467 )
-states/WALK_E/node = SubResource( 47 )
+states/WALK_E/node = SubResource( 48 )
 states/WALK_E/position = Vector2( -747, -29 )
-states/WALK_N/node = SubResource( 48 )
+states/WALK_N/node = SubResource( 49 )
 states/WALK_N/position = Vector2( -143.319, -358.184 )
-states/WALK_NE/node = SubResource( 49 )
+states/WALK_NE/node = SubResource( 50 )
 states/WALK_NE/position = Vector2( -145.319, -179 )
-states/WALK_NW/node = SubResource( 50 )
+states/WALK_NW/node = SubResource( 51 )
 states/WALK_NW/position = Vector2( -145.319, -507 )
-states/WALK_S/node = SubResource( 51 )
+states/WALK_S/node = SubResource( 52 )
 states/WALK_S/position = Vector2( -1058.32, -358.184 )
-states/WALK_SE/node = SubResource( 52 )
+states/WALK_SE/node = SubResource( 53 )
 states/WALK_SE/position = Vector2( -1058.32, -179 )
-states/WALK_SW/node = SubResource( 53 )
+states/WALK_SW/node = SubResource( 54 )
 states/WALK_SW/position = Vector2( -1058.32, -507 )
-states/WALK_W/node = SubResource( 54 )
+states/WALK_W/node = SubResource( 55 )
 states/WALK_W/position = Vector2( -699, -558 )
-transitions = [ "BRAIN", "IDLE_N", SubResource( 55 ), "IDLE_N", "BRAIN", SubResource( 56 ), "BRAIN", "IDLE_W", SubResource( 57 ), "IDLE_W", "BRAIN", SubResource( 58 ), "IDLE_E", "BRAIN", SubResource( 59 ), "BRAIN", "IDLE_E", SubResource( 60 ), "BRAIN", "IDLE_S", SubResource( 61 ), "IDLE_S", "BRAIN", SubResource( 62 ), "BRAIN", "IDLE_NW", SubResource( 63 ), "IDLE_NW", "BRAIN", SubResource( 64 ), "BRAIN", "IDLE_SW", SubResource( 65 ), "IDLE_SW", "BRAIN", SubResource( 66 ), "IDLE_NE", "BRAIN", SubResource( 67 ), "BRAIN", "IDLE_NE", SubResource( 68 ), "BRAIN", "IDLE_SE", SubResource( 69 ), "IDLE_SE", "BRAIN", SubResource( 70 ), "IDLE_N", "WALK_N", SubResource( 71 ), "WALK_N", "IDLE_N", SubResource( 72 ), "IDLE_NE", "WALK_NE", SubResource( 73 ), "WALK_NE", "IDLE_NE", SubResource( 74 ), "IDLE_E", "WALK_E", SubResource( 75 ), "WALK_E", "IDLE_E", SubResource( 76 ), "IDLE_SE", "WALK_SE", SubResource( 77 ), "WALK_SE", "IDLE_SE", SubResource( 78 ), "WALK_S", "IDLE_S", SubResource( 79 ), "IDLE_S", "WALK_S", SubResource( 80 ), "IDLE_NW", "WALK_NW", SubResource( 81 ), "WALK_NW", "IDLE_NW", SubResource( 82 ), "IDLE_W", "WALK_W", SubResource( 83 ), "WALK_W", "IDLE_W", SubResource( 84 ), "IDLE_SW", "WALK_SW", SubResource( 85 ), "WALK_SW", "IDLE_SW", SubResource( 86 ), "IDLE_N", "ATTACK_N", SubResource( 87 ), "ATTACK_N", "IDLE_N", SubResource( 88 ), "ATTACK_SW", "IDLE_SW", SubResource( 89 ), "IDLE_SW", "ATTACK_SW", SubResource( 90 ), "ATTACK_S", "IDLE_S", SubResource( 91 ), "IDLE_S", "ATTACK_S", SubResource( 92 ), "ATTACK_SE", "IDLE_SE", SubResource( 93 ), "IDLE_SE", "ATTACK_SE", SubResource( 94 ), "IDLE_W", "ATTACK_W", SubResource( 95 ), "ATTACK_W", "IDLE_W", SubResource( 96 ), "IDLE_NW", "ATTACK_NW", SubResource( 97 ), "ATTACK_NW", "IDLE_NW", SubResource( 98 ), "IDLE_NE", "ATTACK_NE", SubResource( 99 ), "ATTACK_NE", "IDLE_NE", SubResource( 100 ), "IDLE_E", "ATTACK_E", SubResource( 101 ), "ATTACK_E", "IDLE_E", SubResource( 102 ), "BRAIN", "HURT", SubResource( 108 ), "HURT", "BRAIN", SubResource( 109 ), "HURT", "DEAD", SubResource( 110 ) ]
+transitions = [ "BRAIN", "IDLE_N", SubResource( 56 ), "IDLE_N", "BRAIN", SubResource( 57 ), "BRAIN", "IDLE_W", SubResource( 58 ), "IDLE_W", "BRAIN", SubResource( 59 ), "IDLE_E", "BRAIN", SubResource( 60 ), "BRAIN", "IDLE_E", SubResource( 61 ), "BRAIN", "IDLE_S", SubResource( 62 ), "IDLE_S", "BRAIN", SubResource( 63 ), "BRAIN", "IDLE_NW", SubResource( 64 ), "IDLE_NW", "BRAIN", SubResource( 65 ), "BRAIN", "IDLE_SW", SubResource( 66 ), "IDLE_SW", "BRAIN", SubResource( 67 ), "IDLE_NE", "BRAIN", SubResource( 68 ), "BRAIN", "IDLE_NE", SubResource( 69 ), "BRAIN", "IDLE_SE", SubResource( 70 ), "IDLE_SE", "BRAIN", SubResource( 71 ), "IDLE_N", "WALK_N", SubResource( 72 ), "WALK_N", "IDLE_N", SubResource( 73 ), "IDLE_NE", "WALK_NE", SubResource( 74 ), "WALK_NE", "IDLE_NE", SubResource( 75 ), "IDLE_E", "WALK_E", SubResource( 76 ), "WALK_E", "IDLE_E", SubResource( 77 ), "IDLE_SE", "WALK_SE", SubResource( 78 ), "WALK_SE", "IDLE_SE", SubResource( 79 ), "WALK_S", "IDLE_S", SubResource( 80 ), "IDLE_S", "WALK_S", SubResource( 81 ), "IDLE_NW", "WALK_NW", SubResource( 82 ), "WALK_NW", "IDLE_NW", SubResource( 83 ), "IDLE_W", "WALK_W", SubResource( 84 ), "WALK_W", "IDLE_W", SubResource( 85 ), "IDLE_SW", "WALK_SW", SubResource( 86 ), "WALK_SW", "IDLE_SW", SubResource( 87 ), "IDLE_N", "ATTACK_N", SubResource( 88 ), "ATTACK_N", "IDLE_N", SubResource( 89 ), "ATTACK_SW", "IDLE_SW", SubResource( 90 ), "IDLE_SW", "ATTACK_SW", SubResource( 91 ), "ATTACK_S", "IDLE_S", SubResource( 92 ), "IDLE_S", "ATTACK_S", SubResource( 93 ), "ATTACK_SE", "IDLE_SE", SubResource( 94 ), "IDLE_SE", "ATTACK_SE", SubResource( 95 ), "IDLE_W", "ATTACK_W", SubResource( 96 ), "ATTACK_W", "IDLE_W", SubResource( 97 ), "IDLE_NW", "ATTACK_NW", SubResource( 98 ), "ATTACK_NW", "IDLE_NW", SubResource( 99 ), "IDLE_NE", "ATTACK_NE", SubResource( 100 ), "ATTACK_NE", "IDLE_NE", SubResource( 101 ), "IDLE_E", "ATTACK_E", SubResource( 102 ), "ATTACK_E", "IDLE_E", SubResource( 103 ), "BRAIN", "HURT", SubResource( 104 ), "HURT", "BRAIN", SubResource( 105 ), "HURT", "DEAD", SubResource( 106 ) ]
 graph_offset = Vector2( -1160.05, -652.74 )
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id=105]
+[sub_resource type="AnimationNodeStateMachinePlayback" id=108]
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id=106]
+[sub_resource type="AnimationNodeStateMachinePlayback" id=109]
 
 [node name="Player1SigurdFix" type="KinematicBody2D" groups=[
 "hero",
@@ -1434,11 +1434,11 @@ anims/WALK_SW = SubResource( 27 )
 anims/WALK_W = SubResource( 28 )
 
 [node name="FSM" type="AnimationTree" parent="."]
-tree_root = SubResource( 104 )
+tree_root = SubResource( 107 )
 anim_player = NodePath("../AnimationPlayer")
 active = true
 process_mode = 0
-parameters/playback = SubResource( 105 )
+parameters/playback = SubResource( 108 )
 parameters/conditions/Attack = false
 parameters/conditions/LookE = false
 parameters/conditions/LookN = false
@@ -1459,7 +1459,7 @@ parameters/conditions/NotLookSW = false
 parameters/conditions/NotLookW = false
 parameters/conditions/NotWalk = false
 parameters/conditions/Walk = false
-parameters/BRAIN/playback = SubResource( 106 )
+parameters/BRAIN/playback = SubResource( 109 )
 script = ExtResource( 3 )
 
 [node name="Control" type="Control" parent="."]

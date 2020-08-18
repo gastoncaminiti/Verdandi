@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://interfaces/norse/img/background-black.png" type="Texture" id=1]
 [ext_resource path="res://interfaces/norse/font/Norsebold.otf" type="DynamicFontData" id=2]
@@ -9,23 +9,23 @@
 [ext_resource path="res://interfaces/norse/element/Eye.tscn" type="PackedScene" id=7]
 
 [sub_resource type="DynamicFont" id=1]
-size = 40
+size = 30
 outline_size = 1
 outline_color = Color( 0.854902, 0.321569, 0, 1 )
 use_filter = true
 font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=2]
-size = 20
-outline_size = 2
-outline_color = Color( 0.0627451, 0.0392157, 0.0196078, 1 )
+outline_size = 1
+outline_color = Color( 0.309804, 0.0588235, 0.0588235, 1 )
 use_filter = true
 font_data = ExtResource( 3 )
 
 [sub_resource type="DynamicFont" id=3]
-size = 25
+size = 24
 outline_size = 2
 outline_color = Color( 0.0980392, 0.262745, 0.00392157, 1 )
+extra_spacing_char = 1
 font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=4]
@@ -37,21 +37,11 @@ extra_spacing_space = 4
 font_data = ExtResource( 4 )
 
 [sub_resource type="DynamicFont" id=5]
-size = 25
-outline_size = 2
-outline_color = Color( 0.439216, 0.0392157, 0.0392157, 1 )
+size = 22
 font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=6]
-size = 25
-outline_size = 3
-outline_color = Color( 0.231373, 0.117647, 0.0156863, 1 )
-use_filter = true
-extra_spacing_char = 1
-font_data = ExtResource( 2 )
-
-[sub_resource type="DynamicFont" id=7]
-size = 30
+size = 24
 outline_size = 2
 outline_color = Color( 0.254902, 0.184314, 0.0156863, 1 )
 use_filter = true
@@ -60,151 +50,156 @@ font_data = ExtResource( 3 )
 [node name="RuneDetailInterface" type="Node2D"]
 
 [node name="BackRect" type="NinePatchRect" parent="."]
-margin_right = 240.0
-margin_bottom = 275.0
-rect_min_size = Vector2( 240, 275 )
+modulate = Color( 1, 1, 1, 0.941176 )
+margin_right = 200.0
+margin_bottom = 170.0
+rect_min_size = Vector2( 200, 170 )
 texture = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VContainer" type="VBoxContainer" parent="BackRect"]
-margin_left = 10.0
-margin_top = 2.0
-margin_right = 235.0
-margin_bottom = 262.0
-rect_min_size = Vector2( 200, 60 )
+[node name="VContainerRunes" type="VBoxContainer" parent="."]
+margin_left = 8.0
+margin_top = 5.0
+margin_right = 194.0
+margin_bottom = 169.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VCEFFECT" type="VBoxContainer" parent="VContainerRunes"]
+margin_right = 186.0
+margin_bottom = 164.0
+rect_min_size = Vector2( 120, 60 )
 custom_constants/separation = 5
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="CCRuneName" type="MarginContainer" parent="BackRect/VContainer"]
-margin_right = 228.0
-margin_bottom = 45.0
-rect_min_size = Vector2( 210, 0 )
+[node name="HCHeader" type="HBoxContainer" parent="VContainerRunes/VCEFFECT"]
+margin_right = 186.0
+margin_bottom = 34.0
+grow_vertical = 0
 
-[node name="LRuneName" type="Label" parent="BackRect/VContainer/CCRuneName"]
-margin_right = 228.0
-margin_bottom = 45.0
-rect_min_size = Vector2( 200, 0 )
+[node name="CCRuneName" type="MarginContainer" parent="VContainerRunes/VCEFFECT/HCHeader"]
+margin_right = 102.0
+margin_bottom = 34.0
+rect_min_size = Vector2( 100, 0 )
+
+[node name="LRuneName" type="Label" parent="VContainerRunes/VCEFFECT/HCHeader/CCRuneName"]
+margin_right = 102.0
+margin_bottom = 34.0
+rect_min_size = Vector2( 100, 0 )
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0.952941, 0.878431, 0.878431, 1 )
 text = "KEY_RUNE"
 align = 1
 
-[node name="CCRuneStatus" type="MarginContainer" parent="BackRect/VContainer"]
-margin_top = 50.0
-margin_right = 228.0
-margin_bottom = 73.0
+[node name="CCRuneStatus" type="MarginContainer" parent="VContainerRunes/VCEFFECT/HCHeader"]
+margin_left = 106.0
+margin_right = 186.0
+margin_bottom = 34.0
+rect_min_size = Vector2( 60, 28 )
 
-[node name="LRuneStatus" type="Label" parent="BackRect/VContainer/CCRuneStatus"]
-margin_right = 228.0
-margin_bottom = 23.0
-rect_min_size = Vector2( 80, 0 )
+[node name="LRuneStatus" type="Label" parent="VContainerRunes/VCEFFECT/HCHeader/CCRuneStatus"]
+margin_top = 3.0
+margin_right = 80.0
+margin_bottom = 31.0
+rect_min_size = Vector2( 80, 28 )
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 1, 0.219608, 0.105882, 1 )
 text = "KEY_STATUS"
 align = 1
 
-[node name="HCEffect" type="HBoxContainer" parent="BackRect/VContainer"]
-margin_top = 78.0
-margin_right = 228.0
-margin_bottom = 129.0
-custom_constants/separation = 8
-alignment = 1
+[node name="HCEffect" type="HBoxContainer" parent="VContainerRunes/VCEFFECT"]
+margin_top = 39.0
+margin_right = 186.0
+margin_bottom = 67.0
+custom_constants/separation = 1
 
-[node name="VLEContainer" type="VBoxContainer" parent="BackRect/VContainer/HCEffect"]
-margin_right = 110.0
-margin_bottom = 51.0
-
-[node name="LEffect" type="Label" parent="BackRect/VContainer/HCEffect/VLEContainer"]
-margin_right = 110.0
+[node name="CCEffect" type="MarginContainer" parent="VContainerRunes/VCEFFECT/HCEffect"]
+margin_right = 90.0
 margin_bottom = 28.0
-rect_min_size = Vector2( 110, 0 )
+rect_min_size = Vector2( 90, 0 )
+
+[node name="LEffect" type="Label" parent="VContainerRunes/VCEFFECT/HCEffect/CCEffect"]
+margin_right = 90.0
+margin_bottom = 28.0
 custom_fonts/font = SubResource( 3 )
 text = "EFFECT"
 align = 1
+valign = 1
 
-[node name="Label" type="Label" parent="BackRect/VContainer/HCEffect/VLEContainer"]
-margin_top = 32.0
-margin_right = 110.0
-margin_bottom = 51.0
+[node name="CCTurn" type="MarginContainer" parent="VContainerRunes/VCEFFECT/HCEffect"]
+margin_left = 91.0
+margin_right = 171.0
+margin_bottom = 28.0
+rect_min_size = Vector2( 80, 0 )
+
+[node name="LTurn" type="Label" parent="VContainerRunes/VCEFFECT/HCEffect/CCTurn"]
+margin_top = 4.0
+margin_right = 80.0
+margin_bottom = 23.0
 custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "3 turns"
 align = 1
 
-[node name="VLIEContainer" type="VBoxContainer" parent="BackRect/VContainer/HCEffect"]
-margin_left = 118.0
-margin_right = 228.0
-margin_bottom = 51.0
+[node name="CCEffectDescription" type="MarginContainer" parent="VContainerRunes/VCEFFECT"]
+margin_top = 72.0
+margin_right = 186.0
+margin_bottom = 125.0
+rect_min_size = Vector2( 0, 53 )
 
-[node name="LIEffect" type="Label" parent="BackRect/VContainer/HCEffect/VLIEContainer"]
-margin_right = 110.0
-margin_bottom = 28.0
-rect_min_size = Vector2( 110, 0 )
+[node name="LEffectDescription" type="Label" parent="VContainerRunes/VCEFFECT/CCEffectDescription"]
+margin_right = 186.0
+margin_bottom = 53.0
+rect_min_size = Vector2( 175, 50 )
 custom_fonts/font = SubResource( 5 )
-text = "EFFECT"
-align = 1
-
-[node name="Label" type="Label" parent="BackRect/VContainer/HCEffect/VLIEContainer"]
-margin_top = 32.0
-margin_right = 110.0
-margin_bottom = 51.0
-custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
-text = "7 turns"
-align = 1
-
-[node name="CCEffectDescription" type="CenterContainer" parent="BackRect/VContainer"]
-margin_top = 134.0
-margin_right = 228.0
-margin_bottom = 234.0
-
-[node name="LEffectDescription" type="Label" parent="BackRect/VContainer/CCEffectDescription"]
-margin_left = 4.0
-margin_right = 224.0
-margin_bottom = 100.0
-rect_min_size = Vector2( 220, 100 )
-custom_fonts/font = SubResource( 6 )
-custom_colors/font_color = Color( 0.839216, 0.839216, 0.839216, 1 )
-custom_constants/line_spacing = 8
-text = "EFFECT EFFECTEFF ECTEFF ECTEFFE CTEFFECT FFECT FFECT  FFECT FFECTFFECT FFECT"
+text = "EFFECT EFFECTEFF EFFECT 
+EFFECTEFF EFFECT "
 align = 1
 valign = 1
 autowrap = true
-clip_text = true
 
-[node name="HCAlignment" type="HBoxContainer" parent="BackRect/VContainer"]
-margin_top = 239.0
-margin_right = 228.0
-margin_bottom = 273.0
+[node name="HCAlignment" type="HBoxContainer" parent="VContainerRunes/VCEFFECT"]
+margin_top = 130.0
+margin_right = 186.0
+margin_bottom = 164.0
 custom_constants/separation = 8
 alignment = 1
 
-[node name="MCAlignment" type="MarginContainer" parent="BackRect/VContainer/HCAlignment"]
-margin_left = 8.0
-margin_right = 42.0
+[node name="MCAlignment" type="MarginContainer" parent="VContainerRunes/VCEFFECT/HCAlignment"]
+margin_left = 22.0
+margin_right = 56.0
 margin_bottom = 34.0
 rect_min_size = Vector2( 34, 34 )
 
-[node name="Axe" parent="BackRect/VContainer/HCAlignment/MCAlignment" instance=ExtResource( 5 )]
+[node name="Axe" parent="VContainerRunes/VCEFFECT/HCAlignment/MCAlignment" instance=ExtResource( 5 )]
 margin_right = 34.0
 margin_bottom = 34.0
+stretch_mode = 5
 
-[node name="Coin" parent="BackRect/VContainer/HCAlignment/MCAlignment" instance=ExtResource( 6 )]
+[node name="Coin" parent="VContainerRunes/VCEFFECT/HCAlignment/MCAlignment" instance=ExtResource( 6 )]
 margin_right = 34.0
 margin_bottom = 34.0
+expand = false
+stretch_mode = 0
 
-[node name="Eye" parent="BackRect/VContainer/HCAlignment/MCAlignment" instance=ExtResource( 7 )]
+[node name="Eye" parent="VContainerRunes/VCEFFECT/HCAlignment/MCAlignment" instance=ExtResource( 7 )]
 margin_right = 34.0
 margin_bottom = 34.0
+rect_scale = Vector2( 1, 1 )
+expand = false
+stretch_mode = 0
 
-[node name="LAlignment" type="Label" parent="BackRect/VContainer/HCAlignment"]
-margin_left = 50.0
-margin_right = 220.0
-margin_bottom = 34.0
-rect_min_size = Vector2( 170, 0 )
-custom_fonts/font = SubResource( 7 )
+[node name="LAlignment" type="Label" parent="VContainerRunes/VCEFFECT/HCAlignment"]
+margin_left = 64.0
+margin_top = 3.0
+margin_right = 164.0
+margin_bottom = 31.0
+rect_min_size = Vector2( 100, 0 )
+custom_fonts/font = SubResource( 6 )
 text = "KEY_ALING"
