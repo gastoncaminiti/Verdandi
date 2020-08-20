@@ -56,8 +56,8 @@ func _ready():
 	_cooldown.connect("timeout", self, "_on_cooldown_timeout")
 	# Light Config
 	set_global_light_status(false)
-	map_ref = $Map
-
+	map_ref = $LevelMap/Map
+	
 func _input(event):
 	#TEST MOVOMIMIENTO DE UNIDADES
 	if Input.is_key_pressed(KEY_SPACE):
