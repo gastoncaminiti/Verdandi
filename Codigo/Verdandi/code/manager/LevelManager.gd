@@ -31,6 +31,7 @@ var my_enemies = []
 
 #MAPA REFERENCIA
 var map_ref
+var gui_map_ref
 # Timer VAR
 var _cooldown = Timer.new()
 
@@ -57,6 +58,7 @@ func _ready():
 	# Light Config
 	set_global_light_status(false)
 	map_ref = $LevelMap/Map
+	gui_map_ref = $LevelMap
 	
 func _input(event):
 	#TEST MOVOMIMIENTO DE UNIDADES

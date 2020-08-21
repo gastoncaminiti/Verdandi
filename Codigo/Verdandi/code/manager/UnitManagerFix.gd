@@ -93,20 +93,21 @@ func _unit_guard_state():
 #FUNCION EN RESPUESTA A LA SEÑAL DE ENTRADA DEL MOUSE SOBRE LA UNIDAD.
 func _on_Control_mouse_entered():
 	if !get_turn_status():
-		owner.map_ref.switch_in_compass_order(global_position,1,get_unit_stat("move_range"))
+		owner.gui_map_ref.show_selected_grid(global_position,5,2,0)
 		get_parent().selected_unit(unit_stats)
 #FUNCION EN RESPUESTA A LA SEÑAL DE SALIDA DEL MOUSE SOBRE LA UNIDAD.
 func _on_Control_mouse_exited():
-	owner.map_ref.switch_in_compass_order(global_position,0,get_unit_stat("move_range"))
+	owner.gui_map_ref.hide_select_map()
 	get_parent().unselected_unit()
 #FUNCION EN RESPUESTA A LA SEÑAL DE EVENTO DEL MOUSE SOBRE LA UNIDAD.
 func _on_Control_gui_input(event):
 	if event is InputEventMouseButton:
 		if owner.is_in_group("Level"):
 			if event.button_index  == BUTTON_LEFT and event.pressed  and !get_turn_status():
-				owner.map_ref.switch_in_compass_order(global_position,2,get_unit_stat("attack_range"))
+				owner.gui_map_ref.show_selected_grid(global_position,3,1,1)
 			if event.button_index  == BUTTON_RIGHT and event.pressed and !get_turn_status():
-				_attack_started()
+				#_attack_started()
+				owner.gui_map_ref.show_selected_grid(global_position,3,1,2)
 #FUNCTION CALL FOR CONECT A SIGNAL FROM PARENT TO CHILD.
 func connect_parent_child(nsignal, nfunction):
 	if owner != null and owner.is_in_group("Level"):
