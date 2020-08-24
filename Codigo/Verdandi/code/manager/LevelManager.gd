@@ -64,6 +64,7 @@ func _input(event):
 	#TEST MOVOMIMIENTO DE UNIDADES
 	if Input.is_key_pressed(KEY_SPACE):
 		emit_signal("turn_started")
+		$LevelMap.show_grid_map()
 
 # Función: Definición de eventos durante el combate.
 func battle_turn():

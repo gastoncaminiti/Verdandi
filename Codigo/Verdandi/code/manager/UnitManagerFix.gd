@@ -18,6 +18,7 @@ export var unit_stats = {
 #VARIABLES  
 var next_point
 var flag_turn setget set_turn_status, get_turn_status
+var my_path = Array()
 #FUNCION DE PREPARACION DEL NODO
 func _ready():
 	connect_parent_child("ready","_status_ready")
@@ -25,12 +26,12 @@ func _ready():
 	set_turn_status(false)
 #FUNCION EN RESPUESTA A LA SEÑAL DE CAMBIO DE ESTADO
 func _start_actions():
-	set_next_point()
 	set_turn_status(true)
 	_unit_walk_state()
 #FUNCION EN RESPUESTA A LA SEÑAL DE ESTADO INICIAL EN RELACION AL PADRE
 func _status_ready():
 	set_position_center_to_cell()
+	set_next_point()
 #FUNCION PROCESS A EJECUTAR EN CADA TIC DE LA FISICA
 func _physics_process(delta):
 	if is_status("WALK"):
@@ -44,6 +45,8 @@ func is_end_to_movement(delta):
 #FUNCTION SET NEXT POINT
 func set_next_point():
 	next_point = owner.map_ref.get_next_point(global_position,get_unit_stat("orientation"))
+	my_path.clear()
+	my_path.append(owner.map_ref.get_cell_for_point(next_point))
 #FUNCTION GET NEXT POINT
 func get_next_point():
 	return next_point
@@ -82,6 +85,7 @@ func _unit_stop_state():
 	set_unit_stat("status","IDLE")
 	$FSM.update_walk_choise()
 	set_turn_status(false)
+	set_next_point()
 #FUNCTION CALL WHEN ATTACK STATUS IS NEED.
 func _unit_attack_state():
 	set_unit_stat("status","ATTACK")
@@ -93,7 +97,7 @@ func _unit_guard_state():
 #FUNCION EN RESPUESTA A LA SEÑAL DE ENTRADA DEL MOUSE SOBRE LA UNIDAD.
 func _on_Control_mouse_entered():
 	if !get_turn_status():
-		owner.gui_map_ref.show_selected_grid(global_position,5,2,0)
+		owner.gui_map_ref.set_selected_cells(my_path,2)
 		get_parent().selected_unit(unit_stats)
 #FUNCION EN RESPUESTA A LA SEÑAL DE SALIDA DEL MOUSE SOBRE LA UNIDAD.
 func _on_Control_mouse_exited():
@@ -104,10 +108,10 @@ func _on_Control_gui_input(event):
 	if event is InputEventMouseButton:
 		if owner.is_in_group("Level"):
 			if event.button_index  == BUTTON_LEFT and event.pressed  and !get_turn_status():
-				owner.gui_map_ref.show_selected_grid(global_position,3,1,1)
+				owner.gui_map_ref.show_selected_grid(global_position,5,2,0)
 			if event.button_index  == BUTTON_RIGHT and event.pressed and !get_turn_status():
 				#_attack_started()
-				owner.gui_map_ref.show_selected_grid(global_position,3,1,2)
+				owner.gui_map_ref.show_selected_grid(global_position,3,1,1)
 #FUNCTION CALL FOR CONECT A SIGNAL FROM PARENT TO CHILD.
 func connect_parent_child(nsignal, nfunction):
 	if owner != null and owner.is_in_group("Level"):
