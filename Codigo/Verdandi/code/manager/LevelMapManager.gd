@@ -1,9 +1,46 @@
 extends Node2D
-
+# -------------------------------------LEVELMAPMANAGER SCRIPT -------------------------------------
+# Containers VAR
+var map_astar = null
+var point_dic = {}
+#FUNCTION READY
 func _ready():
 	hide_select_map()
+	init_points_astar2D()
+	connect_point_dic()
 #-------------------------------------SECTION A*  MAP FUNCTION-------------------------------------
-
+#FUNCTION
+func init_points_astar2D():
+	map_astar = AStar2D.new()
+	var used_cells = $Map.get_used_cells()
+	for cell in used_cells:
+		var point_astar_id = map_astar.get_available_point_id()
+		map_astar.add_point(point_astar_id,$Map.get_center_point_for_cell(cell), 1)
+		point_dic[get_index_point_dic(cell)] = point_astar_id
+#FUNCTION
+func get_index_point_dic(cell):
+	return str(int(round(cell.x)))+","+str(int(round(cell.y)))
+#FUNCTION
+func connect_point_dic():
+	for cell in $Map.get_used_cells():
+		for x in [-1,0]:
+			for y in [-1,0]:
+				var v2 = Vector2(x,y)
+				if v2 == Vector2(0,0):
+					continue
+				if get_index_point_dic(v2+cell) in point_dic:
+					var id1 = point_dic[get_index_point_dic(cell)]
+					var id2 = point_dic[get_index_point_dic(cell + v2)]
+					if !map_astar.are_points_connected(id1,id2):
+						map_astar.connect_points(id1,id2,true)
+#FUNCTION
+func get_astar_path(start,end):
+	var mp_start = get_index_point_dic($Map.get_cell_for_point(start))
+	var mp_end = get_index_point_dic($Map.get_cell_for_point(end))
+	return map_astar.get_point_path(get_valid_astar_id(mp_start,start), get_valid_astar_id(mp_end,end))
+#FUNCTION
+func get_valid_astar_id(id,point):
+	return point_dic[id] if id in point_dic else map_astar.get_closest_point(point)
 #-------------------------------------SECTION GUI MAP FUNCTION-------------------------------------
 #FUNCTION CLEAR ALL TILES IN SELECTMAP.
 func hide_select_map():

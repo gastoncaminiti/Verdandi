@@ -19,6 +19,7 @@ export var unit_stats = {
 var next_point
 var flag_turn setget set_turn_status, get_turn_status
 var my_path = Array()
+var my_astar_path = PoolVector2Array()
 #FUNCION DE PREPARACION DEL NODO
 func _ready():
 	connect_parent_child("ready","_status_ready")
@@ -39,14 +40,18 @@ func _physics_process(delta):
 			_unit_stop_state()
 #FUNCTION CALL WHEN GO TO NEXT POINT
 func is_end_to_movement(delta):
-	var distance: float = global_position.distance_to(get_next_point())
-	global_position = global_position.linear_interpolate(get_next_point(), SPEED_UNIT * delta / distance)
+	#var distance: float = global_position.distance_to(get_next_point())
+	var distance: float = global_position.distance_to(my_astar_path[my_astar_path.size()- 1])
+	global_position = global_position.linear_interpolate(my_astar_path[my_astar_path.size()- 1], SPEED_UNIT * delta / distance)
 	return distance < MIN_DISTANCE
 #FUNCTION SET NEXT POINT
 func set_next_point():
 	next_point = owner.map_ref.get_next_point(global_position,get_unit_stat("orientation"))
 	my_path.clear()
 	my_path.append(owner.map_ref.get_cell_for_point(next_point))
+	# A* test
+	my_astar_path = owner.gui_map_ref.get_astar_path(global_position,next_point)
+	print(my_astar_path)
 #FUNCTION GET NEXT POINT
 func get_next_point():
 	return next_point
