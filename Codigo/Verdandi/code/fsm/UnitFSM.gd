@@ -8,6 +8,7 @@ func _ready():
 func update_brain_choises():
 	reset_brain_choises()
 	# CONDITIONS: DIRECCTION SELECT
+	print(get_parent().unit_stats.orientation)
 	match get_parent().unit_stats.orientation:
 		0:
 			self["parameters/conditions/LookN"]  = true
@@ -37,6 +38,7 @@ func reset_brain_choises():
 	self["parameters/conditions/LookNW"] = false
 
 func update_idle_choises():
+	self.get("parameters/playback").start("BRAIN")
 	reset_idle_choises()
 	# CONDITIONS: DIRECCTION SELECT
 	match get_parent().unit_stats.orientation:

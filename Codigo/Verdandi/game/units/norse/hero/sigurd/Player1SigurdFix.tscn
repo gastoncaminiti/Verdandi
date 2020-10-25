@@ -1153,18 +1153,15 @@ animation = "WALK_W"
 advance_condition = "LookN"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=57]
-switch_mode = 2
 advance_condition = "NotLookN"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=58]
 advance_condition = "LookW"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=59]
-switch_mode = 2
 advance_condition = "NotLookW"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=60]
-switch_mode = 2
 advance_condition = "NotLookE"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=61]
@@ -1174,25 +1171,21 @@ advance_condition = "LookE"
 advance_condition = "LookS"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=63]
-switch_mode = 2
 advance_condition = "NotLookS"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=64]
 advance_condition = "LookNW"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=65]
-switch_mode = 2
 advance_condition = "NotLookNW"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=66]
 advance_condition = "LookSW"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=67]
-switch_mode = 2
 advance_condition = "NotLookSW"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=68]
-switch_mode = 2
 advance_condition = "NotLookNE"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=69]
@@ -1202,7 +1195,6 @@ advance_condition = "LookNE"
 advance_condition = "LookSE"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=71]
-switch_mode = 2
 advance_condition = "NotLookSE"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=72]
@@ -1312,7 +1304,6 @@ advance_condition = "NotAttack"
 [sub_resource type="AnimationNodeStateMachineTransition" id=104]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=105]
-switch_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=106]
 
@@ -1372,7 +1363,7 @@ states/WALK_SW/position = Vector2( -1058.32, -507 )
 states/WALK_W/node = SubResource( 55 )
 states/WALK_W/position = Vector2( -699, -558 )
 transitions = [ "BRAIN", "IDLE_N", SubResource( 56 ), "IDLE_N", "BRAIN", SubResource( 57 ), "BRAIN", "IDLE_W", SubResource( 58 ), "IDLE_W", "BRAIN", SubResource( 59 ), "IDLE_E", "BRAIN", SubResource( 60 ), "BRAIN", "IDLE_E", SubResource( 61 ), "BRAIN", "IDLE_S", SubResource( 62 ), "IDLE_S", "BRAIN", SubResource( 63 ), "BRAIN", "IDLE_NW", SubResource( 64 ), "IDLE_NW", "BRAIN", SubResource( 65 ), "BRAIN", "IDLE_SW", SubResource( 66 ), "IDLE_SW", "BRAIN", SubResource( 67 ), "IDLE_NE", "BRAIN", SubResource( 68 ), "BRAIN", "IDLE_NE", SubResource( 69 ), "BRAIN", "IDLE_SE", SubResource( 70 ), "IDLE_SE", "BRAIN", SubResource( 71 ), "IDLE_N", "WALK_N", SubResource( 72 ), "WALK_N", "IDLE_N", SubResource( 73 ), "IDLE_NE", "WALK_NE", SubResource( 74 ), "WALK_NE", "IDLE_NE", SubResource( 75 ), "IDLE_E", "WALK_E", SubResource( 76 ), "WALK_E", "IDLE_E", SubResource( 77 ), "IDLE_SE", "WALK_SE", SubResource( 78 ), "WALK_SE", "IDLE_SE", SubResource( 79 ), "WALK_S", "IDLE_S", SubResource( 80 ), "IDLE_S", "WALK_S", SubResource( 81 ), "IDLE_NW", "WALK_NW", SubResource( 82 ), "WALK_NW", "IDLE_NW", SubResource( 83 ), "IDLE_W", "WALK_W", SubResource( 84 ), "WALK_W", "IDLE_W", SubResource( 85 ), "IDLE_SW", "WALK_SW", SubResource( 86 ), "WALK_SW", "IDLE_SW", SubResource( 87 ), "IDLE_N", "ATTACK_N", SubResource( 88 ), "ATTACK_N", "IDLE_N", SubResource( 89 ), "ATTACK_SW", "IDLE_SW", SubResource( 90 ), "IDLE_SW", "ATTACK_SW", SubResource( 91 ), "ATTACK_S", "IDLE_S", SubResource( 92 ), "IDLE_S", "ATTACK_S", SubResource( 93 ), "ATTACK_SE", "IDLE_SE", SubResource( 94 ), "IDLE_SE", "ATTACK_SE", SubResource( 95 ), "IDLE_W", "ATTACK_W", SubResource( 96 ), "ATTACK_W", "IDLE_W", SubResource( 97 ), "IDLE_NW", "ATTACK_NW", SubResource( 98 ), "ATTACK_NW", "IDLE_NW", SubResource( 99 ), "IDLE_NE", "ATTACK_NE", SubResource( 100 ), "ATTACK_NE", "IDLE_NE", SubResource( 101 ), "IDLE_E", "ATTACK_E", SubResource( 102 ), "ATTACK_E", "IDLE_E", SubResource( 103 ), "BRAIN", "HURT", SubResource( 104 ), "HURT", "BRAIN", SubResource( 105 ), "HURT", "DEAD", SubResource( 106 ) ]
-graph_offset = Vector2( -1160.05, -652.74 )
+graph_offset = Vector2( -1160.05, -444.62 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=108]
 

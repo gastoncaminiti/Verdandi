@@ -23,24 +23,35 @@ func get_index_point_dic(cell):
 #FUNCTION
 func connect_point_dic():
 	for cell in $Map.get_used_cells():
-		for x in [-1,0]:
-			for y in [-1,0]:
-				var v2 = Vector2(x,y)
-				if v2 == Vector2(0,0):
-					continue
-				if get_index_point_dic(v2+cell) in point_dic:
-					var id1 = point_dic[get_index_point_dic(cell)]
-					var id2 = point_dic[get_index_point_dic(cell + v2)]
-					if !map_astar.are_points_connected(id1,id2):
-						map_astar.connect_points(id1,id2,true)
+		for cardinal in $Map.COMPASS:
+			if get_index_point_dic(cardinal+cell) in point_dic:
+				var id1 = point_dic[get_index_point_dic(cell)]
+				var id2 = point_dic[get_index_point_dic(cell + cardinal)]
+				if !map_astar.are_points_connected(id1,id2):
+					map_astar.connect_points(id1,id2,true)
 #FUNCTION
 func get_astar_path(start,end):
-	var mp_start = get_index_point_dic($Map.get_cell_for_point(start))
-	var mp_end = get_index_point_dic($Map.get_cell_for_point(end))
-	return map_astar.get_point_path(get_valid_astar_id(mp_start,start), get_valid_astar_id(mp_end,end))
+	var mp_start = get_id_for_point(start)
+	var mp_end   = get_id_for_point(end)
+	var start_id = get_valid_astar_id(mp_start,start)
+	var end_id   = get_valid_astar_id(mp_end,end)
+	print("-----------------------------------------")
+	print(start_id)
+	print(get_relations_id(start_id))
+	if start_id == end_id:
+		var  neighbors = get_relations_id(end_id)
+		return map_astar.get_point_path(start_id, neighbors[randi() % neighbors.size()])
+	else:
+		return map_astar.get_point_path(start_id, end_id)
 #FUNCTION
 func get_valid_astar_id(id,point):
 	return point_dic[id] if id in point_dic else map_astar.get_closest_point(point)
+#FUNCTION
+func get_id_for_point(point):
+	return  get_index_point_dic($Map.get_cell_for_point(point))
+#FUNCTION
+func get_relations_id(id):
+	return  map_astar.get_point_connections(id)
 #-------------------------------------SECTION GUI MAP FUNCTION-------------------------------------
 #FUNCTION CLEAR ALL TILES IN SELECTMAP.
 func hide_select_map():
@@ -53,6 +64,19 @@ func show_grid_map():
 #FUNCTION SHOW TILE IN ONE VALID CELLS.
 func set_selected_cell(cell,id_tile):
 	$SelectMap.set_cellv(cell, id_tile)
+#FUNCTION SHOW TILE FOR PATH
+func set_selected_path(my_path, id_tile):
+	var cells = Array()
+	for p in my_path.size():
+		cells.append($Map.get_cell_for_point(my_path[p]))
+	cells.pop_front()
+	set_selected_cells(cells,id_tile)
+#FUNCTION GET COMPASS 
+func path_computed(my_path):
+	#ERROR EN DIAGONAL
+	return $Map.get_cell_for_point(my_path[1]) - $Map.get_cell_for_point(my_path[0])
+func in_compass(cardinal):
+	return $Map.COMPASS.find(cardinal)
 #FUNCTION SHOW TILES IN ESPECIFICS CELLS.
 func set_selected_cells(cells,id_tile):
 	for i in cells.size():

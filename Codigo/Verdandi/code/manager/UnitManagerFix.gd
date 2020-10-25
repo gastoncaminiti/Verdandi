@@ -18,7 +18,6 @@ export var unit_stats = {
 #VARIABLES  
 var next_point
 var flag_turn setget set_turn_status, get_turn_status
-var my_path = Array()
 var my_astar_path = PoolVector2Array()
 #FUNCION DE PREPARACION DEL NODO
 func _ready():
@@ -40,18 +39,18 @@ func _physics_process(delta):
 			_unit_stop_state()
 #FUNCTION CALL WHEN GO TO NEXT POINT
 func is_end_to_movement(delta):
-	#var distance: float = global_position.distance_to(get_next_point())
 	var distance: float = global_position.distance_to(my_astar_path[my_astar_path.size()- 1])
 	global_position = global_position.linear_interpolate(my_astar_path[my_astar_path.size()- 1], SPEED_UNIT * delta / distance)
 	return distance < MIN_DISTANCE
 #FUNCTION SET NEXT POINT
 func set_next_point():
 	next_point = owner.map_ref.get_next_point(global_position,get_unit_stat("orientation"))
-	my_path.clear()
-	my_path.append(owner.map_ref.get_cell_for_point(next_point))
 	# A* test
 	my_astar_path = owner.gui_map_ref.get_astar_path(global_position,next_point)
-	print(my_astar_path)
+	#print(owner.gui_map_ref.path_computed(my_astar_path))
+	set_unit_stat("orientation",int(owner.gui_map_ref.in_compass(owner.gui_map_ref.path_computed(my_astar_path))))
+	#print(get_unit_stat("orientation"))
+	#print(my_astar_path)
 #FUNCTION GET NEXT POINT
 func get_next_point():
 	return next_point
@@ -89,8 +88,10 @@ func _unit_walk_state():
 func _unit_stop_state():
 	set_unit_stat("status","IDLE")
 	$FSM.update_walk_choise()
-	set_turn_status(false)
 	set_next_point()
+	$FSM.update_idle_choises()
+	$FSM.update_brain_choises()
+	set_turn_status(false)
 #FUNCTION CALL WHEN ATTACK STATUS IS NEED.
 func _unit_attack_state():
 	set_unit_stat("status","ATTACK")
@@ -102,7 +103,7 @@ func _unit_guard_state():
 #FUNCION EN RESPUESTA A LA SEÑAL DE ENTRADA DEL MOUSE SOBRE LA UNIDAD.
 func _on_Control_mouse_entered():
 	if !get_turn_status():
-		owner.gui_map_ref.set_selected_cells(my_path,2)
+		owner.gui_map_ref.set_selected_path(my_astar_path,2)
 		get_parent().selected_unit(unit_stats)
 #FUNCION EN RESPUESTA A LA SEÑAL DE SALIDA DEL MOUSE SOBRE LA UNIDAD.
 func _on_Control_mouse_exited():

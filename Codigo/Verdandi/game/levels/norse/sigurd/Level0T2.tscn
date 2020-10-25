@@ -28,7 +28,7 @@ tile_set = ExtResource( 2 )
 cell_size = Vector2( 32, 16 )
 cell_custom_transform = Transform2D( 0, 0, 0, 0, 0, 0 )
 format = 1
-tile_data = PoolIntArray( 196625, 8, 0, 196626, 8, 0, 196627, 8, 0, 196628, 8, 0, 196629, 8, 0, 262161, 8, 0, 262162, 8, 0, 262163, 8, 0, 262164, 8, 0, 262165, 8, 0, 327697, 8, 0, 327698, 8, 0, 327699, 8, 0, 327700, 8, 0, 327701, 8, 0, 393233, 8, 0, 393234, 8, 0, 393235, 8, 0, 393236, 8, 0, 393237, 8, 0, 458769, 8, 0, 458770, 8, 0, 458771, 8, 0, 458772, 8, 0, 458773, 8, 0 )
+tile_data = PoolIntArray( -589801, 8, 0, -589800, 8, 0, -524266, 8, 0, -524265, 8, 0, -524264, 8, 0, -458730, 8, 0, -458729, 8, 0, -393194, 8, 0, -393193, 8, 0, -327664, 8, 0, -327663, 8, 0, -327659, 8, 0, -327658, 8, 0, -262129, 8, 0, -262128, 8, 0, -262127, 8, 0, -262123, 8, 0, -262122, 8, 0, -196596, 8, 0, -196595, 8, 0, -196594, 8, 0, -196593, 8, 0, -196592, 8, 0, -196588, 8, 0, -196587, 8, 0, -131061, 8, 0, -131060, 8, 0, -131059, 8, 0, -131058, 8, 0, -131052, 8, 0, -131051, 8, 0, -65525, 8, 0, -65524, 8, 0, -65511, 8, 0, -65510, 8, 0, 17, 8, 0, 18, 8, 0, 25, 8, 0, 26, 8, 0, 65553, 8, 0, 65554, 8, 0, 65560, 8, 0, 65561, 8, 0, 65562, 8, 0, 131088, 8, 0, 131089, 8, 0, 131096, 8, 0, 131097, 8, 0, 196624, 8, 0, 196625, 8, 0, 196631, 8, 0, 196632, 8, 0, 262161, 8, 0, 262162, 8, 0, 262167, 8, 0, 262168, 8, 0, 327697, 8, 0, 327698, 8, 0, 327702, 8, 0, 327703, 8, 0, 393233, 8, 0, 393234, 8, 0, 393235, 8, 0, 393238, 8, 0, 393239, 8, 0, 458770, 8, 0, 458771, 8, 0 )
 script = ExtResource( 5 )
 
 [node name="SelectMap" type="TileMap" parent="LevelMap"]
@@ -39,7 +39,7 @@ cell_custom_transform = Transform2D( 0, 0, 0, 0, 0, 0 )
 format = 1
 
 [node name="Player1Sigurd" parent="." instance=ExtResource( 4 )]
-position = Vector2( 220.057, 200.699 )
+position = Vector2( 269.878, 239.48 )
 unit_stats = {
 "attack": 30,
 "attack_range": 1,
@@ -49,6 +49,48 @@ unit_stats = {
 "move_range": 1,
 "name": "Sigurd",
 "orientation": 0,
+"status": "IDLE"
+}
+
+[node name="Player1Sigurd2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 270.082, 156.539 )
+unit_stats = {
+"attack": 30,
+"attack_range": 1,
+"attack_speed": 2,
+"defense": 5,
+"life": 200,
+"move_range": 1,
+"name": "Sigurd",
+"orientation": 6,
+"status": "IDLE"
+}
+
+[node name="Player1Sigurd4" parent="." instance=ExtResource( 4 )]
+position = Vector2( 348.903, 148.924 )
+unit_stats = {
+"attack": 30,
+"attack_range": 1,
+"attack_speed": 2,
+"defense": 5,
+"life": 200,
+"move_range": 0,
+"name": "Sigurd",
+"orientation": 0,
+"status": "IDLE"
+}
+
+[node name="Player1Sigurd5" parent="." instance=ExtResource( 4 )]
+position = Vector2( 342.743, 106.317 )
+unit_stats = {
+"attack": 30,
+"attack_range": 1,
+"attack_speed": 2,
+"defense": 5,
+"life": 200,
+"move_range": 0,
+"name": "Sigurd",
+"orientation": 6,
 "status": "IDLE"
 }
 
