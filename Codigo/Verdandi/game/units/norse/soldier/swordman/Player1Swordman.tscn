@@ -55,16 +55,6 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 18 ) ],
-"loop": true,
-"name": "idle_north_east",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 48 ), ExtResource( 44 ), ExtResource( 42 ), ExtResource( 14 ) ],
-"loop": false,
-"name": "attack_north",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 18 ), ExtResource( 7 ), ExtResource( 25 ), ExtResource( 50 ), ExtResource( 4 ) ],
 "loop": true,
 "name": "walk_north_east",
@@ -85,10 +75,25 @@ animations = [ {
 "name": "idle_north",
 "speed": 5.0
 }, {
+"frames": [ ExtResource( 48 ), ExtResource( 44 ), ExtResource( 42 ), ExtResource( 14 ) ],
+"loop": false,
+"name": "attack_north",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 51 ) ],
 "loop": true,
 "name": "idle_south_east",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 46 ), ExtResource( 24 ), ExtResource( 49 ), ExtResource( 8 ) ],
+"loop": false,
+"name": "attack_south_east",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 10 ), ExtResource( 31 ), ExtResource( 28 ), ExtResource( 9 ), ExtResource( 12 ) ],
+"loop": true,
+"name": "walk_north_west",
+"speed": 10.0
 }, {
 "frames": [ ExtResource( 38 ), ExtResource( 33 ), ExtResource( 40 ), ExtResource( 32 ), ExtResource( 35 ) ],
 "loop": true,
@@ -99,26 +104,6 @@ animations = [ {
 "loop": true,
 "name": "walk_south_east",
 "speed": 10.0
-}, {
-"frames": [ ExtResource( 10 ), ExtResource( 31 ), ExtResource( 28 ), ExtResource( 9 ), ExtResource( 12 ) ],
-"loop": true,
-"name": "walk_north_west",
-"speed": 10.0
-}, {
-"frames": [ ExtResource( 46 ), ExtResource( 24 ), ExtResource( 49 ), ExtResource( 8 ) ],
-"loop": false,
-"name": "attack_south_east",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 26 ), ExtResource( 15 ), ExtResource( 41 ), ExtResource( 30 ) ],
-"loop": false,
-"name": "attack_east",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 39 ), ExtResource( 47 ), ExtResource( 36 ) ],
-"loop": false,
-"name": "dead_east",
-"speed": 5.0
 }, {
 "frames": [ ExtResource( 6 ), ExtResource( 23 ), ExtResource( 17 ), ExtResource( 21 ), ExtResource( 6 ) ],
 "loop": true,
@@ -133,6 +118,21 @@ animations = [ {
 "frames": [ ExtResource( 10 ) ],
 "loop": true,
 "name": "idle_north_west",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 39 ), ExtResource( 47 ), ExtResource( 36 ) ],
+"loop": false,
+"name": "dead_east",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 26 ), ExtResource( 15 ), ExtResource( 41 ), ExtResource( 30 ) ],
+"loop": false,
+"name": "attack_east",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 18 ) ],
+"loop": true,
+"name": "idle_north_east",
 "speed": 5.0
 } ]
 
