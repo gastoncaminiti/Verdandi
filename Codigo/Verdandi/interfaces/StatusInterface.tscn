@@ -1,10 +1,10 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=12 format=2]
 
-[ext_resource path="res://interfaces/norse/img/interface_00.png" type="Texture" id=2]
+[ext_resource path="res://interfaces/norse/img/Status/statusIcon2.png" type="Texture" id=1]
+[ext_resource path="res://interfaces/norse/img/Status/statusIcon0.png" type="Texture" id=2]
+[ext_resource path="res://interfaces/norse/img/Status/statusIcon1.png" type="Texture" id=3]
 [ext_resource path="res://interfaces/norse/font/Norsebold.otf" type="DynamicFontData" id=4]
-[ext_resource path="res://interfaces/norse/img/interface_01.png" type="Texture" id=5]
-[ext_resource path="res://interfaces/norse/img/interface_02.png" type="Texture" id=6]
-[ext_resource path="res://interfaces/norse/img/interface_03.png" type="Texture" id=7]
+[ext_resource path="res://interfaces/norse/img/Status/statusIcon3.png" type="Texture" id=5]
 [ext_resource path="res://interfaces/norse/img/hero/sigurd/Hero_GUI_X.png" type="Texture" id=8]
 
 [sub_resource type="Gradient" id=1]
@@ -28,13 +28,6 @@ outline_color = Color( 0.435294, 0.137255, 0.00784314, 1 )
 use_filter = true
 font_data = ExtResource( 4 )
 
-[sub_resource type="DynamicFont" id=5]
-size = 12
-outline_size = 1
-outline_color = Color( 0.294118, 0.286275, 0.286275, 1 )
-use_filter = true
-font_data = ExtResource( 4 )
-
 [sub_resource type="DynamicFont" id=6]
 size = 10
 outline_size = 1
@@ -47,9 +40,9 @@ font_data = ExtResource( 4 )
 
 [node name="BackRect" type="NinePatchRect" parent="."]
 modulate = Color( 1, 1, 1, 0.784314 )
-margin_right = 112.0
+margin_right = 130.0
 margin_bottom = 32.0
-rect_min_size = Vector2( 112, 32 )
+rect_min_size = Vector2( 130, 32 )
 rect_scale = Vector2( 0.992146, 1.00697 )
 texture = SubResource( 2 )
 __meta__ = {
@@ -58,9 +51,9 @@ __meta__ = {
 
 [node name="VCStatus" type="VBoxContainer" parent="."]
 margin_top = 2.01394
-margin_right = 152.0
+margin_right = 150.0
 margin_bottom = 52.0139
-rect_min_size = Vector2( 150, 50 )
+rect_min_size = Vector2( 120, 50 )
 rect_scale = Vector2( 1, 0.995765 )
 custom_constants/separation = 1
 __meta__ = {
@@ -68,7 +61,7 @@ __meta__ = {
 }
 
 [node name="HCHeader" type="HBoxContainer" parent="VCStatus"]
-margin_right = 152.0
+margin_right = 150.0
 margin_bottom = 16.0
 rect_min_size = Vector2( 110, 0 )
 size_flags_vertical = 4
@@ -116,33 +109,16 @@ margin_bottom = 14.0
 custom_fonts/font = SubResource( 4 )
 text = "Swordman"
 
-[node name="CCOrientate" type="MarginContainer" parent="VCStatus/HCHeader"]
-margin_left = 92.0
-margin_right = 112.0
-margin_bottom = 16.0
-rect_min_size = Vector2( 20, 0 )
-
-[node name="NOrientate" type="Label" parent="VCStatus/HCHeader/CCOrientate"]
-margin_right = 20.0
-margin_bottom = 15.0
-custom_fonts/font = SubResource( 5 )
-text = "NW"
-align = 1
-
-[node name="GCStats" type="GridContainer" parent="VCStatus"]
-margin_left = 1.0
+[node name="GCStats" type="HBoxContainer" parent="VCStatus"]
+margin_left = 13.0
 margin_top = 17.0
-margin_right = 151.0
+margin_right = 136.0
 margin_bottom = 29.0
-rect_min_size = Vector2( 150, 0 )
+rect_min_size = Vector2( 110, 0 )
 size_flags_horizontal = 4
 size_flags_vertical = 4
-custom_constants/vseparation = 0
-custom_constants/hseparation = 0
-columns = 4
-__meta__ = {
-"_edit_use_anchors_": false
-}
+custom_constants/separation = 1
+alignment = 1
 
 [node name="HCLife" type="HBoxContainer" parent="VCStatus/GCStats"]
 margin_right = 30.0
@@ -167,7 +143,7 @@ margin_left = 1.0
 margin_top = 1.0
 margin_right = 9.0
 margin_bottom = 9.0
-texture = ExtResource( 2 )
+texture = ExtResource( 1 )
 
 [node name="NLife" type="Label" parent="VCStatus/GCStats/HCLife"]
 margin_left = 12.0
@@ -178,8 +154,8 @@ custom_fonts/font = SubResource( 6 )
 text = "100"
 
 [node name="HCAttack" type="HBoxContainer" parent="VCStatus/GCStats"]
-margin_left = 30.0
-margin_right = 60.0
+margin_left = 31.0
+margin_right = 61.0
 margin_bottom = 12.0
 rect_min_size = Vector2( 30, 0 )
 hint_tooltip = "KEY_ATTACK"
@@ -200,7 +176,7 @@ margin_left = 1.0
 margin_top = 1.0
 margin_right = 9.0
 margin_bottom = 9.0
-texture = ExtResource( 5 )
+texture = ExtResource( 2 )
 
 [node name="NAttack" type="Label" parent="VCStatus/GCStats/HCAttack"]
 margin_left = 12.0
@@ -212,8 +188,8 @@ custom_fonts/font = SubResource( 6 )
 text = "10"
 
 [node name="HCDefense" type="HBoxContainer" parent="VCStatus/GCStats"]
-margin_left = 60.0
-margin_right = 90.0
+margin_left = 62.0
+margin_right = 92.0
 margin_bottom = 12.0
 rect_min_size = Vector2( 30, 0 )
 hint_tooltip = "KEY_DEFENSE"
@@ -234,7 +210,7 @@ margin_left = 1.0
 margin_top = 1.0
 margin_right = 9.0
 margin_bottom = 9.0
-texture = ExtResource( 6 )
+texture = ExtResource( 3 )
 
 [node name="NDefense" type="Label" parent="VCStatus/GCStats/HCDefense"]
 margin_left = 12.0
@@ -245,8 +221,8 @@ custom_fonts/font = SubResource( 6 )
 text = "20"
 
 [node name="HCSpeed" type="HBoxContainer" parent="VCStatus/GCStats"]
-margin_left = 90.0
-margin_right = 120.0
+margin_left = 93.0
+margin_right = 123.0
 margin_bottom = 12.0
 rect_min_size = Vector2( 30, 0 )
 hint_tooltip = "KEY_SPEED"
@@ -265,7 +241,7 @@ margin_left = 1.0
 margin_top = 1.0
 margin_right = 9.0
 margin_bottom = 9.0
-texture = ExtResource( 7 )
+texture = ExtResource( 5 )
 
 [node name="NSpeed" type="Label" parent="VCStatus/GCStats/HCSpeed"]
 margin_left = 12.0

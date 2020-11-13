@@ -1,7 +1,7 @@
 [gd_scene load_steps=113 format=2]
 
 [ext_resource path="res://code/manager/UnitManagerFix.gd" type="Script" id=1]
-[ext_resource path="res://game/units/norse/hero/sigurd/img/SigurdPlayer1.png" type="Texture" id=2]
+[ext_resource path="res://game/units/norse/soldier/swordman/img/SwordmanPlayer2.png" type="Texture" id=2]
 [ext_resource path="res://code/fsm/UnitFSM.gd" type="Script" id=3]
 
 [sub_resource type="CapsuleShape2D" id=1]
@@ -45,7 +45,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 0, -10 ) ]
+"values": [ Vector2( -1, -8 ) ]
 }
 tracks/3/type = "method"
 tracks/3/path = NodePath(".")
@@ -99,7 +99,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 6, -10 ) ]
+"values": [ Vector2( 6, -8 ) ]
 }
 tracks/3/type = "method"
 tracks/3/path = NodePath(".")
@@ -152,7 +152,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 5, -10 ) ]
+"values": [ Vector2( 4, -8 ) ]
 }
 tracks/3/type = "method"
 tracks/3/path = NodePath(".")
@@ -206,7 +206,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 0, -10 ) ]
+"values": [ Vector2( 0, -8 ) ]
 }
 tracks/3/type = "method"
 tracks/3/path = NodePath(".")
@@ -260,7 +260,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( -1, -10 ) ]
+"values": [ Vector2( 1, -8 ) ]
 }
 tracks/3/type = "method"
 tracks/3/path = NodePath(".")
@@ -314,7 +314,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( -2, -10 ) ]
+"values": [ Vector2( -2, -8 ) ]
 }
 tracks/3/type = "method"
 tracks/3/path = NodePath(".")
@@ -367,7 +367,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( -5, -10 ) ]
+"values": [ Vector2( -4, -8 ) ]
 }
 tracks/3/type = "method"
 tracks/3/path = NodePath(".")
@@ -420,7 +420,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( -7, -10 ) ]
+"values": [ Vector2( -6, -8 ) ]
 }
 tracks/3/type = "method"
 tracks/3/path = NodePath(".")
@@ -474,7 +474,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0, 0.1, 0.2 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 2, -3 ), Vector2( 3, -1 ), Vector2( 4, 1 ) ]
+"values": [ Vector2( 0, -4 ), Vector2( -2, 0 ), Vector2( -4, 4 ) ]
 }
 
 [sub_resource type="Animation" id=11]
@@ -529,7 +529,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 0, -10 ) ]
+"values": [ Vector2( -1, -8 ) ]
 }
 
 [sub_resource type="Animation" id=13]
@@ -568,7 +568,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 3, -10 ) ]
+"values": [ Vector2( 4, -8 ) ]
 }
 
 [sub_resource type="Animation" id=14]
@@ -607,7 +607,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 0, -10 ) ]
+"values": [ Vector2( 1, -8 ) ]
 }
 
 [sub_resource type="Animation" id=15]
@@ -646,7 +646,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 0, -10 ) ]
+"values": [ Vector2( 0, -8 ) ]
 }
 
 [sub_resource type="Animation" id=16]
@@ -685,7 +685,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 1, -10 ) ]
+"values": [ Vector2( 1, -8 ) ]
 }
 
 [sub_resource type="Animation" id=17]
@@ -724,7 +724,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 0, -10 ) ]
+"values": [ Vector2( 0, -8 ) ]
 }
 
 [sub_resource type="Animation" id=18]
@@ -763,7 +763,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( -1, -10 ) ]
+"values": [ Vector2( -1, -8 ) ]
 }
 
 [sub_resource type="Animation" id=19]
@@ -802,12 +802,11 @@ tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( -3, -10 ) ]
+"values": [ Vector2( -4, -8 ) ]
 }
 
 [sub_resource type="Animation" id=20]
 length = 0.4
-loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -842,7 +841,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( -2, -10 ) ]
+"values": [ Vector2( -2, -8 ) ]
 }
 
 [sub_resource type="Animation" id=21]
@@ -1370,9 +1369,8 @@ graph_offset = Vector2( -1160.05, -444.62 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=109]
 
-[node name="SigurdPlayer1" type="KinematicBody2D" groups=[
-"hero",
-"player1",
+[node name="SwordmanPlayerTwo0" type="KinematicBody2D" groups=[
+"player2",
 "unit",
 ]]
 script = ExtResource( 1 )
@@ -1384,11 +1382,12 @@ visible = false
 polygon = PoolVector2Array( 48, 0, 0, -24, -48, 0, 0, 24 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 0, -10 )
+position = Vector2( -2, -6 )
+scale = Vector2( 0.8, 0.8 )
 texture = ExtResource( 2 )
 vframes = 10
 hframes = 5
-frame = 15
+frame = 46
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2( 0.2, 0.2 )

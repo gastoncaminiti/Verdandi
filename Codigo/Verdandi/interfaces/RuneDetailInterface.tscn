@@ -185,14 +185,11 @@ stretch_mode = 5
 [node name="Coin" parent="VContainerRunes/VCEFFECT/HCAlignment/MCAlignment" instance=ExtResource( 6 )]
 margin_right = 34.0
 margin_bottom = 34.0
-expand = false
 stretch_mode = 0
 
 [node name="Eye" parent="VContainerRunes/VCEFFECT/HCAlignment/MCAlignment" instance=ExtResource( 7 )]
 margin_right = 34.0
 margin_bottom = 34.0
-rect_scale = Vector2( 1, 1 )
-expand = false
 stretch_mode = 0
 
 [node name="LAlignment" type="Label" parent="VContainerRunes/VCEFFECT/HCAlignment"]

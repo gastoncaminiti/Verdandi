@@ -45,7 +45,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( -1, -6 ) ]
+"values": [ Vector2( -1, -8 ) ]
 }
 tracks/3/type = "method"
 tracks/3/path = NodePath(".")
@@ -99,7 +99,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 6, -6 ) ]
+"values": [ Vector2( 6, -8 ) ]
 }
 tracks/3/type = "method"
 tracks/3/path = NodePath(".")
@@ -152,7 +152,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 4, -6 ) ]
+"values": [ Vector2( 4, -8 ) ]
 }
 tracks/3/type = "method"
 tracks/3/path = NodePath(".")
@@ -206,7 +206,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 0, -6 ) ]
+"values": [ Vector2( 0, -8 ) ]
 }
 tracks/3/type = "method"
 tracks/3/path = NodePath(".")
@@ -260,7 +260,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 1, -6 ) ]
+"values": [ Vector2( 1, -8 ) ]
 }
 tracks/3/type = "method"
 tracks/3/path = NodePath(".")
@@ -314,7 +314,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( -2, -6 ) ]
+"values": [ Vector2( -2, -8 ) ]
 }
 tracks/3/type = "method"
 tracks/3/path = NodePath(".")
@@ -367,7 +367,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( -4, -6 ) ]
+"values": [ Vector2( -4, -8 ) ]
 }
 tracks/3/type = "method"
 tracks/3/path = NodePath(".")
@@ -420,7 +420,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( -6, -6 ) ]
+"values": [ Vector2( -6, -8 ) ]
 }
 tracks/3/type = "method"
 tracks/3/path = NodePath(".")
@@ -529,7 +529,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( -1, -6 ) ]
+"values": [ Vector2( -1, -8 ) ]
 }
 
 [sub_resource type="Animation" id=13]
@@ -568,7 +568,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 4, -6 ) ]
+"values": [ Vector2( 4, -8 ) ]
 }
 
 [sub_resource type="Animation" id=14]
@@ -607,7 +607,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 1, -6 ) ]
+"values": [ Vector2( 1, -8 ) ]
 }
 
 [sub_resource type="Animation" id=15]
@@ -646,7 +646,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 0, -6 ) ]
+"values": [ Vector2( 0, -8 ) ]
 }
 
 [sub_resource type="Animation" id=16]
@@ -685,7 +685,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 1, -6 ) ]
+"values": [ Vector2( 1, -8 ) ]
 }
 
 [sub_resource type="Animation" id=17]
@@ -724,7 +724,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 0, -6 ) ]
+"values": [ Vector2( 0, -8 ) ]
 }
 
 [sub_resource type="Animation" id=18]
@@ -763,7 +763,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( -1, -6 ) ]
+"values": [ Vector2( -1, -8 ) ]
 }
 
 [sub_resource type="Animation" id=19]
@@ -802,7 +802,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( -4, -6 ) ]
+"values": [ Vector2( -4, -8 ) ]
 }
 
 [sub_resource type="Animation" id=20]
@@ -841,7 +841,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( -2, -6 ) ]
+"values": [ Vector2( -2, -8 ) ]
 }
 
 [sub_resource type="Animation" id=21]
@@ -1369,8 +1369,7 @@ graph_offset = Vector2( -1160.05, -444.62 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=109]
 
-[node name="Player1SigurdFix" type="KinematicBody2D" groups=[
-"hero",
+[node name="SwordmanPlayerOne0" type="KinematicBody2D" groups=[
 "player1",
 "unit",
 ]]
@@ -1383,12 +1382,12 @@ visible = false
 polygon = PoolVector2Array( 48, 0, 0, -24, -48, 0, 0, 24 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( -1, -6 )
+position = Vector2( -2, -8 )
 scale = Vector2( 0.8, 0.8 )
 texture = ExtResource( 2 )
 vframes = 10
 hframes = 5
-frame = 43
+frame = 46
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2( 0.2, 0.2 )

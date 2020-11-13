@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://code/manager/LevelManager.gd" type="Script" id=1]
 [ext_resource path="res://game/maps/norse/tile/TileMapV2.tres" type="TileSet" id=2]
@@ -8,6 +8,8 @@
 [ext_resource path="res://asset/sound/Game - Morning Dew.ogg" type="AudioStream" id=6]
 [ext_resource path="res://game/maps/norse/resources/BlackLight.tscn" type="PackedScene" id=7]
 [ext_resource path="res://game/maps/norse/tile/TileMapSelectedV2.tres" type="TileSet" id=8]
+[ext_resource path="res://game/units/norse/soldier/swordman/SwordmanPlayer1.tscn" type="PackedScene" id=9]
+[ext_resource path="res://game/units/norse/soldier/swordman/SwordmanPlayer2.tscn" type="PackedScene" id=10]
 [ext_resource path="res://code/manager/LevelMapManager.gd" type="Script" id=12]
 
 [node name="Level0T2" type="Node2D" groups=[
@@ -28,7 +30,7 @@ tile_set = ExtResource( 2 )
 cell_size = Vector2( 32, 16 )
 cell_custom_transform = Transform2D( 0, 0, 0, 0, 0, 0 )
 format = 1
-tile_data = PoolIntArray( -589801, 11, 0, -589800, 11, 0, -524266, 11, 0, -524265, 11, 0, -524264, 11, 0, -458730, 11, 0, -458729, 11, 0, -458728, 11, 0, -393194, 11, 0, -393193, 11, 0, -327664, 12, 0, -327663, 12, 0, -327659, 11, 0, -327658, 11, 0, -262129, 12, 0, -262128, 12, 0, -262127, 12, 0, -262123, 11, 0, -262122, 11, 0, -196596, 12, 0, -196595, 12, 0, -196594, 12, 0, -196593, 12, 0, -196592, 12, 0, -196588, 11, 0, -196587, 11, 0, -131061, 12, 0, -131060, 12, 0, -131059, 12, 0, -131058, 12, 0, -131052, 11, 0, -131051, 11, 0, -65525, 12, 0, -65524, 12, 0, -65511, 12, 0, -65510, 12, 0, 17, 11, 0, 18, 11, 0, 25, 12, 0, 26, 12, 0, 65553, 11, 0, 65554, 11, 0, 65560, 12, 0, 65561, 12, 0, 65562, 12, 0, 131088, 11, 0, 131089, 11, 0, 131096, 12, 0, 131097, 12, 0, 196624, 11, 0, 196625, 11, 0, 196631, 12, 0, 196632, 12, 0, 262161, 11, 0, 262162, 11, 0, 262167, 12, 0, 262168, 12, 0, 327697, 11, 0, 327698, 11, 0, 327702, 12, 0, 327703, 12, 0, 393233, 11, 0, 393234, 11, 0, 393235, 11, 0, 393238, 12, 0, 393239, 12, 0, 458770, 11, 0, 458771, 11, 0 )
+tile_data = PoolIntArray( -393200, 11, 0, -393199, 11, 0, -393198, 11, 0, -393197, 11, 0, -393196, 11, 0, -393195, 11, 0, -393194, 11, 0, -393193, 11, 0, -393192, 11, 0, -393191, 11, 0, -327664, 11, 0, -327663, 12, 0, -327662, 12, 0, -327661, 12, 0, -327660, 12, 0, -327659, 12, 0, -327658, 12, 0, -327657, 12, 0, -327656, 12, 0, -327655, 11, 0, -262128, 11, 0, -262127, 12, 0, -262126, 12, 0, -262125, 12, 0, -262124, 12, 0, -262123, 12, 0, -262122, 12, 0, -262121, 12, 0, -262120, 12, 0, -262119, 11, 0, -196592, 11, 0, -196591, 12, 0, -196590, 12, 0, -196589, 12, 0, -196588, 12, 0, -196587, 12, 0, -196586, 12, 0, -196585, 12, 0, -196584, 11, 0, -196583, 11, 0, -131056, 11, 0, -131055, 12, 0, -131054, 12, 0, -131053, 12, 0, -131052, 11, 0, -131051, 11, 0, -131050, 12, 0, -131049, 12, 0, -131048, 12, 0, -131047, 11, 0, -65520, 11, 0, -65519, 12, 0, -65518, 12, 0, -65517, 12, 0, -65516, 11, 0, -65515, 11, 0, -65514, 12, 0, -65513, 12, 0, -65512, 12, 0, -65511, 11, 0, 16, 11, 0, 17, 12, 0, 18, 12, 0, 19, 12, 0, 20, 11, 0, 21, 11, 0, 22, 12, 0, 23, 12, 0, 24, 12, 0, 25, 11, 0, 65552, 11, 0, 65553, 12, 0, 65554, 12, 0, 65555, 12, 0, 65556, 11, 0, 65557, 11, 0, 65558, 12, 0, 65559, 12, 0, 65560, 12, 0, 65561, 11, 0, 131088, 11, 0, 131089, 12, 0, 131090, 12, 0, 131091, 12, 0, 131092, 12, 0, 131093, 12, 0, 131094, 12, 0, 131095, 12, 0, 131096, 12, 0, 131097, 11, 0, 196624, 11, 0, 196625, 12, 0, 196626, 12, 0, 196627, 12, 0, 196628, 12, 0, 196629, 12, 0, 196630, 12, 0, 196631, 12, 0, 196632, 12, 0, 196633, 11, 0, 262160, 11, 0, 262161, 12, 0, 262162, 12, 0, 262163, 12, 0, 262164, 12, 0, 262165, 12, 0, 262166, 12, 0, 262167, 12, 0, 262168, 12, 0, 262169, 11, 0, 327696, 11, 0, 327697, 12, 0, 327698, 12, 0, 327699, 12, 0, 327700, 12, 0, 327701, 12, 0, 327702, 12, 0, 327703, 12, 0, 327704, 12, 0, 327705, 11, 0, 393232, 11, 0, 393233, 12, 0, 393234, 12, 0, 393235, 12, 0, 393236, 12, 0, 393237, 12, 0, 393238, 12, 0, 393239, 12, 0, 393240, 12, 0, 393241, 11, 0, 458768, 11, 0, 458769, 11, 0, 458770, 11, 0, 458771, 11, 0, 458772, 11, 0, 458773, 11, 0, 458774, 11, 0, 458775, 11, 0, 458776, 11, 0, 458777, 11, 0 )
 script = ExtResource( 5 )
 
 [node name="SelectMap" type="TileMap" parent="LevelMap"]
@@ -39,7 +41,7 @@ cell_custom_transform = Transform2D( 0, 0, 0, 0, 0, 0 )
 format = 1
 
 [node name="Player1Sigurd" parent="." instance=ExtResource( 4 )]
-position = Vector2( 269.878, 239.48 )
+position = Vector2( 264, 200 )
 unit_stats = {
 "attack": 30,
 "attack_range": 1,
@@ -49,48 +51,6 @@ unit_stats = {
 "move_range": 1,
 "name": "Sigurd",
 "orientation": 0,
-"status": "IDLE"
-}
-
-[node name="Player1Sigurd2" parent="." instance=ExtResource( 4 )]
-position = Vector2( 270.082, 156.539 )
-unit_stats = {
-"attack": 30,
-"attack_range": 1,
-"attack_speed": 2,
-"defense": 5,
-"life": 200,
-"move_range": 1,
-"name": "Sigurd",
-"orientation": 6,
-"status": "IDLE"
-}
-
-[node name="Player1Sigurd4" parent="." instance=ExtResource( 4 )]
-position = Vector2( 348.903, 148.924 )
-unit_stats = {
-"attack": 30,
-"attack_range": 1,
-"attack_speed": 2,
-"defense": 5,
-"life": 200,
-"move_range": 0,
-"name": "Sigurd",
-"orientation": 0,
-"status": "IDLE"
-}
-
-[node name="Player1Sigurd5" parent="." instance=ExtResource( 4 )]
-position = Vector2( 342.743, 106.317 )
-unit_stats = {
-"attack": 30,
-"attack_range": 1,
-"attack_speed": 2,
-"defense": 5,
-"life": 200,
-"move_range": 0,
-"name": "Sigurd",
-"orientation": 6,
 "status": "IDLE"
 }
 
@@ -102,3 +62,76 @@ position = Vector2( -60, 30 )
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
+
+[node name="SwordmanPlayer1" parent="." instance=ExtResource( 9 )]
+position = Vector2( 240, 216 )
+
+[node name="SwordmanPlayer2" parent="." instance=ExtResource( 9 )]
+position = Vector2( 224, 200 )
+unit_stats = {
+"attack": 25,
+"attack_range": 1,
+"attack_speed": 1,
+"defense": 20,
+"life": 100,
+"move_range": 1,
+"name": "Sigurd",
+"orientation": 0,
+"status": "IDLE"
+}
+
+[node name="SwordmanPlayer3" parent="." instance=ExtResource( 9 )]
+position = Vector2( 280, 224 )
+unit_stats = {
+"attack": 25,
+"attack_range": 1,
+"attack_speed": 1,
+"defense": 20,
+"life": 100,
+"move_range": 1,
+"name": "Sigurd",
+"orientation": 0,
+"status": "IDLE"
+}
+
+[node name="SwordmanPlayerTwo0" parent="." instance=ExtResource( 10 )]
+position = Vector2( 368, 112 )
+unit_stats = {
+"attack": 25,
+"attack_range": 1,
+"attack_speed": 1,
+"defense": 20,
+"life": 100,
+"move_range": 1,
+"name": "Sigurd",
+"orientation": 4,
+"status": "IDLE"
+}
+
+[node name="SwordmanPlayerTwo1" parent="." instance=ExtResource( 10 )]
+position = Vector2( 376, 136 )
+unit_stats = {
+"attack": 25,
+"attack_range": 1,
+"attack_speed": 1,
+"defense": 20,
+"life": 100,
+"move_range": 1,
+"name": "Sigurd",
+"orientation": 4,
+"status": "IDLE"
+}
+
+[node name="SwordmanPlayerTwo2" parent="." instance=ExtResource( 10 )]
+position = Vector2( 416, 136 )
+unit_stats = {
+"attack": 25,
+"attack_range": 1,
+"attack_speed": 1,
+"defense": 20,
+"life": 100,
+"move_range": 1,
+"name": "Sigurd",
+"orientation": 4,
+"status": "IDLE"
+}

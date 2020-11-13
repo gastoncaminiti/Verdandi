@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://interfaces/norse/img/interface_06.png" type="Texture" id=1]
+[ext_resource path="res://interfaces/norse/img/HUD/aling1.png" type="Texture" id=1]
 
 [node name="Axe" type="TextureRect"]
 margin_right = 30.0
