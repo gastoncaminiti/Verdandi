@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=2]
+[gd_scene load_steps=46 format=2]
 
 [ext_resource path="res://code/manager/interface/InterfaceGameManager.gd" type="Script" id=1]
 [ext_resource path="res://interfaces/norse/img/background.png" type="Texture" id=2]
@@ -9,7 +9,6 @@
 [ext_resource path="res://interfaces/norse/font/Norsebold.otf" type="DynamicFontData" id=7]
 [ext_resource path="res://game/player/avatar/norse/sigrdrifa/Sidgrida.tscn" type="PackedScene" id=8]
 [ext_resource path="res://interfaces/norse/img/papyrus.png" type="Texture" id=9]
-[ext_resource path="res://interfaces/norse/font/Runes2.TTF" type="DynamicFontData" id=10]
 [ext_resource path="res://interfaces/norse/img/interface_19.png" type="Texture" id=11]
 [ext_resource path="res://interfaces/StatusInterface.tscn" type="PackedScene" id=12]
 [ext_resource path="res://interfaces/RuneDetailInterface.tscn" type="PackedScene" id=13]
@@ -25,12 +24,13 @@
 [ext_resource path="res://interfaces/norse/element/Coin.tscn" type="PackedScene" id=23]
 [ext_resource path="res://interfaces/norse/element/Axe.tscn" type="PackedScene" id=24]
 [ext_resource path="res://interfaces/norse/element/Eye.tscn" type="PackedScene" id=25]
-[ext_resource path="res://interfaces/norse/font/Runes.TTF" type="DynamicFontData" id=26]
+[ext_resource path="res://interfaces/norse/img/Runes/Font/RuneF_03.png" type="Texture" id=26]
 [ext_resource path="res://interfaces/norse/font/NordicaRegular.otf" type="DynamicFontData" id=27]
 [ext_resource path="res://interfaces/norse/img/battlebutton/normal.png" type="Texture" id=28]
 [ext_resource path="res://interfaces/norse/img/battlebutton/hoover.png" type="Texture" id=29]
 [ext_resource path="res://interfaces/norse/img/battlebutton/diseable.png" type="Texture" id=30]
 [ext_resource path="res://interfaces/norse/img/battlebutton/press.png" type="Texture" id=31]
+[ext_resource path="res://interfaces/norse/img/Runes/Icon/RuneI_00.png" type="Texture" id=32]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -50,28 +50,6 @@ size = 35
 outline_size = 2
 outline_color = Color( 0.305882, 0.254902, 0.054902, 1 )
 font_data = ExtResource( 7 )
-
-[sub_resource type="DynamicFont" id=3]
-size = 26
-outline_size = 1
-outline_color = Color( 0.854902, 0.584314, 0.266667, 1 )
-use_filter = true
-extra_spacing_top = -5
-extra_spacing_bottom = -5
-extra_spacing_char = -5
-extra_spacing_space = -5
-font_data = ExtResource( 10 )
-
-[sub_resource type="DynamicFont" id=4]
-size = 26
-outline_size = 1
-outline_color = Color( 0.854902, 0.584314, 0.266667, 1 )
-use_filter = true
-extra_spacing_top = -5
-extra_spacing_bottom = -5
-extra_spacing_char = -5
-extra_spacing_space = -5
-font_data = ExtResource( 10 )
 
 [sub_resource type="DynamicFont" id=5]
 size = 26
@@ -103,13 +81,6 @@ outline_color = Color( 0.168627, 0.14902, 0.0156863, 1 )
 use_filter = true
 font_data = ExtResource( 7 )
 
-[sub_resource type="DynamicFont" id=9]
-size = 24
-outline_size = 1
-outline_color = Color( 0.619608, 0.290196, 0.027451, 1 )
-use_filter = true
-font_data = ExtResource( 26 )
-
 [sub_resource type="DynamicFont" id=10]
 size = 8
 outline_size = 1
@@ -120,7 +91,7 @@ font_data = ExtResource( 27 )
 [sub_resource type="DynamicFont" id=11]
 size = 8
 outline_size = 1
-outline_color = Color( 0.521569, 0.0313726, 0.0313726, 1 )
+outline_color = Color( 0.309804, 0.0156863, 0.0156863, 1 )
 use_filter = true
 font_data = ExtResource( 27 )
 
@@ -302,417 +273,18 @@ __meta__ = {
 }
 
 [node name="GridPapyrus" type="GridContainer" parent="Layer 2 - GUI/Papyrus"]
-margin_left = 17.0
-margin_top = 25.0
-margin_right = 130.0
-margin_bottom = 142.0
+margin_left = 25.5319
+margin_top = 30.0254
+margin_right = 115.532
+margin_bottom = 140.025
 grow_vertical = 2
 rect_min_size = Vector2( 30, 0 )
 custom_constants/vseparation = 2
-custom_constants/hseparation = -15
+custom_constants/hseparation = 2
 columns = 5
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="CChar0" type="CenterContainer" parent="Layer 2 - GUI/Papyrus/GridPapyrus"]
-margin_right = 33.0
-margin_bottom = 20.0
-rect_min_size = Vector2( 33, 20 )
-hint_tooltip = "KEY_QUIT"
-
-[node name="Char0" type="Label" parent="Layer 2 - GUI/Papyrus/GridPapyrus/CChar0"]
-margin_left = 16.0
-margin_top = 1.0
-margin_right = 16.0
-margin_bottom = 19.0
-custom_fonts/font = SubResource( 3 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
-custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
-
-[node name="CChar1" type="CenterContainer" parent="Layer 2 - GUI/Papyrus/GridPapyrus"]
-margin_left = 18.0
-margin_right = 51.0
-margin_bottom = 20.0
-rect_min_size = Vector2( 33, 20 )
-
-[node name="Char1" type="Label" parent="Layer 2 - GUI/Papyrus/GridPapyrus/CChar1"]
-margin_left = 16.0
-margin_top = 1.0
-margin_right = 16.0
-margin_bottom = 19.0
-custom_fonts/font = SubResource( 4 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
-custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
-
-[node name="CChar2" type="CenterContainer" parent="Layer 2 - GUI/Papyrus/GridPapyrus"]
-margin_left = 36.0
-margin_right = 69.0
-margin_bottom = 20.0
-rect_min_size = Vector2( 33, 20 )
-
-[node name="Char2" type="Label" parent="Layer 2 - GUI/Papyrus/GridPapyrus/CChar2"]
-margin_left = 16.0
-margin_top = 1.0
-margin_right = 16.0
-margin_bottom = 19.0
-custom_fonts/font = SubResource( 4 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
-custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
-
-[node name="CChar3" type="CenterContainer" parent="Layer 2 - GUI/Papyrus/GridPapyrus"]
-margin_left = 54.0
-margin_right = 87.0
-margin_bottom = 20.0
-rect_min_size = Vector2( 33, 20 )
-
-[node name="Char3" type="Label" parent="Layer 2 - GUI/Papyrus/GridPapyrus/CChar3"]
-margin_left = 16.0
-margin_top = 1.0
-margin_right = 16.0
-margin_bottom = 19.0
-custom_fonts/font = SubResource( 4 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
-custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
-
-[node name="CChar4" type="CenterContainer" parent="Layer 2 - GUI/Papyrus/GridPapyrus"]
-margin_left = 72.0
-margin_right = 105.0
-margin_bottom = 20.0
-rect_min_size = Vector2( 33, 20 )
-
-[node name="Char4" type="Label" parent="Layer 2 - GUI/Papyrus/GridPapyrus/CChar4"]
-margin_left = 16.0
-margin_top = 1.0
-margin_right = 16.0
-margin_bottom = 19.0
-custom_fonts/font = SubResource( 4 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
-custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
-
-[node name="CChar5" type="CenterContainer" parent="Layer 2 - GUI/Papyrus/GridPapyrus"]
-margin_top = 22.0
-margin_right = 33.0
-margin_bottom = 42.0
-rect_min_size = Vector2( 33, 20 )
-
-[node name="Char5" type="Label" parent="Layer 2 - GUI/Papyrus/GridPapyrus/CChar5"]
-margin_left = 16.0
-margin_top = 1.0
-margin_right = 16.0
-margin_bottom = 19.0
-custom_fonts/font = SubResource( 4 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
-custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
-
-[node name="CChar6" type="CenterContainer" parent="Layer 2 - GUI/Papyrus/GridPapyrus"]
-margin_left = 18.0
-margin_top = 22.0
-margin_right = 51.0
-margin_bottom = 42.0
-rect_min_size = Vector2( 33, 20 )
-
-[node name="Char6" type="Label" parent="Layer 2 - GUI/Papyrus/GridPapyrus/CChar6"]
-margin_left = 16.0
-margin_top = 1.0
-margin_right = 16.0
-margin_bottom = 19.0
-custom_fonts/font = SubResource( 4 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
-custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
-
-[node name="CChar7" type="CenterContainer" parent="Layer 2 - GUI/Papyrus/GridPapyrus"]
-margin_left = 36.0
-margin_top = 22.0
-margin_right = 69.0
-margin_bottom = 42.0
-rect_min_size = Vector2( 33, 20 )
-
-[node name="Char7" type="Label" parent="Layer 2 - GUI/Papyrus/GridPapyrus/CChar7"]
-margin_left = 16.0
-margin_top = 1.0
-margin_right = 16.0
-margin_bottom = 19.0
-custom_fonts/font = SubResource( 4 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
-custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
-
-[node name="CChar8" type="CenterContainer" parent="Layer 2 - GUI/Papyrus/GridPapyrus"]
-margin_left = 54.0
-margin_top = 22.0
-margin_right = 87.0
-margin_bottom = 42.0
-rect_min_size = Vector2( 33, 20 )
-
-[node name="Char8" type="Label" parent="Layer 2 - GUI/Papyrus/GridPapyrus/CChar8"]
-margin_left = 16.0
-margin_top = 1.0
-margin_right = 16.0
-margin_bottom = 19.0
-custom_fonts/font = SubResource( 4 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
-custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
-
-[node name="CChar9" type="CenterContainer" parent="Layer 2 - GUI/Papyrus/GridPapyrus"]
-margin_left = 72.0
-margin_top = 22.0
-margin_right = 105.0
-margin_bottom = 42.0
-rect_min_size = Vector2( 33, 20 )
-
-[node name="Char9" type="Label" parent="Layer 2 - GUI/Papyrus/GridPapyrus/CChar9"]
-margin_left = 16.0
-margin_top = 1.0
-margin_right = 16.0
-margin_bottom = 19.0
-custom_fonts/font = SubResource( 4 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
-custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
-
-[node name="CChar10" type="CenterContainer" parent="Layer 2 - GUI/Papyrus/GridPapyrus"]
-margin_top = 44.0
-margin_right = 33.0
-margin_bottom = 64.0
-rect_min_size = Vector2( 33, 20 )
-
-[node name="Char10" type="Label" parent="Layer 2 - GUI/Papyrus/GridPapyrus/CChar10"]
-margin_left = 16.0
-margin_top = 1.0
-margin_right = 16.0
-margin_bottom = 19.0
-custom_fonts/font = SubResource( 4 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
-custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
-
-[node name="CChar11" type="CenterContainer" parent="Layer 2 - GUI/Papyrus/GridPapyrus"]
-margin_left = 18.0
-margin_top = 44.0
-margin_right = 51.0
-margin_bottom = 64.0
-rect_min_size = Vector2( 33, 20 )
-
-[node name="Char11" type="Label" parent="Layer 2 - GUI/Papyrus/GridPapyrus/CChar11"]
-margin_left = 16.0
-margin_top = 1.0
-margin_right = 16.0
-margin_bottom = 19.0
-custom_fonts/font = SubResource( 4 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
-custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
-
-[node name="CChar12" type="CenterContainer" parent="Layer 2 - GUI/Papyrus/GridPapyrus"]
-margin_left = 36.0
-margin_top = 44.0
-margin_right = 69.0
-margin_bottom = 64.0
-rect_min_size = Vector2( 33, 20 )
-
-[node name="Char12" type="Label" parent="Layer 2 - GUI/Papyrus/GridPapyrus/CChar12"]
-margin_left = 16.0
-margin_top = 1.0
-margin_right = 16.0
-margin_bottom = 19.0
-custom_fonts/font = SubResource( 4 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
-custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
-
-[node name="CChar13" type="CenterContainer" parent="Layer 2 - GUI/Papyrus/GridPapyrus"]
-margin_left = 54.0
-margin_top = 44.0
-margin_right = 87.0
-margin_bottom = 64.0
-rect_min_size = Vector2( 33, 20 )
-
-[node name="Char13" type="Label" parent="Layer 2 - GUI/Papyrus/GridPapyrus/CChar13"]
-margin_left = 16.0
-margin_top = 1.0
-margin_right = 16.0
-margin_bottom = 19.0
-custom_fonts/font = SubResource( 4 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
-custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
-
-[node name="CChar14" type="CenterContainer" parent="Layer 2 - GUI/Papyrus/GridPapyrus"]
-margin_left = 72.0
-margin_top = 44.0
-margin_right = 105.0
-margin_bottom = 64.0
-rect_min_size = Vector2( 33, 20 )
-
-[node name="Char14" type="Label" parent="Layer 2 - GUI/Papyrus/GridPapyrus/CChar14"]
-margin_left = 16.0
-margin_top = 1.0
-margin_right = 16.0
-margin_bottom = 19.0
-custom_fonts/font = SubResource( 4 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
-custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
-
-[node name="CChar15" type="CenterContainer" parent="Layer 2 - GUI/Papyrus/GridPapyrus"]
-margin_top = 66.0
-margin_right = 33.0
-margin_bottom = 86.0
-rect_min_size = Vector2( 33, 20 )
-
-[node name="Char15" type="Label" parent="Layer 2 - GUI/Papyrus/GridPapyrus/CChar15"]
-margin_left = 16.0
-margin_top = 1.0
-margin_right = 16.0
-margin_bottom = 19.0
-custom_fonts/font = SubResource( 4 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
-custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
-
-[node name="CChar16" type="CenterContainer" parent="Layer 2 - GUI/Papyrus/GridPapyrus"]
-margin_left = 18.0
-margin_top = 66.0
-margin_right = 51.0
-margin_bottom = 86.0
-rect_min_size = Vector2( 33, 20 )
-
-[node name="Char16" type="Label" parent="Layer 2 - GUI/Papyrus/GridPapyrus/CChar16"]
-margin_left = 16.0
-margin_top = 1.0
-margin_right = 16.0
-margin_bottom = 19.0
-custom_fonts/font = SubResource( 4 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
-custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
-
-[node name="CChar17" type="CenterContainer" parent="Layer 2 - GUI/Papyrus/GridPapyrus"]
-margin_left = 36.0
-margin_top = 66.0
-margin_right = 69.0
-margin_bottom = 86.0
-rect_min_size = Vector2( 33, 20 )
-
-[node name="Char17" type="Label" parent="Layer 2 - GUI/Papyrus/GridPapyrus/CChar17"]
-margin_left = 16.0
-margin_top = 1.0
-margin_right = 16.0
-margin_bottom = 19.0
-custom_fonts/font = SubResource( 4 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
-custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
-
-[node name="CChar18" type="CenterContainer" parent="Layer 2 - GUI/Papyrus/GridPapyrus"]
-margin_left = 54.0
-margin_top = 66.0
-margin_right = 87.0
-margin_bottom = 86.0
-rect_min_size = Vector2( 33, 20 )
-
-[node name="Char18" type="Label" parent="Layer 2 - GUI/Papyrus/GridPapyrus/CChar18"]
-margin_left = 16.0
-margin_top = 1.0
-margin_right = 16.0
-margin_bottom = 19.0
-custom_fonts/font = SubResource( 4 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
-custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
-
-[node name="CChar19" type="CenterContainer" parent="Layer 2 - GUI/Papyrus/GridPapyrus"]
-margin_left = 72.0
-margin_top = 66.0
-margin_right = 105.0
-margin_bottom = 86.0
-rect_min_size = Vector2( 33, 20 )
-
-[node name="Char19" type="Label" parent="Layer 2 - GUI/Papyrus/GridPapyrus/CChar19"]
-margin_left = 16.0
-margin_top = 1.0
-margin_right = 16.0
-margin_bottom = 19.0
-custom_fonts/font = SubResource( 4 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
-custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
-
-[node name="CChar20" type="CenterContainer" parent="Layer 2 - GUI/Papyrus/GridPapyrus"]
-margin_top = 88.0
-margin_right = 33.0
-margin_bottom = 108.0
-rect_min_size = Vector2( 33, 20 )
-
-[node name="Char20" type="Label" parent="Layer 2 - GUI/Papyrus/GridPapyrus/CChar20"]
-margin_left = 16.0
-margin_top = 1.0
-margin_right = 16.0
-margin_bottom = 19.0
-custom_fonts/font = SubResource( 4 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
-custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
-
-[node name="CChar21" type="CenterContainer" parent="Layer 2 - GUI/Papyrus/GridPapyrus"]
-margin_left = 18.0
-margin_top = 88.0
-margin_right = 51.0
-margin_bottom = 108.0
-rect_min_size = Vector2( 33, 20 )
-
-[node name="Char21" type="Label" parent="Layer 2 - GUI/Papyrus/GridPapyrus/CChar21"]
-margin_left = 16.0
-margin_top = 1.0
-margin_right = 16.0
-margin_bottom = 19.0
-custom_fonts/font = SubResource( 4 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
-custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
-
-[node name="CChar22" type="CenterContainer" parent="Layer 2 - GUI/Papyrus/GridPapyrus"]
-margin_left = 36.0
-margin_top = 88.0
-margin_right = 69.0
-margin_bottom = 108.0
-rect_min_size = Vector2( 33, 20 )
-
-[node name="Char22" type="Label" parent="Layer 2 - GUI/Papyrus/GridPapyrus/CChar22"]
-margin_left = 16.0
-margin_top = 1.0
-margin_right = 16.0
-margin_bottom = 19.0
-custom_fonts/font = SubResource( 4 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
-custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
-
-[node name="CChar23" type="CenterContainer" parent="Layer 2 - GUI/Papyrus/GridPapyrus"]
-margin_left = 54.0
-margin_top = 88.0
-margin_right = 87.0
-margin_bottom = 108.0
-rect_min_size = Vector2( 33, 20 )
-
-[node name="CChar23" type="Label" parent="Layer 2 - GUI/Papyrus/GridPapyrus/CChar23"]
-margin_left = 16.0
-margin_top = 1.0
-margin_right = 16.0
-margin_bottom = 19.0
-custom_fonts/font = SubResource( 4 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
-custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
 
 [node name="AlignmentContainer" type="HBoxContainer" parent="Layer 2 - GUI"]
 anchor_left = 0.5
@@ -824,14 +396,14 @@ rect_min_size = Vector2( 150, 40 )
 alignment = 1
 
 [node name="GridEffectMy" type="HBoxContainer" parent="Layer 2 - GUI"]
-margin_left = 176.0
-margin_top = 29.0
-margin_right = 516.0
-margin_bottom = 69.0
+margin_left = 176.263
+margin_top = 32.527
+margin_right = 516.263
+margin_bottom = 72.527
 rect_min_size = Vector2( 340, 40 )
 rect_scale = Vector2( 0.9, 0.9 )
 size_flags_horizontal = 0
-custom_constants/separation = -20
+custom_constants/separation = 2
 alignment = 1
 __meta__ = {
 "_edit_use_anchors_": false
@@ -970,67 +542,71 @@ margin_right = 1133.0
 margin_bottom = 260.0
 
 [node name="CEffect" type="VBoxContainer" parent="."]
+modulate = Color( 1, 1, 1, 0 )
 margin_left = 991.0
 margin_top = 1.0
-margin_right = 1036.0
-margin_bottom = 67.0
-rect_min_size = Vector2( 45, 66 )
+margin_right = 1007.0
+margin_bottom = 28.0
 hint_tooltip = "A"
-custom_constants/separation = 2
+custom_constants/separation = 3
 alignment = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="CEffect"]
-margin_top = 14.0
-margin_right = 45.0
-margin_bottom = 39.0
-custom_fonts/font = SubResource( 9 )
-custom_colors/font_color = Color( 1, 1, 1, 1 )
-custom_colors/font_outline_modulate = Color( 0.117647, 1, 0, 1 )
-text = "D"
-align = 1
+[node name="Icon" type="TextureRect" parent="CEffect"]
+modulate = Color( 0.117647, 0.717647, 0.0313726, 1 )
+margin_right = 16.0
+margin_bottom = 16.0
+texture = ExtResource( 32 )
 
 [node name="LTurn" type="Label" parent="CEffect"]
-margin_top = 41.0
-margin_right = 45.0
-margin_bottom = 51.0
+margin_top = 19.0
+margin_right = 16.0
+margin_bottom = 29.0
 custom_fonts/font = SubResource( 10 )
 text = "3"
 align = 1
 valign = 1
 
 [node name="CEInverse" type="VBoxContainer" parent="."]
+modulate = Color( 1, 1, 1, 0 )
 margin_left = 914.0
 margin_top = 1.0
-margin_right = 959.0
-margin_bottom = 67.0
-rect_min_size = Vector2( 45, 66 )
-custom_constants/separation = 2
+margin_right = 930.0
+margin_bottom = 29.0
+custom_constants/separation = 3
 alignment = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="CEInverse"]
-margin_top = 14.0
-margin_right = 45.0
-margin_bottom = 39.0
-custom_fonts/font = SubResource( 9 )
-custom_colors/font_color = Color( 1, 1, 1, 1 )
-custom_colors/font_outline_modulate = Color( 0.996078, 0.054902, 0, 1 )
-text = "a"
-align = 1
+[node name="Icon" type="TextureRect" parent="CEInverse"]
+modulate = Color( 0.921569, 0.145098, 0.0196078, 1 )
+margin_right = 16.0
+margin_bottom = 16.0
+texture = ExtResource( 32 )
+flip_v = true
 
 [node name="LTurn" type="Label" parent="CEInverse"]
-margin_top = 41.0
-margin_right = 45.0
-margin_bottom = 51.0
+margin_top = 19.0
+margin_right = 16.0
+margin_bottom = 29.0
 custom_fonts/font = SubResource( 11 )
 text = "3"
 align = 1
 valign = 1
+
+[node name="FontRune" type="TextureRect" parent="."]
+modulate = Color( 0.298039, 0.254902, 0.254902, 1 )
+margin_left = 914.0
+margin_top = 88.9547
+margin_right = 930.0
+margin_bottom = 104.955
+texture = ExtResource( 26 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 playback_speed = 1.5

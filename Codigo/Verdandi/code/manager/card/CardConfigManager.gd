@@ -13,3 +13,9 @@ func card_image(img_id):
 # Returns an instance of the custom card design
 func card_instance():
 	return custom_rune.instance()
+
+func card_icon(img_id):
+	return "res://interfaces/norse/img/Runes/Icon/RuneI_"+img_id+".png"
+
+func card_font(img_id):
+	return "res://interfaces/norse/img/Runes/Font/RuneF_"+img_id+".png"

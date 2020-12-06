@@ -86,18 +86,18 @@ func update_turn_gui_one_effect(i,t):
 	get_node("Layer 2 - GUI/GridEffectMy").get_child(i).get_child(1).text = t
 
 func set_rune_gui(character,index, b, card_data):
+	print(CardConfig.card_icon(card_data.image))
 	var avatar = get_node("Layer 2 - GUI/Sidgrida/AnimatedSprite")
 	avatar.play("atack")
 	avatar.set_frame(0)
-	var c = character  if b else character.to_upper() 
-	#var node_effect_gui = "Layer 2 - GUI/GridEffectMy/CEffect"+String(index)+"/Effect"+String(index)
-	var node_papyrus_gui = "Layer 2 - GUI/Papyrus/GridPapyrus/CChar"+String(index)+"/Char"+String(index)
-	if(get_node(node_papyrus_gui)):
-		get_node(node_papyrus_gui).text  =  c
-		get_node(node_papyrus_gui).get_parent().hint_tooltip = card_data.inverse.milestone[0]  if b else card_data.effect.milestone[0]
+	var font_aux = $FontRune.duplicate()
+	font_aux.set_texture(load(CardConfig.card_font(card_data.image)))
+	font_aux.set_flip_v(b)
+	font_aux.hint_tooltip = card_data.inverse.milestone[0]  if b else card_data.effect.milestone[0]
+	get_node("Layer 2 - GUI/Papyrus/GridPapyrus").add_child(font_aux)
 	if b:
 		var aux_inverse = $CEInverse.duplicate()
-		aux_inverse.get_child(0).text = c
+		aux_inverse.get_child(0).set_texture(load(CardConfig.card_icon(card_data.image)))
 		aux_inverse.get_child(1).text =  String(card_data.inverse.duration)
 		aux_inverse.hint_tooltip = card_data.inverse.description
 		get_node("Layer 2 - GUI/GridEffectMy").add_child(aux_inverse)
@@ -105,7 +105,7 @@ func set_rune_gui(character,index, b, card_data):
 		$Tween.start()
 	else:
 		var aux_effect  = $CEffect.duplicate()
-		aux_effect.get_child(0).text = c
+		aux_effect.get_child(0).set_texture(load(CardConfig.card_icon(card_data.image)))
 		aux_effect.get_child(1).text = String(card_data.effect.duration)
 		aux_effect.hint_tooltip = card_data.effect.description
 		get_node("Layer 2 - GUI/GridEffectMy").add_child(aux_effect)
