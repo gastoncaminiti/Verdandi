@@ -6,6 +6,7 @@ var MIN_DISTANCE = 0.5
 # UNIT STATISTICS VARIABLES 
 export var unit_stats = {
 	"name": "Sigurd",
+	"icon": "01",
 	"life": 100,
 	"attack": 25,
 	"defense": 20,

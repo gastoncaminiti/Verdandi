@@ -20,11 +20,12 @@ func disiable_hourglass():
 	hourglass.global_position = Vector2(1200,400)
 
 func set_selected_gui(unit_data):
+	get_node("Layer 2 - GUI/StatusInterface/VCStatus/HCHeader/CCIcon/TIcon").set_texture(load(unit_data.icon))
 	get_node("Layer 2 - GUI/StatusInterface/VCStatus/HCHeader/CCName/NName").set_text(String(unit_data.name))
 	get_node("Layer 2 - GUI/StatusInterface/VCStatus/GCStats/HCLife/NLife").set_text(String(unit_data.life))
 	get_node("Layer 2 - GUI/StatusInterface/VCStatus/GCStats/HCAttack/NAttack").set_text(String(unit_data.attack))
-	get_node("Layer 2 - GUI/StatusInterface/VCStatus/GCStats/HCDefense/NDefense").set_text(String(unit_data.defense))
-	get_node("Layer 2 - GUI/StatusInterface/VCStatus/GCStats/HCSpeed/NSpeed").set_text(String(unit_data.attack_speed))
+	get_node("Layer 2 - GUI/StatusInterface/VCStatus/GCStats2/HCDefense/NDefense").set_text(String(unit_data.defense))
+	get_node("Layer 2 - GUI/StatusInterface/VCStatus/GCStats2/HCSpeed/NSpeed").set_text(String(unit_data.attack_speed))
 	$AnimationPlayer.queue("SHOW_UNIT_STATUS")
 
 func set_unselected_gui():

@@ -1374,6 +1374,18 @@ graph_offset = Vector2( -1160.05, -444.62 )
 "unit",
 ]]
 script = ExtResource( 1 )
+unit_stats = {
+"attack": 25,
+"attack_range": 1,
+"attack_speed": 1,
+"defense": 20,
+"icon": "res://interfaces/norse/img/classicon/classIcon_2.png",
+"life": 100,
+"move_range": 1,
+"name": "Enemy",
+"orientation": 4,
+"status": "IDLE"
+}
 
 [node name="Area2D" type="Area2D" parent="."]
 visible = false
