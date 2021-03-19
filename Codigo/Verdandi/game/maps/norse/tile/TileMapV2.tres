@@ -15,6 +15,10 @@
 8/tile_mode = 0
 8/occluder_offset = Vector2( 0, 0 )
 8/navigation_offset = Vector2( 0, 0 )
+8/shape_offset = Vector2( 0, 0 )
+8/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+8/shape_one_way = false
+8/shape_one_way_margin = 0.0
 8/shapes = [  ]
 8/z_index = 0
 10/name = "GRASS_T1"
@@ -25,6 +29,10 @@
 10/tile_mode = 0
 10/occluder_offset = Vector2( 0, 0 )
 10/navigation_offset = Vector2( 0, 0 )
+10/shape_offset = Vector2( 0, 0 )
+10/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+10/shape_one_way = false
+10/shape_one_way_margin = 0.0
 10/shapes = [  ]
 10/z_index = 0
 11/name = "ROCK_T2"
@@ -35,6 +43,10 @@
 11/tile_mode = 0
 11/occluder_offset = Vector2( 0, 0 )
 11/navigation_offset = Vector2( 0, 0 )
+11/shape_offset = Vector2( 0, 0 )
+11/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+11/shape_one_way = false
+11/shape_one_way_margin = 0.0
 11/shapes = [  ]
 11/z_index = 0
 12/name = "ROCK_T1"
@@ -45,6 +57,10 @@
 12/tile_mode = 0
 12/occluder_offset = Vector2( 0, 0 )
 12/navigation_offset = Vector2( 0, 0 )
+12/shape_offset = Vector2( 0, 0 )
+12/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+12/shape_one_way = false
+12/shape_one_way_margin = 0.0
 12/shapes = [  ]
 12/z_index = 0
 script = ExtResource( 4 )
