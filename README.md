@@ -6,7 +6,7 @@ Desarrollado con Godot Engine Versión 3.2
 <hr />
 
 ### Estado actual
-En desarrollo Alpha Test III
+Cancelado
 [Bitácora](https://www.facebook.com/watch/111584003792452/600727444132790)
 
 <hr />
